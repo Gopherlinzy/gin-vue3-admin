@@ -1,0 +1,41 @@
+package {{PackageName}}
+
+import (
+    "github.com/Gopherlinzy/gohub/pkg/app"
+    "github.com/Gopherlinzy/gohub/pkg/database"
+    "github.com/Gopherlinzy/gohub/pkg/paginator"
+
+    "github.com/gin-gonic/gin"
+)
+
+func Get(idstr string) ({{VariableName}} {{StructName}}) {
+    database.Gohub_DB.Where("id", idstr).First(&{{VariableName}})
+    return
+}
+
+func GetBy(field, value string) ({{VariableName}} {{StructName}}) {
+    database.Gohub_DB.Where(field + " = ?", value).First(&{{VariableName}})
+    return
+}
+
+func All() ({{VariableNamePlural}} []{{StructName}}) {
+    database.Gohub_DB.Find(&{{VariableNamePlural}})
+    return
+}
+
+func IsExist(field, value string) bool {
+    var count int64
+    database.Gohub_DB.Model({{StructName}}{}).Where(field + " = ?", value).Count(&count)
+    return count > 0
+}
+
+func Paginate(c *gin.Context, perPage int) ({{VariableNamePlural}} []{{StructName}}, paging paginator.Paging) {
+    paging = paginator.Paginate(
+        c,
+        database.Gohub_DB.Model({{StructName}}{}),
+        &{{VariableNamePlural}},
+        app.V1URL(database.TableName(&{{StructName}}{})),
+        perPage,
+    )
+    return
+}

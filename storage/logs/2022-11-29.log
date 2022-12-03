@@ -1,0 +1,326 @@
+2022-11-29 19:22:35	[31mERROR[0m	redis/redis.go:49	Error Occurred:	{"error": "dial tcp 127.0.0.1:6379: connect: connection refused"}
+github.com/Gopherlinzy/gohub/pkg/redis.NewClient
+	/Users/admin/go/src/gin-vue3-admin/pkg/redis/redis.go:49
+github.com/Gopherlinzy/gohub/pkg/redis.ConnectRedis.func1
+	/Users/admin/go/src/gin-vue3-admin/pkg/redis/redis.go:27
+sync.(*Once).doSlow
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/sync/once.go:74
+sync.(*Once).Do
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/sync/once.go:65
+github.com/Gopherlinzy/gohub/pkg/redis.ConnectRedis
+	/Users/admin/go/src/gin-vue3-admin/pkg/redis/redis.go:26
+github.com/Gopherlinzy/gohub/bootstrap.SetupRedis
+	/Users/admin/go/src/gin-vue3-admin/bootstrap/redis.go:11
+main.main.func1
+	/Users/admin/go/src/gin-vue3-admin/main.go:35
+github.com/spf13/cobra.(*Command).execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:896
+github.com/spf13/cobra.(*Command).ExecuteC
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:1044
+github.com/spf13/cobra.(*Command).Execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:968
+main.main
+	/Users/admin/go/src/gin-vue3-admin/main.go:61
+runtime.main
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/proc.go:250
+2022-11-29 19:22:35	[31mERROR[0m	redis/redis.go:49	Error Occurred:	{"error": "dial tcp 127.0.0.1:6379: connect: connection refused"}
+github.com/Gopherlinzy/gohub/pkg/redis.NewClient
+	/Users/admin/go/src/gin-vue3-admin/pkg/redis/redis.go:49
+github.com/Gopherlinzy/gohub/pkg/cache.NewRedisStore
+	/Users/admin/go/src/gin-vue3-admin/pkg/cache/store_redis.go:17
+github.com/Gopherlinzy/gohub/bootstrap.SetupCache
+	/Users/admin/go/src/gin-vue3-admin/bootstrap/cache.go:12
+main.main.func1
+	/Users/admin/go/src/gin-vue3-admin/main.go:38
+github.com/spf13/cobra.(*Command).execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:896
+github.com/spf13/cobra.(*Command).ExecuteC
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:1044
+github.com/spf13/cobra.(*Command).Execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:968
+main.main
+	/Users/admin/go/src/gin-vue3-admin/main.go:61
+runtime.main
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/proc.go:250
+2022-11-29 19:37:35	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-11-29 19:37:35	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "2.000ms", "rows": 1}
+2022-11-29 19:37:35	[35mDEBUG[0m	cmd/migrate.go:61	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'migrations' AND table_type = 'BASE TABLE'", "time": "1.000ms", "rows": -1}
+2022-11-29 19:37:36	[35mDEBUG[0m	cmd/migrate.go:61	Database Query	{"sql": "CREATE TABLE `migrations` (`id` bigint unsigned AUTO_INCREMENT,`migration` varchar(255) NOT NULL UNIQUE,`batch` bigint,PRIMARY KEY (`id`))", "time": "11.000ms", "rows": 0}
+2022-11-29 19:37:36	[33mWARN[0m	gorm@v1.24.1/callbacks.go:134	Database ErrRecordNotFound	{"sql": "SELECT * FROM `migrations` ORDER BY id DESC,`migrations`.`id` LIMIT 1", "time": "2.000ms", "rows": 0}
+2022-11-29 19:37:36	[35mDEBUG[0m	cmd/migrate.go:65	Database Query	{"sql": "SELECT * FROM `migrations` ORDER BY id DESC,`migrations`.`id` LIMIT 1", "time": "2.000ms", "rows": 0}
+2022-11-29 19:37:36	[35mDEBUG[0m	cobra@v1.6.1/command.go:920	Database Query	{"sql": "SELECT * FROM `migrations`", "time": "0.000ms", "rows": 0}
+2022-11-29 19:37:36	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-11-29 19:37:36	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-11-29 19:37:36	[35mDEBUG[0m	migrate/migrator.go:71	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'users' AND table_type = 'BASE TABLE'", "time": "0.000ms", "rows": -1}
+2022-11-29 19:37:36	[35mDEBUG[0m	migrate/migrator.go:71	Database Query	{"sql": "CREATE TABLE `users` (`id` bigint unsigned AUTO_INCREMENT,`name` varchar(255) NOT NULL,`email` varchar(255) DEFAULT null,`phone` varchar(20) DEFAULT null,`password` varchar(255),`created_at` datetime(0),`updated_at` datetime(0),`deleted_at` datetime(3) NULL,PRIMARY KEY (`id`),INDEX `idx_users_name` (`name`),INDEX `idx_users_email` (`email`),INDEX `idx_users_phone` (`phone`),INDEX `idx_users_created_at` (`created_at`),INDEX `idx_users_updated_at` (`updated_at`),INDEX `idx_users_deleted_at` (`deleted_at`))", "time": "7.000ms", "rows": 0}
+2022-11-29 19:37:36	[35mDEBUG[0m	cmd/migrate.go:65	Database Query	{"sql": "INSERT INTO `migrations` (`migration`,`batch`) VALUES ('2022_11_23_204912_add_users_table',1)", "time": "0.000ms", "rows": 1}
+2022-11-29 19:37:36	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-11-29 19:37:36	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-11-29 19:37:36	[35mDEBUG[0m	migrate/migrator.go:71	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'categories' AND table_type = 'BASE TABLE'", "time": "0.000ms", "rows": -1}
+2022-11-29 19:37:36	[35mDEBUG[0m	migrate/migrator.go:71	Database Query	{"sql": "CREATE TABLE `categories` (`id` bigint unsigned AUTO_INCREMENT,`name` longtext,`description` longtext,`created_at` datetime(0),`updated_at` datetime(0),`deleted_at` datetime(3) NULL,PRIMARY KEY (`id`),INDEX `idx_categories_created_at` (`created_at`),INDEX `idx_categories_updated_at` (`updated_at`),INDEX `idx_categories_deleted_at` (`deleted_at`))", "time": "4.000ms", "rows": 0}
+2022-11-29 19:37:36	[35mDEBUG[0m	cmd/migrate.go:65	Database Query	{"sql": "INSERT INTO `migrations` (`migration`,`batch`) VALUES ('2022_11_24_194250_add_categories_table',1)", "time": "0.000ms", "rows": 1}
+2022-11-29 19:37:36	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-11-29 19:37:36	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-11-29 19:37:36	[35mDEBUG[0m	migrate/migrator.go:71	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'users' AND table_type = 'BASE TABLE'", "time": "0.000ms", "rows": -1}
+2022-11-29 19:37:36	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-11-29 19:37:36	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-11-29 19:37:36	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT * FROM `users` LIMIT 1", "time": "0.000ms", "rows": -1}
+2022-11-29 19:37:36	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gohub' AND table_name = 'users' ORDER BY ORDINAL_POSITION", "time": "1.000ms", "rows": -1}
+2022-11-29 19:37:36	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-11-29 19:37:36	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-11-29 19:37:36	[35mDEBUG[0m	migrate/migrator.go:71	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'categories' AND table_type = 'BASE TABLE'", "time": "0.000ms", "rows": -1}
+2022-11-29 19:37:36	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-11-29 19:37:36	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-11-29 19:37:36	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT * FROM `categories` LIMIT 1", "time": "0.000ms", "rows": -1}
+2022-11-29 19:37:36	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gohub' AND table_name = 'categories' ORDER BY ORDINAL_POSITION", "time": "0.000ms", "rows": -1}
+2022-11-29 19:37:36	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-11-29 19:37:36	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-11-29 19:37:36	[35mDEBUG[0m	migrate/migrator.go:71	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'topics' AND table_type = 'BASE TABLE'", "time": "0.000ms", "rows": -1}
+2022-11-29 19:37:36	[35mDEBUG[0m	migrate/migrator.go:71	Database Query	{"sql": "CREATE TABLE `topics` (`id` bigint unsigned AUTO_INCREMENT,`title` varchar(255) NOT NULL,`body` longtext NOT NULL,`user_id` bigint unsigned NOT NULL NOT NULL,`category_id` bigint unsigned NOT NULL NOT NULL,`created_at` datetime(0),`updated_at` datetime(0),`deleted_at` datetime(3) NULL,PRIMARY KEY (`id`),INDEX `idx_topics_title` (`title`),INDEX `idx_topics_user_id` (`user_id`),INDEX `idx_topics_category_id` (`category_id`),INDEX `idx_topics_created_at` (`created_at`),INDEX `idx_topics_updated_at` (`updated_at`),INDEX `idx_topics_deleted_at` (`deleted_at`),CONSTRAINT `fk_topics_user` FOREIGN KEY (`user_id`) REFERENCES `users`(`id`),CONSTRAINT `fk_topics_category` FOREIGN KEY (`category_id`) REFERENCES `categories`(`id`))", "time": "6.000ms", "rows": 0}
+2022-11-29 19:37:36	[35mDEBUG[0m	cmd/migrate.go:65	Database Query	{"sql": "INSERT INTO `migrations` (`migration`,`batch`) VALUES ('2022_11_25_134049_add_topics_table',1)", "time": "0.000ms", "rows": 1}
+2022-11-29 19:37:36	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-11-29 19:37:36	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-11-29 19:37:36	[35mDEBUG[0m	migrate/migrator.go:71	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'links' AND table_type = 'BASE TABLE'", "time": "0.000ms", "rows": -1}
+2022-11-29 19:37:36	[35mDEBUG[0m	migrate/migrator.go:71	Database Query	{"sql": "CREATE TABLE `links` (`id` bigint unsigned AUTO_INCREMENT,`name` varchar(255) NOT NULL,`url` varchar(255) DEFAULT null,`created_at` datetime(0),`updated_at` datetime(0),`deleted_at` datetime(3) NULL,PRIMARY KEY (`id`),INDEX `idx_links_deleted_at` (`deleted_at`),INDEX `idx_links_created_at` (`created_at`),INDEX `idx_links_updated_at` (`updated_at`))", "time": "3.000ms", "rows": 0}
+2022-11-29 19:37:36	[35mDEBUG[0m	cmd/migrate.go:65	Database Query	{"sql": "INSERT INTO `migrations` (`migration`,`batch`) VALUES ('2022_11_25_152436_add_links_table',1)", "time": "0.000ms", "rows": 1}
+2022-11-29 19:37:36	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-11-29 19:37:36	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-11-29 19:37:36	[35mDEBUG[0m	migrate/migrator.go:71	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'users' AND table_type = 'BASE TABLE'", "time": "0.000ms", "rows": -1}
+2022-11-29 19:37:36	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-11-29 19:37:36	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-11-29 19:37:36	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT * FROM `users` LIMIT 1", "time": "0.000ms", "rows": -1}
+2022-11-29 19:37:36	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gohub' AND table_name = 'users' ORDER BY ORDINAL_POSITION", "time": "0.000ms", "rows": -1}
+2022-11-29 19:37:36	[35mDEBUG[0m	migrate/migrator.go:71	Database Query	{"sql": "ALTER TABLE `users` ADD `city` varchar(10)", "time": "4.000ms", "rows": 0}
+2022-11-29 19:37:36	[35mDEBUG[0m	migrate/migrator.go:71	Database Query	{"sql": "ALTER TABLE `users` ADD `introduction` varchar(255)", "time": "4.000ms", "rows": 0}
+2022-11-29 19:37:36	[35mDEBUG[0m	migrate/migrator.go:71	Database Query	{"sql": "ALTER TABLE `users` ADD `avatar` varchar(255) DEFAULT null", "time": "5.000ms", "rows": 0}
+2022-11-29 19:37:36	[35mDEBUG[0m	cmd/migrate.go:65	Database Query	{"sql": "INSERT INTO `migrations` (`migration`,`batch`) VALUES ('2022_11_25_180033_add_fields_to_user',1)", "time": "0.000ms", "rows": 1}
+2022-11-29 19:40:31	[33mWARN[0m	gorm@v1.24.1/callbacks.go:134	Database Slow Log	{"sql": "INSERT INTO `users` (`name`,`city`,`introduction`,`avatar`,`email`,`phone`,`password`,`created_at`,`updated_at`,`deleted_at`) VALUES ('GOlFnxq','','','','GJWsbRT@ewpMttd.org','10127046423','$2a$12$54H8rIcUUuIyq4hn7EznQuQXP61ge1KxgYPWZ3oQjyrfhc88sK/cO','2022-11-29 19:40:31.092','2022-11-29 19:40:31.092',NULL),('YVdRMth','','','','bJCRfMj@upcLVPn.biz','51171819912','$2a$12$P8rXXOBjGYcWh6UrYhXcGO8psLBl/UvG86vz8f14Qt/YjaJp41mEW','2022-11-29 19:40:31.092','2022-11-29 19:40:31.092',NULL),('fdpbxQW','','','','EyvOqNe@AsPXMwP.biz','20979183439','$2a$12$te4PL/3zTWVieYzhgEMkNOFQrA.c3TAJZ8saCEikpemDEHQebM10i','2022-11-29 19:40:31.092','2022-11-29 19:40:31.092',NULL),('yVmtkuB','','','','OOAHVrf@JwUAvYn.ru','33953625840','$2a$12$CD55tfhsq/10IxHVGzX2IOZAZ7bkgVqyfYRJcLdGdt1pdjCb6cAg.','2022-11-29 19:40:31.092','2022-11-29 19:40:31.092',NULL),('fhyHPcW','','','','WeUVtkl@AfYbxqF.info','11400631756','$2a$12$ozum.RBchMmPN9DDXybfjehY/2aVOEcM1bQ37wSKSOKy6.Ix3VBjq','2022-11-29 19:40:31.092','2022-11-29 19:40:31.092',NULL),('mnrMEnY','','','','ehlGXWG@BXWcoDL.biz','64296377779','$2a$12$sUxFBPJ0FDV4Ka9Ach7gWuOlDq0j4I31T7KoOBwWeNFxVL75efQqe','2022-11-29 19:40:31.092','2022-11-29 19:40:31.092',NULL),('GAQmwrk','','','','WEXAgKl@KOOWRMf.biz','93979078919','$2a$12$KcKcJufXpDzhv9riMhurKePDDct1q0Ocub4jxh5Tp37XNGh9JiKPS','2022-11-29 19:40:31.092','2022-11-29 19:40:31.092',NULL),('ZvtvLKw','','','','rsxJxcD@jaaMWTw.ru','06329094036','$2a$12$Y2nc.nWrO0AnYqcaI8lBtOVu9VokizXOXDXLP.yw9jPmaNMPhJpk6','2022-11-29 19:40:31.092','2022-11-29 19:40:31.092',NULL),('DWOfwkp','','','','vAmJkOb@DDugfUa.ru','02208552736','$2a$12$H7Zkp2aetm9SrxN2KvLMuOTlIapCcOz1M5fAsU47Qcc0La6Ki8iL.','2022-11-29 19:40:31.092','2022-11-29 19:40:31.092',NULL),('VlOmcqg','','','','TABptDe@OCNIcbI.org','03063292253','$2a$12$Qga3NtBPNyw7TwzEwYG00ueB4VIh/ArVfI97MU5HvyLBDrd7CgPzq','2022-11-29 19:40:31.092','2022-11-29 19:40:31.092',NULL)", "time": "2642.000ms", "rows": 10}
+2022-11-29 19:40:31	[35mDEBUG[0m	cmd/seed.go:30	Database Query	{"sql": "INSERT INTO `users` (`name`,`city`,`introduction`,`avatar`,`email`,`phone`,`password`,`created_at`,`updated_at`,`deleted_at`) VALUES ('GOlFnxq','','','','GJWsbRT@ewpMttd.org','10127046423','$2a$12$54H8rIcUUuIyq4hn7EznQuQXP61ge1KxgYPWZ3oQjyrfhc88sK/cO','2022-11-29 19:40:31.092','2022-11-29 19:40:31.092',NULL),('YVdRMth','','','','bJCRfMj@upcLVPn.biz','51171819912','$2a$12$P8rXXOBjGYcWh6UrYhXcGO8psLBl/UvG86vz8f14Qt/YjaJp41mEW','2022-11-29 19:40:31.092','2022-11-29 19:40:31.092',NULL),('fdpbxQW','','','','EyvOqNe@AsPXMwP.biz','20979183439','$2a$12$te4PL/3zTWVieYzhgEMkNOFQrA.c3TAJZ8saCEikpemDEHQebM10i','2022-11-29 19:40:31.092','2022-11-29 19:40:31.092',NULL),('yVmtkuB','','','','OOAHVrf@JwUAvYn.ru','33953625840','$2a$12$CD55tfhsq/10IxHVGzX2IOZAZ7bkgVqyfYRJcLdGdt1pdjCb6cAg.','2022-11-29 19:40:31.092','2022-11-29 19:40:31.092',NULL),('fhyHPcW','','','','WeUVtkl@AfYbxqF.info','11400631756','$2a$12$ozum.RBchMmPN9DDXybfjehY/2aVOEcM1bQ37wSKSOKy6.Ix3VBjq','2022-11-29 19:40:31.092','2022-11-29 19:40:31.092',NULL),('mnrMEnY','','','','ehlGXWG@BXWcoDL.biz','64296377779','$2a$12$sUxFBPJ0FDV4Ka9Ach7gWuOlDq0j4I31T7KoOBwWeNFxVL75efQqe','2022-11-29 19:40:31.092','2022-11-29 19:40:31.092',NULL),('GAQmwrk','','','','WEXAgKl@KOOWRMf.biz','93979078919','$2a$12$KcKcJufXpDzhv9riMhurKePDDct1q0Ocub4jxh5Tp37XNGh9JiKPS','2022-11-29 19:40:31.092','2022-11-29 19:40:31.092',NULL),('ZvtvLKw','','','','rsxJxcD@jaaMWTw.ru','06329094036','$2a$12$Y2nc.nWrO0AnYqcaI8lBtOVu9VokizXOXDXLP.yw9jPmaNMPhJpk6','2022-11-29 19:40:31.092','2022-11-29 19:40:31.092',NULL),('DWOfwkp','','','','vAmJkOb@DDugfUa.ru','02208552736','$2a$12$H7Zkp2aetm9SrxN2KvLMuOTlIapCcOz1M5fAsU47Qcc0La6Ki8iL.','2022-11-29 19:40:31.092','2022-11-29 19:40:31.092',NULL),('VlOmcqg','','','','TABptDe@OCNIcbI.org','03063292253','$2a$12$Qga3NtBPNyw7TwzEwYG00ueB4VIh/ArVfI97MU5HvyLBDrd7CgPzq','2022-11-29 19:40:31.092','2022-11-29 19:40:31.092',NULL)", "time": "2642.000ms", "rows": 10}
+2022-11-29 19:40:31	[35mDEBUG[0m	cmd/seed.go:30	Database Query	{"sql": "INSERT INTO `categories` (`name`,`description`,`created_at`,`updated_at`,`deleted_at`) VALUES ('eKjvDYE','Accusantium sit perferendis aut voluptatem consequatur.','2022-11-29 19:40:31.098','2022-11-29 19:40:31.098',NULL),('Uqbryit','Sit consequatur aut perferendis voluptatem accusantium.','2022-11-29 19:40:31.098','2022-11-29 19:40:31.098',NULL),('OprZnOD','Perferendis voluptatem accusantium aut sit consequatur.','2022-11-29 19:40:31.098','2022-11-29 19:40:31.098',NULL),('pOuvouX','Perferendis consequatur sit voluptatem accusantium aut.','2022-11-29 19:40:31.098','2022-11-29 19:40:31.098',NULL),('cOAhqSE','Voluptatem perferendis consequatur sit accusantium aut.','2022-11-29 19:40:31.098','2022-11-29 19:40:31.098',NULL),('BgsxkUP','Sit perferendis voluptatem aut consequatur accusantium.','2022-11-29 19:40:31.098','2022-11-29 19:40:31.098',NULL),('nuugtMN','Aut consequatur sit perferendis voluptatem accusantium.','2022-11-29 19:40:31.098','2022-11-29 19:40:31.098',NULL),('HYljARF','Consequatur aut sit voluptatem accusantium perferendis.','2022-11-29 19:40:31.098','2022-11-29 19:40:31.098',NULL),('sTtGrJF','Consequatur sit voluptatem perferendis accusantium aut.','2022-11-29 19:40:31.098','2022-11-29 19:40:31.098',NULL),('kbdSCiM','Accusantium aut sit perferendis voluptatem consequatur.','2022-11-29 19:40:31.098','2022-11-29 19:40:31.098',NULL)", "time": "2.000ms", "rows": 10}
+2022-11-29 19:40:31	[35mDEBUG[0m	cmd/seed.go:30	Database Query	{"sql": "INSERT INTO `links` (`name`,`url`,`created_at`,`updated_at`,`deleted_at`) VALUES ('pFVLmnO','http://www.RunigcU.biz/wbvMOgf','2022-11-29 19:40:31.1','2022-11-29 19:40:31.1',NULL),('JdLjaSD','http://www.RijQXLq.biz/NKiiOUn','2022-11-29 19:40:31.1','2022-11-29 19:40:31.1',NULL),('DArPQWS','https://barcvad.ru/doLXkfQ','2022-11-29 19:40:31.1','2022-11-29 19:40:31.1',NULL),('cioFGUd','http://GCtgiqB.biz/aNgnUeX.php','2022-11-29 19:40:31.1','2022-11-29 19:40:31.1',NULL),('ioiwZjv','https://sWIFDRL.net/','2022-11-29 19:40:31.1','2022-11-29 19:40:31.1',NULL)", "time": "3.000ms", "rows": 5}
+2022-11-29 19:40:31	[35mDEBUG[0m	cmd/seed.go:30	Database Query	{"sql": "INSERT INTO `topics` (`title`,`body`,`user_id`,`category_id`,`created_at`,`updated_at`,`deleted_at`) VALUES ('Sit perferendis aut consequatur accusantium voluptatem.','Consequatur sit voluptatem aut perferendis accusantium. Voluptatem aut consequatur perferendis sit accusantium. Aut accusantium sit voluptatem perferendis consequatur. Perferendis sit accusantium aut consequatur voluptatem. Perferendis accusantium aut sit voluptatem consequatur. Perferendis consequatur voluptatem aut accusantium sit. Sit accusantium voluptatem aut perferendis consequatur. Sit accusantium voluptatem perferendis consequatur aut. Accusantium consequatur sit voluptatem perferendis aut.','1','3','2022-11-29 19:40:31.103','2022-11-29 19:40:31.103',NULL),('Accusantium aut sit consequatur perferendis voluptatem.','Consequatur sit perferendis accusantium voluptatem aut. Voluptatem accusantium aut consequatur perferendis sit. Accusantium sit consequatur voluptatem aut perferendis. Aut sit accusantium consequatur voluptatem perferendis.','1','3','2022-11-29 19:40:31.103','2022-11-29 19:40:31.103',NULL),('Aut accusantium sit voluptatem consequatur perferendis.','Perferendis voluptatem aut sit accusantium consequatur. Aut accusantium voluptatem sit perferendis consequatur. Perferendis aut voluptatem sit accusantium consequatur. Accusantium sit consequatur aut perferendis voluptatem. Aut consequatur perferendis sit accusantium voluptatem. Voluptatem consequatur sit perferendis accusantium aut. Consequatur sit aut voluptatem perferendis accusantium. Perferendis aut sit accusantium voluptatem consequatur.','1','3','2022-11-29 19:40:31.103','2022-11-29 19:40:31.103',NULL),('Perferendis voluptatem consequatur accusantium sit aut.','Perferendis aut accusantium consequatur sit voluptatem. Sit consequatur perferendis accusantium voluptatem aut. Accusantium sit consequatur perferendis aut voluptatem. Voluptatem accusantium perferendis aut consequatur sit. Sit perferendis aut consequatur accusantium voluptatem. Sit perferendis voluptatem accusantium consequatur aut. Voluptatem sit aut perferendis consequatur accusantium.','1','3','2022-11-29 19:40:31.103','2022-11-29 19:40:31.103',NULL),('Voluptatem consequatur accusantium sit aut perferendis.','Accusantium perferendis consequatur aut sit voluptatem. Consequatur accusantium perferendis voluptatem sit aut. Consequatur accusantium perferendis sit voluptatem aut. Accusantium sit aut voluptatem perferendis consequatur. Voluptatem consequatur accusantium sit aut perferendis. Perferendis sit aut voluptatem consequatur accusantium.','1','3','2022-11-29 19:40:31.103','2022-11-29 19:40:31.103',NULL),('Voluptatem aut accusantium perferendis sit consequatur.','Aut accusantium voluptatem perferendis consequatur sit. Sit consequatur accusantium aut perferendis voluptatem. Aut sit consequatur perferendis voluptatem accusantium. Perferendis voluptatem accusantium consequatur sit aut. Accusantium consequatur perferendis aut sit voluptatem. Aut perferendis sit accusantium consequatur voluptatem. Voluptatem accusantium perferendis sit consequatur aut. Consequatur voluptatem accusantium sit perferendis aut. Sit perferendis voluptatem aut consequatur accusantium.','1','3','2022-11-29 19:40:31.103','2022-11-29 19:40:31.103',NULL),('Aut sit perferendis accusantium consequatur voluptatem.','Consequatur sit accusantium aut perferendis voluptatem. Sit perferendis accusantium aut voluptatem consequatur. Accusantium aut consequatur sit perferendis voluptatem. Perferendis sit accusantium consequatur aut voluptatem. Perferendis sit voluptatem aut accusantium consequatur. Accusantium perferendis consequatur sit aut voluptatem. Consequatur voluptatem perferendis sit aut accusantium. Aut perferendis accusantium consequatur voluptatem sit. Perferendis consequatur voluptatem sit aut accusantium.','1','3','2022-11-29 19:40:31.103','2022-11-29 19:40:31.103',NULL),('Voluptatem consequatur accusantium aut perferendis sit.','Aut consequatur sit accusantium perferendis voluptatem. Perferendis consequatur sit accusantium voluptatem aut.','1','3','2022-11-29 19:40:31.103','2022-11-29 19:40:31.103',NULL),('Perferendis voluptatem aut consequatur accusantium sit.','Voluptatem accusantium sit aut consequatur perferendis. Sit consequatur perferendis voluptatem accusantium aut. Sit perferendis accusantium consequatur voluptatem aut. Aut accusantium voluptatem consequatur sit perferendis. Perferendis aut consequatur voluptatem accusantium sit. Aut accusantium sit perferendis voluptatem consequatur. Consequatur voluptatem accusantium sit aut perferendis.','1','3','2022-11-29 19:40:31.103','2022-11-29 19:40:31.103',NULL),('Voluptatem consequatur perferendis accusantium sit aut.','Voluptatem accusantium consequatur perferendis sit aut. Perferendis sit aut consequatur accusantium voluptatem. Voluptatem accusantium sit perferendis aut consequatur. Voluptatem perferendis consequatur accusantium aut sit. Consequatur perferendis sit aut accusantium voluptatem. Consequatur aut voluptatem accusantium sit perferendis. Accusantium aut perferendis voluptatem sit consequatur. Accusantium consequatur aut voluptatem perferendis sit.','1','3','2022-11-29 19:40:31.103','2022-11-29 19:40:31.103',NULL)", "time": "2.000ms", "rows": 10}
+2022-11-29 19:50:49	[35mDEBUG[0m	verifycode/verifycode.go:82	验证码	{"检查验证码": "{\"00012312312\":\"123456\"}"}
+2022-11-29 19:50:49	[33mWARN[0m	gorm@v1.24.1/callbacks.go:134	Database ErrRecordNotFound	{"sql": "SELECT * FROM `users` WHERE phone = '00012312312' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "1.000ms", "rows": 0}
+2022-11-29 19:50:49	[35mDEBUG[0m	auth/login_controller.go:26	Database Query	{"sql": "SELECT * FROM `users` WHERE phone = '00012312312' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "1.000ms", "rows": 0}
+2022-11-29 19:50:49	[31mERROR[0m	response/response.go:83	Error Occurred:	{"error": "手机号未注册"}
+github.com/Gopherlinzy/gohub/pkg/response.Error
+	/Users/admin/go/src/gin-vue3-admin/pkg/response/response.go:83
+github.com/Gopherlinzy/gohub/app/http/controllers/api/v1/auth.(*LoginController).LoginByPhone
+	/Users/admin/go/src/gin-vue3-admin/app/http/controllers/api/v1/auth/login_controller.go:29
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.GuestJWT.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/guest_jwt.go:22
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.LimitIP.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:31
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.LimitIP.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:31
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.ForceUA.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-11-29 19:50:49	[33mWARN[0m	middlewares/logger.go:72	HTTP Warning 422	{"status": 422, "request": "POST /api/v1/auth/login/using-phone", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "10.000ms", "Request Body": "{\r\n    \"phone\":\"00012312312\",\r\n    \"verify_code\":\"123456\"\r\n}", "Response Body": "{\"error\":\"手机号未注册\",\"message\":\"账号不存在\"}"}
+2022-11-29 19:51:47	[35mDEBUG[0m	verifycode/verifycode.go:82	验证码	{"检查验证码": "{\"00012312312\":\"123456\"}"}
+2022-11-29 19:51:47	[33mWARN[0m	gorm@v1.24.1/callbacks.go:134	Database ErrRecordNotFound	{"sql": "SELECT * FROM `users` WHERE phone = '00012312312' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 0}
+2022-11-29 19:51:47	[35mDEBUG[0m	auth/login_controller.go:26	Database Query	{"sql": "SELECT * FROM `users` WHERE phone = '00012312312' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 0}
+2022-11-29 19:51:47	[31mERROR[0m	response/response.go:83	Error Occurred:	{"error": "手机号未注册"}
+github.com/Gopherlinzy/gohub/pkg/response.Error
+	/Users/admin/go/src/gin-vue3-admin/pkg/response/response.go:83
+github.com/Gopherlinzy/gohub/app/http/controllers/api/v1/auth.(*LoginController).LoginByPhone
+	/Users/admin/go/src/gin-vue3-admin/app/http/controllers/api/v1/auth/login_controller.go:29
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.GuestJWT.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/guest_jwt.go:22
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.LimitIP.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:31
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.LimitIP.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:31
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.ForceUA.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-11-29 19:51:47	[33mWARN[0m	middlewares/logger.go:72	HTTP Warning 422	{"status": 422, "request": "POST /api/v1/auth/login/using-phone", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "6.000ms", "Request Body": "{\r\n    \"phone\":\"00012312312\",\r\n    \"verify_code\":\"123456\"\r\n}", "Response Body": "{\"error\":\"手机号未注册\",\"message\":\"账号不存在\"}"}
+2022-11-29 19:52:06	[35mDEBUG[0m	auth/login_controller.go:48	Database Query	{"sql": "SELECT * FROM `users` WHERE (name = 'sly' OR phone = 'sly' OR email = 'sly') AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "1.000ms", "rows": 1}
+2022-11-29 19:52:06	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "POST /api/v1/auth/login/using-password", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "303.000ms", "Request Body": "{\r\n    \"login_id\":\"sly\",\r\n    \"password\":\"123456\",\r\n    \"captcha_id\":\"captcha_skip_test\",\r\n    \"captcha_answer\":\"648022\"\r\n}", "Response Body": "{\"data\":{\"id\":1,\"name\":\"sly\",\"created_at\":\"2022-11-29T19:40:31+08:00\",\"updated_at\":\"2022-11-29T19:40:31+08:00\",\"deleted_at\":null},\"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSIsInVzZXJfbmFtZSI6InNseSIsImV4cGlyZV90aW1lIjoxNjc0OTA2NzI2LCJpc3MiOiJnb2h1YiIsImV4cCI6MTY3NDkwNjcyNiwibmJmIjoxNjY5NzIyNzI2LCJpYXQiOjE2Njk3MjI3MjZ9.IrLDT2m3rzJ_pCNeWIcLKTVe9n0Uj4VngR-MYgjh6S8\"}"}
+2022-11-29 19:52:10	[35mDEBUG[0m	verifycode/verifycode.go:82	验证码	{"检查验证码": "{\"00012312312\":\"123456\"}"}
+2022-11-29 19:52:10	[33mWARN[0m	gorm@v1.24.1/callbacks.go:134	Database ErrRecordNotFound	{"sql": "SELECT * FROM `users` WHERE phone = '00012312312' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 0}
+2022-11-29 19:52:10	[35mDEBUG[0m	auth/login_controller.go:26	Database Query	{"sql": "SELECT * FROM `users` WHERE phone = '00012312312' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 0}
+2022-11-29 19:52:10	[31mERROR[0m	response/response.go:83	Error Occurred:	{"error": "手机号未注册"}
+github.com/Gopherlinzy/gohub/pkg/response.Error
+	/Users/admin/go/src/gin-vue3-admin/pkg/response/response.go:83
+github.com/Gopherlinzy/gohub/app/http/controllers/api/v1/auth.(*LoginController).LoginByPhone
+	/Users/admin/go/src/gin-vue3-admin/app/http/controllers/api/v1/auth/login_controller.go:29
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.GuestJWT.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/guest_jwt.go:22
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.LimitIP.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:31
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.LimitIP.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:31
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.ForceUA.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-11-29 19:52:10	[33mWARN[0m	middlewares/logger.go:72	HTTP Warning 422	{"status": 422, "request": "POST /api/v1/auth/login/using-phone", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "9.000ms", "Request Body": "{\r\n    \"phone\":\"00012312312\",\r\n    \"verify_code\":\"123456\"\r\n}", "Response Body": "{\"error\":\"手机号未注册\",\"message\":\"账号不存在\"}"}
+2022-11-29 19:52:53	[35mDEBUG[0m	verifycode/verifycode.go:82	验证码	{"检查验证码": "{\"00012312312\":\"123456\"}"}
+2022-11-29 19:52:53	[33mWARN[0m	gorm@v1.24.1/callbacks.go:134	Database ErrRecordNotFound	{"sql": "SELECT * FROM `users` WHERE phone = '00012312312' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 0}
+2022-11-29 19:52:53	[35mDEBUG[0m	auth/login_controller.go:26	Database Query	{"sql": "SELECT * FROM `users` WHERE phone = '00012312312' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 0}
+2022-11-29 19:52:53	[31mERROR[0m	response/response.go:83	Error Occurred:	{"error": "手机号未注册"}
+github.com/Gopherlinzy/gohub/pkg/response.Error
+	/Users/admin/go/src/gin-vue3-admin/pkg/response/response.go:83
+github.com/Gopherlinzy/gohub/app/http/controllers/api/v1/auth.(*LoginController).LoginByPhone
+	/Users/admin/go/src/gin-vue3-admin/app/http/controllers/api/v1/auth/login_controller.go:29
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.GuestJWT.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/guest_jwt.go:22
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.LimitIP.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:31
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.LimitIP.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:31
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.ForceUA.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-11-29 19:52:53	[33mWARN[0m	middlewares/logger.go:72	HTTP Warning 422	{"status": 422, "request": "POST /api/v1/auth/login/using-phone", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "5.000ms", "Request Body": "{\r\n    \"phone\":\"00012312312\",\r\n    \"verify_code\":\"123456\"\r\n}", "Response Body": "{\"error\":\"手机号未注册\",\"message\":\"账号不存在\"}"}
+2022-11-29 19:53:13	[35mDEBUG[0m	verifycode/verifycode.go:82	验证码	{"检查验证码": "{\"00012312312\":\"123456\"}"}
+2022-11-29 19:53:13	[35mDEBUG[0m	auth/login_controller.go:26	Database Query	{"sql": "SELECT * FROM `users` WHERE phone = '00012312312' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-11-29 19:53:13	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "POST /api/v1/auth/login/using-phone", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "4.000ms", "Request Body": "{\r\n    \"phone\":\"00012312312\",\r\n    \"verify_code\":\"123456\"\r\n}", "Response Body": "{\"data\":{\"id\":1,\"name\":\"sly\",\"created_at\":\"2022-11-29T19:40:31+08:00\",\"updated_at\":\"2022-11-29T19:40:31+08:00\",\"deleted_at\":null},\"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSIsInVzZXJfbmFtZSI6InNseSIsImV4cGlyZV90aW1lIjoxNjc0OTA2NzkzLCJpc3MiOiJnb2h1YiIsImV4cCI6MTY3NDkwNjc5MywibmJmIjoxNjY5NzIyNzkzLCJpYXQiOjE2Njk3MjI3OTN9.Mf4zns3T3mt-C0vUPMy07rsBv3cslfmppNzBStIaTvk\"}"}
+2022-11-29 19:56:13	[35mDEBUG[0m	auth/login_controller.go:48	Database Query	{"sql": "SELECT * FROM `users` WHERE (name = 'sly' OR phone = 'sly' OR email = 'sly') AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "1.000ms", "rows": 1}
+2022-11-29 19:56:13	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "POST /api/v1/auth/login/using-password", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "305.000ms", "Request Body": "{\r\n    \"login_id\":\"sly\",\r\n    \"password\":\"123456\",\r\n    \"captcha_id\":\"captcha_skip_test\",\r\n    \"captcha_answer\":\"648022\"\r\n}", "Response Body": "{\"data\":{\"id\":1,\"name\":\"sly\",\"created_at\":\"2022-11-29T19:40:31+08:00\",\"updated_at\":\"2022-11-29T19:40:31+08:00\",\"deleted_at\":null},\"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSIsInVzZXJfbmFtZSI6InNseSIsImV4cGlyZV90aW1lIjoxNjc0OTA2OTczLCJpc3MiOiJnb2h1YiIsImV4cCI6MTY3NDkwNjk3MywibmJmIjoxNjY5NzIyOTczLCJpYXQiOjE2Njk3MjI5NzN9.CqJgP5qzF6HyiHJz9o0ssxWVPJx9zOE5AhLy4UMho_I\"}"}
+2022-11-29 22:44:27	[31mERROR[0m	redis/redis.go:49	Error Occurred:	{"error": "dial tcp 127.0.0.1:6379: connect: connection refused"}
+github.com/Gopherlinzy/gohub/pkg/redis.NewClient
+	/Users/admin/go/src/gin-vue3-admin/pkg/redis/redis.go:49
+github.com/Gopherlinzy/gohub/pkg/redis.ConnectRedis.func1
+	/Users/admin/go/src/gin-vue3-admin/pkg/redis/redis.go:27
+sync.(*Once).doSlow
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/sync/once.go:74
+sync.(*Once).Do
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/sync/once.go:65
+github.com/Gopherlinzy/gohub/pkg/redis.ConnectRedis
+	/Users/admin/go/src/gin-vue3-admin/pkg/redis/redis.go:26
+github.com/Gopherlinzy/gohub/bootstrap.SetupRedis
+	/Users/admin/go/src/gin-vue3-admin/bootstrap/redis.go:11
+main.main.func1
+	/Users/admin/go/src/gin-vue3-admin/main.go:35
+github.com/spf13/cobra.(*Command).execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:896
+github.com/spf13/cobra.(*Command).ExecuteC
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:1044
+github.com/spf13/cobra.(*Command).Execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:968
+main.main
+	/Users/admin/go/src/gin-vue3-admin/main.go:61
+runtime.main
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/proc.go:250
+2022-11-29 22:44:27	[31mERROR[0m	redis/redis.go:49	Error Occurred:	{"error": "dial tcp 127.0.0.1:6379: connect: connection refused"}
+github.com/Gopherlinzy/gohub/pkg/redis.NewClient
+	/Users/admin/go/src/gin-vue3-admin/pkg/redis/redis.go:49
+github.com/Gopherlinzy/gohub/pkg/cache.NewRedisStore
+	/Users/admin/go/src/gin-vue3-admin/pkg/cache/store_redis.go:17
+github.com/Gopherlinzy/gohub/bootstrap.SetupCache
+	/Users/admin/go/src/gin-vue3-admin/bootstrap/cache.go:12
+main.main.func1
+	/Users/admin/go/src/gin-vue3-admin/main.go:38
+github.com/spf13/cobra.(*Command).execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:896
+github.com/spf13/cobra.(*Command).ExecuteC
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:1044
+github.com/spf13/cobra.(*Command).Execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:968
+main.main
+	/Users/admin/go/src/gin-vue3-admin/main.go:61
+runtime.main
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/proc.go:250
+2022-11-29 22:46:06	[35mDEBUG[0m	auth/login_controller.go:48	Database Query	{"sql": "SELECT * FROM `users` WHERE (name = 'sly' OR phone = 'sly' OR email = 'sly') AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "2.000ms", "rows": 1}
+2022-11-29 22:46:07	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "POST /api/v1/auth/login/using-password", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "297.000ms", "Request Body": "{\r\n    \"login_id\":\"sly\",\r\n    \"password\":\"123456\",\r\n    \"captcha_id\":\"captcha_skip_test\",\r\n    \"captcha_answer\":\"648022\"\r\n}", "Response Body": "{\"data\":{\"id\":1,\"name\":\"sly\",\"created_at\":\"2022-11-29T19:40:31+08:00\",\"updated_at\":\"2022-11-29T19:40:31+08:00\",\"deleted_at\":null},\"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSIsInVzZXJfbmFtZSI6InNseSIsImV4cGlyZV90aW1lIjoxNjc0OTE3MTY3LCJpc3MiOiJnb2h1YiIsImV4cCI6MTY3NDkxNzE2NywibmJmIjoxNjY5NzMzMTY3LCJpYXQiOjE2Njk3MzMxNjd9.-qupWLaUZaHioRRWDzq0331_Z18kSxZvL9KGixj_C5o\"}"}

@@ -1,0 +1,90 @@
+package v1
+
+import (
+    "github.com/Gopherlinzy/gohub/app/models/{{PackageName}}"
+    "github.com/Gopherlinzy/gohub/app/policies"
+    "github.com/Gopherlinzy/gohub/app/requests"
+    "github.com/Gopherlinzy/gohub/pkg/response"
+
+    "github.com/gin-gonic/gin"
+)
+
+type {{StructNamePlural}}Controller struct {
+    BaseApiController
+}
+
+// Index 显示 {{PackageName}} 列表
+func (ctrl *{{StructNamePlural}}Controller) Index(c *gin.Context) {
+    {{VariableNamePlural}} := {{PackageName}}.All()
+    response.Data(c, {{VariableNamePlural}})
+}
+
+// Show 显示单个 {{PackageName}} 数据
+func (ctrl *{{StructNamePlural}}Controller) Show(c *gin.Context) {
+    {{VariableName}}Model := {{PackageName}}.Get(c.Param("id"))
+    if {{VariableName}}Model.ID == 0 {
+        response.Abort404(c)
+        return
+    }
+    response.Data(c, {{VariableName}}Model)
+}
+
+// Store 新建 {{PackageName}} 数据
+func (ctrl *{{StructNamePlural}}Controller) Store(c *gin.Context) {
+
+    request := requests.{{StructName}}Request{}
+    if ok := requests.Validate(c, &request, requests.{{StructName}}Save); !ok {
+        return
+    }
+
+    {{VariableName}}Model := {{PackageName}}.{{StructName}}{
+        FieldName:      request.FieldName,
+    }
+    {{VariableName}}Model.Create()
+    if {{VariableName}}Model.ID > 0 {
+        response.Created(c, {{VariableName}}Model)
+    } else {
+        response.Abort500(c, "创建失败，请稍后尝试~")
+    }
+}
+
+// Update 修改 {{PackageName}} 数据
+func (ctrl *{{StructNamePlural}}Controller) Update(c *gin.Context) {
+
+    request := requests.{{StructName}}Request{}
+
+    if bindOk := requests.Validate(c, &request, requests.{{StructName}}Save); !bindOk {
+        return
+    }
+
+    {{VariableName}}Model := {{PackageName}}.Get(request.ID)
+
+    {{VariableName}}Model.FieldName = request.FieldName
+    rowsAffected := {{VariableName}}Model.Save()
+    if rowsAffected > 0 {
+        response.Data(c, {{VariableName}}Model)
+    } else {
+        response.Abort500(c, "更新失败，请稍后尝试~")
+    }
+}
+
+// Delete 删除 {{PackageName}} 数据
+func (ctrl *{{StructNamePlural}}Controller) Delete(c *gin.Context) {
+
+    // 表单验证
+   	request := requests.{{StructName}}DeleteRequest{}
+
+   	if bindOk := requests.Validate(c, &request, requests.{{StructName}}Delete); !bindOk {
+   		return
+   	}
+
+    {{VariableName}}Model := {{PackageName}}.Get(request.ID)
+
+    rowsAffected := {{VariableName}}Model.Delete()
+    if rowsAffected > 0 {
+        response.Success(c)
+        return
+    }
+
+    response.Abort500(c, "删除失败，请稍后尝试~")
+}

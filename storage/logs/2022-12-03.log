@@ -1,0 +1,1216 @@
+2022-12-03 11:45:05	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "2.000ms", "rows": 1}
+2022-12-03 11:45:05	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "2.000ms", "rows": 1}
+2022-12-03 11:45:05	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `roles` WHERE role_name= 'Admin'", "time": "1.000ms", "rows": 1}
+2022-12-03 11:45:05	[33mWARN[0m	middlewares/logger.go:72	HTTP Warning 422	{"status": 422, "request": "POST /api/v1/users/1", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "10.000ms", "Request Body": "{\n    \"role_name\":\"Admin\"\n}", "Response Body": "{\"errors\":{\"role_name\":[\"角色名必须存在\"]},\"message\":\"请求验证不通过，具体请查看 errors\"}"}
+2022-12-03 11:45:48	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-03 11:45:48	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "INSERT INTO `roles` (`role_name`,`des`,`created_at`,`updated_at`,`deleted_at`) VALUES ('user','普通用户','2022-12-03 11:45:48.941','2022-12-03 11:45:48.941',NULL)", "time": "2.000ms", "rows": 1}
+2022-12-03 11:45:48	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 201, "request": "POST /api/v1/roles", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "5.000ms", "Request Body": "{\n    \"role_name\":\"user\",\n    \"des\": \"普通用户\"\n}", "Response Body": "{\"data\":{\"id\":3,\"role_name\":\"user\",\"des\":\"普通用户\",\"created_at\":\"2022-12-03T11:45:48.941+08:00\",\"updated_at\":\"2022-12-03T11:45:48.941+08:00\",\"deleted_at\":null},\"success\":true}"}
+2022-12-03 11:45:54	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-03 11:45:54	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-03 11:45:54	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `roles` WHERE role_name= 'admin'", "time": "0.000ms", "rows": 1}
+2022-12-03 11:45:54	[33mWARN[0m	middlewares/logger.go:72	HTTP Warning 422	{"status": 422, "request": "POST /api/v1/users/1", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "2.000ms", "Request Body": "{\n    \"role_name\":\"admin\"\n}", "Response Body": "{\"errors\":{\"role_name\":[\"角色名必须存在\"]},\"message\":\"请求验证不通过，具体请查看 errors\"}"}
+2022-12-03 11:46:00	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-03 11:46:00	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-03 11:46:00	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `roles` WHERE role_name= 'user'", "time": "0.000ms", "rows": 1}
+2022-12-03 11:46:00	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 11:46:00	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-03 11:46:00	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND table_type = 'BASE TABLE'", "time": "1.000ms", "rows": -1}
+2022-12-03 11:46:00	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 11:46:00	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-03 11:46:00	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT * FROM `casbin_rule` LIMIT 1", "time": "0.000ms", "rows": -1}
+2022-12-03 11:46:00	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' ORDER BY ORDINAL_POSITION", "time": "1.000ms", "rows": -1}
+2022-12-03 11:46:00	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 11:46:00	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-03 11:46:00	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND index_name = 'idx_casbin_rule'", "time": "1.000ms", "rows": -1}
+2022-12-03 11:46:00	[35mDEBUG[0m	v2@v2.58.0/enforcer.go:179	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 1}
+2022-12-03 11:46:00	[35mDEBUG[0m	v2@v2.58.0/enforcer_cached.go:96	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "1.000ms", "rows": 1}
+2022-12-03 11:46:00	[35mDEBUG[0m	v2@v2.58.0/internal_api.go:305	Database Query	{"sql": "INSERT INTO `casbin_rule` (`ptype`,`v0`,`v1`,`v2`,`v3`,`v4`,`v5`) VALUES ('g','sly','user','','','','')", "time": "3.000ms", "rows": 1}
+2022-12-03 11:46:00	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 201, "request": "POST /api/v1/users/1", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "17.000ms", "Request Body": "{\n    \"role_name\":\"user\"\n}", "Response Body": "{\"data\":{\"id\":1,\"name\":\"sly\",\"created_at\":\"2022-11-29T19:40:31+08:00\",\"updated_at\":\"2022-11-29T19:40:31+08:00\",\"deleted_at\":null},\"success\":true}"}
+2022-12-03 11:47:40	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-03 11:47:40	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-03 11:47:40	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `roles` WHERE role_name= 'user'", "time": "0.000ms", "rows": 1}
+2022-12-03 11:47:40	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 201, "request": "POST /api/v1/users/1", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "3.000ms", "Request Body": "{\n    \"role_name\":\"user\"\n}", "Response Body": "{\"data\":{\"id\":1,\"name\":\"sly\",\"created_at\":\"2022-11-29T19:40:31+08:00\",\"updated_at\":\"2022-11-29T19:40:31+08:00\",\"deleted_at\":null},\"success\":true}"}
+2022-12-03 11:48:49	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-03 11:48:49	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-03 11:48:49	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `roles` WHERE role_name= 'user'", "time": "2.000ms", "rows": 1}
+2022-12-03 11:48:49	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 201, "request": "POST /api/v1/users/1", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "4.000ms", "Request Body": "{\n    \"role_name\":\"user\"\n}", "Response Body": "{\"data\":{\"id\":1,\"name\":\"sly\",\"created_at\":\"2022-11-29T19:40:31+08:00\",\"updated_at\":\"2022-11-29T19:40:31+08:00\",\"deleted_at\":null},\"success\":true}"}
+2022-12-03 11:50:34	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "1.000ms", "rows": 1}
+2022-12-03 11:50:34	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-03 11:50:34	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `roles` WHERE role_name= 'user'", "time": "1.000ms", "rows": 1}
+2022-12-03 11:50:34	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 201, "request": "POST /api/v1/users/1", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "4.000ms", "Request Body": "{\n    \"role_name\":\"user\"\n}", "Response Body": "{\"data\":{\"id\":1,\"name\":\"sly\",\"created_at\":\"2022-11-29T19:40:31+08:00\",\"updated_at\":\"2022-11-29T19:40:31+08:00\",\"deleted_at\":null},\"success\":true}"}
+2022-12-03 11:50:37	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-03 11:50:37	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-03 11:50:37	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `roles` WHERE role_name= 'user'", "time": "0.000ms", "rows": 1}
+2022-12-03 11:50:37	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 201, "request": "POST /api/v1/users/1", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "1.000ms", "Request Body": "{\n    \"role_name\":\"user\"\n}", "Response Body": "{\"data\":{\"id\":1,\"name\":\"sly\",\"created_at\":\"2022-11-29T19:40:31+08:00\",\"updated_at\":\"2022-11-29T19:40:31+08:00\",\"deleted_at\":null},\"success\":true}"}
+2022-12-03 11:51:06	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-03 11:51:06	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-03 11:51:06	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `roles` WHERE role_name= 'user'", "time": "0.000ms", "rows": 1}
+2022-12-03 11:51:06	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 201, "request": "POST /api/v1/users/1", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "2.000ms", "Request Body": "{\n    \"role_name\":\"user\"\n}", "Response Body": "{\"data\":{\"id\":1,\"name\":\"sly\",\"created_at\":\"2022-11-29T19:40:31+08:00\",\"updated_at\":\"2022-11-29T19:40:31+08:00\",\"deleted_at\":null},\"success\":true}"}
+2022-12-03 11:51:26	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-03 11:51:26	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-03 11:51:26	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `roles` WHERE role_name= 'superAdmin'", "time": "1.000ms", "rows": 1}
+2022-12-03 11:51:26	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 201, "request": "POST /api/v1/users/1", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "3.000ms", "Request Body": "{\n    \"role_name\":\"superAdmin\"\n}", "Response Body": "{\"data\":{\"id\":1,\"name\":\"sly\",\"created_at\":\"2022-11-29T19:40:31+08:00\",\"updated_at\":\"2022-11-29T19:40:31+08:00\",\"deleted_at\":null},\"success\":true}"}
+2022-12-03 11:54:17	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-03 11:54:17	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-03 11:54:17	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `roles` WHERE role_name= 'superAdmin'", "time": "0.000ms", "rows": 1}
+2022-12-03 11:54:17	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 201, "request": "POST /api/v1/users/1", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "3.000ms", "Request Body": "{\n    \"role_name\":\"superAdmin\"\n}", "Response Body": "{\"data\":{\"id\":1,\"name\":\"sly\",\"created_at\":\"2022-11-29T19:40:31+08:00\",\"updated_at\":\"2022-11-29T19:40:31+08:00\",\"deleted_at\":null},\"success\":true}"}
+2022-12-03 11:54:19	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-03 11:54:19	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-03 11:54:19	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `roles` WHERE role_name= 'superAdmin'", "time": "0.000ms", "rows": 1}
+2022-12-03 11:54:19	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 201, "request": "POST /api/v1/users/1", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "2.000ms", "Request Body": "{\n    \"role_name\":\"superAdmin\"\n}", "Response Body": "{\"data\":{\"id\":1,\"name\":\"sly\",\"created_at\":\"2022-11-29T19:40:31+08:00\",\"updated_at\":\"2022-11-29T19:40:31+08:00\",\"deleted_at\":null},\"success\":true}"}
+2022-12-03 11:54:20	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-03 11:54:20	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-03 11:54:20	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `roles` WHERE role_name= 'superAdmin'", "time": "0.000ms", "rows": 1}
+2022-12-03 11:54:20	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 201, "request": "POST /api/v1/users/1", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "3.000ms", "Request Body": "{\n    \"role_name\":\"superAdmin\"\n}", "Response Body": "{\"data\":{\"id\":1,\"name\":\"sly\",\"created_at\":\"2022-11-29T19:40:31+08:00\",\"updated_at\":\"2022-11-29T19:40:31+08:00\",\"deleted_at\":null},\"success\":true}"}
+2022-12-03 11:54:21	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-03 11:54:21	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-03 11:54:21	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `roles` WHERE role_name= 'superAdmin'", "time": "0.000ms", "rows": 1}
+2022-12-03 11:54:21	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 201, "request": "POST /api/v1/users/1", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "3.000ms", "Request Body": "{\n    \"role_name\":\"superAdmin\"\n}", "Response Body": "{\"data\":{\"id\":1,\"name\":\"sly\",\"created_at\":\"2022-11-29T19:40:31+08:00\",\"updated_at\":\"2022-11-29T19:40:31+08:00\",\"deleted_at\":null},\"success\":true}"}
+2022-12-03 11:54:26	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-03 11:54:26	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-03 11:54:26	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `roles` WHERE role_name= 'user'", "time": "0.000ms", "rows": 1}
+2022-12-03 11:54:26	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 201, "request": "POST /api/v1/users/1", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "3.000ms", "Request Body": "{\n    \"role_name\":\"user\"\n}", "Response Body": "{\"data\":{\"id\":1,\"name\":\"sly\",\"created_at\":\"2022-11-29T19:40:31+08:00\",\"updated_at\":\"2022-11-29T19:40:31+08:00\",\"deleted_at\":null},\"success\":true}"}
+2022-12-03 11:55:11	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-03 11:55:11	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-03 11:55:11	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `roles` WHERE role_name= 'user'", "time": "0.000ms", "rows": 1}
+2022-12-03 11:55:11	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 201, "request": "POST /api/v1/users/1", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "3.000ms", "Request Body": "{\n    \"role_name\":\"user\"\n}", "Response Body": "{\"data\":{\"id\":1,\"name\":\"sly\",\"created_at\":\"2022-11-29T19:40:31+08:00\",\"updated_at\":\"2022-11-29T19:40:31+08:00\",\"deleted_at\":null},\"success\":true}"}
+2022-12-03 11:57:52	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "1.000ms", "rows": 1}
+2022-12-03 11:57:52	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-03 11:57:52	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `roles` WHERE role_name= 'user'", "time": "0.000ms", "rows": 1}
+2022-12-03 11:57:52	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 11:57:52	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-03 11:57:52	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND table_type = 'BASE TABLE'", "time": "1.000ms", "rows": -1}
+2022-12-03 11:57:52	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 11:57:52	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-03 11:57:52	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT * FROM `casbin_rule` LIMIT 1", "time": "0.000ms", "rows": -1}
+2022-12-03 11:57:52	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' ORDER BY ORDINAL_POSITION", "time": "2.000ms", "rows": -1}
+2022-12-03 11:57:52	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 11:57:52	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-03 11:57:52	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND index_name = 'idx_casbin_rule'", "time": "1.000ms", "rows": -1}
+2022-12-03 11:57:52	[35mDEBUG[0m	v2@v2.58.0/enforcer.go:179	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 1}
+2022-12-03 11:57:52	[35mDEBUG[0m	v2@v2.58.0/enforcer_cached.go:96	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 1}
+2022-12-03 11:57:52	[35mDEBUG[0m	v2@v2.58.0/internal_api.go:305	Database Query	{"sql": "INSERT INTO `casbin_rule` (`ptype`,`v0`,`v1`,`v2`,`v3`,`v4`,`v5`) VALUES ('g','sly','user','','','','')", "time": "2.000ms", "rows": 1}
+2022-12-03 11:57:52	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 201, "request": "POST /api/v1/users/1", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "21.000ms", "Request Body": "{\n    \"role_name\":\"user\"\n}", "Response Body": "{\"data\":{\"id\":1,\"name\":\"sly\",\"created_at\":\"2022-11-29T19:40:31+08:00\",\"updated_at\":\"2022-11-29T19:40:31+08:00\",\"deleted_at\":null},\"success\":true}"}
+2022-12-03 12:00:04	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-03 12:00:04	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-03 12:00:04	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `roles` WHERE role_name= 'user'", "time": "0.000ms", "rows": 1}
+2022-12-03 12:00:04	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 12:00:04	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "1.000ms", "rows": 1}
+2022-12-03 12:00:04	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND table_type = 'BASE TABLE'", "time": "1.000ms", "rows": -1}
+2022-12-03 12:00:04	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 12:00:04	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "1.000ms", "rows": 1}
+2022-12-03 12:00:04	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT * FROM `casbin_rule` LIMIT 1", "time": "0.000ms", "rows": -1}
+2022-12-03 12:00:04	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' ORDER BY ORDINAL_POSITION", "time": "2.000ms", "rows": -1}
+2022-12-03 12:00:04	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 12:00:04	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "1.000ms", "rows": 1}
+2022-12-03 12:00:04	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND index_name = 'idx_casbin_rule'", "time": "1.000ms", "rows": -1}
+2022-12-03 12:00:04	[35mDEBUG[0m	v2@v2.58.0/enforcer.go:179	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 1}
+2022-12-03 12:00:04	[35mDEBUG[0m	v2@v2.58.0/enforcer_cached.go:96	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 1}
+2022-12-03 12:00:04	[35mDEBUG[0m	v2@v2.58.0/internal_api.go:305	Database Query	{"sql": "INSERT INTO `casbin_rule` (`ptype`,`v0`,`v1`,`v2`,`v3`,`v4`,`v5`) VALUES ('g','sly','user','','','','')", "time": "2.000ms", "rows": 1}
+2022-12-03 12:00:04	[35mDEBUG[0m	user/user_model.go:57	Database Query	{"sql": "DELETE FROM `casbin_rule` WHERE ptype = 'g' AND v0 = 'sly' AND v1 = 'superAdmin'", "time": "1.000ms", "rows": 1}
+2022-12-03 12:00:04	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 201, "request": "POST /api/v1/users/1", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "24.000ms", "Request Body": "{\n    \"role_name\":\"user\"\n}", "Response Body": "{\"data\":{\"id\":1,\"name\":\"sly\",\"created_at\":\"2022-11-29T19:40:31+08:00\",\"updated_at\":\"2022-11-29T19:40:31+08:00\",\"deleted_at\":null},\"success\":true}"}
+2022-12-03 14:19:28	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 14:19:28	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "1.000ms", "rows": 1}
+2022-12-03 14:19:28	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND table_type = 'BASE TABLE'", "time": "2.000ms", "rows": -1}
+2022-12-03 14:19:28	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 14:19:28	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "1.000ms", "rows": 1}
+2022-12-03 14:19:28	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT * FROM `casbin_rule` LIMIT 1", "time": "0.000ms", "rows": -1}
+2022-12-03 14:19:28	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' ORDER BY ORDINAL_POSITION", "time": "1.000ms", "rows": -1}
+2022-12-03 14:19:28	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 14:19:28	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-03 14:19:28	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND index_name = 'idx_casbin_rule'", "time": "1.000ms", "rows": -1}
+2022-12-03 14:19:28	[35mDEBUG[0m	v2@v2.58.0/enforcer.go:179	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 1}
+2022-12-03 14:19:28	[35mDEBUG[0m	v2@v2.58.0/enforcer_cached.go:96	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 1}
+2022-12-03 14:19:28	[31mERROR[0m	middlewares/recovery.go:51	recovery from panic	{"time": "2022-12-03 14:19:28", "error": "interface conversion: interface {} is nil, not string", "request": "GET /api/v1/user HTTP/1.1\r\nHost: localhost:8888\r\nAccept: */*\r\nAccept-Encoding: gzip, deflate, br\r\nAuthorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMiIsInVzZXJfbmFtZSI6InNseSIsImV4cGlyZV90aW1lIjoxNjc0ODI0ODMxLCJpc3MiOiJnb2h1YiIsImV4cCI6MTY3NDgyNDgzMSwibmJmIjoxNjY5NjQwODMxLCJpYXQiOjE2Njk2NDA4MzF9.MYHMOt_BdHEJ3dIpZXaRwGj0Jy51jXnSxdV8yxcYlUw\r\nConnection: keep-alive\r\nPostman-Token: 207484c3-3095-40d9-88db-d51ee80a6663\r\nUser-Agent: PostmanRuntime/7.29.2\r\n\r\n", "stacktrace": "github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1.1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:56\nruntime.gopanic\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/panic.go:884\nruntime.panicdottypeE\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/iface.go:262\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.Casbin.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/casbin.go:12\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.ForceUA.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/gin-gonic/gin.(*Engine).handleHTTPRequest\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616\ngithub.com/gin-gonic/gin.(*Engine).ServeHTTP\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572\nnet/http.serverHandler.ServeHTTP\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947\nnet/http.(*conn).serve\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991"}
+github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1.1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:51
+runtime.gopanic
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/panic.go:884
+runtime.panicdottypeE
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/iface.go:262
+github.com/Gopherlinzy/gohub/app/http/middlewares.Casbin.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/casbin.go:12
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.ForceUA.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-03 14:19:28	[31mERROR[0m	middlewares/logger.go:75	HTTP Error 500	{"status": 500, "request": "GET /api/v1/user", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "23.000ms"}
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:75
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-03 14:19:35	[31mERROR[0m	middlewares/recovery.go:51	recovery from panic	{"time": "2022-12-03 14:19:35", "error": "interface conversion: interface {} is nil, not string", "request": "GET /api/v1/user/1 HTTP/1.1\r\nHost: localhost:8888\r\nAccept: */*\r\nAccept-Encoding: gzip, deflate, br\r\nAuthorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMiIsInVzZXJfbmFtZSI6InNseSIsImV4cGlyZV90aW1lIjoxNjc0ODI0ODMxLCJpc3MiOiJnb2h1YiIsImV4cCI6MTY3NDgyNDgzMSwibmJmIjoxNjY5NjQwODMxLCJpYXQiOjE2Njk2NDA4MzF9.MYHMOt_BdHEJ3dIpZXaRwGj0Jy51jXnSxdV8yxcYlUw\r\nConnection: keep-alive\r\nPostman-Token: 6f439faa-6924-407e-81e9-a2180d50f408\r\nUser-Agent: PostmanRuntime/7.29.2\r\n\r\n", "stacktrace": "github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1.1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:56\nruntime.gopanic\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/panic.go:884\nruntime.panicdottypeE\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/iface.go:262\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.Casbin.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/casbin.go:12\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.ForceUA.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/gin-gonic/gin.serveError\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:652\ngithub.com/gin-gonic/gin.(*Engine).handleHTTPRequest\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:645\ngithub.com/gin-gonic/gin.(*Engine).ServeHTTP\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572\nnet/http.serverHandler.ServeHTTP\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947\nnet/http.(*conn).serve\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991"}
+github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1.1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:51
+runtime.gopanic
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/panic.go:884
+runtime.panicdottypeE
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/iface.go:262
+github.com/Gopherlinzy/gohub/app/http/middlewares.Casbin.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/casbin.go:12
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.ForceUA.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.serveError
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:652
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:645
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-03 14:19:35	[31mERROR[0m	middlewares/logger.go:75	HTTP Error 500	{"status": 500, "request": "GET /api/v1/user/1", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "8.000ms"}
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:75
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.serveError
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:652
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:645
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-03 14:19:55	[31mERROR[0m	middlewares/recovery.go:51	recovery from panic	{"time": "2022-12-03 14:19:55", "error": "interface conversion: interface {} is nil, not string", "request": "GET /api/v1/1 HTTP/1.1\r\nHost: localhost:8888\r\nAccept: */*\r\nAccept-Encoding: gzip, deflate, br\r\nAuthorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMiIsInVzZXJfbmFtZSI6InNseSIsImV4cGlyZV90aW1lIjoxNjc0ODI0ODMxLCJpc3MiOiJnb2h1YiIsImV4cCI6MTY3NDgyNDgzMSwibmJmIjoxNjY5NjQwODMxLCJpYXQiOjE2Njk2NDA4MzF9.MYHMOt_BdHEJ3dIpZXaRwGj0Jy51jXnSxdV8yxcYlUw\r\nConnection: keep-alive\r\nPostman-Token: 392d7273-e3b5-427d-9930-ef1074043c8b\r\nUser-Agent: PostmanRuntime/7.29.2\r\n\r\n", "stacktrace": "github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1.1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:56\nruntime.gopanic\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/panic.go:884\nruntime.panicdottypeE\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/iface.go:262\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.Casbin.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/casbin.go:12\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.ForceUA.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/gin-gonic/gin.serveError\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:652\ngithub.com/gin-gonic/gin.(*Engine).handleHTTPRequest\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:645\ngithub.com/gin-gonic/gin.(*Engine).ServeHTTP\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572\nnet/http.serverHandler.ServeHTTP\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947\nnet/http.(*conn).serve\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991"}
+github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1.1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:51
+runtime.gopanic
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/panic.go:884
+runtime.panicdottypeE
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/iface.go:262
+github.com/Gopherlinzy/gohub/app/http/middlewares.Casbin.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/casbin.go:12
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.ForceUA.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.serveError
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:652
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:645
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-03 14:19:55	[31mERROR[0m	middlewares/logger.go:75	HTTP Error 500	{"status": 500, "request": "GET /api/v1/1", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "4.000ms"}
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:75
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.serveError
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:652
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:645
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-03 14:20:14	[31mERROR[0m	middlewares/recovery.go:51	recovery from panic	{"time": "2022-12-03 14:20:14", "error": "interface conversion: interface {} is nil, not string", "request": "GET /api/v1/users HTTP/1.1\r\nHost: localhost:8888\r\nAccept: */*\r\nAccept-Encoding: gzip, deflate, br\r\nConnection: keep-alive\r\nPostman-Token: acbf15a4-e7ad-4f8d-87e8-d0b0a723b436\r\nUser-Agent: PostmanRuntime/7.29.2\r\n\r\n", "stacktrace": "github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1.1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:56\nruntime.gopanic\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/panic.go:884\nruntime.panicdottypeE\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/iface.go:262\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.Casbin.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/casbin.go:12\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.ForceUA.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/gin-gonic/gin.(*Engine).handleHTTPRequest\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616\ngithub.com/gin-gonic/gin.(*Engine).ServeHTTP\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572\nnet/http.serverHandler.ServeHTTP\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947\nnet/http.(*conn).serve\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991"}
+github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1.1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:51
+runtime.gopanic
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/panic.go:884
+runtime.panicdottypeE
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/iface.go:262
+github.com/Gopherlinzy/gohub/app/http/middlewares.Casbin.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/casbin.go:12
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.ForceUA.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-03 14:20:14	[31mERROR[0m	middlewares/logger.go:75	HTTP Error 500	{"status": 500, "request": "GET /api/v1/users", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "5.000ms"}
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:75
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-03 14:21:48	[35mDEBUG[0m	paginator/paginator.go:64	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-03 14:21:48	[35mDEBUG[0m	v1/users_controller.go:30	Database Query	{"sql": "SELECT * FROM `users` WHERE `users`.`deleted_at` IS NULL ORDER BY id asc LIMIT 5", "time": "0.000ms", "rows": 5}
+2022-12-03 14:21:48	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/users", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "3.000ms"}
+2022-12-03 14:23:49	[35mDEBUG[0m	paginator/paginator.go:64	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-03 14:23:49	[35mDEBUG[0m	v1/users_controller.go:30	Database Query	{"sql": "SELECT * FROM `users` WHERE `users`.`deleted_at` IS NULL ORDER BY id asc LIMIT 5", "time": "1.000ms", "rows": 5}
+2022-12-03 14:23:49	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/users", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "5.000ms"}
+2022-12-03 14:25:49	[35mDEBUG[0m	paginator/paginator.go:64	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-03 14:25:49	[35mDEBUG[0m	v1/users_controller.go:30	Database Query	{"sql": "SELECT * FROM `users` WHERE `users`.`deleted_at` IS NULL ORDER BY id asc LIMIT 5", "time": "0.000ms", "rows": 5}
+2022-12-03 14:25:49	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/users", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "4.000ms"}
+2022-12-03 14:26:07	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-03 14:26:07	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE `id` = '1' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-03 14:26:07	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/roles/1", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "2.000ms"}
+2022-12-03 14:28:51	[31mERROR[0m	middlewares/recovery.go:51	recovery from panic	{"time": "2022-12-03 14:28:51", "error": "Key \"current_user_name\" does not exist", "request": "GET /api/v1/roles/1 HTTP/1.1\r\nHost: localhost:8888\r\nAccept: */*\r\nAccept-Encoding: gzip, deflate, br\r\nAuthorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSIsInVzZXJfbmFtZSI6InNseSIsImV4cGlyZV90aW1lIjoxNjc1MTczODkxLCJpc3MiOiJnb2h1YiIsImV4cCI6MTY3NTE3Mzg5MSwibmJmIjoxNjY5OTg5ODkxLCJpYXQiOjE2Njk5ODk4OTF9.XrKzyUXkfXklHd77-LbpC6IPoxiDyfZGrYt_UwobvQ8\r\nConnection: keep-alive\r\nPostman-Token: 7698c250-4252-49f0-81ff-c82d03ca39de\r\nUser-Agent: PostmanRuntime/7.29.2\r\n\r\n", "stacktrace": "github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1.1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:56\nruntime.gopanic\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/panic.go:884\ngithub.com/gin-gonic/gin.(*Context).MustGet\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:272\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.Casbin.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/casbin.go:11\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.ForceUA.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/gin-gonic/gin.(*Engine).handleHTTPRequest\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616\ngithub.com/gin-gonic/gin.(*Engine).ServeHTTP\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572\nnet/http.serverHandler.ServeHTTP\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947\nnet/http.(*conn).serve\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991"}
+github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1.1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:51
+runtime.gopanic
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/panic.go:884
+github.com/gin-gonic/gin.(*Context).MustGet
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:272
+github.com/Gopherlinzy/gohub/app/http/middlewares.Casbin.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/casbin.go:11
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.ForceUA.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-03 14:28:51	[31mERROR[0m	middlewares/logger.go:75	HTTP Error 500	{"status": 500, "request": "GET /api/v1/roles/1", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "4.000ms"}
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:75
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-03 14:40:01	[31mERROR[0m	middlewares/recovery.go:51	recovery from panic	{"time": "2022-12-03 14:40:01", "error": "Key \"current_user_name\" does not exist", "request": "GET /api/v1/roles/1 HTTP/1.1\r\nHost: localhost:8888\r\nAccept: */*\r\nAccept-Encoding: gzip, deflate, br\r\nAuthorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSIsInVzZXJfbmFtZSI6InNseSIsImV4cGlyZV90aW1lIjoxNjc1MTczODkxLCJpc3MiOiJnb2h1YiIsImV4cCI6MTY3NTE3Mzg5MSwibmJmIjoxNjY5OTg5ODkxLCJpYXQiOjE2Njk5ODk4OTF9.XrKzyUXkfXklHd77-LbpC6IPoxiDyfZGrYt_UwobvQ8\r\nConnection: keep-alive\r\nPostman-Token: 842d27f1-7fba-4260-9633-1dd3e1ea06d4\r\nUser-Agent: PostmanRuntime/7.29.2\r\n\r\n", "stacktrace": "github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1.1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:56\nruntime.gopanic\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/panic.go:884\ngithub.com/gin-gonic/gin.(*Context).MustGet\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:272\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.Casbin.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/casbin.go:11\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.ForceUA.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/gin-gonic/gin.(*Engine).handleHTTPRequest\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616\ngithub.com/gin-gonic/gin.(*Engine).ServeHTTP\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572\nnet/http.serverHandler.ServeHTTP\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947\nnet/http.(*conn).serve\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991"}
+github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1.1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:51
+runtime.gopanic
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/panic.go:884
+github.com/gin-gonic/gin.(*Context).MustGet
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:272
+github.com/Gopherlinzy/gohub/app/http/middlewares.Casbin.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/casbin.go:11
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.ForceUA.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-03 14:40:01	[31mERROR[0m	middlewares/logger.go:75	HTTP Error 500	{"status": 500, "request": "GET /api/v1/roles/1", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "4.000ms"}
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:75
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-03 14:40:11	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "1.000ms", "rows": 1}
+2022-12-03 14:40:11	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 14:40:11	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-03 14:40:11	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND table_type = 'BASE TABLE'", "time": "2.000ms", "rows": -1}
+2022-12-03 14:40:11	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 14:40:11	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "1.000ms", "rows": 1}
+2022-12-03 14:40:11	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT * FROM `casbin_rule` LIMIT 1", "time": "0.000ms", "rows": -1}
+2022-12-03 14:40:11	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' ORDER BY ORDINAL_POSITION", "time": "2.000ms", "rows": -1}
+2022-12-03 14:40:11	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 14:40:11	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "1.000ms", "rows": 1}
+2022-12-03 14:40:11	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND index_name = 'idx_casbin_rule'", "time": "2.000ms", "rows": -1}
+2022-12-03 14:40:11	[35mDEBUG[0m	v2@v2.58.0/enforcer.go:179	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 1}
+2022-12-03 14:40:11	[35mDEBUG[0m	v2@v2.58.0/enforcer_cached.go:96	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 1}
+2022-12-03 14:40:11	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE `id` = '1' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "1.000ms", "rows": 1}
+2022-12-03 14:40:11	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/roles/1", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "21.000ms"}
+2022-12-03 14:40:43	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "1.000ms", "rows": 1}
+2022-12-03 14:40:43	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 14:40:43	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-03 14:40:43	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND table_type = 'BASE TABLE'", "time": "2.000ms", "rows": -1}
+2022-12-03 14:40:43	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 14:40:43	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "1.000ms", "rows": 1}
+2022-12-03 14:40:43	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT * FROM `casbin_rule` LIMIT 1", "time": "0.000ms", "rows": -1}
+2022-12-03 14:40:43	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' ORDER BY ORDINAL_POSITION", "time": "1.000ms", "rows": -1}
+2022-12-03 14:40:43	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 14:40:43	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-03 14:40:43	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND index_name = 'idx_casbin_rule'", "time": "1.000ms", "rows": -1}
+2022-12-03 14:40:43	[35mDEBUG[0m	v2@v2.58.0/enforcer.go:179	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 1}
+2022-12-03 14:40:43	[35mDEBUG[0m	v2@v2.58.0/enforcer_cached.go:96	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 1}
+2022-12-03 14:40:43	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE `id` = '1' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-03 14:40:43	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/roles/1", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "16.000ms"}
+2022-12-03 14:45:48	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "1.000ms", "rows": 1}
+2022-12-03 14:45:48	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 14:45:48	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "1.000ms", "rows": 1}
+2022-12-03 14:45:48	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND table_type = 'BASE TABLE'", "time": "1.000ms", "rows": -1}
+2022-12-03 14:45:48	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 14:45:48	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "1.000ms", "rows": 1}
+2022-12-03 14:45:48	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT * FROM `casbin_rule` LIMIT 1", "time": "0.000ms", "rows": -1}
+2022-12-03 14:45:48	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' ORDER BY ORDINAL_POSITION", "time": "2.000ms", "rows": -1}
+2022-12-03 14:45:48	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 14:45:48	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-03 14:45:48	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND index_name = 'idx_casbin_rule'", "time": "2.000ms", "rows": -1}
+2022-12-03 14:45:48	[35mDEBUG[0m	v2@v2.58.0/enforcer.go:179	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "1.000ms", "rows": 1}
+2022-12-03 14:45:48	[35mDEBUG[0m	v2@v2.58.0/enforcer_cached.go:96	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 1}
+2022-12-03 14:45:48	[33mWARN[0m	middlewares/logger.go:72	HTTP Warning 415	{"status": 415, "request": "GET /api/v1/roles/1", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "22.000ms"}
+2022-12-03 14:48:25	[33mWARN[0m	middlewares/logger.go:72	HTTP Warning 401	{"status": 401, "request": "GET /api/v1/users", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "0.000ms"}
+2022-12-03 14:48:43	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "1.000ms", "rows": 1}
+2022-12-03 14:48:43	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 14:48:43	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "1.000ms", "rows": 1}
+2022-12-03 14:48:43	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND table_type = 'BASE TABLE'", "time": "1.000ms", "rows": -1}
+2022-12-03 14:48:43	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 14:48:43	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-03 14:48:43	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT * FROM `casbin_rule` LIMIT 1", "time": "0.000ms", "rows": -1}
+2022-12-03 14:48:43	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' ORDER BY ORDINAL_POSITION", "time": "2.000ms", "rows": -1}
+2022-12-03 14:48:43	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "1.000ms", "rows": -1}
+2022-12-03 14:48:43	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "2.000ms", "rows": 1}
+2022-12-03 14:48:43	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND index_name = 'idx_casbin_rule'", "time": "3.000ms", "rows": -1}
+2022-12-03 14:48:43	[35mDEBUG[0m	v2@v2.58.0/enforcer.go:179	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 2}
+2022-12-03 14:48:43	[35mDEBUG[0m	v2@v2.58.0/enforcer_cached.go:96	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 2}
+2022-12-03 14:48:43	[33mWARN[0m	middlewares/logger.go:72	HTTP Warning 415	{"status": 415, "request": "GET /api/v1/users", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "25.000ms"}
+2022-12-03 14:49:01	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "1.000ms", "rows": 1}
+2022-12-03 14:49:01	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 14:49:01	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-03 14:49:01	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND table_type = 'BASE TABLE'", "time": "1.000ms", "rows": -1}
+2022-12-03 14:49:01	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 14:49:01	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-03 14:49:01	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT * FROM `casbin_rule` LIMIT 1", "time": "0.000ms", "rows": -1}
+2022-12-03 14:49:01	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' ORDER BY ORDINAL_POSITION", "time": "2.000ms", "rows": -1}
+2022-12-03 14:49:01	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 14:49:01	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-03 14:49:01	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND index_name = 'idx_casbin_rule'", "time": "1.000ms", "rows": -1}
+2022-12-03 14:49:01	[35mDEBUG[0m	v2@v2.58.0/enforcer.go:179	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 2}
+2022-12-03 14:49:01	[35mDEBUG[0m	v2@v2.58.0/enforcer_cached.go:96	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 2}
+2022-12-03 14:49:01	[33mWARN[0m	middlewares/logger.go:72	HTTP Warning 415	{"status": 415, "request": "GET /api/v1/users", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "15.000ms"}
+2022-12-03 14:49:59	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-03 14:49:59	[33mWARN[0m	middlewares/logger.go:72	HTTP Warning 415	{"status": 415, "request": "GET /api/v1/users", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "1.000ms"}
+2022-12-03 14:50:00	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "1.000ms", "rows": 1}
+2022-12-03 14:50:00	[33mWARN[0m	middlewares/logger.go:72	HTTP Warning 415	{"status": 415, "request": "GET /api/v1/users", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "2.000ms"}
+2022-12-03 14:50:14	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-03 14:50:14	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 14:50:14	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-03 14:50:14	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND table_type = 'BASE TABLE'", "time": "1.000ms", "rows": -1}
+2022-12-03 14:50:14	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 14:50:14	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-03 14:50:14	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT * FROM `casbin_rule` LIMIT 1", "time": "0.000ms", "rows": -1}
+2022-12-03 14:50:14	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' ORDER BY ORDINAL_POSITION", "time": "1.000ms", "rows": -1}
+2022-12-03 14:50:14	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 14:50:14	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-03 14:50:14	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND index_name = 'idx_casbin_rule'", "time": "0.000ms", "rows": -1}
+2022-12-03 14:50:14	[35mDEBUG[0m	v2@v2.58.0/enforcer.go:179	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 2}
+2022-12-03 14:50:14	[35mDEBUG[0m	v2@v2.58.0/enforcer_cached.go:96	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 2}
+2022-12-03 14:50:14	[33mWARN[0m	middlewares/logger.go:72	HTTP Warning 415	{"status": 415, "request": "GET /api/v1/users", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "11.000ms"}
+2022-12-03 14:53:17	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-03 14:53:17	[33mWARN[0m	middlewares/logger.go:72	HTTP Warning 415	{"status": 415, "request": "GET /api/v1/users", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "2.000ms"}
+2022-12-03 14:53:55	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-03 14:53:55	[33mWARN[0m	middlewares/logger.go:72	HTTP Warning 415	{"status": 415, "request": "GET /api/v1/users", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "1.000ms"}
+2022-12-03 14:55:16	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "1.000ms", "rows": 1}
+2022-12-03 14:55:16	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 14:55:16	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "1.000ms", "rows": 1}
+2022-12-03 14:55:16	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND table_type = 'BASE TABLE'", "time": "1.000ms", "rows": -1}
+2022-12-03 14:55:16	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 14:55:16	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-03 14:55:16	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT * FROM `casbin_rule` LIMIT 1", "time": "0.000ms", "rows": -1}
+2022-12-03 14:55:16	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' ORDER BY ORDINAL_POSITION", "time": "0.000ms", "rows": -1}
+2022-12-03 14:55:16	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 14:55:16	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-03 14:55:16	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND index_name = 'idx_casbin_rule'", "time": "1.000ms", "rows": -1}
+2022-12-03 14:55:16	[35mDEBUG[0m	v2@v2.58.0/enforcer.go:179	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "1.000ms", "rows": 2}
+2022-12-03 14:55:16	[35mDEBUG[0m	v2@v2.58.0/enforcer_cached.go:96	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 2}
+2022-12-03 14:55:16	[35mDEBUG[0m	paginator/paginator.go:64	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-03 14:55:16	[35mDEBUG[0m	v1/users_controller.go:30	Database Query	{"sql": "SELECT * FROM `users` WHERE `users`.`deleted_at` IS NULL ORDER BY id asc LIMIT 5", "time": "0.000ms", "rows": 5}
+2022-12-03 14:55:16	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/users", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "20.000ms"}
+2022-12-03 15:46:39	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "INSERT INTO `casbin_rule` (`ptype`,`v0`,`v1`,`v2`,`v3`,`v4`,`v5`) VALUES ('g','admin','superAdmin','','','',''),('g','sly','user','','','',''),('p','superAdmin','/api/v1/users','GET','','',''),('p','superAdmin','/api/v1/users','POST','','',''),('p','superAdmin','/api/v1/users/email','PUT','','',''),('p','superAdmin','/api/v1/users/phone','PUT','','',''),('p','superAdmin','/api/v1/users/password','PUT','','',''),('p','superAdmin','/api/v1/users/avatar','PUT','','',''),('p','superAdmin','/api/v1/users','DELETE','','',''),('p','superAdmin','/api/v1/categories','GET','','',''),('p','superAdmin','/api/v1/categories','POST','','',''),('p','superAdmin','/api/v1/categories','PUT','','',''),('p','superAdmin','/api/v1/categories','DELETE','','',''),('p','superAdmin','/api/v1/roles','GET','','',''),('p','superAdmin','/api/v1/roles','POST','','',''),('p','superAdmin','/api/v1/roles','PUT','','',''),('p','superAdmin','/api/v1/roles','DELETE','','','')", "time": "2.000ms", "rows": 17}
+2022-12-03 15:47:28	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "1.000ms", "rows": 1}
+2022-12-03 15:47:28	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 15:47:28	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "1.000ms", "rows": 1}
+2022-12-03 15:47:28	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND table_type = 'BASE TABLE'", "time": "1.000ms", "rows": -1}
+2022-12-03 15:47:28	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 15:47:28	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "1.000ms", "rows": 1}
+2022-12-03 15:47:28	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT * FROM `casbin_rule` LIMIT 1", "time": "0.000ms", "rows": -1}
+2022-12-03 15:47:28	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' ORDER BY ORDINAL_POSITION", "time": "2.000ms", "rows": -1}
+2022-12-03 15:47:28	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 15:47:28	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "1.000ms", "rows": 1}
+2022-12-03 15:47:28	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND index_name = 'idx_casbin_rule'", "time": "3.000ms", "rows": -1}
+2022-12-03 15:47:28	[35mDEBUG[0m	v2@v2.58.0/enforcer.go:179	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "1.000ms", "rows": 17}
+2022-12-03 15:47:28	[35mDEBUG[0m	v2@v2.58.0/enforcer_cached.go:96	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 17}
+2022-12-03 15:47:28	[33mWARN[0m	middlewares/logger.go:72	HTTP Warning 415	{"status": 415, "request": "POST /api/v1/categories", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "23.000ms", "Request Body": "{\r\n    \"id\":\"1\",\r\n    \"name\": \"新分类\",\r\n    \"description\": \"这里是描述\"\r\n}", "Response Body": "{\"message\":\"请求失败，您并没有访问此接口的权限\"}"}
+2022-12-03 15:53:33	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `casbin_rule`", "time": "0.000ms", "rows": 1}
+2022-12-03 15:53:33	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `casbin_rule`", "time": "0.000ms", "rows": 1}
+2022-12-03 15:54:17	[31mERROR[0m	gorm@v1.24.1/callbacks.go:134	Database Error	{"sql": "SELECT * FROM `casbin_rule`", "time": "0.000ms", "rows": 0, "error": "Error 1146: Table 'gohub.casbin_rule' doesn't exist"}
+gorm.io/gorm.(*processor).Execute
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+gorm.io/gorm.(*DB).Find
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/finisher_api.go:170
+github.com/Gopherlinzy/gohub/bootstrap.initCasbinData
+	/Users/admin/go/src/gin-vue3-admin/bootstrap/initialzation.go:20
+github.com/Gopherlinzy/gohub/bootstrap.IntizationData.func1
+	/Users/admin/go/src/gin-vue3-admin/bootstrap/initialzation.go:13
+sync.(*Once).doSlow
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/sync/once.go:74
+sync.(*Once).Do
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/sync/once.go:65
+github.com/Gopherlinzy/gohub/bootstrap.IntizationData
+	/Users/admin/go/src/gin-vue3-admin/bootstrap/initialzation.go:12
+main.main.func1
+	/Users/admin/go/src/gin-vue3-admin/main.go:41
+github.com/spf13/cobra.(*Command).execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:896
+github.com/spf13/cobra.(*Command).ExecuteC
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:1044
+github.com/spf13/cobra.(*Command).Execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:968
+main.main
+	/Users/admin/go/src/gin-vue3-admin/main.go:64
+runtime.main
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/proc.go:250
+2022-12-03 15:54:17	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `casbin_rule`", "time": "0.000ms", "rows": 0, "error": "Error 1146: Table 'gohub.casbin_rule' doesn't exist"}
+2022-12-03 15:54:17	[31mERROR[0m	gorm@v1.24.1/callbacks.go:134	Database Error	{"sql": "INSERT INTO `casbin_rule` (`ptype`,`v0`,`v1`,`v2`,`v3`,`v4`,`v5`) VALUES ('g','admin','superAdmin','','','',''),('g','sly','user','','','',''),('p','superAdmin','/api/v1/users','GET','','',''),('p','superAdmin','/api/v1/users','POST','','',''),('p','superAdmin','/api/v1/users/email','PUT','','',''),('p','superAdmin','/api/v1/users/phone','PUT','','',''),('p','superAdmin','/api/v1/users/password','PUT','','',''),('p','superAdmin','/api/v1/users/avatar','PUT','','',''),('p','superAdmin','/api/v1/users','DELETE','','',''),('p','superAdmin','/api/v1/categories','GET','','',''),('p','superAdmin','/api/v1/categories','POST','','',''),('p','superAdmin','/api/v1/categories','PUT','','',''),('p','superAdmin','/api/v1/categories','DELETE','','',''),('p','superAdmin','/api/v1/roles','GET','','',''),('p','superAdmin','/api/v1/roles','POST','','',''),('p','superAdmin','/api/v1/roles','PUT','','',''),('p','superAdmin','/api/v1/roles','DELETE','','',''),('p','user','/api/v1/users','GET','','',''),('p','user','/api/v1/users','POST','','',''),('p','user','/api/v1/users/email','PUT','','',''),('p','user','/api/v1/users/phone','PUT','','',''),('p','user','/api/v1/users/password','PUT','','',''),('p','user','/api/v1/users/avatar','PUT','','',''),('p','user','/api/v1/users','DELETE','','',''),('p','user','/api/v1/categories','GET','','',''),('p','user','/api/v1/categories','POST','','',''),('p','user','/api/v1/categories','PUT','','',''),('p','user','/api/v1/categories','DELETE','','','')", "time": "0.000ms", "rows": 0, "error": "Error 1146: Table 'gohub.casbin_rule' doesn't exist"}
+gorm.io/gorm.(*processor).Execute
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+gorm.io/gorm.(*DB).Create
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/finisher_api.go:24
+github.com/Gopherlinzy/gohub/bootstrap.initCasbinData
+	/Users/admin/go/src/gin-vue3-admin/bootstrap/initialzation.go:61
+github.com/Gopherlinzy/gohub/bootstrap.IntizationData.func1
+	/Users/admin/go/src/gin-vue3-admin/bootstrap/initialzation.go:13
+sync.(*Once).doSlow
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/sync/once.go:74
+sync.(*Once).Do
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/sync/once.go:65
+github.com/Gopherlinzy/gohub/bootstrap.IntizationData
+	/Users/admin/go/src/gin-vue3-admin/bootstrap/initialzation.go:12
+main.main.func1
+	/Users/admin/go/src/gin-vue3-admin/main.go:41
+github.com/spf13/cobra.(*Command).execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:896
+github.com/spf13/cobra.(*Command).ExecuteC
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:1044
+github.com/spf13/cobra.(*Command).Execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:968
+main.main
+	/Users/admin/go/src/gin-vue3-admin/main.go:64
+runtime.main
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/proc.go:250
+2022-12-03 15:54:17	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "INSERT INTO `casbin_rule` (`ptype`,`v0`,`v1`,`v2`,`v3`,`v4`,`v5`) VALUES ('g','admin','superAdmin','','','',''),('g','sly','user','','','',''),('p','superAdmin','/api/v1/users','GET','','',''),('p','superAdmin','/api/v1/users','POST','','',''),('p','superAdmin','/api/v1/users/email','PUT','','',''),('p','superAdmin','/api/v1/users/phone','PUT','','',''),('p','superAdmin','/api/v1/users/password','PUT','','',''),('p','superAdmin','/api/v1/users/avatar','PUT','','',''),('p','superAdmin','/api/v1/users','DELETE','','',''),('p','superAdmin','/api/v1/categories','GET','','',''),('p','superAdmin','/api/v1/categories','POST','','',''),('p','superAdmin','/api/v1/categories','PUT','','',''),('p','superAdmin','/api/v1/categories','DELETE','','',''),('p','superAdmin','/api/v1/roles','GET','','',''),('p','superAdmin','/api/v1/roles','POST','','',''),('p','superAdmin','/api/v1/roles','PUT','','',''),('p','superAdmin','/api/v1/roles','DELETE','','',''),('p','user','/api/v1/users','GET','','',''),('p','user','/api/v1/users','POST','','',''),('p','user','/api/v1/users/email','PUT','','',''),('p','user','/api/v1/users/phone','PUT','','',''),('p','user','/api/v1/users/password','PUT','','',''),('p','user','/api/v1/users/avatar','PUT','','',''),('p','user','/api/v1/users','DELETE','','',''),('p','user','/api/v1/categories','GET','','',''),('p','user','/api/v1/categories','POST','','',''),('p','user','/api/v1/categories','PUT','','',''),('p','user','/api/v1/categories','DELETE','','','')", "time": "0.000ms", "rows": 0, "error": "Error 1146: Table 'gohub.casbin_rule' doesn't exist"}
+2022-12-03 15:55:32	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 15:55:32	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "1.000ms", "rows": 1}
+2022-12-03 15:55:32	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND table_type = 'BASE TABLE'", "time": "1.000ms", "rows": -1}
+2022-12-03 15:55:32	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "CREATE TABLE `casbin_rule` (`id` bigint unsigned AUTO_INCREMENT,`ptype` varchar(100),`v0` varchar(100),`v1` varchar(100),`v2` varchar(100),`v3` varchar(100),`v4` varchar(100),`v5` varchar(100),PRIMARY KEY (`id`))", "time": "9.000ms", "rows": 0}
+2022-12-03 15:55:32	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 15:55:32	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-03 15:55:32	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND index_name = 'idx_casbin_rule'", "time": "0.000ms", "rows": -1}
+2022-12-03 15:55:32	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "CREATE UNIQUE INDEX idx_casbin_rule ON casbin_rule (ptype,v0,v1,v2,v3,v4,v5)", "time": "6.000ms", "rows": 0}
+2022-12-03 15:55:32	[35mDEBUG[0m	v2@v2.58.0/enforcer.go:179	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 0}
+2022-12-03 15:55:32	[35mDEBUG[0m	v2@v2.58.0/enforcer_cached.go:96	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 0}
+2022-12-03 15:55:32	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `casbin_rule`", "time": "0.000ms", "rows": 0}
+2022-12-03 15:55:32	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `casbin_rule`", "time": "0.000ms", "rows": 1}
+2022-12-03 15:55:32	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "INSERT INTO `casbin_rule` (`ptype`,`v0`,`v1`,`v2`,`v3`,`v4`,`v5`) VALUES ('g','admin','superAdmin','','','',''),('g','sly','user','','','',''),('p','superAdmin','/api/v1/users','GET','','',''),('p','superAdmin','/api/v1/users','POST','','',''),('p','superAdmin','/api/v1/users/email','PUT','','',''),('p','superAdmin','/api/v1/users/phone','PUT','','',''),('p','superAdmin','/api/v1/users/password','PUT','','',''),('p','superAdmin','/api/v1/users/avatar','PUT','','',''),('p','superAdmin','/api/v1/users','DELETE','','',''),('p','superAdmin','/api/v1/categories','GET','','',''),('p','superAdmin','/api/v1/categories','POST','','',''),('p','superAdmin','/api/v1/categories','PUT','','',''),('p','superAdmin','/api/v1/categories','DELETE','','',''),('p','superAdmin','/api/v1/roles','GET','','',''),('p','superAdmin','/api/v1/roles','POST','','',''),('p','superAdmin','/api/v1/roles','PUT','','',''),('p','superAdmin','/api/v1/roles','DELETE','','',''),('p','user','/api/v1/users','GET','','',''),('p','user','/api/v1/users','POST','','',''),('p','user','/api/v1/users/email','PUT','','',''),('p','user','/api/v1/users/phone','PUT','','',''),('p','user','/api/v1/users/password','PUT','','',''),('p','user','/api/v1/users/avatar','PUT','','',''),('p','user','/api/v1/users','DELETE','','',''),('p','user','/api/v1/categories','GET','','',''),('p','user','/api/v1/categories','POST','','',''),('p','user','/api/v1/categories','PUT','','',''),('p','user','/api/v1/categories','DELETE','','','')", "time": "2.000ms", "rows": 28}
+2022-12-03 15:56:09	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 15:56:09	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "1.000ms", "rows": 1}
+2022-12-03 15:56:09	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND table_type = 'BASE TABLE'", "time": "1.000ms", "rows": -1}
+2022-12-03 15:56:09	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "CREATE TABLE `casbin_rule` (`id` bigint unsigned AUTO_INCREMENT,`ptype` varchar(100),`v0` varchar(100),`v1` varchar(100),`v2` varchar(100),`v3` varchar(100),`v4` varchar(100),`v5` varchar(100),PRIMARY KEY (`id`))", "time": "9.000ms", "rows": 0}
+2022-12-03 15:56:09	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 15:56:09	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-03 15:56:09	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND index_name = 'idx_casbin_rule'", "time": "1.000ms", "rows": -1}
+2022-12-03 15:56:09	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "CREATE UNIQUE INDEX idx_casbin_rule ON casbin_rule (ptype,v0,v1,v2,v3,v4,v5)", "time": "7.000ms", "rows": 0}
+2022-12-03 15:56:09	[35mDEBUG[0m	v2@v2.58.0/enforcer.go:179	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 0}
+2022-12-03 15:56:09	[35mDEBUG[0m	v2@v2.58.0/enforcer_cached.go:96	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 0}
+2022-12-03 15:56:09	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `casbin_rule`", "time": "0.000ms", "rows": 0}
+2022-12-03 15:56:09	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `casbin_rule`", "time": "0.000ms", "rows": 1}
+2022-12-03 15:56:09	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "INSERT INTO `casbin_rule` (`ptype`,`v0`,`v1`,`v2`,`v3`,`v4`,`v5`) VALUES ('g','admin','superAdmin','','','',''),('g','sly','user','','','',''),('p','superAdmin','/api/v1/users','GET','','',''),('p','superAdmin','/api/v1/users','POST','','',''),('p','superAdmin','/api/v1/users/email','PUT','','',''),('p','superAdmin','/api/v1/users/phone','PUT','','',''),('p','superAdmin','/api/v1/users/password','PUT','','',''),('p','superAdmin','/api/v1/users/avatar','PUT','','',''),('p','superAdmin','/api/v1/users','DELETE','','',''),('p','superAdmin','/api/v1/categories','GET','','',''),('p','superAdmin','/api/v1/categories','POST','','',''),('p','superAdmin','/api/v1/categories','PUT','','',''),('p','superAdmin','/api/v1/categories','DELETE','','',''),('p','superAdmin','/api/v1/roles','GET','','',''),('p','superAdmin','/api/v1/roles','POST','','',''),('p','superAdmin','/api/v1/roles','PUT','','',''),('p','superAdmin','/api/v1/roles','DELETE','','',''),('p','user','/api/v1/users','GET','','',''),('p','user','/api/v1/users','POST','','',''),('p','user','/api/v1/users/email','PUT','','',''),('p','user','/api/v1/users/phone','PUT','','',''),('p','user','/api/v1/users/password','PUT','','',''),('p','user','/api/v1/users/avatar','PUT','','',''),('p','user','/api/v1/users','DELETE','','',''),('p','user','/api/v1/categories','GET','','',''),('p','user','/api/v1/categories','POST','','',''),('p','user','/api/v1/categories','PUT','','',''),('p','user','/api/v1/categories','DELETE','','','')", "time": "1.000ms", "rows": 28}
+2022-12-03 15:56:30	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-03 15:56:30	[33mWARN[0m	middlewares/logger.go:72	HTTP Warning 415	{"status": 415, "request": "POST /api/v1/categories", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "2.000ms", "Request Body": "{\r\n    \"id\":\"1\",\r\n    \"name\": \"新分类\",\r\n    \"description\": \"这里是描述\"\r\n}", "Response Body": "{\"message\":\"请求失败，您并没有访问此接口的权限\"}"}
+2022-12-03 15:56:33	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-03 15:56:33	[33mWARN[0m	middlewares/logger.go:72	HTTP Warning 415	{"status": 415, "request": "POST /api/v1/categories", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "1.000ms", "Request Body": "{\r\n    \"id\":\"1\",\r\n    \"name\": \"新分类\",\r\n    \"description\": \"这里是描述\"\r\n}", "Response Body": "{\"message\":\"请求失败，您并没有访问此接口的权限\"}"}
+2022-12-03 15:57:43	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 15:57:43	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-03 15:57:43	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND table_type = 'BASE TABLE'", "time": "1.000ms", "rows": -1}
+2022-12-03 15:57:43	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 15:57:43	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-03 15:57:43	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT * FROM `casbin_rule` LIMIT 1", "time": "0.000ms", "rows": -1}
+2022-12-03 15:57:43	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' ORDER BY ORDINAL_POSITION", "time": "1.000ms", "rows": -1}
+2022-12-03 15:57:43	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 15:57:43	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-03 15:57:43	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND index_name = 'idx_casbin_rule'", "time": "0.000ms", "rows": -1}
+2022-12-03 15:57:43	[35mDEBUG[0m	v2@v2.58.0/enforcer.go:179	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 28}
+2022-12-03 15:57:43	[35mDEBUG[0m	v2@v2.58.0/enforcer_cached.go:96	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 28}
+2022-12-03 15:57:43	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `casbin_rule`", "time": "0.000ms", "rows": 1}
+2022-12-03 15:57:43	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `casbin_rule`", "time": "0.000ms", "rows": 1}
+2022-12-03 15:57:48	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-03 15:57:48	[31mERROR[0m	response/response.go:73	Error Occurred:	{"error": "json: cannot unmarshal string into Go struct field CategorySaveRequest.id of type uint64"}
+github.com/Gopherlinzy/gohub/pkg/response.BadRequest
+	/Users/admin/go/src/gin-vue3-admin/pkg/response/response.go:73
+github.com/Gopherlinzy/gohub/app/requests.Validate
+	/Users/admin/go/src/gin-vue3-admin/app/requests/requests.go:23
+github.com/Gopherlinzy/gohub/app/http/controllers/api/v1.(*CategoriesController).Store
+	/Users/admin/go/src/gin-vue3-admin/app/http/controllers/api/v1/categories_controller.go:41
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.CasbinAPI.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/casbin.go:28
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.AuthJWT.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/auth_jwt.go:37
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.LimitIP.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:31
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.ForceUA.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-03 15:57:48	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 400, "request": "POST /api/v1/categories", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "6.000ms", "Request Body": "{\r\n    \"id\":\"1\",\r\n    \"name\": \"新分类\",\r\n    \"description\": \"这里是描述\"\r\n}", "Response Body": "{\"error\":\"json: cannot unmarshal string into Go struct field CategorySaveRequest.id of type uint64\",\"message\":\"请求解析错误，请确认请求格式是否正确。上传文件请使用 multipart 标头，参数请使用 JSON 格式。\"}"}
+2022-12-03 15:58:08	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-03 15:58:08	[31mERROR[0m	middlewares/recovery.go:51	recovery from panic	{"time": "2022-12-03 15:58:08", "error": "interface conversion: interface {} is uint64, not string", "request": "POST /api/v1/categories HTTP/1.1\r\nHost: localhost:8888\r\nAccept: */*\r\nAccept-Encoding: gzip, deflate, br\r\nAuthorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSIsInVzZXJfbmFtZSI6Imxpbnp5IiwiZXhwaXJlX3RpbWUiOjE2NzM3NjE5NjgsImV4cCI6MTY3Mzc2MTk2OCwiaWF0IjoxNjY4NTc3OTY4LCJpc3MiOiJHb2h1YiIsIm5iZiI6MTY2ODU3Nzk2OH0.lx4yseXmhpTP54qzR2baDlXg_RgqKNrk8HRrqGCdHaQ\r\nConnection: keep-alive\r\nContent-Length: 81\r\nContent-Type: application/json\r\nPostman-Token: 069c9398-a46b-41fe-b740-fdd8352644f5\r\nUser-Agent: PostmanRuntime/7.29.2\r\n\r\n", "stacktrace": "github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1.1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:56\nruntime.gopanic\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/panic.go:884\nruntime.panicdottypeE\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/iface.go:262\ngithub.com/Gopherlinzy/gohub/app/requests/validators.init.0.func4\n\t/Users/admin/go/src/gin-vue3-admin/app/requests/validators/custom_rules.go:109\ngithub.com/thedevsaddam/govalidator.validateCustomRules\n\t/Users/admin/go/pkg/mod/github.com/thedevsaddam/govalidator@v1.9.10/rules.go:32\ngithub.com/thedevsaddam/govalidator.(*Validator).internalValidateStruct\n\t/Users/admin/go/pkg/mod/github.com/thedevsaddam/govalidator@v1.9.10/validator.go:203\ngithub.com/thedevsaddam/govalidator.(*Validator).ValidateStruct\n\t/Users/admin/go/pkg/mod/github.com/thedevsaddam/govalidator@v1.9.10/validator.go:167\ngithub.com/Gopherlinzy/gohub/app/requests.validate\n\t/Users/admin/go/src/gin-vue3-admin/app/requests/requests.go:52\ngithub.com/Gopherlinzy/gohub/app/requests.CategorySave\n\t/Users/admin/go/src/gin-vue3-admin/app/requests/category_request.go:37\ngithub.com/Gopherlinzy/gohub/app/requests.Validate\n\t/Users/admin/go/src/gin-vue3-admin/app/requests/requests.go:32\ngithub.com/Gopherlinzy/gohub/app/http/controllers/api/v1.(*CategoriesController).Store\n\t/Users/admin/go/src/gin-vue3-admin/app/http/controllers/api/v1/categories_controller.go:41\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.CasbinAPI.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/casbin.go:28\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.AuthJWT.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/auth_jwt.go:37\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.LimitIP.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:31\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.ForceUA.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/gin-gonic/gin.(*Engine).handleHTTPRequest\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616\ngithub.com/gin-gonic/gin.(*Engine).ServeHTTP\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572\nnet/http.serverHandler.ServeHTTP\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947\nnet/http.(*conn).serve\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991"}
+github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1.1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:51
+runtime.gopanic
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/panic.go:884
+runtime.panicdottypeE
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/iface.go:262
+github.com/Gopherlinzy/gohub/app/requests/validators.init.0.func4
+	/Users/admin/go/src/gin-vue3-admin/app/requests/validators/custom_rules.go:109
+github.com/thedevsaddam/govalidator.validateCustomRules
+	/Users/admin/go/pkg/mod/github.com/thedevsaddam/govalidator@v1.9.10/rules.go:32
+github.com/thedevsaddam/govalidator.(*Validator).internalValidateStruct
+	/Users/admin/go/pkg/mod/github.com/thedevsaddam/govalidator@v1.9.10/validator.go:203
+github.com/thedevsaddam/govalidator.(*Validator).ValidateStruct
+	/Users/admin/go/pkg/mod/github.com/thedevsaddam/govalidator@v1.9.10/validator.go:167
+github.com/Gopherlinzy/gohub/app/requests.validate
+	/Users/admin/go/src/gin-vue3-admin/app/requests/requests.go:52
+github.com/Gopherlinzy/gohub/app/requests.CategorySave
+	/Users/admin/go/src/gin-vue3-admin/app/requests/category_request.go:37
+github.com/Gopherlinzy/gohub/app/requests.Validate
+	/Users/admin/go/src/gin-vue3-admin/app/requests/requests.go:32
+github.com/Gopherlinzy/gohub/app/http/controllers/api/v1.(*CategoriesController).Store
+	/Users/admin/go/src/gin-vue3-admin/app/http/controllers/api/v1/categories_controller.go:41
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.CasbinAPI.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/casbin.go:28
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.AuthJWT.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/auth_jwt.go:37
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.LimitIP.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:31
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.ForceUA.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-03 15:58:08	[31mERROR[0m	middlewares/logger.go:75	HTTP Error 500	{"status": 500, "request": "POST /api/v1/categories", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "8.000ms", "Request Body": "{\r\n    \"id\":1,\r\n    \"name\": \"新分类\",\r\n    \"description\": \"这里是描述\"\r\n}", "Response Body": "{\"message\":\"服务器内部错误，请稍后再试\"}"}
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:75
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-03 16:00:23	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 16:00:23	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-03 16:00:23	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND table_type = 'BASE TABLE'", "time": "1.000ms", "rows": -1}
+2022-12-03 16:00:23	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 16:00:23	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-03 16:00:23	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT * FROM `casbin_rule` LIMIT 1", "time": "0.000ms", "rows": -1}
+2022-12-03 16:00:23	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' ORDER BY ORDINAL_POSITION", "time": "1.000ms", "rows": -1}
+2022-12-03 16:00:23	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 16:00:23	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-03 16:00:23	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND index_name = 'idx_casbin_rule'", "time": "1.000ms", "rows": -1}
+2022-12-03 16:00:23	[35mDEBUG[0m	v2@v2.58.0/enforcer.go:179	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 28}
+2022-12-03 16:00:23	[35mDEBUG[0m	v2@v2.58.0/enforcer_cached.go:96	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 28}
+2022-12-03 16:00:23	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `casbin_rule`", "time": "0.000ms", "rows": 1}
+2022-12-03 16:00:23	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `casbin_rule`", "time": "0.000ms", "rows": 1}
+2022-12-03 16:00:26	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-03 16:00:26	[31mERROR[0m	middlewares/recovery.go:51	recovery from panic	{"time": "2022-12-03 16:00:26", "error": "interface conversion: interface {} is uint64, not string", "request": "POST /api/v1/categories HTTP/1.1\r\nHost: localhost:8888\r\nAccept: */*\r\nAccept-Encoding: gzip, deflate, br\r\nAuthorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSIsInVzZXJfbmFtZSI6Imxpbnp5IiwiZXhwaXJlX3RpbWUiOjE2NzM3NjE5NjgsImV4cCI6MTY3Mzc2MTk2OCwiaWF0IjoxNjY4NTc3OTY4LCJpc3MiOiJHb2h1YiIsIm5iZiI6MTY2ODU3Nzk2OH0.lx4yseXmhpTP54qzR2baDlXg_RgqKNrk8HRrqGCdHaQ\r\nConnection: keep-alive\r\nContent-Length: 81\r\nContent-Type: application/json\r\nPostman-Token: 27c38634-b80d-457d-9532-a22648348a75\r\nUser-Agent: PostmanRuntime/7.29.2\r\n\r\n", "stacktrace": "github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1.1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:56\nruntime.gopanic\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/panic.go:884\nruntime.panicdottypeE\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/iface.go:262\ngithub.com/Gopherlinzy/gohub/app/requests/validators.init.0.func4\n\t/Users/admin/go/src/gin-vue3-admin/app/requests/validators/custom_rules.go:109\ngithub.com/thedevsaddam/govalidator.validateCustomRules\n\t/Users/admin/go/pkg/mod/github.com/thedevsaddam/govalidator@v1.9.10/rules.go:32\ngithub.com/thedevsaddam/govalidator.(*Validator).internalValidateStruct\n\t/Users/admin/go/pkg/mod/github.com/thedevsaddam/govalidator@v1.9.10/validator.go:203\ngithub.com/thedevsaddam/govalidator.(*Validator).ValidateStruct\n\t/Users/admin/go/pkg/mod/github.com/thedevsaddam/govalidator@v1.9.10/validator.go:167\ngithub.com/Gopherlinzy/gohub/app/requests.validate\n\t/Users/admin/go/src/gin-vue3-admin/app/requests/requests.go:52\ngithub.com/Gopherlinzy/gohub/app/requests.CategorySave\n\t/Users/admin/go/src/gin-vue3-admin/app/requests/category_request.go:37\ngithub.com/Gopherlinzy/gohub/app/requests.Validate\n\t/Users/admin/go/src/gin-vue3-admin/app/requests/requests.go:32\ngithub.com/Gopherlinzy/gohub/app/http/controllers/api/v1.(*CategoriesController).Store\n\t/Users/admin/go/src/gin-vue3-admin/app/http/controllers/api/v1/categories_controller.go:41\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.CasbinAPI.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/casbin.go:28\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.AuthJWT.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/auth_jwt.go:37\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.LimitIP.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:31\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.ForceUA.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/gin-gonic/gin.(*Engine).handleHTTPRequest\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616\ngithub.com/gin-gonic/gin.(*Engine).ServeHTTP\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572\nnet/http.serverHandler.ServeHTTP\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947\nnet/http.(*conn).serve\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991"}
+github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1.1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:51
+runtime.gopanic
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/panic.go:884
+runtime.panicdottypeE
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/iface.go:262
+github.com/Gopherlinzy/gohub/app/requests/validators.init.0.func4
+	/Users/admin/go/src/gin-vue3-admin/app/requests/validators/custom_rules.go:109
+github.com/thedevsaddam/govalidator.validateCustomRules
+	/Users/admin/go/pkg/mod/github.com/thedevsaddam/govalidator@v1.9.10/rules.go:32
+github.com/thedevsaddam/govalidator.(*Validator).internalValidateStruct
+	/Users/admin/go/pkg/mod/github.com/thedevsaddam/govalidator@v1.9.10/validator.go:203
+github.com/thedevsaddam/govalidator.(*Validator).ValidateStruct
+	/Users/admin/go/pkg/mod/github.com/thedevsaddam/govalidator@v1.9.10/validator.go:167
+github.com/Gopherlinzy/gohub/app/requests.validate
+	/Users/admin/go/src/gin-vue3-admin/app/requests/requests.go:52
+github.com/Gopherlinzy/gohub/app/requests.CategorySave
+	/Users/admin/go/src/gin-vue3-admin/app/requests/category_request.go:37
+github.com/Gopherlinzy/gohub/app/requests.Validate
+	/Users/admin/go/src/gin-vue3-admin/app/requests/requests.go:32
+github.com/Gopherlinzy/gohub/app/http/controllers/api/v1.(*CategoriesController).Store
+	/Users/admin/go/src/gin-vue3-admin/app/http/controllers/api/v1/categories_controller.go:41
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.CasbinAPI.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/casbin.go:28
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.AuthJWT.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/auth_jwt.go:37
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.LimitIP.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:31
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.ForceUA.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-03 16:00:26	[31mERROR[0m	middlewares/logger.go:75	HTTP Error 500	{"status": 500, "request": "POST /api/v1/categories", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "12.000ms", "Request Body": "{\r\n    \"id\":1,\r\n    \"name\": \"新分类\",\r\n    \"description\": \"这里是描述\"\r\n}", "Response Body": "{\"message\":\"服务器内部错误，请稍后再试\"}"}
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:75
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-03 16:02:53	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 16:02:53	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-03 16:02:53	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND table_type = 'BASE TABLE'", "time": "1.000ms", "rows": -1}
+2022-12-03 16:02:53	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 16:02:53	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-03 16:02:53	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT * FROM `casbin_rule` LIMIT 1", "time": "0.000ms", "rows": -1}
+2022-12-03 16:02:53	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' ORDER BY ORDINAL_POSITION", "time": "1.000ms", "rows": -1}
+2022-12-03 16:02:53	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 16:02:53	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-03 16:02:53	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND index_name = 'idx_casbin_rule'", "time": "0.000ms", "rows": -1}
+2022-12-03 16:02:53	[35mDEBUG[0m	v2@v2.58.0/enforcer.go:179	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 28}
+2022-12-03 16:02:53	[35mDEBUG[0m	v2@v2.58.0/enforcer_cached.go:96	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 28}
+2022-12-03 16:02:53	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `casbin_rule`", "time": "0.000ms", "rows": 1}
+2022-12-03 16:02:53	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `casbin_rule`", "time": "0.000ms", "rows": 1}
+2022-12-03 16:02:58	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-03 16:02:58	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `categories` WHERE id= '1'", "time": "4.000ms", "rows": 1}
+2022-12-03 16:02:58	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `categories` WHERE name = '新分类' && isnull(deleted_at)", "time": "0.000ms", "rows": 1}
+2022-12-03 16:02:58	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "INSERT INTO `categories` (`name`,`description`,`created_at`,`updated_at`,`deleted_at`) VALUES ('新分类','这里是描述','2022-12-03 16:02:58.82','2022-12-03 16:02:58.82',NULL)", "time": "2.000ms", "rows": 1}
+2022-12-03 16:02:58	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 201, "request": "POST /api/v1/categories", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "10.000ms", "Request Body": "{\r\n    \"id\":\"1\",\r\n    \"name\": \"新分类\",\r\n    \"description\": \"这里是描述\"\r\n}", "Response Body": "{\"data\":{\"id\":11,\"name\":\"新分类\",\"description\":\"这里是描述\",\"created_at\":\"2022-12-03T16:02:58.82+08:00\",\"updated_at\":\"2022-12-03T16:02:58.82+08:00\",\"deleted_at\":null},\"success\":true}"}
+2022-12-03 16:03:03	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-03 16:03:03	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `categories` WHERE id= '1a'", "time": "0.000ms", "rows": 1}
+2022-12-03 16:03:03	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `categories` WHERE name = '新分类' && isnull(deleted_at)", "time": "0.000ms", "rows": 1}
+2022-12-03 16:03:03	[33mWARN[0m	middlewares/logger.go:72	HTTP Warning 422	{"status": 422, "request": "POST /api/v1/categories", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "2.000ms", "Request Body": "{\r\n    \"id\":\"1a\",\r\n    \"name\": \"新分类\",\r\n    \"description\": \"这里是描述\"\r\n}", "Response Body": "{\"errors\":{\"id\":[\"id必须为数字\"],\"name\":[\"名称已存在\"]},\"message\":\"请求验证不通过，具体请查看 errors\"}"}
+2022-12-03 16:03:58	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-03 16:03:58	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `categories` WHERE name = '新分类' && isnull(deleted_at)", "time": "0.000ms", "rows": 1}
+2022-12-03 16:03:58	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "INSERT INTO `categories` (`name`,`description`,`created_at`,`updated_at`,`deleted_at`) VALUES ('新分类','这里是描述','2022-12-03 16:03:58.258','2022-12-03 16:03:58.258',NULL)", "time": "1.000ms", "rows": 1}
+2022-12-03 16:03:58	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 201, "request": "POST /api/v1/categories", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "3.000ms", "Request Body": "{\r\n    \"name\": \"新分类\",\r\n    \"description\": \"这里是描述\"\r\n}", "Response Body": "{\"data\":{\"id\":12,\"name\":\"新分类\",\"description\":\"这里是描述\",\"created_at\":\"2022-12-03T16:03:58.258+08:00\",\"updated_at\":\"2022-12-03T16:03:58.258+08:00\",\"deleted_at\":null},\"success\":true}"}
+2022-12-03 16:04:21	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-03 16:04:21	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `categories` WHERE id= '1'", "time": "0.000ms", "rows": 1}
+2022-12-03 16:04:21	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `categories` WHERE name = '新分类名称' && isnull(deleted_at)", "time": "0.000ms", "rows": 1}
+2022-12-03 16:04:21	[31mERROR[0m	gorm@v1.24.1/callbacks.go:134	Database Error	{"sql": "UPDATE `categories` SET `name`='新分类名称',`description`='这里是描述',`created_at`='0000-00-00 00:00:00',`updated_at`='2022-12-03 16:04:21.328',`deleted_at`=NULL WHERE `categories`.`deleted_at` IS NULL AND `id` = 1", "time": "0.000ms", "rows": 0, "error": "Error 1292: Incorrect datetime value: '0000-00-00' for column 'created_at' at row 1"}
+gorm.io/gorm.(*processor).Execute
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+gorm.io/gorm.(*DB).Save
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/finisher_api.go:104
+github.com/Gopherlinzy/gohub/app/models/category.(*Category).Save
+	/Users/admin/go/src/gin-vue3-admin/app/models/category/category_model.go:23
+github.com/Gopherlinzy/gohub/app/http/controllers/api/v1.(*CategoriesController).Update
+	/Users/admin/go/src/gin-vue3-admin/app/http/controllers/api/v1/categories_controller.go:76
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.CasbinAPI.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/casbin.go:28
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.AuthJWT.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/auth_jwt.go:37
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.LimitIP.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:31
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.ForceUA.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-03 16:04:21	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "UPDATE `categories` SET `name`='新分类名称',`description`='这里是描述',`created_at`='0000-00-00 00:00:00',`updated_at`='2022-12-03 16:04:21.328',`deleted_at`=NULL WHERE `categories`.`deleted_at` IS NULL AND `id` = 1", "time": "0.000ms", "rows": 0, "error": "Error 1292: Incorrect datetime value: '0000-00-00' for column 'created_at' at row 1"}
+2022-12-03 16:04:21	[31mERROR[0m	middlewares/logger.go:75	HTTP Error 500	{"status": 500, "request": "PUT /api/v1/categories", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "4.000ms", "Request Body": "{\r\n    \"id\":\"1\",\r\n    \"name\": \"新分类名称\",\r\n    \"description\": \"这里是描述\"\r\n}", "Response Body": "{\"message\":\"更新失败，请稍后尝试~\"}"}
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:75
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-03 16:04:29	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-03 16:04:29	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `categories` WHERE id= '1'", "time": "0.000ms", "rows": 1}
+2022-12-03 16:04:29	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `categories` WHERE name = '新分类名称' && isnull(deleted_at)", "time": "0.000ms", "rows": 1}
+2022-12-03 16:04:29	[31mERROR[0m	gorm@v1.24.1/callbacks.go:134	Database Error	{"sql": "UPDATE `categories` SET `name`='新分类名称',`description`='这里是描述',`created_at`='0000-00-00 00:00:00',`updated_at`='2022-12-03 16:04:29.254',`deleted_at`=NULL WHERE `categories`.`deleted_at` IS NULL AND `id` = 1", "time": "0.000ms", "rows": 0, "error": "Error 1292: Incorrect datetime value: '0000-00-00' for column 'created_at' at row 1"}
+gorm.io/gorm.(*processor).Execute
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+gorm.io/gorm.(*DB).Save
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/finisher_api.go:104
+github.com/Gopherlinzy/gohub/app/models/category.(*Category).Save
+	/Users/admin/go/src/gin-vue3-admin/app/models/category/category_model.go:23
+github.com/Gopherlinzy/gohub/app/http/controllers/api/v1.(*CategoriesController).Update
+	/Users/admin/go/src/gin-vue3-admin/app/http/controllers/api/v1/categories_controller.go:76
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.CasbinAPI.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/casbin.go:28
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.AuthJWT.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/auth_jwt.go:37
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.LimitIP.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:31
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.ForceUA.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-03 16:04:29	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "UPDATE `categories` SET `name`='新分类名称',`description`='这里是描述',`created_at`='0000-00-00 00:00:00',`updated_at`='2022-12-03 16:04:29.254',`deleted_at`=NULL WHERE `categories`.`deleted_at` IS NULL AND `id` = 1", "time": "0.000ms", "rows": 0, "error": "Error 1292: Incorrect datetime value: '0000-00-00' for column 'created_at' at row 1"}
+2022-12-03 16:04:29	[31mERROR[0m	middlewares/logger.go:75	HTTP Error 500	{"status": 500, "request": "PUT /api/v1/categories", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "4.000ms", "Request Body": "{\r\n    \"id\":\"1\",\r\n    \"name\": \"新分类名称\",\r\n    \"description\": \"这里是描述\"\r\n}", "Response Body": "{\"message\":\"更新失败，请稍后尝试~\"}"}
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:75
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-03 16:57:20	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 16:57:20	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-03 16:57:20	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND table_type = 'BASE TABLE'", "time": "1.000ms", "rows": -1}
+2022-12-03 16:57:20	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 16:57:20	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-03 16:57:20	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT * FROM `casbin_rule` LIMIT 1", "time": "0.000ms", "rows": -1}
+2022-12-03 16:57:20	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' ORDER BY ORDINAL_POSITION", "time": "1.000ms", "rows": -1}
+2022-12-03 16:57:20	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 16:57:20	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-03 16:57:20	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND index_name = 'idx_casbin_rule'", "time": "1.000ms", "rows": -1}
+2022-12-03 16:57:20	[35mDEBUG[0m	v2@v2.58.0/enforcer.go:179	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 28}
+2022-12-03 16:57:20	[35mDEBUG[0m	v2@v2.58.0/enforcer_cached.go:96	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 28}
+2022-12-03 16:57:20	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `casbin_rule`", "time": "0.000ms", "rows": 1}
+2022-12-03 16:57:20	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `casbin_rule`", "time": "0.000ms", "rows": 1}
+2022-12-03 16:57:51	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/auth/verify-codes/captcha", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "7.000ms"}
+2022-12-03 16:58:08	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/auth/verify-codes/captcha", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "7.000ms"}
+2022-12-03 16:58:36	[35mDEBUG[0m	auth/login_controller.go:48	Database Query	{"sql": "SELECT * FROM `users` WHERE (name = 'sly' OR phone = 'sly' OR email = 'sly') AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "3.000ms", "rows": 1}
+2022-12-03 16:58:36	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "POST /api/v1/auth/login/using-password", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "312.000ms", "Request Body": "{\"login_id\":\"sly\",\"password\":\"123456\",\"captcha_id\":\"9GucG24KDXBbh13vMXyN\",\"captcha_answer\":\"88ttrr\"}", "Response Body": "{\"data\":{\"id\":1,\"name\":\"sly\",\"created_at\":\"2022-11-29T19:40:31+08:00\",\"updated_at\":\"2022-11-29T19:40:31+08:00\",\"deleted_at\":null},\"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSIsInVzZXJfbmFtZSI6InNseSIsImV4cGlyZV90aW1lIjoxNjc1MjQxOTE2LCJpc3MiOiJnb2h1YiIsImV4cCI6MTY3NTI0MTkxNiwibmJmIjoxNjcwMDU3OTE2LCJpYXQiOjE2NzAwNTc5MTZ9.WPIlAF3xShmGlyLyCMtDkbVCKkN3REEQElA2W7d1K9I\"}"}
+2022-12-03 16:58:51	[33mWARN[0m	middlewares/logger.go:72	HTTP Warning 404	{"status": 404, "request": "GET /api/v1/user", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "0.000ms"}
+2022-12-03 16:58:51	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/auth/verify-codes/captcha", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "8.000ms"}
+2022-12-03 21:14:26	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 21:14:26	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-03 21:14:26	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND table_type = 'BASE TABLE'", "time": "1.000ms", "rows": -1}
+2022-12-03 21:14:26	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "CREATE TABLE `casbin_rule` (`id` bigint unsigned AUTO_INCREMENT,`ptype` varchar(100),`v0` varchar(100),`v1` varchar(100),`v2` varchar(100),`v3` varchar(100),`v4` varchar(100),`v5` varchar(100),PRIMARY KEY (`id`))", "time": "10.000ms", "rows": 0}
+2022-12-03 21:14:26	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 21:14:26	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-03 21:14:26	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND index_name = 'idx_casbin_rule'", "time": "1.000ms", "rows": -1}
+2022-12-03 21:14:26	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "CREATE UNIQUE INDEX idx_casbin_rule ON casbin_rule (ptype,v0,v1,v2,v3,v4,v5)", "time": "8.000ms", "rows": 0}
+2022-12-03 21:14:26	[35mDEBUG[0m	v2@v2.58.0/enforcer.go:179	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 0}
+2022-12-03 21:14:26	[35mDEBUG[0m	v2@v2.58.0/enforcer_cached.go:96	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 0}
+2022-12-03 21:14:26	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `casbin_rule`", "time": "0.000ms", "rows": 0}
+2022-12-03 21:14:26	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `casbin_rule`", "time": "0.000ms", "rows": 1}
+2022-12-03 21:14:26	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "INSERT INTO `casbin_rule` (`ptype`,`v0`,`v1`,`v2`,`v3`,`v4`,`v5`) VALUES ('g','admin','superAdmin','','','',''),('g','sly','user','','','',''),('p','superAdmin','/api/v1/users','GET','','',''),('p','superAdmin','/api/v1/users','POST','','',''),('p','superAdmin','/api/v1/users/email','PUT','','',''),('p','superAdmin','/api/v1/users/phone','PUT','','',''),('p','superAdmin','/api/v1/users/password','PUT','','',''),('p','superAdmin','/api/v1/users/avatar','PUT','','',''),('p','superAdmin','/api/v1/users','DELETE','','',''),('p','superAdmin','/api/v1/categories','GET','','',''),('p','superAdmin','/api/v1/categories','POST','','',''),('p','superAdmin','/api/v1/categories','PUT','','',''),('p','superAdmin','/api/v1/categories','DELETE','','',''),('p','superAdmin','/api/v1/roles','GET','','',''),('p','superAdmin','/api/v1/roles','POST','','',''),('p','superAdmin','/api/v1/roles','PUT','','',''),('p','superAdmin','/api/v1/roles','DELETE','','',''),('p','user','/api/v1/users','GET','','',''),('p','user','/api/v1/users','POST','','',''),('p','user','/api/v1/users/email','PUT','','',''),('p','user','/api/v1/users/phone','PUT','','',''),('p','user','/api/v1/users/password','PUT','','',''),('p','user','/api/v1/users/avatar','PUT','','',''),('p','user','/api/v1/users','DELETE','','',''),('p','user','/api/v1/categories','GET','','',''),('p','user','/api/v1/categories','POST','','',''),('p','user','/api/v1/categories','PUT','','',''),('p','user','/api/v1/categories','DELETE','','','')", "time": "1.000ms", "rows": 28}
+2022-12-03 21:14:43	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 21:14:43	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "1.000ms", "rows": 1}
+2022-12-03 21:14:43	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND table_type = 'BASE TABLE'", "time": "1.000ms", "rows": -1}
+2022-12-03 21:14:43	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 21:14:43	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-03 21:14:43	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT * FROM `casbin_rule` LIMIT 1", "time": "0.000ms", "rows": -1}
+2022-12-03 21:14:43	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' ORDER BY ORDINAL_POSITION", "time": "1.000ms", "rows": -1}
+2022-12-03 21:14:43	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 21:14:43	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-03 21:14:43	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND index_name = 'idx_casbin_rule'", "time": "0.000ms", "rows": -1}
+2022-12-03 21:14:43	[35mDEBUG[0m	v2@v2.58.0/enforcer.go:179	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 28}
+2022-12-03 21:14:43	[35mDEBUG[0m	v2@v2.58.0/enforcer_cached.go:96	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 28}
+2022-12-03 21:14:43	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `casbin_rule`", "time": "0.000ms", "rows": 1}
+2022-12-03 21:14:43	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `casbin_rule`", "time": "0.000ms", "rows": 1}
+2022-12-03 21:14:43	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 21:14:43	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-03 21:14:43	[35mDEBUG[0m	cmd/migrate.go:61	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'migrations' AND table_type = 'BASE TABLE'", "time": "1.000ms", "rows": -1}
+2022-12-03 21:14:43	[35mDEBUG[0m	cmd/migrate.go:65	Database Query	{"sql": "SELECT * FROM `migrations` ORDER BY id DESC,`migrations`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-03 21:14:43	[35mDEBUG[0m	cobra@v1.6.1/command.go:920	Database Query	{"sql": "SELECT * FROM `migrations`", "time": "0.000ms", "rows": 6}
+2022-12-03 21:15:55	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 21:15:55	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "1.000ms", "rows": 1}
+2022-12-03 21:15:55	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND table_type = 'BASE TABLE'", "time": "1.000ms", "rows": -1}
+2022-12-03 21:15:55	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 21:15:55	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-03 21:15:55	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT * FROM `casbin_rule` LIMIT 1", "time": "0.000ms", "rows": -1}
+2022-12-03 21:15:55	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' ORDER BY ORDINAL_POSITION", "time": "1.000ms", "rows": -1}
+2022-12-03 21:15:55	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 21:15:55	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-03 21:15:55	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND index_name = 'idx_casbin_rule'", "time": "0.000ms", "rows": -1}
+2022-12-03 21:15:55	[35mDEBUG[0m	v2@v2.58.0/enforcer.go:179	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 28}
+2022-12-03 21:15:55	[35mDEBUG[0m	v2@v2.58.0/enforcer_cached.go:96	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 28}
+2022-12-03 21:15:55	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `casbin_rule`", "time": "0.000ms", "rows": 1}
+2022-12-03 21:15:55	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `casbin_rule`", "time": "0.000ms", "rows": 1}
+2022-12-03 21:15:55	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-03 21:15:55	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-03 21:15:55	[35mDEBUG[0m	cmd/migrate.go:61	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'migrations' AND table_type = 'BASE TABLE'", "time": "0.000ms", "rows": -1}
+2022-12-03 21:15:55	[35mDEBUG[0m	cmd/migrate.go:65	Database Query	{"sql": "SELECT * FROM `migrations` ORDER BY id DESC,`migrations`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-03 21:15:55	[35mDEBUG[0m	cobra@v1.6.1/command.go:920	Database Query	{"sql": "SELECT * FROM `migrations`", "time": "0.000ms", "rows": 6}
+2022-12-03 21:22:55	[31mERROR[0m	gorm@v1.24.1/callbacks.go:134	Database Error	{"sql": "INSERT INTO `users` (`name`,`city`,`introduction`,`avatar`,`email`,`phone`,`password`,`created_at`,`updated_at`,`deleted_at`) VALUES ('sly','','','','','00012312312','$2a$12$NaVh6WzB67WbdQdVRE5dhu5/xZqpFvrplW2UcMYy492njahg5LNEO','2022-12-03 21:22:55.488','2022-12-03 21:22:55.488',NULL)", "time": "296.000ms", "rows": 0, "error": "Error 1054: Unknown column 'city' in 'field list'"}
+gorm.io/gorm.(*processor).Execute
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+gorm.io/gorm.(*DB).Create
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/finisher_api.go:24
+github.com/Gopherlinzy/gohub/app/models/user.(*User).Create
+	/Users/admin/go/src/gin-vue3-admin/app/models/user/user_model.go:34
+github.com/Gopherlinzy/gohub/app/http/controllers/api/v1/auth.(*SignupController).SignupUsingPhone
+	/Users/admin/go/src/gin-vue3-admin/app/http/controllers/api/v1/auth/signup_controller.go:58
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.GuestJWT.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/guest_jwt.go:22
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.LimitIP.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:31
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.LimitIP.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:31
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.ForceUA.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-03 21:22:55	[31mERROR[0m	middlewares/logger.go:75	HTTP Error 500	{"status": 500, "request": "POST /api/v1/auth/signup/using-phone", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "299.000ms", "Request Body": "{\r\n    \"name\":\"sly\",\r\n    \"password\":\"123456\",\r\n    \"password_confirm\":\"123456\",\r\n    \"verify_code\": \"123456\",\r\n    \"phone\": \"00012312312\"\r\n\r\n}", "Response Body": "{\"message\":\"创建用户失败, 请稍后尝试~\"}"}
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:75
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-03 21:26:13	[31mERROR[0m	gorm@v1.24.1/callbacks.go:134	Database Error	{"sql": "INSERT INTO `users` (`name`,`city`,`introduction`,`avatar`,`email`,`phone`,`password`,`created_at`,`updated_at`,`deleted_at`) VALUES ('sly','','','','','00012312312','$2a$12$wdU5GvgzvL63AHc8Oviis.bNiK2UWtEriLeFL7uuQgiGsS1Q5iN06','2022-12-03 21:26:13.482','2022-12-03 21:26:13.482',NULL)", "time": "296.000ms", "rows": 0, "error": "Error 1054: Unknown column 'city' in 'field list'"}
+gorm.io/gorm.(*processor).Execute
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+gorm.io/gorm.(*DB).Create
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/finisher_api.go:24
+github.com/Gopherlinzy/gohub/app/models/user.(*User).Create
+	/Users/admin/go/src/gin-vue3-admin/app/models/user/user_model.go:34
+github.com/Gopherlinzy/gohub/app/http/controllers/api/v1/auth.(*SignupController).SignupUsingPhone
+	/Users/admin/go/src/gin-vue3-admin/app/http/controllers/api/v1/auth/signup_controller.go:58
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.LimitIP.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:31
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.LimitIP.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:31
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.ForceUA.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-03 21:26:13	[31mERROR[0m	middlewares/logger.go:75	HTTP Error 500	{"status": 500, "request": "POST /api/v1/auth/signup/using-phone", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "303.000ms", "Request Body": "{\r\n    \"name\":\"sly\",\r\n    \"password\":\"123456\",\r\n    \"password_confirm\":\"123456\",\r\n    \"verify_code\": \"123456\",\r\n    \"phone\": \"00012312312\"\r\n\r\n}", "Response Body": "{\"message\":\"创建用户失败, 请稍后尝试~\"}"}
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:75
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-03 21:59:04	[31mERROR[0m	gorm@v1.24.1/callbacks.go:134	Database Error	{"sql": "UPDATE `categories` SET `name`='新分类名称',`description`='这里是描述',`created_at`='0000-00-00 00:00:00',`updated_at`='2022-12-03 21:59:04.654',`deleted_at`=NULL WHERE `categories`.`deleted_at` IS NULL AND `id` = 1", "time": "0.000ms", "rows": 0, "error": "Error 1292: Incorrect datetime value: '0000-00-00' for column 'created_at' at row 1"}
+gorm.io/gorm.(*processor).Execute
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+gorm.io/gorm.(*DB).Save
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/finisher_api.go:104
+github.com/Gopherlinzy/gohub/app/models/category.(*Category).Save
+	/Users/admin/go/src/gin-vue3-admin/app/models/category/category_model.go:23
+github.com/Gopherlinzy/gohub/app/http/controllers/api/v1.(*CategoriesController).Update
+	/Users/admin/go/src/gin-vue3-admin/app/http/controllers/api/v1/categories_controller.go:76
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.CasbinAPI.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/casbin.go:28
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.AuthJWT.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/auth_jwt.go:37
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.LimitIP.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:31
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.ForceUA.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-03 21:59:04	[31mERROR[0m	middlewares/logger.go:75	HTTP Error 500	{"status": 500, "request": "PUT /api/v1/categories", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "6.000ms", "Request Body": "{\r\n    \"id\":\"1\",\r\n    \"name\": \"新分类名称\",\r\n    \"description\": \"这里是描述\"\r\n}", "Response Body": "{\"message\":\"更新失败，请稍后尝试~\"}"}
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:75
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
