@@ -3,6 +3,7 @@ package bootstrap
 import (
 	casbins "github.com/Gopherlinzy/gohub/pkg/casbin"
 	"github.com/Gopherlinzy/gohub/pkg/database"
+	"github.com/Gopherlinzy/gohub/pkg/logger"
 	gormadapter "github.com/casbin/gorm-adapter/v3"
 	"sync"
 )
@@ -16,7 +17,7 @@ func IntizationData() {
 }
 
 func initCasbinData() {
-	casbins.NewCasbin()
+	cs := casbins.NewCasbin()
 	// 如果数据存在了则不插入
 	var count int64
 	database.Gohub_DB.Find(&gormadapter.CasbinRule{}).Count(&count)
@@ -61,4 +62,13 @@ func initCasbinData() {
 	}
 
 	database.Gohub_DB.Model(&gormadapter.CasbinRule{}).Create(policies)
+
+	// 清除内存中的读取的缓存
+	err := cs.Enforcer.InvalidateCache()
+	if err != nil {
+		logger.LogIf(err)
+		return
+	}
+	// 重新缓存
+	_ = cs.Enforcer.LoadPolicy()
 }

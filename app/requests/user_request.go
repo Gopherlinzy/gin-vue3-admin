@@ -207,3 +207,21 @@ func UpdateUserRole(data interface{}, c *gin.Context) map[string][]string {
 
 	return validate(data, rules, messages)
 }
+
+type UserDeleteRequest struct {
+	ID string `valid:"id" json:"id"`
+}
+
+func UserDelete(data interface{}, c *gin.Context) map[string][]string {
+
+	rules := govalidator.MapData{
+		"id": []string{"numeric", "exists:users,id"},
+	}
+	messages := govalidator.MapData{
+		"id": []string{
+			"numeric:id必须为数字",
+			"exists:id必须存在",
+		},
+	}
+	return validate(data, rules, messages)
+}

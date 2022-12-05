@@ -61,3 +61,8 @@ func (userRoleModel *UserRole) UpdateRole() error {
 	}
 	return err
 }
+
+func (user *User) Delete() (rowsAffected int64) {
+	result := database.Gohub_DB.Delete(&user)
+	return result.RowsAffected
+}

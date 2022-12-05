@@ -150,3 +150,23 @@ func (ctrl *UsersController) UpdateUserRole(c *gin.Context) {
 		response.Created(c, userModel)
 	}
 }
+
+func (ctrl *UsersController) DeleteUser(c *gin.Context) {
+
+	// 表单验证
+	request := requests.UserDeleteRequest{}
+
+	if bindOk := requests.Validate(c, &request, requests.UserDelete); !bindOk {
+		return
+	}
+
+	userModel := user.Get(request.ID)
+
+	rowsAffected := userModel.Delete()
+	if rowsAffected > 0 {
+		response.Success(c)
+		return
+	}
+
+	response.Abort500(c, "删除失败，请稍后尝试~")
+}

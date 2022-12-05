@@ -84,6 +84,7 @@ func RegisterAPIRoutes(r *gin.Engine) {
 				usersGroup.PUT("/phone", uc.UpdatePhone)
 				usersGroup.PUT("/password", uc.UpdatePassword)
 				usersGroup.PUT("/avatar", uc.UpdateAvatar)
+				usersGroup.DELETE("", uc.DeleteUser)
 			}
 
 			// category CRUD接口
