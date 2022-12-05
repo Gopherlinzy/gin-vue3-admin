@@ -8,7 +8,59 @@ import (
 	"mime/multipart"
 )
 
+type UserStoreRequest struct {
+	Name     string `valid:"name" json:"name"`
+	Email    string `json:"email,omitempty" valid:"email"`
+	Phone    string `json:"phone,omitempty" valid:"phone"`
+	Password string `valid:"password" json:"password,omitempty"`
+}
+
+func UserStore(data interface{}, c *gin.Context) map[string][]string {
+
+	rules := govalidator.MapData{
+		"name": []string{"required", "alpha_num", "between:3,20", "not_exists:users,name"},
+		"email": []string{
+			"required", "min:4",
+			"max:30",
+			"email",
+			"not_exists:users,email",
+		},
+		"phone": []string{
+			"required",
+			"digits:11",
+			"not_exists:users,phone",
+		},
+		"password": []string{"required", "min:6"},
+	}
+	messages := govalidator.MapData{
+		"name": []string{
+			"required:用户名为必填项",
+			"alpha_num:用户名格式错误，只允许数字和英文",
+			"between:用户名长度需在 3~20 之间",
+			"not_exists:用户名已被占用",
+		},
+		"email": []string{
+			"required:Email 为必填项",
+			"min:Email 长度需大于 4",
+			"max:Email 长度需小于 30",
+			"email:Email 格式不正确，请提供有效的邮箱地址",
+			"not_exists:Email 已被占用",
+		},
+		"phone": []string{
+			"required:手机号为必填项，参数名称 phone",
+			"digits:手机号长度必须为 11 位的数字",
+			"not_exists:Phone 已被占用",
+		},
+		"password": []string{
+			"required:密码为必填项",
+			"min:密码长度需大于 6",
+		},
+	}
+	return validate(data, rules, messages)
+}
+
 type UserUpdateProfileRequest struct {
+	ID           string `valid:"id" json:"id"`
 	Name         string `valid:"name" json:"name"`
 	City         string `valid:"city" json:"city"`
 	Introduction string `valid:"introduction" json:"introduction"`
@@ -19,11 +71,16 @@ func UserUpdateProfile(data interface{}, c *gin.Context) map[string][]string {
 	// 查询用户名重复时，过滤掉当前用户 ID
 	uid := auth.CurrentUID(c)
 	rules := govalidator.MapData{
+		"id":           []string{"numeric", "exists:users,id"},
 		"name":         []string{"required", "alpha_num", "between:3,20", "not_exists:users,name," + uid},
 		"introduction": []string{"min_cn:4", "max_cn:240"},
 		"city":         []string{"min_cn:2", "max_cn:20"},
 	}
 	messages := govalidator.MapData{
+		"id": []string{
+			"numeric:id必须为数字",
+			"exists:id必须存在",
+		},
 		"name": []string{
 			"required:用户名为必填项",
 			"alpha_num:用户名格式错误，只允许数字和英文",
@@ -43,6 +100,7 @@ func UserUpdateProfile(data interface{}, c *gin.Context) map[string][]string {
 }
 
 type UserUpdateEmailRequest struct {
+	ID         string `valid:"id" json:"id"`
 	Email      string `json:"email,omitempty" valid:"email"`
 	VerifyCode string `json:"verify_code,omitempty" valid:"verify_code"`
 }
@@ -51,7 +109,9 @@ func UserUpdateEmail(data interface{}, c *gin.Context) map[string][]string {
 
 	currentUser := auth.CurrentUser(c)
 	rules := govalidator.MapData{
+		"id": []string{"numeric", "exists:users,id"},
 		"email": []string{
+
 			"required", "min:4",
 			"max:30",
 			"email",
@@ -62,6 +122,10 @@ func UserUpdateEmail(data interface{}, c *gin.Context) map[string][]string {
 	}
 
 	messages := govalidator.MapData{
+		"id": []string{
+			"numeric:id必须为数字",
+			"exists:id必须存在",
+		},
 		"email": []string{
 			"required:Email 为必填项",
 			"min:Email 长度需大于 4",
@@ -182,12 +246,12 @@ func UserUpdateAvatar(data interface{}, c *gin.Context) map[string][]string {
 	return validateFile(c, data, rules, messages)
 }
 
-type UpdateUserRoleRequest struct {
+type StoreUserRoleRequest struct {
 	ID       string `valid:"id" json:"id"`
 	RoleName string `json:"role_name,omitempty" valid:"role_name"`
 }
 
-func UpdateUserRole(data interface{}, c *gin.Context) map[string][]string {
+func StoreUserRole(data interface{}, c *gin.Context) map[string][]string {
 
 	rules := govalidator.MapData{
 		"id":        []string{"numeric", "exists:users,id"},

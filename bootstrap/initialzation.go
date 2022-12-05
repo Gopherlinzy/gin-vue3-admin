@@ -31,6 +31,8 @@ func initCasbinData() {
 
 		{Ptype: "p", V0: "superAdmin", V1: "/api/v1/users", V2: "GET"},
 		{Ptype: "p", V0: "superAdmin", V1: "/api/v1/users", V2: "POST"},
+		{Ptype: "p", V0: "superAdmin", V1: "/api/v1/users/role", V2: "POST"},
+		{Ptype: "p", V0: "superAdmin", V1: "/api/v1/users/profile", V2: "PUT"},
 		{Ptype: "p", V0: "superAdmin", V1: "/api/v1/users/email", V2: "PUT"},
 		{Ptype: "p", V0: "superAdmin", V1: "/api/v1/users/phone", V2: "PUT"},
 		{Ptype: "p", V0: "superAdmin", V1: "/api/v1/users/password", V2: "PUT"},
@@ -49,6 +51,8 @@ func initCasbinData() {
 
 		{Ptype: "p", V0: "user", V1: "/api/v1/users", V2: "GET"},
 		{Ptype: "p", V0: "user", V1: "/api/v1/users", V2: "POST"},
+		{Ptype: "p", V0: "user", V1: "/api/v1/users/role", V2: "POST"},
+		{Ptype: "p", V0: "user", V1: "/api/v1/users/profile", V2: "PUT"},
 		{Ptype: "p", V0: "user", V1: "/api/v1/users/email", V2: "PUT"},
 		{Ptype: "p", V0: "user", V1: "/api/v1/users/phone", V2: "PUT"},
 		{Ptype: "p", V0: "user", V1: "/api/v1/users/password", V2: "PUT"},

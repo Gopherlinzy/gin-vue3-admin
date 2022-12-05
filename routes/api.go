@@ -78,8 +78,9 @@ func RegisterAPIRoutes(r *gin.Engine) {
 			usersGroup := v1.Group("/users", middlewares.AuthJWT(), middlewares.CasbinAPI())
 			{
 				usersGroup.GET("", uc.Index)
-				usersGroup.POST("", uc.UpdateUserRole)
-				usersGroup.PUT("", uc.UpdateProfile)
+				usersGroup.POST("", uc.Store)
+				usersGroup.POST("/role", uc.StoreUserRole)
+				usersGroup.PUT("/profile", uc.UpdateProfile)
 				usersGroup.PUT("/email", uc.UpdateEmail)
 				usersGroup.PUT("/phone", uc.UpdatePhone)
 				usersGroup.PUT("/password", uc.UpdatePassword)

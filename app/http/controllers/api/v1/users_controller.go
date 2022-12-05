@@ -6,7 +6,6 @@ import (
 	"github.com/Gopherlinzy/gohub/pkg/auth"
 	"github.com/Gopherlinzy/gohub/pkg/file"
 	"github.com/Gopherlinzy/gohub/pkg/response"
-
 	"github.com/gin-gonic/gin"
 )
 
@@ -34,13 +33,34 @@ func (ctrl *UsersController) Index(c *gin.Context) {
 	})
 }
 
+func (ctrl *UsersController) Store(c *gin.Context) {
+	request := requests.UserStoreRequest{}
+	if ok := requests.Validate(c, &request, requests.UserStore); !ok {
+		return
+	}
+
+	userModel := user.User{
+		Name:     request.Name,
+		Email:    request.Email,
+		Phone:    request.Phone,
+		Password: request.Password,
+	}
+
+	userModel.Create()
+	if userModel.ID > 0 {
+		response.Created(c, userModel)
+	} else {
+		response.Abort500(c, "创建失败，请稍后尝试~")
+	}
+}
+
 func (ctrl *UsersController) UpdateProfile(c *gin.Context) {
 	request := requests.UserUpdateProfileRequest{}
 	if ok := requests.Validate(c, &request, requests.UserUpdateProfile); !ok {
 		return
 	}
 
-	currentUser := auth.CurrentUser(c)
+	currentUser := user.Get(request.ID)
 	currentUser.Name = request.Name
 	currentUser.City = request.City
 	currentUser.Introduction = request.Introduction
@@ -110,6 +130,7 @@ func (ctrl *UsersController) UpdatePassword(c *gin.Context) {
 	}
 }
 
+// UpdateAvatar 上传头像
 func (ctrl *UsersController) UpdateAvatar(c *gin.Context) {
 	request := requests.UserUpdateAvatarRequest{}
 	if ok := requests.Validate(c, &request, requests.UserUpdateAvatar); !ok {
@@ -128,11 +149,11 @@ func (ctrl *UsersController) UpdateAvatar(c *gin.Context) {
 	response.Data(c, currentUser)
 }
 
-// UpdateUserRole 给用户添加角色
-func (ctrl *UsersController) UpdateUserRole(c *gin.Context) {
+// StoreUserRole 给用户添加角色
+func (ctrl *UsersController) StoreUserRole(c *gin.Context) {
 
-	request := requests.UpdateUserRoleRequest{}
-	if ok := requests.Validate(c, &request, requests.UpdateUserRole); !ok {
+	request := requests.StoreUserRoleRequest{}
+	if ok := requests.Validate(c, &request, requests.StoreUserRole); !ok {
 		return
 	}
 
