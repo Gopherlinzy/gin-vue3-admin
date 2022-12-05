@@ -1,0 +1,255 @@
+2022-12-05 12:00:53	[31mERROR[0m	response/response.go:89	Error Occurred:	{"error": "账号不存在"}
+github.com/Gopherlinzy/gohub/pkg/response.Error
+	/Users/admin/go/src/gin-vue3-admin/pkg/response/response.go:89
+github.com/Gopherlinzy/gohub/app/http/controllers/api/v1/auth.(*LoginController).LoginByPassword
+	/Users/admin/go/src/gin-vue3-admin/app/http/controllers/api/v1/auth/login_controller.go:51
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.GuestJWT.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/guest_jwt.go:22
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.LimitIP.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:31
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.LimitIP.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:31
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.ForceUA.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-05 15:08:35	[31mERROR[0m	gorm@v1.24.1/callbacks.go:134	Database Error	{"sql": "INSERT INTO `roles` (`role_name`,`des`,`status`,`created_at`,`updated_at`,`deleted_at`) VALUES ('superAdmin','超级管理员:拥有所有权限',true,'2022-12-05 15:08:35.549','2022-12-05 15:08:35.549',NULL),('admin','管理员',true,'2022-12-05 15:08:35.549','2022-12-05 15:08:35.549',NULL),('user','普通用户',true,'2022-12-05 15:08:35.549','2022-12-05 15:08:35.549',NULL),('guest','游客模式',true,'2022-12-05 15:08:35.549','2022-12-05 15:08:35.549',NULL)", "time": "0.000ms", "rows": 0, "error": "Error 1054: Unknown column 'status' in 'field list'"}
+gorm.io/gorm.(*processor).Execute
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+gorm.io/gorm.(*DB).Create
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/finisher_api.go:24
+github.com/Gopherlinzy/gohub/bootstrap.initRoleData
+	/Users/admin/go/src/gin-vue3-admin/bootstrap/initialzation.go:107
+github.com/Gopherlinzy/gohub/bootstrap.IntizationData.func1
+	/Users/admin/go/src/gin-vue3-admin/bootstrap/initialzation.go:16
+sync.(*Once).doSlow
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/sync/once.go:74
+sync.(*Once).Do
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/sync/once.go:65
+github.com/Gopherlinzy/gohub/bootstrap.IntizationData
+	/Users/admin/go/src/gin-vue3-admin/bootstrap/initialzation.go:15
+main.main.func1
+	/Users/admin/go/src/gin-vue3-admin/main.go:41
+github.com/spf13/cobra.(*Command).execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:896
+github.com/spf13/cobra.(*Command).ExecuteC
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:1044
+github.com/spf13/cobra.(*Command).Execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:968
+main.main
+	/Users/admin/go/src/gin-vue3-admin/main.go:64
+runtime.main
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/proc.go:250
+2022-12-05 15:11:57	[31mERROR[0m	gorm@v1.24.1/callbacks.go:134	Database Error	{"sql": "INSERT INTO `roles` (`role_name`,`des`,`status`,`created_at`,`updated_at`,`deleted_at`) VALUES ('superAdmin','超级管理员:拥有所有权限',true,'2022-12-05 15:11:57.689','2022-12-05 15:11:57.689',NULL),('admin','管理员',true,'2022-12-05 15:11:57.689','2022-12-05 15:11:57.689',NULL),('user','普通用户',true,'2022-12-05 15:11:57.689','2022-12-05 15:11:57.689',NULL),('guest','游客模式',true,'2022-12-05 15:11:57.689','2022-12-05 15:11:57.689',NULL)", "time": "1.000ms", "rows": 0, "error": "Error 1054: Unknown column 'status' in 'field list'"}
+gorm.io/gorm.(*processor).Execute
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+gorm.io/gorm.(*DB).Create
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/finisher_api.go:24
+github.com/Gopherlinzy/gohub/bootstrap.initRoleData
+	/Users/admin/go/src/gin-vue3-admin/bootstrap/initialzation.go:107
+github.com/Gopherlinzy/gohub/bootstrap.IntizationData.func1
+	/Users/admin/go/src/gin-vue3-admin/bootstrap/initialzation.go:16
+sync.(*Once).doSlow
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/sync/once.go:74
+sync.(*Once).Do
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/sync/once.go:65
+github.com/Gopherlinzy/gohub/bootstrap.IntizationData
+	/Users/admin/go/src/gin-vue3-admin/bootstrap/initialzation.go:15
+main.main.func1
+	/Users/admin/go/src/gin-vue3-admin/main.go:41
+github.com/spf13/cobra.(*Command).execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:896
+github.com/spf13/cobra.(*Command).ExecuteC
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:1044
+github.com/spf13/cobra.(*Command).Execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:968
+main.main
+	/Users/admin/go/src/gin-vue3-admin/main.go:64
+runtime.main
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/proc.go:250
+2022-12-05 15:13:09	[31mERROR[0m	gorm@v1.24.1/callbacks.go:134	Database Error	{"sql": "SELECT * FROM `roles` WHERE `roles`.`deleted_at` IS NULL", "time": "1.000ms", "rows": 0, "error": "Error 1146: Table 'gohub.roles' doesn't exist"}
+gorm.io/gorm.(*processor).Execute
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+gorm.io/gorm.(*DB).Find
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/finisher_api.go:170
+github.com/Gopherlinzy/gohub/bootstrap.initRoleData
+	/Users/admin/go/src/gin-vue3-admin/bootstrap/initialzation.go:103
+github.com/Gopherlinzy/gohub/bootstrap.IntizationData.func1
+	/Users/admin/go/src/gin-vue3-admin/bootstrap/initialzation.go:16
+sync.(*Once).doSlow
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/sync/once.go:74
+sync.(*Once).Do
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/sync/once.go:65
+github.com/Gopherlinzy/gohub/bootstrap.IntizationData
+	/Users/admin/go/src/gin-vue3-admin/bootstrap/initialzation.go:15
+main.main.func1
+	/Users/admin/go/src/gin-vue3-admin/main.go:41
+github.com/spf13/cobra.(*Command).execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:896
+github.com/spf13/cobra.(*Command).ExecuteC
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:1044
+github.com/spf13/cobra.(*Command).Execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:968
+main.main
+	/Users/admin/go/src/gin-vue3-admin/main.go:64
+runtime.main
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/proc.go:250
+2022-12-05 15:13:09	[31mERROR[0m	gorm@v1.24.1/callbacks.go:134	Database Error	{"sql": "INSERT INTO `roles` (`role_name`,`des`,`status`,`created_at`,`updated_at`,`deleted_at`) VALUES ('superAdmin','超级管理员:拥有所有权限',true,'2022-12-05 15:13:09.706','2022-12-05 15:13:09.706',NULL),('admin','管理员',true,'2022-12-05 15:13:09.706','2022-12-05 15:13:09.706',NULL),('user','普通用户',true,'2022-12-05 15:13:09.706','2022-12-05 15:13:09.706',NULL),('guest','游客模式',true,'2022-12-05 15:13:09.706','2022-12-05 15:13:09.706',NULL)", "time": "0.000ms", "rows": 0, "error": "Error 1146: Table 'gohub.roles' doesn't exist"}
+gorm.io/gorm.(*processor).Execute
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+gorm.io/gorm.(*DB).Create
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/finisher_api.go:24
+github.com/Gopherlinzy/gohub/bootstrap.initRoleData
+	/Users/admin/go/src/gin-vue3-admin/bootstrap/initialzation.go:115
+github.com/Gopherlinzy/gohub/bootstrap.IntizationData.func1
+	/Users/admin/go/src/gin-vue3-admin/bootstrap/initialzation.go:16
+sync.(*Once).doSlow
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/sync/once.go:74
+sync.(*Once).Do
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/sync/once.go:65
+github.com/Gopherlinzy/gohub/bootstrap.IntizationData
+	/Users/admin/go/src/gin-vue3-admin/bootstrap/initialzation.go:15
+main.main.func1
+	/Users/admin/go/src/gin-vue3-admin/main.go:41
+github.com/spf13/cobra.(*Command).execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:896
+github.com/spf13/cobra.(*Command).ExecuteC
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:1044
+github.com/spf13/cobra.(*Command).Execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:968
+main.main
+	/Users/admin/go/src/gin-vue3-admin/main.go:64
+runtime.main
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/proc.go:250
+2022-12-05 15:14:08	[31mERROR[0m	gorm@v1.24.1/callbacks.go:134	Database Error	{"sql": "SELECT * FROM `roles` WHERE `roles`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 0, "error": "Error 1146: Table 'gohub.roles' doesn't exist"}
+gorm.io/gorm.(*processor).Execute
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+gorm.io/gorm.(*DB).Find
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/finisher_api.go:170
+github.com/Gopherlinzy/gohub/bootstrap.initRoleData
+	/Users/admin/go/src/gin-vue3-admin/bootstrap/initialzation.go:103
+github.com/Gopherlinzy/gohub/bootstrap.IntizationData.func1
+	/Users/admin/go/src/gin-vue3-admin/bootstrap/initialzation.go:16
+sync.(*Once).doSlow
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/sync/once.go:74
+sync.(*Once).Do
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/sync/once.go:65
+github.com/Gopherlinzy/gohub/bootstrap.IntizationData
+	/Users/admin/go/src/gin-vue3-admin/bootstrap/initialzation.go:15
+main.main.func1
+	/Users/admin/go/src/gin-vue3-admin/main.go:41
+github.com/spf13/cobra.(*Command).execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:896
+github.com/spf13/cobra.(*Command).ExecuteC
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:1044
+github.com/spf13/cobra.(*Command).Execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:968
+main.main
+	/Users/admin/go/src/gin-vue3-admin/main.go:64
+runtime.main
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/proc.go:250
+2022-12-05 15:14:08	[31mERROR[0m	gorm@v1.24.1/callbacks.go:134	Database Error	{"sql": "INSERT INTO `roles` (`role_name`,`des`,`status`,`created_at`,`updated_at`,`deleted_at`) VALUES ('superAdmin','超级管理员:拥有所有权限',true,'2022-12-05 15:14:08.26','2022-12-05 15:14:08.26',NULL),('admin','管理员',true,'2022-12-05 15:14:08.26','2022-12-05 15:14:08.26',NULL),('user','普通用户',true,'2022-12-05 15:14:08.26','2022-12-05 15:14:08.26',NULL),('guest','游客模式',true,'2022-12-05 15:14:08.26','2022-12-05 15:14:08.26',NULL)", "time": "0.000ms", "rows": 0, "error": "Error 1146: Table 'gohub.roles' doesn't exist"}
+gorm.io/gorm.(*processor).Execute
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+gorm.io/gorm.(*DB).Create
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/finisher_api.go:24
+github.com/Gopherlinzy/gohub/bootstrap.initRoleData
+	/Users/admin/go/src/gin-vue3-admin/bootstrap/initialzation.go:115
+github.com/Gopherlinzy/gohub/bootstrap.IntizationData.func1
+	/Users/admin/go/src/gin-vue3-admin/bootstrap/initialzation.go:16
+sync.(*Once).doSlow
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/sync/once.go:74
+sync.(*Once).Do
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/sync/once.go:65
+github.com/Gopherlinzy/gohub/bootstrap.IntizationData
+	/Users/admin/go/src/gin-vue3-admin/bootstrap/initialzation.go:15
+main.main.func1
+	/Users/admin/go/src/gin-vue3-admin/main.go:41
+github.com/spf13/cobra.(*Command).execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:896
+github.com/spf13/cobra.(*Command).ExecuteC
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:1044
+github.com/spf13/cobra.(*Command).Execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:968
+main.main
+	/Users/admin/go/src/gin-vue3-admin/main.go:64
+runtime.main
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/proc.go:250
+2022-12-05 15:16:13	[31mERROR[0m	gorm@v1.24.1/callbacks.go:134	Database Error	{"sql": "INSERT INTO `roles` (`role_name`,`des`,`status`,`created_at`,`updated_at`,`deleted_at`) VALUES ('superAdmin','超级管理员:拥有所有权限',true,'2022-12-05 15:16:13.844','2022-12-05 15:16:13.844',NULL),('admin','管理员',true,'2022-12-05 15:16:13.844','2022-12-05 15:16:13.844',NULL),('user','普通用户',true,'2022-12-05 15:16:13.844','2022-12-05 15:16:13.844',NULL),('guest','游客模式',true,'2022-12-05 15:16:13.844','2022-12-05 15:16:13.844',NULL)", "time": "0.000ms", "rows": 0, "error": "Error 1054: Unknown column 'status' in 'field list'"}
+gorm.io/gorm.(*processor).Execute
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+gorm.io/gorm.(*DB).Create
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/finisher_api.go:24
+github.com/Gopherlinzy/gohub/bootstrap.initRoleData
+	/Users/admin/go/src/gin-vue3-admin/bootstrap/initialzation.go:121
+github.com/Gopherlinzy/gohub/bootstrap.IntizationData.func1
+	/Users/admin/go/src/gin-vue3-admin/bootstrap/initialzation.go:16
+sync.(*Once).doSlow
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/sync/once.go:74
+sync.(*Once).Do
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/sync/once.go:65
+github.com/Gopherlinzy/gohub/bootstrap.IntizationData
+	/Users/admin/go/src/gin-vue3-admin/bootstrap/initialzation.go:15
+main.main.func1
+	/Users/admin/go/src/gin-vue3-admin/main.go:41
+github.com/spf13/cobra.(*Command).execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:896
+github.com/spf13/cobra.(*Command).ExecuteC
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:1044
+github.com/spf13/cobra.(*Command).Execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:968
+main.main
+	/Users/admin/go/src/gin-vue3-admin/main.go:64
+runtime.main
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/proc.go:250
+2022-12-05 15:17:42	[31mERROR[0m	gorm@v1.24.1/callbacks.go:134	Database Error	{"sql": "INSERT INTO `roles` (`role_name`,`des`,`status`,`created_at`,`updated_at`,`deleted_at`) VALUES ('superAdmin','超级管理员:拥有所有权限',true,'2022-12-05 15:17:42.471','2022-12-05 15:17:42.471',NULL),('admin','管理员',true,'2022-12-05 15:17:42.471','2022-12-05 15:17:42.471',NULL),('user','普通用户',true,'2022-12-05 15:17:42.471','2022-12-05 15:17:42.471',NULL),('guest','游客模式',true,'2022-12-05 15:17:42.471','2022-12-05 15:17:42.471',NULL)", "time": "0.000ms", "rows": 0, "error": "Error 1054: Unknown column 'status' in 'field list'"}
+gorm.io/gorm.(*processor).Execute
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+gorm.io/gorm.(*DB).Create
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/finisher_api.go:24
+github.com/Gopherlinzy/gohub/bootstrap.initRoleData
+	/Users/admin/go/src/gin-vue3-admin/bootstrap/initialzation.go:120
+github.com/Gopherlinzy/gohub/bootstrap.IntizationData.func1
+	/Users/admin/go/src/gin-vue3-admin/bootstrap/initialzation.go:16
+sync.(*Once).doSlow
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/sync/once.go:74
+sync.(*Once).Do
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/sync/once.go:65
+github.com/Gopherlinzy/gohub/bootstrap.IntizationData
+	/Users/admin/go/src/gin-vue3-admin/bootstrap/initialzation.go:15
+main.main.func1
+	/Users/admin/go/src/gin-vue3-admin/main.go:41
+github.com/spf13/cobra.(*Command).execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:896
+github.com/spf13/cobra.(*Command).ExecuteC
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:1044
+github.com/spf13/cobra.(*Command).Execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:968
+main.main
+	/Users/admin/go/src/gin-vue3-admin/main.go:64
+runtime.main
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/proc.go:250

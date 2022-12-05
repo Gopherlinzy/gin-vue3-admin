@@ -74,7 +74,7 @@ func RegisterAPIRoutes(r *gin.Engine) {
 			// users CRUD接口
 			uc := new(controllers.UsersController)
 			// 获取当前用户
-			//v1.GET("/user", middlewares.AuthJWT(), uc.CurrentUser)
+			v1.GET("/user", middlewares.AuthJWT(), uc.CurrentUser)
 			usersGroup := v1.Group("/users", middlewares.AuthJWT(), middlewares.CasbinAPI())
 			{
 				usersGroup.GET("", uc.Index)

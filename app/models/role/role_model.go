@@ -11,6 +11,7 @@ type Role struct {
 
 	RoleName string `json:"role_name,omitempty"`
 	Des      string `json:"des,omitempty"`
+	Status   bool   `json:"status,omitempty"`
 
 	models.CommonTimestampsField
 }
