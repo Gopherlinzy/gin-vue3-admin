@@ -22,6 +22,8 @@ func init() {
 		Avatar       string `gorm:"type:varchar(255);default:null"`
 		Status       bool   `gorm:"type:TINYINT(1);default:1"`
 
+		RoleName string `gorm:"type:varchar(255);not null"`
+
 		models.CommonTimestampsField
 	}
 

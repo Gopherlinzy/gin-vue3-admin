@@ -1,6 +1,7 @@
 package auth
 
 import (
+	"errors"
 	v1 "github.com/Gopherlinzy/gohub/app/http/controllers/api/v1"
 	"github.com/Gopherlinzy/gohub/app/requests"
 	"github.com/Gopherlinzy/gohub/pkg/auth"
@@ -50,6 +51,11 @@ func (lc *LoginController) LoginByPassword(c *gin.Context) {
 		// 失败，显示错误提示
 		response.Error(c, err, "账号不存在或密码错误")
 	} else {
+		if !user.Status {
+			// 失败，显示错误提示
+			response.LoginError(c, errors.New("账号异常"), "账号当前处于冻结状态，登录失败")
+			return
+		}
 		// 登录成功
 		token := jwt.NewJWT().IssueToken(user.GetStringID(), user.Name)
 

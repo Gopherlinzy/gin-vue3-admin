@@ -153,9 +153,9 @@ func (c *Casbin) DeleteUser(sub, role string) error {
 }
 
 // UpdateUserRole 修改用户绑定角色
-func (c *Casbin) UpdateUserRole(sub, oldRole, newRole string) error {
-	err := c.AddUserRole(sub, newRole)
-	if err = c.DeleteUser(sub, oldRole); err != nil {
+func (c *Casbin) UpdateUserRole(oldsub, newsub, oldRole, newRole string) error {
+	err := c.AddUserRole(newsub, newRole)
+	if err = c.DeleteUser(oldsub, oldRole); err != nil {
 		return err
 	}
 	return err

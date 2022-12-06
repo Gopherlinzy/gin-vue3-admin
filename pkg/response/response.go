@@ -100,21 +100,11 @@ func Error(c *gin.Context, err error, msg ...string) {
 	})
 }
 
-// ValidationError 处理表单验证不通过的错误，返回的 JSON 示例：
-//
-//	{
-//	    "errors": {
-//	        "phone": [
-//	            "手机号为必填项，参数名称 phone",
-//	            "手机号长度必须为 11 位的数字"
-//	        ]
-//	    },
-//	    "message": "请求验证不通过，具体请查看 errors"
-//	}
-func ValidationError(c *gin.Context, errors map[string][]string) {
+// LoginError 处理登陆异常
+func LoginError(c *gin.Context, error error, msg string) {
 	c.AbortWithStatusJSON(http.StatusUnprocessableEntity, gin.H{
-		"message": "请求验证不通过，具体请查看 errors",
-		"errors":  errors,
+		"message": msg,
+		"errors":  error.Error(),
 	})
 }
 

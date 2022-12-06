@@ -5,6 +5,7 @@ import (
 	"github.com/Gopherlinzy/gohub/app/models/user"
 	"github.com/Gopherlinzy/gohub/app/requests"
 	"github.com/Gopherlinzy/gohub/pkg/auth"
+	casbins "github.com/Gopherlinzy/gohub/pkg/casbin"
 	"github.com/Gopherlinzy/gohub/pkg/file"
 	"github.com/Gopherlinzy/gohub/pkg/helpers"
 	"github.com/Gopherlinzy/gohub/pkg/response"
@@ -18,7 +19,18 @@ type UsersController struct {
 
 // CurrentUser 当前登录用户信息
 func (ctrl *UsersController) CurrentUser(c *gin.Context) {
+	//fmt.Println(request)
 	userModel := auth.CurrentUser(c)
+	response.Data(c, userModel)
+}
+
+func (ctrl *UsersController) GetUser(c *gin.Context) {
+	request := requests.UserIDRequest{}
+	if ok := requests.Validate(c, &request, requests.UserID); !ok {
+		return
+	}
+	//fmt.Println(request)
+	userModel := user.Get(request.ID)
 	response.Data(c, userModel)
 }
 
@@ -42,8 +54,6 @@ func (ctrl *UsersController) Store(c *gin.Context) {
 		return
 	}
 
-	status, _ := strconv.ParseBool(request.Status)
-
 	userModel := user.User{
 		Name:         request.Name,
 		Email:        request.Email,
@@ -51,11 +61,13 @@ func (ctrl *UsersController) Store(c *gin.Context) {
 		Password:     request.Password,
 		City:         request.City,
 		Introduction: request.Introduction,
-		Status:       status,
+		Status:       false,
+		RoleName:     request.RoleName,
 	}
 
 	userModel.Create()
 	if userModel.ID > 0 {
+		casbins.NewCasbin().AddUserRole(userModel.Name, userModel.RoleName)
 		response.Created(c, userModel)
 	} else {
 		response.Abort500(c, "创建失败，请稍后尝试~")
@@ -68,19 +80,18 @@ func (ctrl *UsersController) Update(c *gin.Context) {
 		return
 	}
 
-	status, _ := strconv.ParseBool(request.Status)
-
 	currentUser := user.Get(request.ID)
+	oldName := currentUser.Name
 	currentUser.Name = request.Name
 	currentUser.Email = request.Email
 	currentUser.Phone = request.Phone
 	currentUser.Password = request.Password
 	currentUser.City = helpers.IsNull(currentUser.City, request.City)
 	currentUser.Introduction = helpers.IsNull(currentUser.Introduction, request.Introduction)
-	currentUser.Status = status
 
-	rowsAffected := currentUser.Save()
-	if rowsAffected > 0 {
+	err := currentUser.UpdateRole(oldName, request.RoleName)
+
+	if err == nil {
 		response.Data(c, currentUser)
 	} else {
 		response.Abort500(c, "更新失败，请稍后尝试~")
@@ -164,41 +175,38 @@ func (ctrl *UsersController) UpdateAvatar(c *gin.Context) {
 	response.Data(c, currentUser)
 }
 
-// StoreUserRole 给用户添加角色
-func (ctrl *UsersController) StoreUserRole(c *gin.Context) {
+// UpdateUserRole 给用户添加角色
+func (ctrl *UsersController) UpdateUserRole(c *gin.Context) {
 
 	request := requests.StoreUserRoleRequest{}
 	if ok := requests.Validate(c, &request, requests.StoreUserRole); !ok {
 		return
 	}
 
-	userModel := user.Get(request.ID)
+	userRoleModel := user.Get(request.ID)
 
-	userRoleModel := user.UserRole{
-		Name:     userModel.Name,
-		RoleName: request.RoleName,
-	}
-
-	err := userRoleModel.UpdateRole()
+	err := userRoleModel.UpdateRole(userRoleModel.Name, request.RoleName)
 	if err != nil {
 		response.Abort500(c, "创建失败，请稍后尝试~")
 	} else {
-		response.Created(c, userModel)
+		response.Created(c, userRoleModel)
 	}
 }
 
 func (ctrl *UsersController) DeleteUser(c *gin.Context) {
 
 	// 表单验证
-	request := requests.UserDeleteResetRequest{}
+	request := requests.UserIDRequest{}
 
-	if bindOk := requests.Validate(c, &request, requests.UserDeleteReset); !bindOk {
+	if bindOk := requests.Validate(c, &request, requests.UserID); !bindOk {
 		return
 	}
 	fmt.Println(request)
 
 	userModel := user.Get(request.ID)
 
+	// 删除用户绑定的角色
+	casbins.NewCasbin().DeleteUser(userModel.Name, userModel.RoleName)
 	rowsAffected := userModel.Delete()
 	if rowsAffected > 0 {
 		response.Success(c)
@@ -211,9 +219,9 @@ func (ctrl *UsersController) DeleteUser(c *gin.Context) {
 // ResetPassword 重置密码为 123456
 func (ctrl *UsersController) ResetPassword(c *gin.Context) {
 	// 表单验证
-	request := requests.UserDeleteResetRequest{}
+	request := requests.UserIDRequest{}
 
-	if bindOk := requests.Validate(c, &request, requests.UserDeleteReset); !bindOk {
+	if bindOk := requests.Validate(c, &request, requests.UserID); !bindOk {
 		return
 	}
 
@@ -228,4 +236,27 @@ func (ctrl *UsersController) ResetPassword(c *gin.Context) {
 	}
 
 	response.Abort500(c, "重置密码失败，请稍后尝试~")
+}
+
+// UpdateUserStatus 修改用户启用状态
+func (ctrl *UsersController) UpdateUserStatus(c *gin.Context) {
+	request := requests.UpdateUserStatusRequest{}
+	if ok := requests.Validate(c, &request, requests.UpdateUserStatus); !ok {
+		return
+	}
+
+	userModel := user.Get(request.ID)
+
+	status, _ := strconv.ParseBool(request.Status)
+
+	userModel.Status = status
+
+	rowsAffected := userModel.Save()
+
+	if rowsAffected > 0 {
+		response.Success(c)
+		return
+	}
+
+	response.Abort500(c, "更新失败，请稍后尝试~")
 }

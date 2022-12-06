@@ -13,7 +13,7 @@ func init() {
 	type Role struct {
 		models.BaseModel
 
-		RoleName string `gorm:"type:varchar(255);not null"`
+		RoleName string `gorm:"type:varchar(255);not null;unique"`
 		Des      string `gorm:"type:varchar(255);default:null"`
 		Status   bool   `gorm:"type:TINYINT(1);default:1"`
 

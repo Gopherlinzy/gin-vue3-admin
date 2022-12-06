@@ -15,7 +15,7 @@ func RoleSave(data interface{}, c *gin.Context) map[string][]string {
 
 	rules := govalidator.MapData{
 		"id":        []string{"numeric", "exists:roles,id"},
-		"role_name": []string{"required", "alpha_num", "between:3,20"},
+		"role_name": []string{"required", "between:3,20"},
 		"des":       []string{"min_cn:3", "max_cn:255"},
 	}
 	messages := govalidator.MapData{
@@ -25,7 +25,6 @@ func RoleSave(data interface{}, c *gin.Context) map[string][]string {
 		},
 		"role_name": []string{
 			"required:角色名为必填项",
-			"alpha_num:角色名格式错误，只允许数字和英文",
 			"between:角色名长度需在 3~20 之间",
 		},
 		"des": []string{

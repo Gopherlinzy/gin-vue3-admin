@@ -80,9 +80,11 @@ func RegisterAPIRoutes(r *gin.Engine) {
 			{
 				usersGroup.GET("", uc.Index)
 				usersGroup.POST("", uc.Store)
-				usersGroup.POST("/role", uc.StoreUserRole)
+				usersGroup.POST("/id", uc.GetUser)
 				usersGroup.POST("/reset", uc.ResetPassword)
 				usersGroup.PUT("", uc.Update)
+				usersGroup.PUT("/status", uc.UpdateUserStatus)
+				usersGroup.PUT("/role", uc.UpdateUserRole)
 				usersGroup.PUT("/email", uc.UpdateEmail)
 				usersGroup.PUT("/phone", uc.UpdatePhone)
 				usersGroup.PUT("/password", uc.UpdatePassword)

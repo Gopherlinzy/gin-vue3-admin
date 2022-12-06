@@ -17,6 +17,7 @@ func IntizationData() {
 		initUserData()
 		initRoleData()
 		initCasbinData()
+		//casbins.NewCasbin().AddPolicy("superAdmin", "/api/v1/users/id", "POST")
 	})
 }
 
@@ -35,9 +36,9 @@ func initUserData() {
 	}
 
 	users := []user.User{
-		{Name: "sly", Email: "123@testing.com", Phone: "00012312312", Password: "123456", City: "Huzhou", Introduction: "帅", Status: true},
-		{Name: "linzy", Email: "123456@testing.com", Phone: "00012345678", Password: "123456", City: "Hangzhou", Introduction: "很帅", Status: true},
-		{Name: "gg", Email: "gggg@testing.com", Phone: "12345678910", Password: "123456", City: "yingdu", Introduction: "长得不咋地", Status: true},
+		{Name: "sly", Email: "123@testing.com", Phone: "00012312312", Password: "123456", City: "Huzhou", Introduction: "帅", Status: true, RoleName: "superAdmin"},
+		{Name: "linzy", Email: "123456@testing.com", Phone: "00012345678", Password: "123456", City: "Hangzhou", Introduction: "很帅", Status: true, RoleName: "admin"},
+		{Name: "gg", Email: "gggg@testing.com", Phone: "12345678910", Password: "123456", City: "yingdu", Introduction: "长得不咋地", Status: true, RoleName: "user"},
 	}
 
 	database.Gohub_DB.Create(&users)
@@ -77,15 +78,18 @@ func initCasbinData() {
 	}
 
 	policies := []gormadapter.CasbinRule{
+		// 超级管理员
 		{Ptype: "g", V0: "sly", V1: "superAdmin"},
 		{Ptype: "g", V0: "linzy", V1: "admin"},
 		{Ptype: "g", V0: "gg", V1: "user"},
 
 		{Ptype: "p", V0: "superAdmin", V1: "/api/v1/users", V2: "GET"},
 		{Ptype: "p", V0: "superAdmin", V1: "/api/v1/users", V2: "POST"},
-		{Ptype: "p", V0: "superAdmin", V1: "/api/v1/users/role", V2: "POST"},
+		{Ptype: "p", V0: "superAdmin", V1: "/api/v1/users/id", V2: "POST"},
 		{Ptype: "p", V0: "superAdmin", V1: "/api/v1/users/reset", V2: "POST"},
 		{Ptype: "p", V0: "superAdmin", V1: "/api/v1/users", V2: "PUT"},
+		{Ptype: "p", V0: "superAdmin", V1: "/api/v1/users/status", V2: "PUT"},
+		{Ptype: "p", V0: "superAdmin", V1: "/api/v1/users/role", V2: "PUT"},
 		{Ptype: "p", V0: "superAdmin", V1: "/api/v1/users/profile", V2: "PUT"},
 		{Ptype: "p", V0: "superAdmin", V1: "/api/v1/users/email", V2: "PUT"},
 		{Ptype: "p", V0: "superAdmin", V1: "/api/v1/users/phone", V2: "PUT"},
@@ -103,6 +107,7 @@ func initCasbinData() {
 		{Ptype: "p", V0: "superAdmin", V1: "/api/v1/roles", V2: "PUT"},
 		{Ptype: "p", V0: "superAdmin", V1: "/api/v1/roles", V2: "DELETE"},
 
+		// 管理员
 		{Ptype: "p", V0: "admin", V1: "/api/v1/users", V2: "GET"},
 		{Ptype: "p", V0: "admin", V1: "/api/v1/users", V2: "POST"},
 		{Ptype: "p", V0: "admin", V1: "/api/v1/users", V2: "PUT"},
@@ -120,21 +125,22 @@ func initCasbinData() {
 		{Ptype: "p", V0: "admin", V1: "/api/v1/roles", V2: "GET"},
 		{Ptype: "p", V0: "admin", V1: "/api/v1/roles", V2: "POST"},
 
+		// 普通用户
 		{Ptype: "p", V0: "user", V1: "/api/v1/users", V2: "GET"},
-		{Ptype: "p", V0: "user", V1: "/api/v1/users", V2: "POST"},
-		{Ptype: "p", V0: "user", V1: "/api/v1/users/role", V2: "POST"},
-		{Ptype: "p", V0: "user", V1: "/api/v1/users", V2: "PUT"},
 		{Ptype: "p", V0: "user", V1: "/api/v1/users/profile", V2: "PUT"},
 		{Ptype: "p", V0: "user", V1: "/api/v1/users/email", V2: "PUT"},
 		{Ptype: "p", V0: "user", V1: "/api/v1/users/phone", V2: "PUT"},
 		{Ptype: "p", V0: "user", V1: "/api/v1/users/password", V2: "PUT"},
 		{Ptype: "p", V0: "user", V1: "/api/v1/users/avatar", V2: "PUT"},
-		{Ptype: "p", V0: "user", V1: "/api/v1/users", V2: "DELETE"},
 
 		{Ptype: "p", V0: "user", V1: "/api/v1/categories", V2: "GET"},
 		{Ptype: "p", V0: "user", V1: "/api/v1/categories", V2: "POST"},
 		{Ptype: "p", V0: "user", V1: "/api/v1/categories", V2: "PUT"},
 		{Ptype: "p", V0: "user", V1: "/api/v1/categories", V2: "DELETE"},
+
+		// 游客
+		{Ptype: "p", V0: "guest", V1: "/api/v1/users", V2: "GET"},
+		{Ptype: "p", V0: "guest", V1: "/api/v1/categories", V2: "GET"},
 	}
 
 	database.Gohub_DB.Model(&gormadapter.CasbinRule{}).Create(policies)

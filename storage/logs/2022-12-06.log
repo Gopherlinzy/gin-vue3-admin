@@ -979,3 +979,416 @@ net/http.serverHandler.ServeHTTP
 	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
 net/http.(*conn).serve
 	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-06 11:51:05	[31mERROR[0m	gorm@v1.24.1/callbacks.go:134	Database Error	{"sql": "INSERT INTO `users` (`name`,`email`,`phone`,`password`,`city`,`introduction`,`avatar`,`status`,`role_name`,`created_at`,`updated_at`,`deleted_at`) VALUES ('eslHFLR','SDbvmnH@AHdyQRC.biz','63205891952','$2a$12$UT3ewIK.UHMR51aO9T3qKeTat69/rgTZrCnsogPh/wCr.9NOY5HXa','MGbCx','Aut sit accusantium consequatur perferendis voluptatem.','',true,'user','2022-12-06 11:51:05.067','2022-12-06 11:51:05.067',NULL),('oqThtGZ','rlBOVAB@sfmTfLl.biz','61837908244','$2a$12$.Us6TilWM4JRbjFkrkoZb.JioWUtcyA1muyeXc1BkeKfnj8fRjmFK','ORyst','Sit accusantium perferendis aut voluptatem consequatur.','',true,'user','2022-12-06 11:51:05.067','2022-12-06 11:51:05.067',NULL),('yMQpduu','aaChhrt@hnjjBMd.ru','66008078047','$2a$12$7q/kMi8XiuR4GUoPKrzX6OTv/doY243PZgg8PH4k8484e6djgw6.2','WthLv','Voluptatem perferendis consequatur sit accusantium aut.','',false,'user','2022-12-06 11:51:05.067','2022-12-06 11:51:05.067',NULL),('YKpfrHu','CEjiZIm@fLxyiUE.biz','38026079973','$2a$12$AS0NTwTaZBQ90QEHkKpJA.Kr.ruaHqzBZSWXer8wTb/KI/huZwnCG','DrTqX','Aut consequatur voluptatem perferendis sit accusantium.','',false,'user','2022-12-06 11:51:05.067','2022-12-06 11:51:05.067',NULL),('UkAbRIU','nOhlTPU@jBJRQIT.ru','41670156261','$2a$12$iKZtBVDezICbG6eo.dOpo.LWiv2wldonZQ7So2DCxsWvwRQxZiehO','pGTNF','Sit accusantium consequatur aut perferendis voluptatem.','',true,'user','2022-12-06 11:51:05.067','2022-12-06 11:51:05.067',NULL),('GbHNNTw','pgNvLbZ@UgDdMoE.ru','56287375387','$2a$12$cUg.qZ0VVjD2nnhMKVAhHOxZsypTr.xqROjwAfNoW.R2sscycEZQO','eApjm','Sit aut voluptatem consequatur accusantium perferendis.','',false,'user','2022-12-06 11:51:05.067','2022-12-06 11:51:05.067',NULL),('bsMMdZi','ndIXgAN@uqxgSbu.org','46369454602','$2a$12$4ksgvcs6ZPvSHB7x4dxXEuCIOWvN/LSmGjnEgjB9/blJjphBJ9HwS','AqIMt','Voluptatem perferendis consequatur sit aut accusantium.','',false,'user','2022-12-06 11:51:05.067','2022-12-06 11:51:05.067',NULL),('uvrEHsN','cvVFtjn@UoTqewB.com','69491575274','$2a$12$zHDqyDp6OuQvtMPpLctuvuKda1EzSvSkS2JeUCwVfaTbo5qHHWijK','Jaqta','Voluptatem consequatur sit accusantium aut perferendis.','',true,'user','2022-12-06 11:51:05.067','2022-12-06 11:51:05.067',NULL),('uDdXxlH','XPstPWv@heqljLx.biz','14908277052','$2a$12$iAUCItN7wwcoeSFEfR7zkeTmmSiQ0OgNkB2HjN/bRo/TkGhPqpKe2','ZIYfn','Consequatur voluptatem sit accusantium perferendis aut.','',true,'user','2022-12-06 11:51:05.067','2022-12-06 11:51:05.067',NULL),('ylTEGrC','OgYIQxP@uUKkiim.ru','16377174646','$2a$12$We/2hUFxPxJBOFtAOZaSfe4jvdR9zAjRO9A7yzxqiFksTNZGb2eKe','UaFHl','Consequatur aut accusantium voluptatem perferendis sit.','',true,'user','2022-12-06 11:51:05.067','2022-12-06 11:51:05.067',NULL)", "time": "2640.000ms", "rows": 0, "error": "Error 1062: Duplicate entry 'user' for key 'users.role_name'"}
+gorm.io/gorm.(*processor).Execute
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+gorm.io/gorm.(*DB).Create
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/finisher_api.go:24
+github.com/Gopherlinzy/gohub/database/seeders.init.3.func1
+	/Users/admin/go/src/gin-vue3-admin/database/seeders/user_seeder.go:23
+github.com/Gopherlinzy/gohub/pkg/seed.RunAll
+	/Users/admin/go/src/gin-vue3-admin/pkg/seed/seeder.go:58
+github.com/Gopherlinzy/gohub/app/cmd.runSeeders
+	/Users/admin/go/src/gin-vue3-admin/app/cmd/seed.go:30
+github.com/spf13/cobra.(*Command).execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:920
+github.com/spf13/cobra.(*Command).ExecuteC
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:1044
+github.com/spf13/cobra.(*Command).Execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:968
+main.main
+	/Users/admin/go/src/gin-vue3-admin/main.go:64
+runtime.main
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/proc.go:250
+2022-12-06 11:51:05	[31mERROR[0m	seeders/user_seeder.go:27	Error Occurred:	{"error": "Error 1062: Duplicate entry 'user' for key 'users.role_name'"}
+github.com/Gopherlinzy/gohub/database/seeders.init.3.func1
+	/Users/admin/go/src/gin-vue3-admin/database/seeders/user_seeder.go:27
+github.com/Gopherlinzy/gohub/pkg/seed.RunAll
+	/Users/admin/go/src/gin-vue3-admin/pkg/seed/seeder.go:58
+github.com/Gopherlinzy/gohub/app/cmd.runSeeders
+	/Users/admin/go/src/gin-vue3-admin/app/cmd/seed.go:30
+github.com/spf13/cobra.(*Command).execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:920
+github.com/spf13/cobra.(*Command).ExecuteC
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:1044
+github.com/spf13/cobra.(*Command).Execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:968
+main.main
+	/Users/admin/go/src/gin-vue3-admin/main.go:64
+runtime.main
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/proc.go:250
+2022-12-06 11:57:05	[31mERROR[0m	gorm@v1.24.1/callbacks.go:134	Database Error	{"sql": "INSERT INTO `users` (`name`,`email`,`phone`,`password`,`city`,`introduction`,`avatar`,`status`,`role_name`,`created_at`,`updated_at`,`deleted_at`) VALUES ('ohsTVRh','yJHnTlJ@PxOlAxU.org','04373408351','$2a$12$yxxjtVieyOMQ3psStsNM/OoxAy1BnOJQh7hcFKhtjk38MhW6eYJUy','VXGIK','Sit consequatur aut accusantium voluptatem perferendis.','',true,'user','2022-12-06 11:57:05.03','2022-12-06 11:57:05.03',NULL),('HonucCq','QZkSexd@GcJPauc.net','56942195946','$2a$12$Uy/MoH.3K/ImujvZ5h8Q6u1isyzRLUjIfYcj2.tJmk0MHxnfsCQ/S','cTkPH','Accusantium voluptatem sit perferendis aut consequatur.','',false,'user','2022-12-06 11:57:05.03','2022-12-06 11:57:05.03',NULL),('XRMkPky','GgrAhRW@pKrZXkq.info','63648141996','$2a$12$33btg5ALE6Y15g92UoCA0.T5dECUFPv9rO9v2rMT.H7PHzrz0feRq','nuQyV','Consequatur aut sit accusantium perferendis voluptatem.','',true,'user','2022-12-06 11:57:05.03','2022-12-06 11:57:05.03',NULL),('KCHCAKO','vSIpnrR@LNmkgij.biz','55942324268','$2a$12$OPTTZeZbljLH7As4WxkG9OBBuSAf4OH1D6vh/pJYNK8edPcaGmdli','DBBno','Consequatur accusantium sit perferendis voluptatem aut.','',true,'user','2022-12-06 11:57:05.03','2022-12-06 11:57:05.03',NULL),('EhATslb','KOBfovM@LsglTws.com','19476889663','$2a$12$sYlWY00wDgj04XNdfGu5nO88FJmzhHet7vCZ8DrVeCBIZWlIJwKoG','DlMjm','Consequatur sit aut perferendis accusantium voluptatem.','',true,'user','2022-12-06 11:57:05.03','2022-12-06 11:57:05.03',NULL),('rgkvAyH','HjyBdlm@MjgwbLH.info','39168484007','$2a$12$5KGtpL5ks0oBuV88C8BBIO9RZFPgVEgeFS2EANX/bVSAoXe9PZEDq','GUHDY','Accusantium voluptatem perferendis sit aut consequatur.','',true,'user','2022-12-06 11:57:05.03','2022-12-06 11:57:05.03',NULL),('USkVjxN','obRJNyD@KJhcXSX.info','86544058315','$2a$12$qpX9zEnKp1IN2m1d7028UOB6y9aGgsTjIIygmxAIX6eN.Zc4x1Vci','KCOGk','Perferendis sit accusantium consequatur aut voluptatem.','',true,'user','2022-12-06 11:57:05.03','2022-12-06 11:57:05.03',NULL),('VDGslKc','OiEhWwR@OLqSVvg.org','74845793819','$2a$12$X0C/l1mkXaTQ45mnK5BXj.cErjPg7m5KTCgwpMsnVeyUHKJ39aOJG','QKGUo','Aut accusantium voluptatem perferendis sit consequatur.','',false,'user','2022-12-06 11:57:05.03','2022-12-06 11:57:05.03',NULL),('gwOZhfa','OosNBjI@gMNroNY.org','26526928389','$2a$12$OE2mb28hgtumZ8OQfOcepuaGvzx6rNyP/NKXkiEdy8Ncgd/dJKZjG','nPFzR','Sit voluptatem aut perferendis accusantium consequatur.','',true,'user','2022-12-06 11:57:05.03','2022-12-06 11:57:05.03',NULL),('TNPlECl','AHiXOUh@TvrostB.net','46795624360','$2a$12$SPPByyXvI.z4ygX7W1iMFOaKMteordF0T4HtYcohylFqb7nm/ul2a','StEqK','Voluptatem sit aut accusantium perferendis consequatur.','',true,'user','2022-12-06 11:57:05.03','2022-12-06 11:57:05.03',NULL)", "time": "2647.000ms", "rows": 0, "error": "Error 1062: Duplicate entry 'user' for key 'users.role_name'"}
+gorm.io/gorm.(*processor).Execute
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+gorm.io/gorm.(*DB).Create
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/finisher_api.go:24
+github.com/Gopherlinzy/gohub/database/seeders.init.3.func1
+	/Users/admin/go/src/gin-vue3-admin/database/seeders/user_seeder.go:23
+github.com/Gopherlinzy/gohub/pkg/seed.RunAll
+	/Users/admin/go/src/gin-vue3-admin/pkg/seed/seeder.go:58
+github.com/Gopherlinzy/gohub/app/cmd.runSeeders
+	/Users/admin/go/src/gin-vue3-admin/app/cmd/seed.go:30
+github.com/spf13/cobra.(*Command).execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:920
+github.com/spf13/cobra.(*Command).ExecuteC
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:1044
+github.com/spf13/cobra.(*Command).Execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:968
+main.main
+	/Users/admin/go/src/gin-vue3-admin/main.go:64
+runtime.main
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/proc.go:250
+2022-12-06 11:57:05	[31mERROR[0m	seeders/user_seeder.go:27	Error Occurred:	{"error": "Error 1062: Duplicate entry 'user' for key 'users.role_name'"}
+github.com/Gopherlinzy/gohub/database/seeders.init.3.func1
+	/Users/admin/go/src/gin-vue3-admin/database/seeders/user_seeder.go:27
+github.com/Gopherlinzy/gohub/pkg/seed.RunAll
+	/Users/admin/go/src/gin-vue3-admin/pkg/seed/seeder.go:58
+github.com/Gopherlinzy/gohub/app/cmd.runSeeders
+	/Users/admin/go/src/gin-vue3-admin/app/cmd/seed.go:30
+github.com/spf13/cobra.(*Command).execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:920
+github.com/spf13/cobra.(*Command).ExecuteC
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:1044
+github.com/spf13/cobra.(*Command).Execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:968
+main.main
+	/Users/admin/go/src/gin-vue3-admin/main.go:64
+runtime.main
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/proc.go:250
+2022-12-06 11:58:52	[31mERROR[0m	gorm@v1.24.1/callbacks.go:134	Database Error	{"sql": "INSERT INTO `users` (`name`,`email`,`phone`,`password`,`city`,`introduction`,`avatar`,`status`,`role_name`,`created_at`,`updated_at`,`deleted_at`) VALUES ('llqvhCb','bmmXUcI@WAnDQLo.com','02194974420','$2a$12$HNL/VmVkiAob6OiBN/WgvefLVFXemAwPGWRcUcfm1Lm.hDTfm0tHq','LYyfn','Perferendis accusantium sit aut voluptatem consequatur.','',true,'user','2022-12-06 11:58:52.147','2022-12-06 11:58:52.147',NULL),('ZTGHwJb','BEDthUt@FisWcuT.org','52153450337','$2a$12$/numX0dhj/uyWqz.S9c3neutqxGstMQMdA4iGZv8MDkeQTNmx2R52','lsUkb','Sit perferendis aut consequatur accusantium voluptatem.','',false,'user','2022-12-06 11:58:52.147','2022-12-06 11:58:52.147',NULL),('mOjaoAR','gPAsLDH@sXPOiCp.com','74791027486','$2a$12$VlotyS.Hn5EttQx7eCvL5.YriTl7yCfWWHHOaazWGZ2WhETA309sO','GLgoJ','Perferendis consequatur voluptatem sit accusantium aut.','',false,'user','2022-12-06 11:58:52.147','2022-12-06 11:58:52.147',NULL),('mfLVykY','TlTQVyA@oPtnjFy.info','37826107085','$2a$12$Ygj31h18IAvI1NGZ7KGRseE4h4/79M6JolSZaYy8LLSRU3lQgdIHW','bOzbH','Accusantium sit consequatur voluptatem perferendis aut.','',false,'user','2022-12-06 11:58:52.147','2022-12-06 11:58:52.147',NULL),('piyOBDo','apBoIpu@cPakkdx.biz','23663072922','$2a$12$ygxB2JRMok2gAxD9W/MgA.4UM0LlKXx4zNQuzlQSngtTMCAKqkzw.','WgXKI','Accusantium perferendis sit aut consequatur voluptatem.','',false,'user','2022-12-06 11:58:52.147','2022-12-06 11:58:52.147',NULL),('SxUerxL','uuLLoDW@CTKfBwX.ru','62635669737','$2a$12$ZR2PLVnGZ1eMk7.zQUkZ.e7r27rUErFwW/9My3gNVnvV5xw8EO2Le','tPjlK','Aut sit voluptatem consequatur perferendis accusantium.','',false,'user','2022-12-06 11:58:52.147','2022-12-06 11:58:52.147',NULL),('waNvXJH','ECqVFZF@gbsckLC.biz','58019510994','$2a$12$yIFaC7QYivrXn.NTiDG.iucgQs4LjOriHFfxiS26brviW1TiLshRa','oiocC','Accusantium voluptatem aut sit consequatur perferendis.','',false,'user','2022-12-06 11:58:52.147','2022-12-06 11:58:52.147',NULL),('fguWAAh','WrUvAYc@OnJXlgi.info','69552318543','$2a$12$ySVBNsuWL6b7HCHLYMJ96ehWMTGyBLe3U8kuwd60v.iR/EW2W9MFe','xIWSM','Perferendis aut sit voluptatem accusantium consequatur.','',false,'user','2022-12-06 11:58:52.147','2022-12-06 11:58:52.147',NULL),('oIKyynn','yfvYAfX@hKiroaD.net','34719791738','$2a$12$Pha5GtuDC7F0qJXM8ZAfW.KcdaubBdKfwyXt6jpn/NOUAO4R0RBta','NIgVg','Aut voluptatem accusantium consequatur perferendis sit.','',false,'user','2022-12-06 11:58:52.147','2022-12-06 11:58:52.147',NULL),('SAsSajc','HVbURDA@JbRnmeT.info','81891978580','$2a$12$uClRC3IXnnrfZvbBw82B8ea9bTQGtlSwLXYdYa9yIGUEVmA8eW7UO','YvVgt','Aut accusantium voluptatem sit perferendis consequatur.','',true,'user','2022-12-06 11:58:52.147','2022-12-06 11:58:52.147',NULL)", "time": "2685.000ms", "rows": 0, "error": "Error 1062: Duplicate entry 'user' for key 'users.role_name'"}
+gorm.io/gorm.(*processor).Execute
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+gorm.io/gorm.(*DB).Create
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/finisher_api.go:24
+github.com/Gopherlinzy/gohub/database/seeders.init.3.func1
+	/Users/admin/go/src/gin-vue3-admin/database/seeders/user_seeder.go:23
+github.com/Gopherlinzy/gohub/pkg/seed.RunAll
+	/Users/admin/go/src/gin-vue3-admin/pkg/seed/seeder.go:58
+github.com/Gopherlinzy/gohub/app/cmd.runSeeders
+	/Users/admin/go/src/gin-vue3-admin/app/cmd/seed.go:30
+github.com/spf13/cobra.(*Command).execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:920
+github.com/spf13/cobra.(*Command).ExecuteC
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:1044
+github.com/spf13/cobra.(*Command).Execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:968
+main.main
+	/Users/admin/go/src/gin-vue3-admin/main.go:64
+runtime.main
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/proc.go:250
+2022-12-06 11:58:52	[31mERROR[0m	seeders/user_seeder.go:27	Error Occurred:	{"error": "Error 1062: Duplicate entry 'user' for key 'users.role_name'"}
+github.com/Gopherlinzy/gohub/database/seeders.init.3.func1
+	/Users/admin/go/src/gin-vue3-admin/database/seeders/user_seeder.go:27
+github.com/Gopherlinzy/gohub/pkg/seed.RunAll
+	/Users/admin/go/src/gin-vue3-admin/pkg/seed/seeder.go:58
+github.com/Gopherlinzy/gohub/app/cmd.runSeeders
+	/Users/admin/go/src/gin-vue3-admin/app/cmd/seed.go:30
+github.com/spf13/cobra.(*Command).execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:920
+github.com/spf13/cobra.(*Command).ExecuteC
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:1044
+github.com/spf13/cobra.(*Command).Execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:968
+main.main
+	/Users/admin/go/src/gin-vue3-admin/main.go:64
+runtime.main
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/proc.go:250
+2022-12-06 14:46:41	[31mERROR[0m	response/response.go:73	Error Occurred:	{"error": "invalid character '}' looking for beginning of object key string"}
+github.com/Gopherlinzy/gohub/pkg/response.BadRequest
+	/Users/admin/go/src/gin-vue3-admin/pkg/response/response.go:73
+github.com/Gopherlinzy/gohub/app/requests.Validate
+	/Users/admin/go/src/gin-vue3-admin/app/requests/requests.go:23
+github.com/Gopherlinzy/gohub/app/http/controllers/api/v1.(*UsersController).Update
+	/Users/admin/go/src/gin-vue3-admin/app/http/controllers/api/v1/users_controller.go:66
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.CasbinAPI.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/casbin.go:36
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.AuthJWT.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/auth_jwt.go:37
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.LimitIP.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:31
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.ForceUA.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-06 16:36:25	[31mERROR[0m	middlewares/recovery.go:51	recovery from panic	{"time": "2022-12-06 16:36:25", "error": "runtime error: invalid memory address or nil pointer dereference", "request": "POST /api/v1/auth/login/using-password HTTP/1.1\r\nHost: 127.0.0.1:8888\r\nConnection: close\r\nAccept: application/json, text/plain, */*\r\nAccept-Encoding: gzip, deflate, br\r\nAccept-Language: zh-CN,zh;q=0.9,en;q=0.8\r\nAuthorization: Bearer null\r\nConnection: close\r\nContent-Length: 101\r\nContent-Type: application/json;charset=UTF-8\r\nOrigin: http://localhost:3000\r\nReferer: http://localhost:3000/\r\nSec-Ch-Ua: \"Google Chrome\";v=\"107\", \"Chromium\";v=\"107\", \"Not=A?Brand\";v=\"24\"\r\nSec-Ch-Ua-Mobile: ?0\r\nSec-Ch-Ua-Platform: \"macOS\"\r\nSec-Fetch-Dest: empty\r\nSec-Fetch-Mode: cors\r\nSec-Fetch-Site: same-origin\r\nUser-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36\r\n\r\n", "stacktrace": "github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1.1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:56\nruntime.gopanic\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/panic.go:884\nruntime.panicmem\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/panic.go:260\nruntime.sigpanic\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/signal_unix.go:835\ngithub.com/Gopherlinzy/gohub/pkg/response.Error\n\t/Users/admin/go/src/gin-vue3-admin/pkg/response/response.go:99\ngithub.com/Gopherlinzy/gohub/app/http/controllers/api/v1/auth.(*LoginController).LoginByPassword\n\t/Users/admin/go/src/gin-vue3-admin/app/http/controllers/api/v1/auth/login_controller.go:55\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.GuestJWT.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/guest_jwt.go:22\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.LimitIP.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:31\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.LimitIP.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:31\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.ForceUA.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/gin-gonic/gin.(*Engine).handleHTTPRequest\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616\ngithub.com/gin-gonic/gin.(*Engine).ServeHTTP\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572\nnet/http.serverHandler.ServeHTTP\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947\nnet/http.(*conn).serve\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991"}
+github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1.1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:51
+runtime.gopanic
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/panic.go:884
+runtime.panicmem
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/panic.go:260
+runtime.sigpanic
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/signal_unix.go:835
+github.com/Gopherlinzy/gohub/pkg/response.Error
+	/Users/admin/go/src/gin-vue3-admin/pkg/response/response.go:99
+github.com/Gopherlinzy/gohub/app/http/controllers/api/v1/auth.(*LoginController).LoginByPassword
+	/Users/admin/go/src/gin-vue3-admin/app/http/controllers/api/v1/auth/login_controller.go:55
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.GuestJWT.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/guest_jwt.go:22
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.LimitIP.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:31
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.LimitIP.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:31
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.ForceUA.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-06 16:36:25	[31mERROR[0m	middlewares/logger.go:75	HTTP Error 500	{"status": 500, "request": "POST /api/v1/auth/login/using-password", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "328.000ms", "Request Body": "{\"login_id\":\"gggg\",\"password\":\"123456\",\"captcha_id\":\"xHN2s8cH2Aqm9R2qkSA8\",\"captcha_answer\":\"2h1mxs\"}", "Response Body": "{\"message\":\"服务器内部错误，请稍后再试\"}"}
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:75
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-06 16:37:01	[31mERROR[0m	middlewares/recovery.go:51	recovery from panic	{"time": "2022-12-06 16:37:01", "error": "runtime error: invalid memory address or nil pointer dereference", "request": "POST /api/v1/auth/login/using-password HTTP/1.1\r\nHost: localhost:8888\r\nAccept: */*\r\nAccept-Encoding: gzip, deflate, br\r\nConnection: keep-alive\r\nContent-Length: 124\r\nContent-Type: application/json\r\nPostman-Token: 686fec17-7e76-4430-ae87-a4d5c7deee16\r\nUser-Agent: PostmanRuntime/7.29.2\r\n\r\n", "stacktrace": "github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1.1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:56\nruntime.gopanic\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/panic.go:884\nruntime.panicmem\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/panic.go:260\nruntime.sigpanic\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/signal_unix.go:835\ngithub.com/Gopherlinzy/gohub/pkg/response.Error\n\t/Users/admin/go/src/gin-vue3-admin/pkg/response/response.go:99\ngithub.com/Gopherlinzy/gohub/app/http/controllers/api/v1/auth.(*LoginController).LoginByPassword\n\t/Users/admin/go/src/gin-vue3-admin/app/http/controllers/api/v1/auth/login_controller.go:55\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.GuestJWT.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/guest_jwt.go:22\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.LimitIP.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:31\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.LimitIP.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:31\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.ForceUA.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/gin-gonic/gin.(*Engine).handleHTTPRequest\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616\ngithub.com/gin-gonic/gin.(*Engine).ServeHTTP\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572\nnet/http.serverHandler.ServeHTTP\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947\nnet/http.(*conn).serve\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991"}
+github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1.1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:51
+runtime.gopanic
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/panic.go:884
+runtime.panicmem
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/panic.go:260
+runtime.sigpanic
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/signal_unix.go:835
+github.com/Gopherlinzy/gohub/pkg/response.Error
+	/Users/admin/go/src/gin-vue3-admin/pkg/response/response.go:99
+github.com/Gopherlinzy/gohub/app/http/controllers/api/v1/auth.(*LoginController).LoginByPassword
+	/Users/admin/go/src/gin-vue3-admin/app/http/controllers/api/v1/auth/login_controller.go:55
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.GuestJWT.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/guest_jwt.go:22
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.LimitIP.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:31
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.LimitIP.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:31
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.ForceUA.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-06 16:37:01	[31mERROR[0m	middlewares/logger.go:75	HTTP Error 500	{"status": 500, "request": "POST /api/v1/auth/login/using-password", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "311.000ms", "Request Body": "{\r\n    \"login_id\":\"gggg\",\r\n    \"password\":\"123456\",\r\n    \"captcha_id\":\"captcha_skip_test\",\r\n    \"captcha_answer\":\"648022\"\r\n}", "Response Body": "{\"message\":\"服务器内部错误，请稍后再试\"}"}
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:75
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-06 16:38:24	[31mERROR[0m	middlewares/recovery.go:51	recovery from panic	{"time": "2022-12-06 16:38:24", "error": "runtime error: invalid memory address or nil pointer dereference", "request": "POST /api/v1/auth/login/using-password HTTP/1.1\r\nHost: localhost:8888\r\nAccept: */*\r\nAccept-Encoding: gzip, deflate, br\r\nConnection: keep-alive\r\nContent-Length: 124\r\nContent-Type: application/json\r\nPostman-Token: d4343700-3949-4036-90dd-5ecdf130ad81\r\nUser-Agent: PostmanRuntime/7.29.2\r\n\r\n", "stacktrace": "github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1.1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:56\nruntime.gopanic\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/panic.go:884\nruntime.panicmem\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/panic.go:260\nruntime.sigpanic\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/signal_unix.go:835\ngithub.com/Gopherlinzy/gohub/pkg/response.Error\n\t/Users/admin/go/src/gin-vue3-admin/pkg/response/response.go:99\ngithub.com/Gopherlinzy/gohub/app/http/controllers/api/v1/auth.(*LoginController).LoginByPassword\n\t/Users/admin/go/src/gin-vue3-admin/app/http/controllers/api/v1/auth/login_controller.go:55\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.GuestJWT.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/guest_jwt.go:22\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.LimitIP.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:31\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.LimitIP.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:31\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.ForceUA.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/gin-gonic/gin.(*Engine).handleHTTPRequest\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616\ngithub.com/gin-gonic/gin.(*Engine).ServeHTTP\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572\nnet/http.serverHandler.ServeHTTP\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947\nnet/http.(*conn).serve\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991"}
+github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1.1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:51
+runtime.gopanic
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/panic.go:884
+runtime.panicmem
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/panic.go:260
+runtime.sigpanic
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/signal_unix.go:835
+github.com/Gopherlinzy/gohub/pkg/response.Error
+	/Users/admin/go/src/gin-vue3-admin/pkg/response/response.go:99
+github.com/Gopherlinzy/gohub/app/http/controllers/api/v1/auth.(*LoginController).LoginByPassword
+	/Users/admin/go/src/gin-vue3-admin/app/http/controllers/api/v1/auth/login_controller.go:55
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.GuestJWT.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/guest_jwt.go:22
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.LimitIP.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:31
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.LimitIP.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:31
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.ForceUA.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-06 16:38:24	[31mERROR[0m	middlewares/logger.go:75	HTTP Error 500	{"status": 500, "request": "POST /api/v1/auth/login/using-password", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "306.000ms", "Request Body": "{\r\n    \"login_id\":\"gggg\",\r\n    \"password\":\"123456\",\r\n    \"captcha_id\":\"captcha_skip_test\",\r\n    \"captcha_answer\":\"648022\"\r\n}", "Response Body": "{\"message\":\"服务器内部错误，请稍后再试\"}"}
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:75
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-06 16:39:43	[31mERROR[0m	response/response.go:89	Error Occurred:	{"error": "账号异常"}
+github.com/Gopherlinzy/gohub/pkg/response.Error
+	/Users/admin/go/src/gin-vue3-admin/pkg/response/response.go:89
+github.com/Gopherlinzy/gohub/app/http/controllers/api/v1/auth.(*LoginController).LoginByPassword
+	/Users/admin/go/src/gin-vue3-admin/app/http/controllers/api/v1/auth/login_controller.go:56
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.GuestJWT.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/guest_jwt.go:22
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.LimitIP.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:31
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.LimitIP.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:31
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.ForceUA.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-06 16:39:59	[31mERROR[0m	response/response.go:89	Error Occurred:	{"error": "账号异常"}
+github.com/Gopherlinzy/gohub/pkg/response.Error
+	/Users/admin/go/src/gin-vue3-admin/pkg/response/response.go:89
+github.com/Gopherlinzy/gohub/app/http/controllers/api/v1/auth.(*LoginController).LoginByPassword
+	/Users/admin/go/src/gin-vue3-admin/app/http/controllers/api/v1/auth/login_controller.go:56
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.GuestJWT.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/guest_jwt.go:22
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.LimitIP.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:31
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.LimitIP.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:31
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.ForceUA.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991

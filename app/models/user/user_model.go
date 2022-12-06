@@ -1,6 +1,7 @@
 package user
 
 import (
+	"errors"
 	"github.com/Gopherlinzy/gohub/app/models"
 	casbins "github.com/Gopherlinzy/gohub/pkg/casbin"
 	"github.com/Gopherlinzy/gohub/pkg/database"
@@ -23,12 +24,9 @@ type User struct {
 
 	Status bool `json:"status,omitempty"`
 
-	models.CommonTimestampsField
-}
-
-type UserRole struct {
-	Name     string `json:"name,omitempty"`
 	RoleName string `json:"role_name,omitempty"`
+
+	models.CommonTimestampsField
 }
 
 // Create 创建用户，通过 User.ID 来判断是否创建成功
@@ -46,17 +44,23 @@ func (userModel *User) Save() (rowsAffected int64) {
 	return result.RowsAffected
 }
 
-func (userRoleModel *UserRole) AddRole() error {
+func (userRoleModel *User) AddRole() error {
 	return casbins.NewCasbin().AddUserRole(userRoleModel.Name, userRoleModel.RoleName)
 }
 
-func (userRoleModel *UserRole) UpdateRole() error {
+// UpdateRole 更新用户的所属角色
+func (userRoleModel *User) UpdateRole(oldName, newRole string) error {
 	cs := casbins.NewCasbin()
-	role := cs.GetRolesForUser(userRoleModel.Name)
-	if len(role) == 0 {
-		userRoleModel.AddRole()
+	oldRole := userRoleModel.RoleName
+	userRoleModel.RoleName = newRole
+	rowsAffected := userRoleModel.Save()
+	if rowsAffected == 0 {
+		return errors.New("更新用户的所属角色失败")
 	}
-	err := cs.UpdateUserRole(userRoleModel.Name, role[0], userRoleModel.RoleName)
+	err := cs.UpdateUserRole(oldName, userRoleModel.Name, oldRole, newRole)
+	if err != nil {
+		return err
+	}
 	err = cs.Enforcer.InvalidateCache()
 	if err != nil {
 		return err
