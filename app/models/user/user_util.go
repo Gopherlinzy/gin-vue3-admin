@@ -43,7 +43,7 @@ func GetByPhone(phone string) (userModel User) {
 
 // Get 通过 ID 获取用户
 func Get(idstr string) (userModel User) {
-	database.Gohub_DB.Where("id", idstr).First(&userModel)
+	database.Gohub_DB.Where("id = ?", idstr).First(&userModel)
 	return
 }
 

@@ -1,0 +1,981 @@
+2022-12-06 09:51:56	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 09:51:57	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "1.000ms", "rows": 1}
+2022-12-06 09:51:57	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'users' AND table_type = 'BASE TABLE'", "time": "2.000ms", "rows": -1}
+2022-12-06 09:51:57	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "1.000ms", "rows": 1}
+2022-12-06 09:51:57	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 09:51:57	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 09:51:57	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "1.000ms", "rows": 1}
+2022-12-06 09:51:57	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'roles' AND table_type = 'BASE TABLE'", "time": "1.000ms", "rows": -1}
+2022-12-06 09:51:57	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `roles` WHERE `roles`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 09:51:57	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `roles` WHERE `roles`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 09:51:57	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 09:51:57	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-06 09:51:57	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND table_type = 'BASE TABLE'", "time": "1.000ms", "rows": -1}
+2022-12-06 09:51:57	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 09:51:57	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-06 09:51:57	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT * FROM `casbin_rule` LIMIT 1", "time": "0.000ms", "rows": -1}
+2022-12-06 09:51:57	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' ORDER BY ORDINAL_POSITION", "time": "1.000ms", "rows": -1}
+2022-12-06 09:51:57	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 09:51:57	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-06 09:51:57	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND index_name = 'idx_casbin_rule'", "time": "1.000ms", "rows": -1}
+2022-12-06 09:51:57	[35mDEBUG[0m	v2@v2.58.0/enforcer.go:179	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 47}
+2022-12-06 09:51:57	[35mDEBUG[0m	v2@v2.58.0/enforcer_cached.go:96	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 47}
+2022-12-06 09:51:57	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `casbin_rule`", "time": "0.000ms", "rows": 1}
+2022-12-06 09:51:57	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `casbin_rule`", "time": "0.000ms", "rows": 1}
+2022-12-06 09:52:07	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "1.000ms", "rows": 1}
+2022-12-06 09:52:07	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'superAdmin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "1.000ms", "rows": 1}
+2022-12-06 09:52:07	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE email = 'test@testing.com' && isnull(deleted_at)", "time": "0.000ms", "rows": 1}
+2022-12-06 09:52:07	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE phone = '00088888888' && isnull(deleted_at)", "time": "1.000ms", "rows": 1}
+2022-12-06 09:52:07	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE name = 'test' && isnull(deleted_at)", "time": "1.000ms", "rows": 1}
+2022-12-06 09:52:08	[33mWARN[0m	gorm@v1.24.1/callbacks.go:134	Database Slow Log	{"sql": "INSERT INTO `users` (`name`,`email`,`phone`,`password`,`city`,`introduction`,`avatar`,`status`,`created_at`,`updated_at`,`deleted_at`) VALUES ('test','test@testing.com','00088888888','$2a$12$56LwWSQAk/NK2sCZW2AUB.LoADh/./WotRA5au.LVHqDq.vuUrzIO','huoxing','suibianxiexie','',true,'2022-12-06 09:52:08.037','2022-12-06 09:52:08.037',NULL)", "time": "295.000ms", "rows": 1}
+2022-12-06 09:52:08	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "INSERT INTO `users` (`name`,`email`,`phone`,`password`,`city`,`introduction`,`avatar`,`status`,`created_at`,`updated_at`,`deleted_at`) VALUES ('test','test@testing.com','00088888888','$2a$12$56LwWSQAk/NK2sCZW2AUB.LoADh/./WotRA5au.LVHqDq.vuUrzIO','huoxing','suibianxiexie','',true,'2022-12-06 09:52:08.037','2022-12-06 09:52:08.037',NULL)", "time": "295.000ms", "rows": 1}
+2022-12-06 09:52:08	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 201, "request": "POST /api/v1/users", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "303.000ms", "Request Body": "{\n    \"name\": \"test\",\n    \"email\":\"test@testing.com\",\n    \"phone\":\"00088888888\",\n    \"password\":\"123456\",\n    \"city\":\"huoxing\",\n    \"introduction\":\"suibianxiexie\",\n    \"status\":\"true\"\n}", "Response Body": "{\"data\":{\"id\":45,\"name\":\"test\",\"email\":\"test@testing.com\",\"phone\":\"00088888888\",\"city\":\"huoxing\",\"introduction\":\"suibianxiexie\",\"status\":true,\"created_at\":\"2022-12-06T09:52:08.037+08:00\",\"updated_at\":\"2022-12-06T09:52:08.037+08:00\",\"deleted_at\":null},\"success\":true}"}
+2022-12-06 09:53:14	[33mWARN[0m	middlewares/logger.go:72	HTTP Warning 404	{"status": 404, "request": "PUT /api/v1/users", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "0.000ms", "Request Body": "{\r\n    \"id\":\"45\",\r\n    \"name\": \"ggggg\",\r\n    \"email\":\"1@test.com\",\r\n    \"phone\":\"00000000000\",\r\n    \"password\":\"111111\",\r\n    \"introduction\": \"这里是个人描述\",\r\n    \"city\": \"湖州\"\r\n}", "Response Body": "{\"error_code\":404,\"error_message\":\"路由未定义，请确认 url 和请求方法是否正确。\"}"}
+2022-12-06 09:56:02	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 09:56:02	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-06 09:56:02	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'users' AND table_type = 'BASE TABLE'", "time": "0.000ms", "rows": -1}
+2022-12-06 09:56:02	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 09:56:02	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 09:56:02	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 09:56:02	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-06 09:56:02	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'roles' AND table_type = 'BASE TABLE'", "time": "0.000ms", "rows": -1}
+2022-12-06 09:56:02	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `roles` WHERE `roles`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 09:56:02	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `roles` WHERE `roles`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 09:56:02	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 09:56:02	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-06 09:56:02	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND table_type = 'BASE TABLE'", "time": "0.000ms", "rows": -1}
+2022-12-06 09:56:02	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "CREATE TABLE `casbin_rule` (`id` bigint unsigned AUTO_INCREMENT,`ptype` varchar(100),`v0` varchar(100),`v1` varchar(100),`v2` varchar(100),`v3` varchar(100),`v4` varchar(100),`v5` varchar(100),PRIMARY KEY (`id`))", "time": "6.000ms", "rows": 0}
+2022-12-06 09:56:02	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 09:56:02	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-06 09:56:02	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND index_name = 'idx_casbin_rule'", "time": "0.000ms", "rows": -1}
+2022-12-06 09:56:02	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "CREATE UNIQUE INDEX idx_casbin_rule ON casbin_rule (ptype,v0,v1,v2,v3,v4,v5)", "time": "7.000ms", "rows": 0}
+2022-12-06 09:56:02	[35mDEBUG[0m	v2@v2.58.0/enforcer.go:179	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 0}
+2022-12-06 09:56:02	[35mDEBUG[0m	v2@v2.58.0/enforcer_cached.go:96	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 0}
+2022-12-06 09:56:02	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `casbin_rule`", "time": "0.000ms", "rows": 0}
+2022-12-06 09:56:02	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `casbin_rule`", "time": "0.000ms", "rows": 1}
+2022-12-06 09:56:02	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "INSERT INTO `casbin_rule` (`ptype`,`v0`,`v1`,`v2`,`v3`,`v4`,`v5`) VALUES ('g','sly','superAdmin','','','',''),('g','linzy','admin','','','',''),('g','gg','user','','','',''),('p','superAdmin','/api/v1/users','GET','','',''),('p','superAdmin','/api/v1/users','POST','','',''),('p','superAdmin','/api/v1/users/role','POST','','',''),('p','superAdmin','/api/v1/users/reset','POST','','',''),('p','superAdmin','/api/v1/users','PUT','','',''),('p','superAdmin','/api/v1/users/profile','PUT','','',''),('p','superAdmin','/api/v1/users/email','PUT','','',''),('p','superAdmin','/api/v1/users/phone','PUT','','',''),('p','superAdmin','/api/v1/users/password','PUT','','',''),('p','superAdmin','/api/v1/users/avatar','PUT','','',''),('p','superAdmin','/api/v1/users','DELETE','','',''),('p','superAdmin','/api/v1/categories','GET','','',''),('p','superAdmin','/api/v1/categories','POST','','',''),('p','superAdmin','/api/v1/categories','PUT','','',''),('p','superAdmin','/api/v1/categories','DELETE','','',''),('p','superAdmin','/api/v1/roles','GET','','',''),('p','superAdmin','/api/v1/roles','POST','','',''),('p','superAdmin','/api/v1/roles','PUT','','',''),('p','superAdmin','/api/v1/roles','DELETE','','',''),('p','admin','/api/v1/users','GET','','',''),('p','admin','/api/v1/users','POST','','',''),('p','admin','/api/v1/users','PUT','','',''),('p','admin','/api/v1/users/profile','PUT','','',''),('p','admin','/api/v1/users/email','PUT','','',''),('p','admin','/api/v1/users/phone','PUT','','',''),('p','admin','/api/v1/users/password','PUT','','',''),('p','admin','/api/v1/users/avatar','PUT','','',''),('p','admin','/api/v1/categories','GET','','',''),('p','admin','/api/v1/categories','POST','','',''),('p','admin','/api/v1/categories','PUT','','',''),('p','admin','/api/v1/categories','DELETE','','',''),('p','admin','/api/v1/roles','GET','','',''),('p','admin','/api/v1/roles','POST','','',''),('p','user','/api/v1/users','GET','','',''),('p','user','/api/v1/users','POST','','',''),('p','user','/api/v1/users/role','POST','','',''),('p','user','/api/v1/users','PUT','','',''),('p','user','/api/v1/users/profile','PUT','','',''),('p','user','/api/v1/users/email','PUT','','',''),('p','user','/api/v1/users/phone','PUT','','',''),('p','user','/api/v1/users/password','PUT','','',''),('p','user','/api/v1/users/avatar','PUT','','',''),('p','user','/api/v1/users','DELETE','','',''),('p','user','/api/v1/categories','GET','','',''),('p','user','/api/v1/categories','POST','','',''),('p','user','/api/v1/categories','PUT','','',''),('p','user','/api/v1/categories','DELETE','','','')", "time": "1.000ms", "rows": 50}
+2022-12-06 09:56:02	[35mDEBUG[0m	v2@v2.58.0/enforcer_cached.go:96	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 50}
+2022-12-06 09:56:11	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '2' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 09:56:11	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'admin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 09:56:11	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE id= '45'", "time": "0.000ms", "rows": 1}
+2022-12-06 09:56:11	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE email = '1@test.com' && isnull(deleted_at)", "time": "1.000ms", "rows": 1}
+2022-12-06 09:56:11	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE phone = '00000000000' && isnull(deleted_at)", "time": "0.000ms", "rows": 1}
+2022-12-06 09:56:11	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE name = 'ggggg' && isnull(deleted_at) AND id != '2'", "time": "0.000ms", "rows": 1}
+2022-12-06 09:56:11	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '45' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 09:56:11	[33mWARN[0m	gorm@v1.24.1/callbacks.go:134	Database Slow Log	{"sql": "UPDATE `users` SET `name`='ggggg',`email`='1@test.com',`phone`='00000000000',`password`='$2a$12$5bx67.oYBlv43MKLLuBlROVX9drSvo6hD5dmiWoDTs6wDmldnHVTS',`city`='湖州',`introduction`='这里是个人描述',`avatar`='',`status`=true,`created_at`='2022-12-06 09:52:08',`updated_at`='2022-12-06 09:56:11.538',`deleted_at`=NULL WHERE `users`.`deleted_at` IS NULL AND `id` = 45", "time": "309.000ms", "rows": 1}
+2022-12-06 09:56:11	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "UPDATE `users` SET `name`='ggggg',`email`='1@test.com',`phone`='00000000000',`password`='$2a$12$5bx67.oYBlv43MKLLuBlROVX9drSvo6hD5dmiWoDTs6wDmldnHVTS',`city`='湖州',`introduction`='这里是个人描述',`avatar`='',`status`=true,`created_at`='2022-12-06 09:52:08',`updated_at`='2022-12-06 09:56:11.538',`deleted_at`=NULL WHERE `users`.`deleted_at` IS NULL AND `id` = 45", "time": "309.000ms", "rows": 1}
+2022-12-06 09:56:11	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "PUT /api/v1/users", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "317.000ms", "Request Body": "{\r\n    \"id\":\"45\",\r\n    \"name\": \"ggggg\",\r\n    \"email\":\"1@test.com\",\r\n    \"phone\":\"00000000000\",\r\n    \"password\":\"111111\",\r\n    \"introduction\": \"这里是个人描述\",\r\n    \"city\": \"湖州\"\r\n}", "Response Body": "{\"data\":{\"id\":45,\"name\":\"ggggg\",\"email\":\"1@test.com\",\"phone\":\"00000000000\",\"city\":\"湖州\",\"introduction\":\"这里是个人描述\",\"status\":true,\"created_at\":\"2022-12-06T09:52:08+08:00\",\"updated_at\":\"2022-12-06T09:56:11.538+08:00\",\"deleted_at\":null},\"success\":true}"}
+2022-12-06 09:56:23	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 09:56:23	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/user", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "1.000ms"}
+2022-12-06 09:56:23	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 09:56:23	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'superAdmin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 09:56:23	[35mDEBUG[0m	paginator/paginator.go:65	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 09:56:23	[35mDEBUG[0m	v1/users_controller.go:30	Database Query	{"sql": "SELECT * FROM `users` WHERE `users`.`deleted_at` IS NULL ORDER BY id asc LIMIT 5", "time": "0.000ms", "rows": 5}
+2022-12-06 09:56:23	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/users", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "4.000ms"}
+2022-12-06 09:57:48	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 09:57:48	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "1.000ms", "rows": 1}
+2022-12-06 09:57:48	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'users' AND table_type = 'BASE TABLE'", "time": "2.000ms", "rows": -1}
+2022-12-06 09:57:48	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 09:57:48	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 09:57:48	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 09:57:48	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-06 09:57:48	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'roles' AND table_type = 'BASE TABLE'", "time": "2.000ms", "rows": -1}
+2022-12-06 09:57:48	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `roles` WHERE `roles`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 09:57:48	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `roles` WHERE `roles`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 09:57:48	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 09:57:48	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-06 09:57:48	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND table_type = 'BASE TABLE'", "time": "1.000ms", "rows": -1}
+2022-12-06 09:57:48	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 09:57:48	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-06 09:57:48	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT * FROM `casbin_rule` LIMIT 1", "time": "0.000ms", "rows": -1}
+2022-12-06 09:57:48	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' ORDER BY ORDINAL_POSITION", "time": "2.000ms", "rows": -1}
+2022-12-06 09:57:48	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 09:57:48	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-06 09:57:48	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND index_name = 'idx_casbin_rule'", "time": "1.000ms", "rows": -1}
+2022-12-06 09:57:48	[35mDEBUG[0m	v2@v2.58.0/enforcer.go:179	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 50}
+2022-12-06 09:57:48	[35mDEBUG[0m	v2@v2.58.0/enforcer_cached.go:96	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 50}
+2022-12-06 09:57:48	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `casbin_rule`", "time": "0.000ms", "rows": 1}
+2022-12-06 09:57:48	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `casbin_rule`", "time": "0.000ms", "rows": 1}
+2022-12-06 09:59:10	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 09:59:10	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "1.000ms", "rows": 1}
+2022-12-06 09:59:10	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'users' AND table_type = 'BASE TABLE'", "time": "1.000ms", "rows": -1}
+2022-12-06 09:59:10	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 09:59:10	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 09:59:10	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 09:59:10	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-06 09:59:10	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'roles' AND table_type = 'BASE TABLE'", "time": "1.000ms", "rows": -1}
+2022-12-06 09:59:10	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `roles` WHERE `roles`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 09:59:10	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `roles` WHERE `roles`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 09:59:10	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 09:59:10	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-06 09:59:10	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND table_type = 'BASE TABLE'", "time": "0.000ms", "rows": -1}
+2022-12-06 09:59:10	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 09:59:10	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-06 09:59:10	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT * FROM `casbin_rule` LIMIT 1", "time": "0.000ms", "rows": -1}
+2022-12-06 09:59:10	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' ORDER BY ORDINAL_POSITION", "time": "1.000ms", "rows": -1}
+2022-12-06 09:59:10	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 09:59:10	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-06 09:59:10	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND index_name = 'idx_casbin_rule'", "time": "1.000ms", "rows": -1}
+2022-12-06 09:59:10	[35mDEBUG[0m	v2@v2.58.0/enforcer.go:179	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 50}
+2022-12-06 09:59:10	[35mDEBUG[0m	v2@v2.58.0/enforcer_cached.go:96	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 50}
+2022-12-06 09:59:10	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `casbin_rule`", "time": "0.000ms", "rows": 1}
+2022-12-06 09:59:10	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `casbin_rule`", "time": "0.000ms", "rows": 1}
+2022-12-06 09:59:12	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 09:59:12	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-06 09:59:12	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'users' AND table_type = 'BASE TABLE'", "time": "0.000ms", "rows": -1}
+2022-12-06 09:59:12	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 09:59:12	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 09:59:12	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 09:59:12	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-06 09:59:12	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'roles' AND table_type = 'BASE TABLE'", "time": "0.000ms", "rows": -1}
+2022-12-06 09:59:12	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `roles` WHERE `roles`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 09:59:12	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `roles` WHERE `roles`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 09:59:12	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 09:59:12	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-06 09:59:12	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND table_type = 'BASE TABLE'", "time": "0.000ms", "rows": -1}
+2022-12-06 09:59:12	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 09:59:12	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-06 09:59:12	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT * FROM `casbin_rule` LIMIT 1", "time": "0.000ms", "rows": -1}
+2022-12-06 09:59:12	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' ORDER BY ORDINAL_POSITION", "time": "1.000ms", "rows": -1}
+2022-12-06 09:59:12	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 09:59:12	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-06 09:59:12	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND index_name = 'idx_casbin_rule'", "time": "0.000ms", "rows": -1}
+2022-12-06 09:59:12	[35mDEBUG[0m	v2@v2.58.0/enforcer.go:179	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 50}
+2022-12-06 09:59:12	[35mDEBUG[0m	v2@v2.58.0/enforcer_cached.go:96	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 50}
+2022-12-06 09:59:12	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `casbin_rule`", "time": "0.000ms", "rows": 1}
+2022-12-06 09:59:12	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `casbin_rule`", "time": "0.000ms", "rows": 1}
+2022-12-06 09:59:29	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '2' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "2.000ms", "rows": 1}
+2022-12-06 09:59:29	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'admin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "1.000ms", "rows": 1}
+2022-12-06 09:59:29	[31mERROR[0m	response/response.go:73	Error Occurred:	{"error": "json: cannot unmarshal bool into Go struct field UserUpdateRequest.status of type string"}
+github.com/Gopherlinzy/gohub/pkg/response.BadRequest
+	/Users/admin/go/src/gin-vue3-admin/pkg/response/response.go:73
+github.com/Gopherlinzy/gohub/app/requests.Validate
+	/Users/admin/go/src/gin-vue3-admin/app/requests/requests.go:23
+github.com/Gopherlinzy/gohub/app/http/controllers/api/v1.(*UsersController).Update
+	/Users/admin/go/src/gin-vue3-admin/app/http/controllers/api/v1/users_controller.go:65
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.CasbinAPI.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/casbin.go:32
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.AuthJWT.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/auth_jwt.go:37
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.LimitIP.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:31
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.ForceUA.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-06 09:59:29	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 400, "request": "PUT /api/v1/users", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "8.000ms", "Request Body": "{\r\n    \"id\":\"45\",\r\n    \"name\": \"ggggg\",\r\n    \"email\":\"1@test.com\",\r\n    \"phone\":\"00000000000\",\r\n    \"password\":\"111111\",\r\n    \"introduction\": \"这里是个人描述\",\r\n    \"city\": \"湖州\",\r\n    \"status\":false\r\n}", "Response Body": "{\"error\":\"json: cannot unmarshal bool into Go struct field UserUpdateRequest.status of type string\",\"message\":\"请求解析错误，请确认请求格式是否正确。上传文件请使用 multipart 标头，参数请使用 JSON 格式。\"}"}
+2022-12-06 09:59:45	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '2' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 09:59:45	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'admin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 09:59:45	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE id= '45'", "time": "0.000ms", "rows": 1}
+2022-12-06 09:59:45	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE email = '1@test.com' && isnull(deleted_at)", "time": "0.000ms", "rows": 1}
+2022-12-06 09:59:45	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE phone = '00000000000' && isnull(deleted_at)", "time": "0.000ms", "rows": 1}
+2022-12-06 09:59:45	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE name = 'ggggg' && isnull(deleted_at) AND id != '2'", "time": "0.000ms", "rows": 1}
+2022-12-06 09:59:45	[33mWARN[0m	middlewares/logger.go:72	HTTP Warning 422	{"status": 422, "request": "PUT /api/v1/users", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "4.000ms", "Request Body": "{\r\n    \"id\":\"45\",\r\n    \"name\": \"ggggg\",\r\n    \"email\":\"1@test.com\",\r\n    \"phone\":\"00000000000\",\r\n    \"password\":\"111111\",\r\n    \"introduction\": \"这里是个人描述\",\r\n    \"city\": \"湖州\",\r\n    \"status\":\"false\"\r\n}", "Response Body": "{\"errors\":{\"email\":[\"Email 已被占用\"],\"name\":[\"用户名已被占用\"],\"phone\":[\"Phone 已被占用\"]},\"message\":\"请求验证不通过，具体请查看 errors\"}"}
+2022-12-06 09:59:53	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '2' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 09:59:53	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'admin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 09:59:53	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE name = 'ggggg' && isnull(deleted_at) AND id != '2'", "time": "0.000ms", "rows": 1}
+2022-12-06 09:59:53	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE id= '45'", "time": "0.000ms", "rows": 1}
+2022-12-06 09:59:53	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE email = '123@test.com' && isnull(deleted_at)", "time": "0.000ms", "rows": 1}
+2022-12-06 09:59:53	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE phone = '00000000001' && isnull(deleted_at)", "time": "0.000ms", "rows": 1}
+2022-12-06 09:59:53	[33mWARN[0m	middlewares/logger.go:72	HTTP Warning 422	{"status": 422, "request": "PUT /api/v1/users", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "3.000ms", "Request Body": "{\r\n    \"id\":\"45\",\r\n    \"name\": \"ggggg\",\r\n    \"email\":\"123@test.com\",\r\n    \"phone\":\"00000000001\",\r\n    \"password\":\"111111\",\r\n    \"introduction\": \"这里是个人描述\",\r\n    \"city\": \"湖州\",\r\n    \"status\":\"false\"\r\n}", "Response Body": "{\"errors\":{\"name\":[\"用户名已被占用\"]},\"message\":\"请求验证不通过，具体请查看 errors\"}"}
+2022-12-06 09:59:59	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '2' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "1.000ms", "rows": 1}
+2022-12-06 09:59:59	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'admin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 09:59:59	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE phone = '00000000001' && isnull(deleted_at)", "time": "0.000ms", "rows": 1}
+2022-12-06 09:59:59	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE name = 'ggg' && isnull(deleted_at) AND id != '2'", "time": "0.000ms", "rows": 1}
+2022-12-06 09:59:59	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE id= '45'", "time": "0.000ms", "rows": 1}
+2022-12-06 09:59:59	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE email = '123@test.com' && isnull(deleted_at)", "time": "0.000ms", "rows": 1}
+2022-12-06 09:59:59	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '45' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 09:59:59	[33mWARN[0m	gorm@v1.24.1/callbacks.go:134	Database Slow Log	{"sql": "UPDATE `users` SET `name`='ggg',`email`='123@test.com',`phone`='00000000001',`password`='$2a$12$ipZxT.oGQX2MlsFwh.YIfeofevl/XNIRuYH2/a82h84BLASWa0m8a',`city`='湖州',`introduction`='这里是个人描述',`avatar`='',`status`=false,`created_at`='2022-12-06 09:52:08',`updated_at`='2022-12-06 09:59:59.874',`deleted_at`=NULL WHERE `users`.`deleted_at` IS NULL AND `id` = 45", "time": "307.000ms", "rows": 1}
+2022-12-06 09:59:59	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "UPDATE `users` SET `name`='ggg',`email`='123@test.com',`phone`='00000000001',`password`='$2a$12$ipZxT.oGQX2MlsFwh.YIfeofevl/XNIRuYH2/a82h84BLASWa0m8a',`city`='湖州',`introduction`='这里是个人描述',`avatar`='',`status`=false,`created_at`='2022-12-06 09:52:08',`updated_at`='2022-12-06 09:59:59.874',`deleted_at`=NULL WHERE `users`.`deleted_at` IS NULL AND `id` = 45", "time": "307.000ms", "rows": 1}
+2022-12-06 09:59:59	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "PUT /api/v1/users", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "314.000ms", "Request Body": "{\r\n    \"id\":\"45\",\r\n    \"name\": \"ggg\",\r\n    \"email\":\"123@test.com\",\r\n    \"phone\":\"00000000001\",\r\n    \"password\":\"111111\",\r\n    \"introduction\": \"这里是个人描述\",\r\n    \"city\": \"湖州\",\r\n    \"status\":\"false\"\r\n}", "Response Body": "{\"data\":{\"id\":45,\"name\":\"ggg\",\"email\":\"123@test.com\",\"phone\":\"00000000001\",\"city\":\"湖州\",\"introduction\":\"这里是个人描述\",\"created_at\":\"2022-12-06T09:52:08+08:00\",\"updated_at\":\"2022-12-06T09:59:59.874+08:00\",\"deleted_at\":null},\"success\":true}"}
+2022-12-06 10:05:09	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 10:05:09	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "1.000ms", "rows": 1}
+2022-12-06 10:05:09	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'users' AND table_type = 'BASE TABLE'", "time": "1.000ms", "rows": -1}
+2022-12-06 10:05:09	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "1.000ms", "rows": 1}
+2022-12-06 10:05:09	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 10:05:09	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 10:05:09	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:05:09	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'roles' AND table_type = 'BASE TABLE'", "time": "1.000ms", "rows": -1}
+2022-12-06 10:05:09	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `roles` WHERE `roles`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 10:05:09	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `roles` WHERE `roles`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 10:05:09	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 10:05:09	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:05:09	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND table_type = 'BASE TABLE'", "time": "0.000ms", "rows": -1}
+2022-12-06 10:05:09	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 10:05:09	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:05:09	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT * FROM `casbin_rule` LIMIT 1", "time": "0.000ms", "rows": -1}
+2022-12-06 10:05:09	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' ORDER BY ORDINAL_POSITION", "time": "1.000ms", "rows": -1}
+2022-12-06 10:05:09	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 10:05:09	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:05:09	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND index_name = 'idx_casbin_rule'", "time": "0.000ms", "rows": -1}
+2022-12-06 10:05:09	[35mDEBUG[0m	v2@v2.58.0/enforcer.go:179	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 50}
+2022-12-06 10:05:09	[35mDEBUG[0m	v2@v2.58.0/enforcer_cached.go:96	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 50}
+2022-12-06 10:05:09	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `casbin_rule`", "time": "0.000ms", "rows": 1}
+2022-12-06 10:05:09	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `casbin_rule`", "time": "0.000ms", "rows": 1}
+2022-12-06 10:05:11	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '2' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:05:11	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'admin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "1.000ms", "rows": 1}
+2022-12-06 10:05:11	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE id= '45'", "time": "0.000ms", "rows": 1}
+2022-12-06 10:05:11	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE email = '123@test.com' && isnull(deleted_at)", "time": "0.000ms", "rows": 1}
+2022-12-06 10:05:11	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE phone = '00000000001' && isnull(deleted_at)", "time": "0.000ms", "rows": 1}
+2022-12-06 10:05:11	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE name = 'ggg' && isnull(deleted_at) AND id != '2'", "time": "1.000ms", "rows": 1}
+2022-12-06 10:05:11	[33mWARN[0m	middlewares/logger.go:72	HTTP Warning 422	{"status": 422, "request": "PUT /api/v1/users", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "7.000ms", "Request Body": "{\r\n    \"id\":\"45\",\r\n    \"name\": \"ggg\",\r\n    \"email\":\"123@test.com\",\r\n    \"phone\":\"00000000001\",\r\n    \"password\":\"111111\",\r\n    \"introduction\": \"这里是个人描述\",\r\n    \"city\": \"湖州\",\r\n    \"status\":\"false\"\r\n}", "Response Body": "{\"errors\":{\"email\":[\"Email 已被占用\"],\"name\":[\"用户名已被占用\"],\"phone\":[\"Phone 已被占用\"]},\"message\":\"请求验证不通过，具体请查看 errors\"}"}
+2022-12-06 10:07:55	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 10:07:55	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "1.000ms", "rows": 1}
+2022-12-06 10:07:55	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'users' AND table_type = 'BASE TABLE'", "time": "1.000ms", "rows": -1}
+2022-12-06 10:07:55	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 10:07:55	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 10:07:55	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 10:07:55	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:07:55	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'roles' AND table_type = 'BASE TABLE'", "time": "1.000ms", "rows": -1}
+2022-12-06 10:07:55	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `roles` WHERE `roles`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 10:07:55	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `roles` WHERE `roles`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 10:07:55	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 10:07:55	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:07:55	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND table_type = 'BASE TABLE'", "time": "1.000ms", "rows": -1}
+2022-12-06 10:07:55	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 10:07:55	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:07:55	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT * FROM `casbin_rule` LIMIT 1", "time": "0.000ms", "rows": -1}
+2022-12-06 10:07:55	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' ORDER BY ORDINAL_POSITION", "time": "1.000ms", "rows": -1}
+2022-12-06 10:07:55	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 10:07:55	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:07:55	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND index_name = 'idx_casbin_rule'", "time": "0.000ms", "rows": -1}
+2022-12-06 10:07:55	[35mDEBUG[0m	v2@v2.58.0/enforcer.go:179	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 50}
+2022-12-06 10:07:55	[35mDEBUG[0m	v2@v2.58.0/enforcer_cached.go:96	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 50}
+2022-12-06 10:07:55	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `casbin_rule`", "time": "0.000ms", "rows": 1}
+2022-12-06 10:07:55	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `casbin_rule`", "time": "0.000ms", "rows": 1}
+2022-12-06 10:07:57	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '2' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:07:57	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'admin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:07:57	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE name = 'ggg' && isnull(deleted_at) AND id != '45'", "time": "0.000ms", "rows": 1}
+2022-12-06 10:07:57	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE id= '45'", "time": "0.000ms", "rows": 1}
+2022-12-06 10:07:57	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE email = '123@test.com' && isnull(deleted_at)", "time": "1.000ms", "rows": 1}
+2022-12-06 10:07:57	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE phone = '00000000001' && isnull(deleted_at)", "time": "0.000ms", "rows": 1}
+2022-12-06 10:07:57	[33mWARN[0m	middlewares/logger.go:72	HTTP Warning 422	{"status": 422, "request": "PUT /api/v1/users", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "7.000ms", "Request Body": "{\r\n    \"id\":\"45\",\r\n    \"name\": \"ggg\",\r\n    \"email\":\"123@test.com\",\r\n    \"phone\":\"00000000001\",\r\n    \"password\":\"111111\",\r\n    \"introduction\": \"这里是个人描述\",\r\n    \"city\": \"湖州\",\r\n    \"status\":\"false\"\r\n}", "Response Body": "{\"errors\":{\"email\":[\"Email 已被占用\"],\"phone\":[\"Phone 已被占用\"]},\"message\":\"请求验证不通过，具体请查看 errors\"}"}
+2022-12-06 10:08:09	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 10:08:09	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:08:09	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'users' AND table_type = 'BASE TABLE'", "time": "1.000ms", "rows": -1}
+2022-12-06 10:08:09	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 10:08:09	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 10:08:09	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 10:08:09	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:08:09	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'roles' AND table_type = 'BASE TABLE'", "time": "0.000ms", "rows": -1}
+2022-12-06 10:08:09	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `roles` WHERE `roles`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 10:08:09	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `roles` WHERE `roles`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 10:08:09	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 10:08:09	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:08:09	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND table_type = 'BASE TABLE'", "time": "1.000ms", "rows": -1}
+2022-12-06 10:08:09	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 10:08:09	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:08:09	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT * FROM `casbin_rule` LIMIT 1", "time": "0.000ms", "rows": -1}
+2022-12-06 10:08:09	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' ORDER BY ORDINAL_POSITION", "time": "1.000ms", "rows": -1}
+2022-12-06 10:08:09	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 10:08:09	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:08:09	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND index_name = 'idx_casbin_rule'", "time": "0.000ms", "rows": -1}
+2022-12-06 10:08:09	[35mDEBUG[0m	v2@v2.58.0/enforcer.go:179	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 50}
+2022-12-06 10:08:09	[35mDEBUG[0m	v2@v2.58.0/enforcer_cached.go:96	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 50}
+2022-12-06 10:08:09	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `casbin_rule`", "time": "0.000ms", "rows": 1}
+2022-12-06 10:08:09	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `casbin_rule`", "time": "0.000ms", "rows": 1}
+2022-12-06 10:10:02	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '2' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "1.000ms", "rows": 1}
+2022-12-06 10:10:02	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'admin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "1.000ms", "rows": 1}
+2022-12-06 10:10:02	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE id= '45'", "time": "0.000ms", "rows": 1}
+2022-12-06 10:10:02	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE email = '123@test.com' && isnull(deleted_at) AND id != '45'", "time": "0.000ms", "rows": 1}
+2022-12-06 10:10:02	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE phone = '00000000001' && isnull(deleted_at) AND id != '45'", "time": "0.000ms", "rows": 1}
+2022-12-06 10:10:02	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE name = 'ggg' && isnull(deleted_at) AND id != '45'", "time": "0.000ms", "rows": 1}
+2022-12-06 10:10:02	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '45' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:10:02	[33mWARN[0m	gorm@v1.24.1/callbacks.go:134	Database Slow Log	{"sql": "UPDATE `users` SET `name`='ggg',`email`='123@test.com',`phone`='00000000001',`password`='$2a$12$4AgbXK7LppHUYkFu8M107OEA09o3T6bUX.5fziItaPOyAvVpKGUhC',`city`='湖州',`introduction`='这里是个人描述',`avatar`='',`status`=false,`created_at`='2022-12-06 09:52:08',`updated_at`='2022-12-06 10:10:02.823',`deleted_at`=NULL WHERE `users`.`deleted_at` IS NULL AND `id` = 45", "time": "302.000ms", "rows": 1}
+2022-12-06 10:10:02	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "UPDATE `users` SET `name`='ggg',`email`='123@test.com',`phone`='00000000001',`password`='$2a$12$4AgbXK7LppHUYkFu8M107OEA09o3T6bUX.5fziItaPOyAvVpKGUhC',`city`='湖州',`introduction`='这里是个人描述',`avatar`='',`status`=false,`created_at`='2022-12-06 09:52:08',`updated_at`='2022-12-06 10:10:02.823',`deleted_at`=NULL WHERE `users`.`deleted_at` IS NULL AND `id` = 45", "time": "302.000ms", "rows": 1}
+2022-12-06 10:10:02	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "PUT /api/v1/users", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "310.000ms", "Request Body": "{\r\n    \"id\":\"45\",\r\n    \"name\": \"ggg\",\r\n    \"email\":\"123@test.com\",\r\n    \"phone\":\"00000000001\",\r\n    \"password\":\"111111\",\r\n    \"introduction\": \"这里是个人描述\",\r\n    \"city\": \"湖州\",\r\n    \"status\":\"false\"\r\n}", "Response Body": "{\"data\":{\"id\":45,\"name\":\"ggg\",\"email\":\"123@test.com\",\"phone\":\"00000000001\",\"city\":\"湖州\",\"introduction\":\"这里是个人描述\",\"created_at\":\"2022-12-06T09:52:08+08:00\",\"updated_at\":\"2022-12-06T10:10:02.823+08:00\",\"deleted_at\":null},\"success\":true}"}
+2022-12-06 10:10:17	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '2' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:10:17	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'admin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:10:17	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE id= '45'", "time": "0.000ms", "rows": 1}
+2022-12-06 10:10:17	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE email = '123@test.com' && isnull(deleted_at) AND id != '45'", "time": "1.000ms", "rows": 1}
+2022-12-06 10:10:17	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE phone = '00000000001' && isnull(deleted_at) AND id != '45'", "time": "0.000ms", "rows": 1}
+2022-12-06 10:10:17	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE name = 'ggg' && isnull(deleted_at) AND id != '45'", "time": "0.000ms", "rows": 1}
+2022-12-06 10:10:17	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '45' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:10:17	[33mWARN[0m	gorm@v1.24.1/callbacks.go:134	Database Slow Log	{"sql": "UPDATE `users` SET `name`='ggg',`email`='123@test.com',`phone`='00000000001',`password`='$2a$12$Ai.16zUiugAXfopcSp204ukpDKlcetas5yngl.SdMWApLZaXGHTFq',`city`='湖州',`introduction`='这里是个人描述',`avatar`='',`status`=false,`created_at`='2022-12-06 09:52:08',`updated_at`='2022-12-06 10:10:17.411',`deleted_at`=NULL WHERE `users`.`deleted_at` IS NULL AND `id` = 45", "time": "301.000ms", "rows": 1}
+2022-12-06 10:10:17	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "UPDATE `users` SET `name`='ggg',`email`='123@test.com',`phone`='00000000001',`password`='$2a$12$Ai.16zUiugAXfopcSp204ukpDKlcetas5yngl.SdMWApLZaXGHTFq',`city`='湖州',`introduction`='这里是个人描述',`avatar`='',`status`=false,`created_at`='2022-12-06 09:52:08',`updated_at`='2022-12-06 10:10:17.411',`deleted_at`=NULL WHERE `users`.`deleted_at` IS NULL AND `id` = 45", "time": "301.000ms", "rows": 1}
+2022-12-06 10:10:17	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "PUT /api/v1/users", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "306.000ms", "Request Body": "{\r\n    \"id\":\"45\",\r\n    \"name\": \"ggg\",\r\n    \"email\":\"123@test.com\",\r\n    \"phone\":\"00000000001\",\r\n    \"password\":\"111111\",\r\n    \"introduction\": \"这里是个人描述\",\r\n    \"city\": \"湖州\",\r\n    \"status\":\"false\"\r\n}", "Response Body": "{\"data\":{\"id\":45,\"name\":\"ggg\",\"email\":\"123@test.com\",\"phone\":\"00000000001\",\"city\":\"湖州\",\"introduction\":\"这里是个人描述\",\"created_at\":\"2022-12-06T09:52:08+08:00\",\"updated_at\":\"2022-12-06T10:10:17.411+08:00\",\"deleted_at\":null},\"success\":true}"}
+2022-12-06 10:10:26	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '2' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:10:26	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'admin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:10:26	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE name = 'ggg' && isnull(deleted_at) AND id != '45'", "time": "0.000ms", "rows": 1}
+2022-12-06 10:10:26	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE id= '45'", "time": "0.000ms", "rows": 1}
+2022-12-06 10:10:26	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE email = '123@test.com' && isnull(deleted_at) AND id != '45'", "time": "0.000ms", "rows": 1}
+2022-12-06 10:10:26	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE phone = '00000000001' && isnull(deleted_at) AND id != '45'", "time": "0.000ms", "rows": 1}
+2022-12-06 10:10:26	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '45' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "1.000ms", "rows": 1}
+2022-12-06 10:10:26	[33mWARN[0m	gorm@v1.24.1/callbacks.go:134	Database Slow Log	{"sql": "UPDATE `users` SET `name`='ggg',`email`='123@test.com',`phone`='00000000001',`password`='$2a$12$oSxZ8KoEcRJghxjPMc5Z5OBpDn0lqXpg1/5DRcWw/iaAiLnDY0YcS',`city`='湖州',`introduction`='这里是个人描述',`avatar`='',`status`=true,`created_at`='2022-12-06 09:52:08',`updated_at`='2022-12-06 10:10:26.473',`deleted_at`=NULL WHERE `users`.`deleted_at` IS NULL AND `id` = 45", "time": "305.000ms", "rows": 1}
+2022-12-06 10:10:26	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "UPDATE `users` SET `name`='ggg',`email`='123@test.com',`phone`='00000000001',`password`='$2a$12$oSxZ8KoEcRJghxjPMc5Z5OBpDn0lqXpg1/5DRcWw/iaAiLnDY0YcS',`city`='湖州',`introduction`='这里是个人描述',`avatar`='',`status`=true,`created_at`='2022-12-06 09:52:08',`updated_at`='2022-12-06 10:10:26.473',`deleted_at`=NULL WHERE `users`.`deleted_at` IS NULL AND `id` = 45", "time": "305.000ms", "rows": 1}
+2022-12-06 10:10:26	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "PUT /api/v1/users", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "311.000ms", "Request Body": "{\r\n    \"id\":\"45\",\r\n    \"name\": \"ggg\",\r\n    \"email\":\"123@test.com\",\r\n    \"phone\":\"00000000001\",\r\n    \"password\":\"111111\",\r\n    \"introduction\": \"这里是个人描述\",\r\n    \"city\": \"湖州\",\r\n    \"status\":\"true\"\r\n}", "Response Body": "{\"data\":{\"id\":45,\"name\":\"ggg\",\"email\":\"123@test.com\",\"phone\":\"00000000001\",\"city\":\"湖州\",\"introduction\":\"这里是个人描述\",\"status\":true,\"created_at\":\"2022-12-06T09:52:08+08:00\",\"updated_at\":\"2022-12-06T10:10:26.473+08:00\",\"deleted_at\":null},\"success\":true}"}
+2022-12-06 10:19:56	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "1.000ms", "rows": 1}
+2022-12-06 10:19:56	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'superAdmin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "1.000ms", "rows": 1}
+2022-12-06 10:19:56	[35mDEBUG[0m	paginator/paginator.go:65	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 10:19:56	[35mDEBUG[0m	v1/users_controller.go:30	Database Query	{"sql": "SELECT * FROM `users` WHERE `users`.`deleted_at` IS NULL ORDER BY id asc LIMIT 5", "time": "0.000ms", "rows": 5}
+2022-12-06 10:19:56	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/users", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "5.000ms"}
+2022-12-06 10:20:23	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "1.000ms", "rows": 1}
+2022-12-06 10:20:23	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'superAdmin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "1.000ms", "rows": 1}
+2022-12-06 10:20:23	[35mDEBUG[0m	paginator/paginator.go:65	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 10:20:23	[35mDEBUG[0m	v1/users_controller.go:30	Database Query	{"sql": "SELECT * FROM `users` WHERE `users`.`deleted_at` IS NULL ORDER BY id asc LIMIT 5", "time": "1.000ms", "rows": 5}
+2022-12-06 10:20:23	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/users", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "10.000ms"}
+2022-12-06 10:21:01	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "2.000ms", "rows": 1}
+2022-12-06 10:21:01	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'superAdmin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "2.000ms", "rows": 1}
+2022-12-06 10:21:01	[35mDEBUG[0m	paginator/paginator.go:65	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 10:21:01	[35mDEBUG[0m	v1/users_controller.go:30	Database Query	{"sql": "SELECT * FROM `users` WHERE `users`.`deleted_at` IS NULL ORDER BY id asc LIMIT 5", "time": "0.000ms", "rows": 5}
+2022-12-06 10:21:01	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/users", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "7.000ms"}
+2022-12-06 10:21:27	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:21:27	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'superAdmin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "1.000ms", "rows": 1}
+2022-12-06 10:21:27	[35mDEBUG[0m	paginator/paginator.go:65	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 10:21:27	[35mDEBUG[0m	v1/users_controller.go:30	Database Query	{"sql": "SELECT * FROM `users` WHERE `users`.`deleted_at` IS NULL ORDER BY id asc LIMIT 5", "time": "0.000ms", "rows": 5}
+2022-12-06 10:21:27	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/users", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "5.000ms"}
+2022-12-06 10:21:44	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:21:44	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'superAdmin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:21:44	[35mDEBUG[0m	paginator/paginator.go:65	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 10:21:44	[35mDEBUG[0m	v1/users_controller.go:30	Database Query	{"sql": "SELECT * FROM `users` WHERE `users`.`deleted_at` IS NULL ORDER BY id asc LIMIT 5", "time": "0.000ms", "rows": 5}
+2022-12-06 10:21:44	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/users", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "3.000ms"}
+2022-12-06 10:21:54	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:21:54	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/user", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "1.000ms"}
+2022-12-06 10:21:54	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:21:54	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'superAdmin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:21:54	[35mDEBUG[0m	paginator/paginator.go:65	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 10:21:54	[35mDEBUG[0m	v1/users_controller.go:30	Database Query	{"sql": "SELECT * FROM `users` WHERE `users`.`deleted_at` IS NULL ORDER BY id asc LIMIT 5", "time": "0.000ms", "rows": 5}
+2022-12-06 10:21:54	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/users", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "2.000ms"}
+2022-12-06 10:21:58	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:21:58	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'superAdmin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:21:58	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE id= '1'", "time": "0.000ms", "rows": 1}
+2022-12-06 10:21:58	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE email = '' && isnull(deleted_at) AND id != '1'", "time": "0.000ms", "rows": 1}
+2022-12-06 10:21:58	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE phone = '' && isnull(deleted_at) AND id != '1'", "time": "0.000ms", "rows": 1}
+2022-12-06 10:21:58	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE name = '' && isnull(deleted_at) AND id != '1'", "time": "0.000ms", "rows": 1}
+2022-12-06 10:21:58	[33mWARN[0m	middlewares/logger.go:72	HTTP Warning 422	{"status": 422, "request": "PUT /api/v1/users", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "4.000ms", "Request Body": "{\"id\":\"1\",\"name\":\"\",\"email\":\"\",\"phone\":\"\",\"password\":\"\",\"city\":\"\",\"introduction\":\"\",\"status\":\"false\"}", "Response Body": "{\"errors\":{\"email\":[\"Email 为必填项\",\"Email 长度需大于 4\",\"Email 格式不正确，请提供有效的邮箱地址\"],\"name\":[\"用户名为必填项\",\"用户名格式错误，只允许数字和英文\",\"用户名长度需在 3~20 之间\"],\"password\":[\"密码为必填项\",\"密码长度需大于 6\"],\"phone\":[\"手机号为必填项，参数名称 phone\",\"手机号长度必须为 11 位的数字\"]},\"message\":\"请求验证不通过，具体请查看 errors\"}"}
+2022-12-06 10:24:38	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:24:38	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'superAdmin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:24:38	[35mDEBUG[0m	paginator/paginator.go:65	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 10:24:38	[35mDEBUG[0m	v1/users_controller.go:30	Database Query	{"sql": "SELECT * FROM `users` WHERE `users`.`deleted_at` IS NULL ORDER BY id asc LIMIT 5", "time": "0.000ms", "rows": 5}
+2022-12-06 10:24:38	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/users", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "5.000ms"}
+2022-12-06 10:25:07	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "1.000ms", "rows": 1}
+2022-12-06 10:25:07	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/user", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "2.000ms"}
+2022-12-06 10:25:08	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:25:08	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'superAdmin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:25:08	[35mDEBUG[0m	paginator/paginator.go:65	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 10:25:08	[35mDEBUG[0m	v1/users_controller.go:30	Database Query	{"sql": "SELECT * FROM `users` WHERE `users`.`deleted_at` IS NULL ORDER BY id asc LIMIT 5", "time": "0.000ms", "rows": 5}
+2022-12-06 10:25:08	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/users", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "2.000ms"}
+2022-12-06 10:25:56	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:25:56	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'superAdmin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:25:56	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE name = 'ggg' && isnull(deleted_at) AND id != '3'", "time": "0.000ms", "rows": 1}
+2022-12-06 10:25:56	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE id= '3'", "time": "0.000ms", "rows": 1}
+2022-12-06 10:25:56	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE email = '111111@test.com' && isnull(deleted_at) AND id != '3'", "time": "0.000ms", "rows": 1}
+2022-12-06 10:25:56	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE phone = '00033333333' && isnull(deleted_at) AND id != '3'", "time": "0.000ms", "rows": 1}
+2022-12-06 10:25:56	[33mWARN[0m	middlewares/logger.go:72	HTTP Warning 422	{"status": 422, "request": "PUT /api/v1/users", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "5.000ms", "Request Body": "{\"id\":\"3\",\"name\":\"ggg\",\"email\":\"111111@test.com\",\"phone\":\"00033333333\",\"password\":\"123456\",\"city\":\"\",\"introduction\":\"\",\"status\":\"true\"}", "Response Body": "{\"errors\":{\"name\":[\"用户名已被占用\"]},\"message\":\"请求验证不通过，具体请查看 errors\"}"}
+2022-12-06 10:26:05	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "2.000ms", "rows": 1}
+2022-12-06 10:26:05	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'superAdmin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "1.000ms", "rows": 1}
+2022-12-06 10:26:05	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE id= '3'", "time": "0.000ms", "rows": 1}
+2022-12-06 10:26:05	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE email = '111111@test.com' && isnull(deleted_at) AND id != '3'", "time": "0.000ms", "rows": 1}
+2022-12-06 10:26:05	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE phone = '00033333333' && isnull(deleted_at) AND id != '3'", "time": "0.000ms", "rows": 1}
+2022-12-06 10:26:05	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE name = 'gggggg' && isnull(deleted_at) AND id != '3'", "time": "0.000ms", "rows": 1}
+2022-12-06 10:26:05	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '3' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:26:05	[33mWARN[0m	gorm@v1.24.1/callbacks.go:134	Database Slow Log	{"sql": "UPDATE `users` SET `name`='gggggg',`email`='111111@test.com',`phone`='00033333333',`password`='$2a$12$Hmx26a4DNjMvlWLeKFzVUOPpFt3wTmqquipYSVaomGP47jvujO6e.',`city`='',`introduction`='',`avatar`='',`status`=true,`created_at`='2022-12-05 16:32:35',`updated_at`='2022-12-06 10:26:05.324',`deleted_at`=NULL WHERE `users`.`deleted_at` IS NULL AND `id` = 3", "time": "311.000ms", "rows": 1}
+2022-12-06 10:26:05	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "UPDATE `users` SET `name`='gggggg',`email`='111111@test.com',`phone`='00033333333',`password`='$2a$12$Hmx26a4DNjMvlWLeKFzVUOPpFt3wTmqquipYSVaomGP47jvujO6e.',`city`='',`introduction`='',`avatar`='',`status`=true,`created_at`='2022-12-05 16:32:35',`updated_at`='2022-12-06 10:26:05.324',`deleted_at`=NULL WHERE `users`.`deleted_at` IS NULL AND `id` = 3", "time": "311.000ms", "rows": 1}
+2022-12-06 10:26:05	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "PUT /api/v1/users", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "322.000ms", "Request Body": "{\"id\":\"3\",\"name\":\"gggggg\",\"email\":\"111111@test.com\",\"phone\":\"00033333333\",\"password\":\"123456\",\"city\":\"\",\"introduction\":\"\",\"status\":\"true\"}", "Response Body": "{\"data\":{\"id\":3,\"name\":\"gggggg\",\"email\":\"111111@test.com\",\"phone\":\"00033333333\",\"status\":true,\"created_at\":\"2022-12-05T16:32:35+08:00\",\"updated_at\":\"2022-12-06T10:26:05.324+08:00\",\"deleted_at\":null},\"success\":true}"}
+2022-12-06 10:26:05	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:26:05	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'superAdmin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:26:05	[35mDEBUG[0m	paginator/paginator.go:65	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 10:26:05	[35mDEBUG[0m	v1/users_controller.go:30	Database Query	{"sql": "SELECT * FROM `users` WHERE `users`.`deleted_at` IS NULL ORDER BY id asc LIMIT 5", "time": "0.000ms", "rows": 5}
+2022-12-06 10:26:05	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/users", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "1.000ms"}
+2022-12-06 10:29:43	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 10:29:43	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "1.000ms", "rows": 1}
+2022-12-06 10:29:43	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'users' AND table_type = 'BASE TABLE'", "time": "1.000ms", "rows": -1}
+2022-12-06 10:29:43	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 10:29:43	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 10:29:43	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 10:29:43	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:29:43	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'roles' AND table_type = 'BASE TABLE'", "time": "1.000ms", "rows": -1}
+2022-12-06 10:29:43	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `roles` WHERE `roles`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 10:29:43	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `roles` WHERE `roles`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 10:29:43	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 10:29:43	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:29:43	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND table_type = 'BASE TABLE'", "time": "1.000ms", "rows": -1}
+2022-12-06 10:29:43	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 10:29:43	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:29:43	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT * FROM `casbin_rule` LIMIT 1", "time": "0.000ms", "rows": -1}
+2022-12-06 10:29:43	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' ORDER BY ORDINAL_POSITION", "time": "2.000ms", "rows": -1}
+2022-12-06 10:29:43	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 10:29:43	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:29:43	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND index_name = 'idx_casbin_rule'", "time": "1.000ms", "rows": -1}
+2022-12-06 10:29:43	[35mDEBUG[0m	v2@v2.58.0/enforcer.go:179	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 50}
+2022-12-06 10:29:43	[35mDEBUG[0m	v2@v2.58.0/enforcer_cached.go:96	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 50}
+2022-12-06 10:29:43	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `casbin_rule`", "time": "0.000ms", "rows": 1}
+2022-12-06 10:29:43	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `casbin_rule`", "time": "0.000ms", "rows": 1}
+2022-12-06 10:30:05	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "1.000ms", "rows": 1}
+2022-12-06 10:30:05	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/user", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "2.000ms"}
+2022-12-06 10:30:05	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:30:05	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'superAdmin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:30:05	[35mDEBUG[0m	paginator/paginator.go:65	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 10:30:05	[35mDEBUG[0m	v1/users_controller.go:31	Database Query	{"sql": "SELECT * FROM `users` WHERE `users`.`deleted_at` IS NULL ORDER BY id asc LIMIT 5", "time": "0.000ms", "rows": 5}
+2022-12-06 10:30:05	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/users", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "3.000ms"}
+2022-12-06 10:30:32	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "1.000ms", "rows": 1}
+2022-12-06 10:30:32	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'superAdmin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "1.000ms", "rows": 1}
+2022-12-06 10:30:32	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE email = '1111111@test.com' && isnull(deleted_at) AND id != '3'", "time": "0.000ms", "rows": 1}
+2022-12-06 10:30:32	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE phone = '11111111110' && isnull(deleted_at) AND id != '3'", "time": "0.000ms", "rows": 1}
+2022-12-06 10:30:32	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE name = 'ggg' && isnull(deleted_at) AND id != '3'", "time": "0.000ms", "rows": 1}
+2022-12-06 10:30:32	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE id= '3'", "time": "0.000ms", "rows": 1}
+2022-12-06 10:30:32	[33mWARN[0m	middlewares/logger.go:72	HTTP Warning 422	{"status": 422, "request": "PUT /api/v1/users", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "9.000ms", "Request Body": "{\"id\":\"3\",\"name\":\"ggg\",\"email\":\"1111111@test.com\",\"phone\":\"11111111110\",\"password\":\"111111\",\"city\":\"\",\"introduction\":\"\",\"status\":\"false\"}", "Response Body": "{\"errors\":{\"name\":[\"用户名已被占用\"]},\"message\":\"请求验证不通过，具体请查看 errors\"}"}
+2022-12-06 10:30:38	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:30:38	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'superAdmin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:30:38	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE name = 'gggg' && isnull(deleted_at) AND id != '3'", "time": "0.000ms", "rows": 1}
+2022-12-06 10:30:38	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE id= '3'", "time": "0.000ms", "rows": 1}
+2022-12-06 10:30:38	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE email = '1111111@test.com' && isnull(deleted_at) AND id != '3'", "time": "0.000ms", "rows": 1}
+2022-12-06 10:30:38	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE phone = '11111111110' && isnull(deleted_at) AND id != '3'", "time": "0.000ms", "rows": 1}
+2022-12-06 10:30:38	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '3' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:30:39	[33mWARN[0m	gorm@v1.24.1/callbacks.go:134	Database Slow Log	{"sql": "UPDATE `users` SET `name`='gggg',`email`='1111111@test.com',`phone`='11111111110',`password`='$2a$12$QR9GvFSbQYOfn/JzKkGiVuwdv1gdVIlhq2U8EUTiUWRCg.V788Vki',`city`='wenling',`introduction`='yibanabn',`avatar`='',`status`=false,`created_at`='2022-12-05 16:32:35',`updated_at`='2022-12-06 10:30:39.163',`deleted_at`=NULL WHERE `users`.`deleted_at` IS NULL AND `id` = 3", "time": "306.000ms", "rows": 1}
+2022-12-06 10:30:39	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "UPDATE `users` SET `name`='gggg',`email`='1111111@test.com',`phone`='11111111110',`password`='$2a$12$QR9GvFSbQYOfn/JzKkGiVuwdv1gdVIlhq2U8EUTiUWRCg.V788Vki',`city`='wenling',`introduction`='yibanabn',`avatar`='',`status`=false,`created_at`='2022-12-05 16:32:35',`updated_at`='2022-12-06 10:30:39.163',`deleted_at`=NULL WHERE `users`.`deleted_at` IS NULL AND `id` = 3", "time": "306.000ms", "rows": 1}
+2022-12-06 10:30:39	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "PUT /api/v1/users", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "311.000ms", "Request Body": "{\"id\":\"3\",\"name\":\"gggg\",\"email\":\"1111111@test.com\",\"phone\":\"11111111110\",\"password\":\"111111\",\"city\":\"\",\"introduction\":\"\",\"status\":\"false\"}", "Response Body": "{\"data\":{\"id\":3,\"name\":\"gggg\",\"email\":\"1111111@test.com\",\"phone\":\"11111111110\",\"city\":\"wenling\",\"introduction\":\"yibanabn\",\"created_at\":\"2022-12-05T16:32:35+08:00\",\"updated_at\":\"2022-12-06T10:30:39.163+08:00\",\"deleted_at\":null},\"success\":true}"}
+2022-12-06 10:30:39	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:30:39	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'superAdmin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:30:39	[35mDEBUG[0m	paginator/paginator.go:65	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 10:30:39	[35mDEBUG[0m	v1/users_controller.go:31	Database Query	{"sql": "SELECT * FROM `users` WHERE `users`.`deleted_at` IS NULL ORDER BY id asc LIMIT 5", "time": "0.000ms", "rows": 5}
+2022-12-06 10:30:39	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/users", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "2.000ms"}
+2022-12-06 10:30:43	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:30:43	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'superAdmin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:30:43	[35mDEBUG[0m	paginator/paginator.go:65	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 10:30:43	[35mDEBUG[0m	v1/users_controller.go:31	Database Query	{"sql": "SELECT * FROM `users` WHERE `users`.`deleted_at` IS NULL ORDER BY id asc LIMIT 5 OFFSET 10", "time": "0.000ms", "rows": 1}
+2022-12-06 10:30:43	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/users?page=3&sort=id&order=asc&per_page=5", "query": "page=3&sort=id&order=asc&per_page=5", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "3.000ms"}
+2022-12-06 10:30:45	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:30:45	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'superAdmin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:30:45	[35mDEBUG[0m	paginator/paginator.go:65	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 10:30:45	[35mDEBUG[0m	v1/users_controller.go:31	Database Query	{"sql": "SELECT * FROM `users` WHERE `users`.`deleted_at` IS NULL ORDER BY id asc LIMIT 5", "time": "0.000ms", "rows": 5}
+2022-12-06 10:30:45	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/users?page=1&sort=id&order=asc&per_page=5", "query": "page=1&sort=id&order=asc&per_page=5", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "2.000ms"}
+2022-12-06 10:30:47	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:30:47	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'superAdmin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:30:47	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE id= '3'", "time": "0.000ms", "rows": 1}
+2022-12-06 10:30:47	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '3' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:30:47	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "UPDATE `users` SET `deleted_at`='2022-12-06 10:30:47.49' WHERE `users`.`id` = 3 AND `users`.`deleted_at` IS NULL", "time": "2.000ms", "rows": 1}
+2022-12-06 10:30:47	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "DELETE /api/v1/users", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "5.000ms", "Request Body": "{\"id\":\"3\"}", "Response Body": "{\"message\":\"操作成功！\",\"success\":true}"}
+2022-12-06 10:30:47	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:30:47	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'superAdmin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:30:47	[35mDEBUG[0m	paginator/paginator.go:65	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 10:30:47	[35mDEBUG[0m	v1/users_controller.go:31	Database Query	{"sql": "SELECT * FROM `users` WHERE `users`.`deleted_at` IS NULL ORDER BY id asc LIMIT 5", "time": "0.000ms", "rows": 5}
+2022-12-06 10:30:47	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/users?page=1&sort=id&order=asc&per_page=5", "query": "page=1&sort=id&order=asc&per_page=5", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "3.000ms"}
+2022-12-06 10:31:39	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:31:39	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'superAdmin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:31:39	[35mDEBUG[0m	paginator/paginator.go:65	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 10:31:39	[35mDEBUG[0m	v1/users_controller.go:31	Database Query	{"sql": "SELECT * FROM `users` WHERE `users`.`deleted_at` IS NULL ORDER BY id asc LIMIT 5", "time": "1.000ms", "rows": 5}
+2022-12-06 10:31:39	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/users", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "5.000ms"}
+2022-12-06 10:32:38	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "1.000ms", "rows": 1}
+2022-12-06 10:32:38	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'superAdmin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "1.000ms", "rows": 1}
+2022-12-06 10:32:38	[35mDEBUG[0m	paginator/paginator.go:65	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 10:32:38	[35mDEBUG[0m	v1/users_controller.go:31	Database Query	{"sql": "SELECT * FROM `users` WHERE `users`.`deleted_at` IS NULL ORDER BY id asc LIMIT 5", "time": "2.000ms", "rows": 5}
+2022-12-06 10:32:38	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/users", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "6.000ms"}
+2022-12-06 10:34:00	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "4.000ms", "rows": 1}
+2022-12-06 10:34:00	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'superAdmin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:34:00	[35mDEBUG[0m	paginator/paginator.go:65	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 10:34:00	[35mDEBUG[0m	v1/users_controller.go:31	Database Query	{"sql": "SELECT * FROM `users` WHERE `users`.`deleted_at` IS NULL ORDER BY id asc LIMIT 5", "time": "0.000ms", "rows": 5}
+2022-12-06 10:34:00	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/users", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "7.000ms"}
+2022-12-06 10:34:14	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:34:14	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/user", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "1.000ms"}
+2022-12-06 10:34:14	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:34:14	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'superAdmin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:34:14	[35mDEBUG[0m	paginator/paginator.go:65	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 10:34:14	[35mDEBUG[0m	v1/users_controller.go:31	Database Query	{"sql": "SELECT * FROM `users` WHERE `users`.`deleted_at` IS NULL ORDER BY id asc LIMIT 5", "time": "0.000ms", "rows": 5}
+2022-12-06 10:34:14	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/users", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "2.000ms"}
+2022-12-06 10:34:20	[33mWARN[0m	middlewares/logger.go:72	HTTP Warning 404	{"status": 404, "request": "GET /api/v1/users/reset", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "0.000ms"}
+2022-12-06 10:36:23	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "1.000ms", "rows": 1}
+2022-12-06 10:36:23	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'superAdmin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:36:23	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE id= '3'", "time": "0.000ms", "rows": 1}
+2022-12-06 10:36:23	[33mWARN[0m	gorm@v1.24.1/callbacks.go:134	Database ErrRecordNotFound	{"sql": "SELECT * FROM `users` WHERE `id` = '3' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 0}
+2022-12-06 10:36:23	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '3' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 0}
+2022-12-06 10:36:23	[33mWARN[0m	gorm@v1.24.1/callbacks.go:134	Database Slow Log	{"sql": "INSERT INTO `users` (`name`,`email`,`phone`,`password`,`city`,`introduction`,`avatar`,`status`,`created_at`,`updated_at`,`deleted_at`) VALUES ('','','','$2a$12$IZdsJu9Wdkaav1/pdrauoOdPkCIP/nZwKNtsjjxfchAvS1a4iEvY2','','','',false,'2022-12-06 10:36:23.82','2022-12-06 10:36:23.82',NULL)", "time": "299.000ms", "rows": 1}
+2022-12-06 10:36:23	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "INSERT INTO `users` (`name`,`email`,`phone`,`password`,`city`,`introduction`,`avatar`,`status`,`created_at`,`updated_at`,`deleted_at`) VALUES ('','','','$2a$12$IZdsJu9Wdkaav1/pdrauoOdPkCIP/nZwKNtsjjxfchAvS1a4iEvY2','','','',false,'2022-12-06 10:36:23.82','2022-12-06 10:36:23.82',NULL)", "time": "299.000ms", "rows": 1}
+2022-12-06 10:36:23	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "POST /api/v1/users/reset", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "305.000ms", "Request Body": "{\n    \"id\":\"3\"\n}", "Response Body": "{\"message\":\"操作成功！\",\"success\":true}"}
+2022-12-06 10:37:19	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 10:37:19	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "1.000ms", "rows": 1}
+2022-12-06 10:37:19	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'users' AND table_type = 'BASE TABLE'", "time": "1.000ms", "rows": -1}
+2022-12-06 10:37:19	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 10:37:19	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 10:37:19	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 10:37:19	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:37:19	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'roles' AND table_type = 'BASE TABLE'", "time": "1.000ms", "rows": -1}
+2022-12-06 10:37:19	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `roles` WHERE `roles`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 10:37:19	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `roles` WHERE `roles`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 10:37:19	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 10:37:19	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:37:19	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND table_type = 'BASE TABLE'", "time": "1.000ms", "rows": -1}
+2022-12-06 10:37:19	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 10:37:19	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:37:19	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT * FROM `casbin_rule` LIMIT 1", "time": "0.000ms", "rows": -1}
+2022-12-06 10:37:19	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' ORDER BY ORDINAL_POSITION", "time": "1.000ms", "rows": -1}
+2022-12-06 10:37:19	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 10:37:19	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:37:19	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND index_name = 'idx_casbin_rule'", "time": "2.000ms", "rows": -1}
+2022-12-06 10:37:19	[35mDEBUG[0m	v2@v2.58.0/enforcer.go:179	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 50}
+2022-12-06 10:37:19	[35mDEBUG[0m	v2@v2.58.0/enforcer_cached.go:96	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 50}
+2022-12-06 10:37:19	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `casbin_rule`", "time": "0.000ms", "rows": 1}
+2022-12-06 10:37:19	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `casbin_rule`", "time": "0.000ms", "rows": 1}
+2022-12-06 10:38:01	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 10:38:01	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:38:01	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'users' AND table_type = 'BASE TABLE'", "time": "1.000ms", "rows": -1}
+2022-12-06 10:38:01	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 10:38:01	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 10:38:01	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 10:38:01	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:38:01	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'roles' AND table_type = 'BASE TABLE'", "time": "1.000ms", "rows": -1}
+2022-12-06 10:38:01	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `roles` WHERE `roles`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 10:38:01	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `roles` WHERE `roles`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 10:38:01	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 10:38:01	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:38:01	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND table_type = 'BASE TABLE'", "time": "0.000ms", "rows": -1}
+2022-12-06 10:38:01	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 10:38:01	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:38:01	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT * FROM `casbin_rule` LIMIT 1", "time": "0.000ms", "rows": -1}
+2022-12-06 10:38:01	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' ORDER BY ORDINAL_POSITION", "time": "2.000ms", "rows": -1}
+2022-12-06 10:38:01	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 10:38:01	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:38:01	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND index_name = 'idx_casbin_rule'", "time": "1.000ms", "rows": -1}
+2022-12-06 10:38:01	[35mDEBUG[0m	v2@v2.58.0/enforcer.go:179	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 50}
+2022-12-06 10:38:01	[35mDEBUG[0m	v2@v2.58.0/enforcer_cached.go:96	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 50}
+2022-12-06 10:38:01	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `casbin_rule`", "time": "0.000ms", "rows": 1}
+2022-12-06 10:38:01	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `casbin_rule`", "time": "0.000ms", "rows": 1}
+2022-12-06 10:38:20	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 10:38:20	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "1.000ms", "rows": 1}
+2022-12-06 10:38:20	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'users' AND table_type = 'BASE TABLE'", "time": "0.000ms", "rows": -1}
+2022-12-06 10:38:20	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 10:38:20	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 10:38:20	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 10:38:20	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:38:20	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'roles' AND table_type = 'BASE TABLE'", "time": "1.000ms", "rows": -1}
+2022-12-06 10:38:20	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `roles` WHERE `roles`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 10:38:20	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `roles` WHERE `roles`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-06 10:38:20	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 10:38:20	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:38:20	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND table_type = 'BASE TABLE'", "time": "1.000ms", "rows": -1}
+2022-12-06 10:38:20	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 10:38:20	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:38:20	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT * FROM `casbin_rule` LIMIT 1", "time": "0.000ms", "rows": -1}
+2022-12-06 10:38:20	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' ORDER BY ORDINAL_POSITION", "time": "2.000ms", "rows": -1}
+2022-12-06 10:38:20	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-06 10:38:20	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:38:20	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND index_name = 'idx_casbin_rule'", "time": "1.000ms", "rows": -1}
+2022-12-06 10:38:20	[35mDEBUG[0m	v2@v2.58.0/enforcer.go:179	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 50}
+2022-12-06 10:38:20	[35mDEBUG[0m	v2@v2.58.0/enforcer_cached.go:96	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 50}
+2022-12-06 10:38:20	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `casbin_rule`", "time": "0.000ms", "rows": 1}
+2022-12-06 10:38:20	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `casbin_rule`", "time": "0.000ms", "rows": 1}
+2022-12-06 10:38:34	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:38:34	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'superAdmin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-06 10:38:34	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE id= '3'", "time": "0.000ms", "rows": 1}
+2022-12-06 10:38:34	[33mWARN[0m	gorm@v1.24.1/callbacks.go:134	Database ErrRecordNotFound	{"sql": "SELECT * FROM `users` WHERE `id` = '3' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 0}
+2022-12-06 10:38:34	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE `id` = '3' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 0}
+2022-12-06 10:38:34	[33mWARN[0m	gorm@v1.24.1/callbacks.go:134	Database Slow Log	{"sql": "INSERT INTO `users` (`name`,`email`,`phone`,`password`,`city`,`introduction`,`avatar`,`status`,`created_at`,`updated_at`,`deleted_at`) VALUES ('','','','$2a$12$6qba68LCY9Pnw/p99Op9dOb3FjrH51J6PWkn/tXVcrXAXscDLppie','','','',false,'2022-12-06 10:38:34.71','2022-12-06 10:38:34.71',NULL)", "time": "310.000ms", "rows": 1}
+2022-12-06 10:38:34	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "INSERT INTO `users` (`name`,`email`,`phone`,`password`,`city`,`introduction`,`avatar`,`status`,`created_at`,`updated_at`,`deleted_at`) VALUES ('','','','$2a$12$6qba68LCY9Pnw/p99Op9dOb3FjrH51J6PWkn/tXVcrXAXscDLppie','','','',false,'2022-12-06 10:38:34.71','2022-12-06 10:38:34.71',NULL)", "time": "310.000ms", "rows": 1}
+2022-12-06 10:38:34	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "POST /api/v1/users/reset", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "316.000ms", "Request Body": "{\n    \"id\":\"3\"\n}", "Response Body": "{\"message\":\"操作成功！\",\"success\":true}"}
+2022-12-06 10:39:50	[31mERROR[0m	response/response.go:73	Error Occurred:	{"error": "json: cannot unmarshal number into Go struct field UserDeleteResetRequest.id of type string"}
+github.com/Gopherlinzy/gohub/pkg/response.BadRequest
+	/Users/admin/go/src/gin-vue3-admin/pkg/response/response.go:73
+github.com/Gopherlinzy/gohub/app/requests.Validate
+	/Users/admin/go/src/gin-vue3-admin/app/requests/requests.go:23
+github.com/Gopherlinzy/gohub/app/http/controllers/api/v1.(*UsersController).ResetPassword
+	/Users/admin/go/src/gin-vue3-admin/app/http/controllers/api/v1/users_controller.go:215
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.CasbinAPI.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/casbin.go:32
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.AuthJWT.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/auth_jwt.go:37
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.LimitIP.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:31
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.ForceUA.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-06 10:40:12	[31mERROR[0m	gorm@v1.24.1/callbacks.go:134	Database Error	{"sql": "UPDATE `users` SET `deleted_at`='2022-12-06 10:40:12.553' WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 0, "error": "WHERE conditions required"}
+gorm.io/gorm.(*processor).Execute
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+gorm.io/gorm.(*DB).Delete
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/finisher_api.go:406
+github.com/Gopherlinzy/gohub/app/models/user.(*User).Delete
+	/Users/admin/go/src/gin-vue3-admin/app/models/user/user_model.go:68
+github.com/Gopherlinzy/gohub/app/http/controllers/api/v1.(*UsersController).DeleteUser
+	/Users/admin/go/src/gin-vue3-admin/app/http/controllers/api/v1/users_controller.go:201
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.CasbinAPI.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/casbin.go:32
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.AuthJWT.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/auth_jwt.go:37
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.LimitIP.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:31
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.ForceUA.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-06 10:40:12	[31mERROR[0m	middlewares/logger.go:75	HTTP Error 500	{"status": 500, "request": "DELETE /api/v1/users", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "4.000ms", "Request Body": "{\n    \"id\":\"33\"\n}", "Response Body": "{\"message\":\"删除失败，请稍后尝试~\"}"}
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:75
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-06 10:43:05	[31mERROR[0m	gorm@v1.24.1/callbacks.go:134	Database Error	{"sql": "SELECT * FROM `users` WHERE id =  AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 0, "error": "Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1' at line 1"}
+gorm.io/gorm.(*processor).Execute
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+gorm.io/gorm.(*DB).First
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/finisher_api.go:129
+github.com/Gopherlinzy/gohub/app/models/user.Get
+	/Users/admin/go/src/gin-vue3-admin/app/models/user/user_util.go:46
+github.com/Gopherlinzy/gohub/app/http/middlewares.AuthJWT.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/auth_jwt.go:25
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.LimitIP.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:31
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.ForceUA.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-06 10:43:51	[31mERROR[0m	gorm@v1.24.1/callbacks.go:134	Database Error	{"sql": "SELECT * FROM `users` WHERE id =  AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 0, "error": "Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1' at line 1"}
+gorm.io/gorm.(*processor).Execute
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+gorm.io/gorm.(*DB).First
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/finisher_api.go:129
+github.com/Gopherlinzy/gohub/app/models/user.Get
+	/Users/admin/go/src/gin-vue3-admin/app/models/user/user_util.go:46
+github.com/Gopherlinzy/gohub/app/http/middlewares.AuthJWT.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/auth_jwt.go:25
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.LimitIP.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:31
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.ForceUA.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-06 10:44:34	[31mERROR[0m	gorm@v1.24.1/callbacks.go:134	Database Error	{"sql": "SELECT * FROM `users` WHERE id =  AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 0, "error": "Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1' at line 1"}
+gorm.io/gorm.(*processor).Execute
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+gorm.io/gorm.(*DB).First
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/finisher_api.go:129
+github.com/Gopherlinzy/gohub/app/models/user.Get
+	/Users/admin/go/src/gin-vue3-admin/app/models/user/user_util.go:46
+github.com/Gopherlinzy/gohub/app/http/middlewares.AuthJWT.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/auth_jwt.go:25
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.LimitIP.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:31
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.ForceUA.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-06 10:44:46	[31mERROR[0m	gorm@v1.24.1/callbacks.go:134	Database Error	{"sql": "SELECT * FROM `users` WHERE id =  AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 0, "error": "Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1' at line 1"}
+gorm.io/gorm.(*processor).Execute
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+gorm.io/gorm.(*DB).First
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/finisher_api.go:129
+github.com/Gopherlinzy/gohub/app/models/user.Get
+	/Users/admin/go/src/gin-vue3-admin/app/models/user/user_util.go:46
+github.com/Gopherlinzy/gohub/app/http/middlewares.AuthJWT.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/auth_jwt.go:25
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.LimitIP.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:31
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.ForceUA.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-06 10:54:01	[31mERROR[0m	middlewares/recovery.go:51	recovery from panic	{"time": "2022-12-06 10:54:01", "error": "runtime error: index out of range [0] with length 0", "request": "GET /api/v1/users HTTP/1.1\r\nHost: localhost:8888\r\nAccept: */*\r\nAccept-Encoding: gzip, deflate, br\r\nAuthorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMjUiLCJ1c2VyX25hbWUiOiJNanN1dXNZIiwiZXhwaXJlX3RpbWUiOjE2NzU0NzkyMjQsImlzcyI6ImdvaHViIiwiZXhwIjoxNjc1NDc5MjI0LCJuYmYiOjE2NzAyOTUyMjQsImlhdCI6MTY3MDI5NTIyNH0.mkw6Cwp7kkyZieijNs4vhJ8hZEGdCG3MuKLkyCYOFzI\r\nConnection: keep-alive\r\nPostman-Token: 3066e546-7ff5-4285-a3b3-a0bf424223f7\r\nUser-Agent: PostmanRuntime/7.29.2\r\n\r\n", "stacktrace": "github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1.1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:56\nruntime.gopanic\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/panic.go:884\nruntime.goPanicIndex\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/panic.go:113\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.CasbinAPI.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/casbin.go:15\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.AuthJWT.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/auth_jwt.go:37\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.LimitIP.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:31\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.ForceUA.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/gin-gonic/gin.(*Engine).handleHTTPRequest\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616\ngithub.com/gin-gonic/gin.(*Engine).ServeHTTP\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572\nnet/http.serverHandler.ServeHTTP\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947\nnet/http.(*conn).serve\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991"}
+github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1.1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:51
+runtime.gopanic
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/panic.go:884
+runtime.goPanicIndex
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/panic.go:113
+github.com/Gopherlinzy/gohub/app/http/middlewares.CasbinAPI.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/casbin.go:15
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.AuthJWT.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/auth_jwt.go:37
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.LimitIP.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:31
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.ForceUA.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-06 10:54:01	[31mERROR[0m	middlewares/logger.go:75	HTTP Error 500	{"status": 500, "request": "GET /api/v1/users", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "7.000ms"}
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:75
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-06 10:55:46	[31mERROR[0m	middlewares/recovery.go:51	recovery from panic	{"time": "2022-12-06 10:55:46", "error": "runtime error: index out of range [0] with length 0", "request": "GET /api/v1/users HTTP/1.1\r\nHost: localhost:8888\r\nAccept: */*\r\nAccept-Encoding: gzip, deflate, br\r\nAuthorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMjUiLCJ1c2VyX25hbWUiOiJNanN1dXNZIiwiZXhwaXJlX3RpbWUiOjE2NzU0NzkyMjQsImlzcyI6ImdvaHViIiwiZXhwIjoxNjc1NDc5MjI0LCJuYmYiOjE2NzAyOTUyMjQsImlhdCI6MTY3MDI5NTIyNH0.mkw6Cwp7kkyZieijNs4vhJ8hZEGdCG3MuKLkyCYOFzI\r\nConnection: keep-alive\r\nPostman-Token: 69fec9be-8e68-41f1-bcd8-124ed903d1be\r\nUser-Agent: PostmanRuntime/7.29.2\r\n\r\n", "stacktrace": "github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1.1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:56\nruntime.gopanic\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/panic.go:884\nruntime.goPanicIndex\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/panic.go:113\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.CasbinAPI.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/casbin.go:15\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.AuthJWT.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/auth_jwt.go:37\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.LimitIP.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:31\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.ForceUA.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/gin-gonic/gin.(*Engine).handleHTTPRequest\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616\ngithub.com/gin-gonic/gin.(*Engine).ServeHTTP\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572\nnet/http.serverHandler.ServeHTTP\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947\nnet/http.(*conn).serve\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991"}
+github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1.1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:51
+runtime.gopanic
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/panic.go:884
+runtime.goPanicIndex
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/panic.go:113
+github.com/Gopherlinzy/gohub/app/http/middlewares.CasbinAPI.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/casbin.go:15
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.AuthJWT.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/auth_jwt.go:37
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.LimitIP.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:31
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.ForceUA.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-06 10:55:46	[31mERROR[0m	middlewares/logger.go:75	HTTP Error 500	{"status": 500, "request": "GET /api/v1/users", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "6.000ms"}
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:75
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-06 10:57:14	[31mERROR[0m	middlewares/recovery.go:51	recovery from panic	{"time": "2022-12-06 10:57:14", "error": "runtime error: index out of range [0] with length 0", "request": "GET /api/v1/users HTTP/1.1\r\nHost: localhost:8888\r\nAccept: */*\r\nAccept-Encoding: gzip, deflate, br\r\nAuthorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMjUiLCJ1c2VyX25hbWUiOiJNanN1dXNZIiwiZXhwaXJlX3RpbWUiOjE2NzU0NzkyMjQsImlzcyI6ImdvaHViIiwiZXhwIjoxNjc1NDc5MjI0LCJuYmYiOjE2NzAyOTUyMjQsImlhdCI6MTY3MDI5NTIyNH0.mkw6Cwp7kkyZieijNs4vhJ8hZEGdCG3MuKLkyCYOFzI\r\nConnection: keep-alive\r\nPostman-Token: 6559680b-6daa-48e2-b108-70e578d0022e\r\nUser-Agent: PostmanRuntime/7.29.2\r\n\r\n", "stacktrace": "github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1.1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:56\nruntime.gopanic\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/panic.go:884\nruntime.goPanicIndex\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/panic.go:113\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.CasbinAPI.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/casbin.go:15\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.AuthJWT.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/auth_jwt.go:37\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.LimitIP.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:31\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.ForceUA.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1\n\t/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47\ngithub.com/gin-gonic/gin.(*Context).Next\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173\ngithub.com/gin-gonic/gin.(*Engine).handleHTTPRequest\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616\ngithub.com/gin-gonic/gin.(*Engine).ServeHTTP\n\t/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572\nnet/http.serverHandler.ServeHTTP\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947\nnet/http.(*conn).serve\n\t/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991"}
+github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1.1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:51
+runtime.gopanic
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/panic.go:884
+runtime.goPanicIndex
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/panic.go:113
+github.com/Gopherlinzy/gohub/app/http/middlewares.CasbinAPI.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/casbin.go:15
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.AuthJWT.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/auth_jwt.go:37
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.LimitIP.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:31
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.ForceUA.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Recovery.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-06 10:57:14	[31mERROR[0m	middlewares/logger.go:75	HTTP Error 500	{"status": 500, "request": "GET /api/v1/users", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "6.000ms"}
+github.com/Gopherlinzy/gohub/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:75
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991

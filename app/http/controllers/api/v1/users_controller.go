@@ -1,12 +1,15 @@
 package v1
 
 import (
+	"fmt"
 	"github.com/Gopherlinzy/gohub/app/models/user"
 	"github.com/Gopherlinzy/gohub/app/requests"
 	"github.com/Gopherlinzy/gohub/pkg/auth"
 	"github.com/Gopherlinzy/gohub/pkg/file"
+	"github.com/Gopherlinzy/gohub/pkg/helpers"
 	"github.com/Gopherlinzy/gohub/pkg/response"
 	"github.com/gin-gonic/gin"
+	"strconv"
 )
 
 type UsersController struct {
@@ -39,11 +42,16 @@ func (ctrl *UsersController) Store(c *gin.Context) {
 		return
 	}
 
+	status, _ := strconv.ParseBool(request.Status)
+
 	userModel := user.User{
-		Name:     request.Name,
-		Email:    request.Email,
-		Phone:    request.Phone,
-		Password: request.Password,
+		Name:         request.Name,
+		Email:        request.Email,
+		Phone:        request.Phone,
+		Password:     request.Password,
+		City:         request.City,
+		Introduction: request.Introduction,
+		Status:       status,
 	}
 
 	userModel.Create()
@@ -54,16 +62,23 @@ func (ctrl *UsersController) Store(c *gin.Context) {
 	}
 }
 
-func (ctrl *UsersController) UpdateProfile(c *gin.Context) {
-	request := requests.UserUpdateProfileRequest{}
-	if ok := requests.Validate(c, &request, requests.UserUpdateProfile); !ok {
+func (ctrl *UsersController) Update(c *gin.Context) {
+	request := requests.UserUpdateRequest{}
+	if ok := requests.Validate(c, &request, requests.UserUpdate); !ok {
 		return
 	}
 
+	status, _ := strconv.ParseBool(request.Status)
+
 	currentUser := user.Get(request.ID)
 	currentUser.Name = request.Name
-	currentUser.City = request.City
-	currentUser.Introduction = request.Introduction
+	currentUser.Email = request.Email
+	currentUser.Phone = request.Phone
+	currentUser.Password = request.Password
+	currentUser.City = helpers.IsNull(currentUser.City, request.City)
+	currentUser.Introduction = helpers.IsNull(currentUser.Introduction, request.Introduction)
+	currentUser.Status = status
+
 	rowsAffected := currentUser.Save()
 	if rowsAffected > 0 {
 		response.Data(c, currentUser)
@@ -175,11 +190,12 @@ func (ctrl *UsersController) StoreUserRole(c *gin.Context) {
 func (ctrl *UsersController) DeleteUser(c *gin.Context) {
 
 	// 表单验证
-	request := requests.UserDeleteRequest{}
+	request := requests.UserDeleteResetRequest{}
 
-	if bindOk := requests.Validate(c, &request, requests.UserDelete); !bindOk {
+	if bindOk := requests.Validate(c, &request, requests.UserDeleteReset); !bindOk {
 		return
 	}
+	fmt.Println(request)
 
 	userModel := user.Get(request.ID)
 
@@ -190,4 +206,26 @@ func (ctrl *UsersController) DeleteUser(c *gin.Context) {
 	}
 
 	response.Abort500(c, "删除失败，请稍后尝试~")
+}
+
+// ResetPassword 重置密码为 123456
+func (ctrl *UsersController) ResetPassword(c *gin.Context) {
+	// 表单验证
+	request := requests.UserDeleteResetRequest{}
+
+	if bindOk := requests.Validate(c, &request, requests.UserDeleteReset); !bindOk {
+		return
+	}
+
+	userModel := user.Get(request.ID)
+	fmt.Println(userModel)
+
+	userModel.Password = "123456"
+	rowsAffected := userModel.Save()
+	if rowsAffected > 0 {
+		response.Success(c)
+		return
+	}
+
+	response.Abort500(c, "重置密码失败，请稍后尝试~")
 }

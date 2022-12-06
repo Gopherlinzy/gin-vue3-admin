@@ -13,6 +13,10 @@ func CasbinAPI() gin.HandlerFunc {
 		sub, exists := c.MustGet("current_user_name").(string)
 		if exists {
 			r := casbins.NewCasbin().GetRolesForUser(sub)[0]
+			if len(r) == 0 {
+				response.NoPolicyRequest(c, "你没有权限")
+				c.Abort()
+			}
 			// 获取请求的PATH
 			obj := c.Request.URL.Path
 			// 获取请求方法
@@ -20,7 +24,7 @@ func CasbinAPI() gin.HandlerFunc {
 			//fmt.Println("--------", sub, obj, act)
 
 			// 存在这条policy
-			success := casbins.NewCasbin().Enforce(sub, obj, act)
+			success := casbins.NewCasbin().Enforce(r, obj, act)
 			// 并且角色状态为true
 			status := role.GetBy("role_name", r).Status
 			if !success || !status {

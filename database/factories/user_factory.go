@@ -16,10 +16,18 @@ func MakeUsers(times int) []user.User {
 
 	for i := 0; i < times; i++ {
 		model := user.User{
-			Name:     faker.Username(),
-			Email:    faker.Email(),
-			Phone:    helpers.RandomNumber(11),
-			Password: "123456",
+			Name:         faker.Username(),
+			Email:        faker.Email(),
+			Phone:        helpers.RandomNumber(11),
+			Password:     "123456",
+			City:         helpers.RandomString(5),
+			Introduction: faker.Sentence(),
+			Status: func(x int) bool {
+				if x == 1 {
+					return true
+				}
+				return false
+			}(helpers.RandomInt(2)),
 		}
 		objs = append(objs, model)
 	}

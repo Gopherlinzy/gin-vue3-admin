@@ -9,10 +9,13 @@ import (
 )
 
 type UserStoreRequest struct {
-	Name     string `valid:"name" json:"name"`
-	Email    string `json:"email,omitempty" valid:"email"`
-	Phone    string `json:"phone,omitempty" valid:"phone"`
-	Password string `valid:"password" json:"password,omitempty"`
+	Name         string `valid:"name" json:"name"`
+	Email        string `json:"email,omitempty" valid:"email"`
+	Phone        string `json:"phone,omitempty" valid:"phone"`
+	Password     string `valid:"password" json:"password,omitempty"`
+	City         string `valid:"city" json:"city"`
+	Introduction string `valid:"introduction" json:"introduction"`
+	Status       string `valid:"status" json:"status"`
 }
 
 func UserStore(data interface{}, c *gin.Context) map[string][]string {
@@ -30,7 +33,10 @@ func UserStore(data interface{}, c *gin.Context) map[string][]string {
 			"digits:11",
 			"not_exists:users,phone",
 		},
-		"password": []string{"required", "min:6"},
+		"password":     []string{"required", "min:6"},
+		"introduction": []string{"min_cn:4", "max_cn:240"},
+		"city":         []string{"min_cn:2", "max_cn:20"},
+		"status":       []string{"required", "bool"},
 	}
 	messages := govalidator.MapData{
 		"name": []string{
@@ -55,26 +61,55 @@ func UserStore(data interface{}, c *gin.Context) map[string][]string {
 			"required:密码为必填项",
 			"min:密码长度需大于 6",
 		},
+		"introduction": []string{
+			"min_cn:描述长度需至少 4 个字",
+			"max_cn:描述长度不能超过 240 个字",
+		},
+		"city": []string{
+			"min_cn:城市需至少 2 个字",
+			"max_cn:城市不能超过 20 个字",
+		},
+		"status": []string{
+			"required:status为必填项",
+			"bool:必须得为布尔类型:true, false, 1, 0, \"1\" and \"0\"",
+		},
 	}
 	return validate(data, rules, messages)
 }
 
-type UserUpdateProfileRequest struct {
+type UserUpdateRequest struct {
 	ID           string `valid:"id" json:"id"`
 	Name         string `valid:"name" json:"name"`
+	Email        string `json:"email,omitempty" valid:"email"`
+	Phone        string `json:"phone,omitempty" valid:"phone"`
+	Password     string `valid:"password" json:"password,omitempty"`
 	City         string `valid:"city" json:"city"`
 	Introduction string `valid:"introduction" json:"introduction"`
+	Status       string `valid:"status" json:"status"`
 }
 
-func UserUpdateProfile(data interface{}, c *gin.Context) map[string][]string {
+func UserUpdate(data interface{}, c *gin.Context) map[string][]string {
 
 	// 查询用户名重复时，过滤掉当前用户 ID
-	uid := auth.CurrentUID(c)
+	uid := data.(*UserUpdateRequest).ID
 	rules := govalidator.MapData{
-		"id":           []string{"numeric", "exists:users,id"},
+		"id": []string{"numeric", "exists:users,id"},
+		"email": []string{
+			"required", "min:4",
+			"max:30",
+			"email",
+			"not_exists:users,email," + uid,
+		},
+		"phone": []string{
+			"required",
+			"digits:11",
+			"not_exists:users,phone," + uid,
+		},
+		"password":     []string{"required", "min:6"},
 		"name":         []string{"required", "alpha_num", "between:3,20", "not_exists:users,name," + uid},
 		"introduction": []string{"min_cn:4", "max_cn:240"},
 		"city":         []string{"min_cn:2", "max_cn:20"},
+		"status":       []string{"required", "bool"},
 	}
 	messages := govalidator.MapData{
 		"id": []string{
@@ -87,6 +122,22 @@ func UserUpdateProfile(data interface{}, c *gin.Context) map[string][]string {
 			"between:用户名长度需在 3~20 之间",
 			"not_exists:用户名已被占用",
 		},
+		"email": []string{
+			"required:Email 为必填项",
+			"min:Email 长度需大于 4",
+			"max:Email 长度需小于 30",
+			"email:Email 格式不正确，请提供有效的邮箱地址",
+			"not_exists:Email 已被占用",
+		},
+		"phone": []string{
+			"required:手机号为必填项，参数名称 phone",
+			"digits:手机号长度必须为 11 位的数字",
+			"not_exists:Phone 已被占用",
+		},
+		"password": []string{
+			"required:密码为必填项",
+			"min:密码长度需大于 6",
+		},
 		"introduction": []string{
 			"min_cn:描述长度需至少 4 个字",
 			"max_cn:描述长度不能超过 240 个字",
@@ -94,6 +145,10 @@ func UserUpdateProfile(data interface{}, c *gin.Context) map[string][]string {
 		"city": []string{
 			"min_cn:城市需至少 2 个字",
 			"max_cn:城市不能超过 20 个字",
+		},
+		"status": []string{
+			"required:status为必填项",
+			"bool:必须得为布尔类型:true, false, 1, 0, \"1\" and \"0\"",
 		},
 	}
 	return validate(data, rules, messages)
@@ -272,12 +327,11 @@ func StoreUserRole(data interface{}, c *gin.Context) map[string][]string {
 	return validate(data, rules, messages)
 }
 
-type UserDeleteRequest struct {
+type UserDeleteResetRequest struct {
 	ID string `valid:"id" json:"id"`
 }
 
-func UserDelete(data interface{}, c *gin.Context) map[string][]string {
-
+func UserDeleteReset(data interface{}, c *gin.Context) map[string][]string {
 	rules := govalidator.MapData{
 		"id": []string{"numeric", "exists:users,id"},
 	}

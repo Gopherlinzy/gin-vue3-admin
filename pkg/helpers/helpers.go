@@ -88,3 +88,11 @@ func RandomNumber(length int) string {
 	}
 	return string(b)
 }
+
+// IsNull 修改的时候如果新值为空则不修改
+func IsNull(oldValue, newValue string) string {
+	if Empty(newValue) {
+		return oldValue
+	}
+	return newValue
+}

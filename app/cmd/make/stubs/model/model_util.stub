@@ -9,7 +9,7 @@ import (
 )
 
 func Get(idstr string) ({{VariableName}} {{StructName}}) {
-    database.Gohub_DB.Where("id", idstr).First(&{{VariableName}})
+    database.Gohub_DB.Where("id = ?", idstr).First(&{{VariableName}})
     return
 }
 

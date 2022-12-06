@@ -13,13 +13,15 @@ type User struct {
 
 	Name string `json:"name,omitempty"`
 
+	Email    string `json:"email,omitempty"` // json:"-" json解析器忽略此字段
+	Phone    string `json:"phone,omitempty"`
+	Password string `json:"-"`
+
 	City         string `json:"city,omitempty"`
 	Introduction string `json:"introduction,omitempty"`
 	Avatar       string `json:"avatar,omitempty"`
 
-	Email    string `json:"-"` // json:"-" json解析器忽略此字段
-	Phone    string `json:"-"`
-	Password string `json:"-"`
+	Status bool `json:"status,omitempty"`
 
 	models.CommonTimestampsField
 }

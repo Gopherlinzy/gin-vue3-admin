@@ -15,6 +15,7 @@ func RegisterAPIRoutes(r *gin.Engine) {
 
 	var v1 *gin.RouterGroup
 	if len(configYaml.Gohub_Config.App.APIDomain) == 0 {
+		configYaml.Gohub_Config.App.Url += "/api"
 		v1 = r.Group("/api/v1")
 	} else {
 		v1 = r.Group("/v1")
@@ -80,7 +81,8 @@ func RegisterAPIRoutes(r *gin.Engine) {
 				usersGroup.GET("", uc.Index)
 				usersGroup.POST("", uc.Store)
 				usersGroup.POST("/role", uc.StoreUserRole)
-				usersGroup.PUT("/profile", uc.UpdateProfile)
+				usersGroup.POST("/reset", uc.ResetPassword)
+				usersGroup.PUT("", uc.Update)
 				usersGroup.PUT("/email", uc.UpdateEmail)
 				usersGroup.PUT("/phone", uc.UpdatePhone)
 				usersGroup.PUT("/password", uc.UpdatePassword)
