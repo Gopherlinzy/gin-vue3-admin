@@ -1,10 +1,10 @@
 package middlewares
 
 import (
-	"github.com/Gopherlinzy/gohub/pkg/app"
-	"github.com/Gopherlinzy/gohub/pkg/limiter"
-	"github.com/Gopherlinzy/gohub/pkg/logger"
-	"github.com/Gopherlinzy/gohub/pkg/response"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/app"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/limiter"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/logger"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/response"
 	"github.com/gin-gonic/gin"
 	"github.com/spf13/cast"
 	"net/http"
@@ -17,7 +17,6 @@ import (
 // * 10 reqs/minute: "10-M"
 // * 1000 reqs/hour: "1000-H"
 // * 2000 reqs/day: "2000-D"
-//
 func LimitIP(limit string) gin.HandlerFunc {
 	if app.IsTesting() {
 		limit = "1000000-H"

@@ -3,8 +3,8 @@ package auth
 
 import (
 	"errors"
-	"github.com/Gopherlinzy/gohub/app/models/user"
-	"github.com/Gopherlinzy/gohub/pkg/logger"
+	"github.com/Gopherlinzy/gin-vue3-admin/app/models/user"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/logger"
 	"github.com/gin-gonic/gin"
 )
 

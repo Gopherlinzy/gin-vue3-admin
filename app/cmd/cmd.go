@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"github.com/Gopherlinzy/gohub/pkg/helpers"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/helpers"
 	"github.com/spf13/cobra"
 	"os"
 )

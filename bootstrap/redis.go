@@ -2,8 +2,8 @@ package bootstrap
 
 import (
 	"fmt"
-	"github.com/Gopherlinzy/gohub/pkg/configYaml"
-	"github.com/Gopherlinzy/gohub/pkg/redis"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/configYaml"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/redis"
 )
 
 // SetupRedis 初始化 Redis

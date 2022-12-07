@@ -1,12 +1,12 @@
 package auth
 
 import (
-	v1 "github.com/Gopherlinzy/gohub/app/http/controllers/api/v1"
-	"github.com/Gopherlinzy/gohub/app/requests"
-	"github.com/Gopherlinzy/gohub/pkg/captcha"
-	"github.com/Gopherlinzy/gohub/pkg/logger"
-	"github.com/Gopherlinzy/gohub/pkg/response"
-	"github.com/Gopherlinzy/gohub/pkg/verifycode"
+	v1 "github.com/Gopherlinzy/gin-vue3-admin/app/http/controllers/api/v1"
+	"github.com/Gopherlinzy/gin-vue3-admin/app/requests"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/captcha"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/logger"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/response"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/verifycode"
 	"github.com/gin-gonic/gin"
 )
 

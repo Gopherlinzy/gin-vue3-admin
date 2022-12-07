@@ -2,8 +2,8 @@
 package validators
 
 import (
-	"github.com/Gopherlinzy/gohub/pkg/captcha"
-	"github.com/Gopherlinzy/gohub/pkg/verifycode"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/captcha"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/verifycode"
 )
 
 // ValidateCaptcha 自定义规则，验证『图片验证码』

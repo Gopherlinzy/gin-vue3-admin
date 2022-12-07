@@ -1,9 +1,9 @@
 package topic
 
 import (
-	"github.com/Gopherlinzy/gohub/pkg/app"
-	"github.com/Gopherlinzy/gohub/pkg/database"
-	"github.com/Gopherlinzy/gohub/pkg/paginator"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/app"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/database"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/paginator"
 	"github.com/gin-gonic/gin"
 	"gorm.io/gorm/clause"
 )

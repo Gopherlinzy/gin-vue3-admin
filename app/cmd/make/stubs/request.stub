@@ -38,11 +38,11 @@ func {{StructName}}Save(data interface{}, c *gin.Context) map[string][]string {
     return validate(data, rules, messages)
 }
 
-type {{StructName}}DeleteRequest struct {
+type {{StructName}}IDRequest struct {
     ID string `valid:"id" json:"id"`
 }
 
-func {{StructName}}Save(data interface{}, c *gin.Context) map[string][]string {
+func {{StructName}}ID(data interface{}, c *gin.Context) map[string][]string {
 
     rules := govalidator.MapData{
    		"id": []string{"numeric", "exists:{{TableName}},id"},

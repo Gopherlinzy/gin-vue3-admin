@@ -3,9 +3,9 @@ package file
 
 import (
 	"fmt"
-	"github.com/Gopherlinzy/gohub/pkg/app"
-	"github.com/Gopherlinzy/gohub/pkg/auth"
-	"github.com/Gopherlinzy/gohub/pkg/helpers"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/app"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/auth"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/helpers"
 	"github.com/disintegration/imaging"
 	"github.com/gin-gonic/gin"
 	"mime/multipart"

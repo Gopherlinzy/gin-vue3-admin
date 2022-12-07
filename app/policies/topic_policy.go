@@ -2,8 +2,8 @@
 package policies
 
 import (
-	"github.com/Gopherlinzy/gohub/app/models/topic"
-	"github.com/Gopherlinzy/gohub/pkg/auth"
+	"github.com/Gopherlinzy/gin-vue3-admin/app/models/topic"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/auth"
 	"github.com/gin-gonic/gin"
 )
 

@@ -1,6 +1,6 @@
 package configYaml
 
-import "github.com/Gopherlinzy/gohub/configYaml/mailhog"
+import "github.com/Gopherlinzy/gin-vue3-admin/configYaml/mailhog"
 
 type Mail struct {
 	STMP mailhog.STMP `mapstructure:"stmp" json:"stmp" yaml:"stmp"`

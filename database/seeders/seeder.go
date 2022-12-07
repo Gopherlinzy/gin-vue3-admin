@@ -1,7 +1,7 @@
 // Package seeders 存放数据填充文件
 package seeders
 
-import "github.com/Gopherlinzy/gohub/pkg/seed"
+import "github.com/Gopherlinzy/gin-vue3-admin/pkg/seed"
 
 func Initialize() {
 

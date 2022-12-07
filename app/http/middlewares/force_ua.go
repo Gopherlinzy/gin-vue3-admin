@@ -3,7 +3,7 @@ package middlewares
 
 import (
 	"errors"
-	"github.com/Gopherlinzy/gohub/pkg/response"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/response"
 	"github.com/gin-gonic/gin"
 )
 

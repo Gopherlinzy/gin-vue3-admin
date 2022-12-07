@@ -2,9 +2,9 @@
 package limiter
 
 import (
-	"github.com/Gopherlinzy/gohub/pkg/configYaml"
-	"github.com/Gopherlinzy/gohub/pkg/logger"
-	"github.com/Gopherlinzy/gohub/pkg/redis"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/configYaml"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/logger"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/redis"
 	"github.com/gin-gonic/gin"
 	limiterlib "github.com/ulule/limiter/v3"
 	sredis "github.com/ulule/limiter/v3/drivers/store/redis"

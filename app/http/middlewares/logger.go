@@ -3,8 +3,8 @@ package middlewares
 
 import (
 	"bytes"
-	"github.com/Gopherlinzy/gohub/pkg/helpers"
-	"github.com/Gopherlinzy/gohub/pkg/logger"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/helpers"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/logger"
 	"github.com/gin-gonic/gin"
 	"github.com/spf13/cast"
 	"go.uber.org/zap"

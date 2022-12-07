@@ -2,7 +2,7 @@ package casbins
 
 import (
 	"fmt"
-	"github.com/Gopherlinzy/gohub/pkg/database"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/database"
 	"github.com/casbin/casbin/v2"
 	casbinmodel "github.com/casbin/casbin/v2/model"
 	gormadapter "github.com/casbin/gorm-adapter/v3"

@@ -2,9 +2,9 @@ package jwt
 
 import (
 	"errors"
-	"github.com/Gopherlinzy/gohub/pkg/app"
-	"github.com/Gopherlinzy/gohub/pkg/configYaml"
-	"github.com/Gopherlinzy/gohub/pkg/logger"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/app"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/configYaml"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/logger"
 	"github.com/gin-gonic/gin"
 	jwtpkg "github.com/golang-jwt/jwt/v4"
 	"strings"

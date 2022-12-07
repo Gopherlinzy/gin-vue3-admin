@@ -2,11 +2,11 @@
 package auth
 
 import (
-	v1 "github.com/Gopherlinzy/gohub/app/http/controllers/api/v1"
-	"github.com/Gopherlinzy/gohub/app/models/user"
-	"github.com/Gopherlinzy/gohub/app/requests"
-	"github.com/Gopherlinzy/gohub/pkg/jwt"
-	"github.com/Gopherlinzy/gohub/pkg/response"
+	v1 "github.com/Gopherlinzy/gin-vue3-admin/app/http/controllers/api/v1"
+	"github.com/Gopherlinzy/gin-vue3-admin/app/models/user"
+	"github.com/Gopherlinzy/gin-vue3-admin/app/requests"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/jwt"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/response"
 	"github.com/gin-gonic/gin"
 )
 

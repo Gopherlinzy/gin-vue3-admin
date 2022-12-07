@@ -1,8 +1,8 @@
 package middlewares
 
 import (
-	"github.com/Gopherlinzy/gohub/pkg/jwt"
-	"github.com/Gopherlinzy/gohub/pkg/response"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/jwt"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/response"
 	"github.com/gin-gonic/gin"
 )
 

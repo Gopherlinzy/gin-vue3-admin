@@ -3,8 +3,8 @@ package bootstrap
 
 import (
 	"fmt"
-	"github.com/Gopherlinzy/gohub/pkg/cache"
-	"github.com/Gopherlinzy/gohub/pkg/configYaml"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/cache"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/configYaml"
 )
 
 // SetupCache 缓存

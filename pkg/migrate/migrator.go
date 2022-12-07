@@ -2,9 +2,9 @@
 package migrate
 
 import (
-	"github.com/Gopherlinzy/gohub/pkg/console"
-	"github.com/Gopherlinzy/gohub/pkg/database"
-	"github.com/Gopherlinzy/gohub/pkg/file"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/console"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/database"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/file"
 	"gorm.io/gorm"
 	"os"
 )

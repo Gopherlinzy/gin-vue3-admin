@@ -2,8 +2,8 @@
 package factories
 
 import (
-	"github.com/Gopherlinzy/gohub/app/models/user"
-	"github.com/Gopherlinzy/gohub/pkg/helpers"
+	"github.com/Gopherlinzy/gin-vue3-admin/app/models/user"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/helpers"
 	"github.com/bxcodec/faker/v4"
 	gormadapter "github.com/casbin/gorm-adapter/v3"
 )

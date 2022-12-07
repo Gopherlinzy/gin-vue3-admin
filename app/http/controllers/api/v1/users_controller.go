@@ -2,13 +2,13 @@ package v1
 
 import (
 	"fmt"
-	"github.com/Gopherlinzy/gohub/app/models/user"
-	"github.com/Gopherlinzy/gohub/app/requests"
-	"github.com/Gopherlinzy/gohub/pkg/auth"
-	casbins "github.com/Gopherlinzy/gohub/pkg/casbin"
-	"github.com/Gopherlinzy/gohub/pkg/file"
-	"github.com/Gopherlinzy/gohub/pkg/helpers"
-	"github.com/Gopherlinzy/gohub/pkg/response"
+	"github.com/Gopherlinzy/gin-vue3-admin/app/models/user"
+	"github.com/Gopherlinzy/gin-vue3-admin/app/requests"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/auth"
+	casbins "github.com/Gopherlinzy/gin-vue3-admin/pkg/casbin"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/file"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/helpers"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/response"
 	"github.com/gin-gonic/gin"
 	"strconv"
 )

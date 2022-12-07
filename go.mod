@@ -1,4 +1,4 @@
-module github.com/Gopherlinzy/gohub
+module github.com/Gopherlinzy/gin-vue3-admin
 
 go 1.18
 

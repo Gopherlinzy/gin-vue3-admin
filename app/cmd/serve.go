@@ -2,8 +2,8 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/Gopherlinzy/gohub/bootstrap"
-	"github.com/Gopherlinzy/gohub/pkg/configYaml"
+	"github.com/Gopherlinzy/gin-vue3-admin/bootstrap"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/configYaml"
 	"github.com/gin-gonic/gin"
 	"github.com/spf13/cobra"
 )

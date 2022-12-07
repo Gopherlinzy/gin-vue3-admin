@@ -3,7 +3,7 @@ package redis
 
 import (
 	"context"
-	"github.com/Gopherlinzy/gohub/pkg/logger"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/logger"
 	"github.com/go-redis/redis/v8"
 	"sync"
 	"time"

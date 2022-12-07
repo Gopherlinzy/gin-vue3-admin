@@ -4,9 +4,9 @@ package make
 import (
 	"embed"
 	"fmt"
-	"github.com/Gopherlinzy/gohub/pkg/console"
-	"github.com/Gopherlinzy/gohub/pkg/file"
-	"github.com/Gopherlinzy/gohub/pkg/str"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/console"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/file"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/str"
 	"github.com/iancoleman/strcase"
 	"github.com/spf13/cobra"
 	"strings"

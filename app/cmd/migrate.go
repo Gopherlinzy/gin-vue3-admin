@@ -1,8 +1,8 @@
 package cmd
 
 import (
-	"github.com/Gopherlinzy/gohub/database/migrations"
-	"github.com/Gopherlinzy/gohub/pkg/migrate"
+	"github.com/Gopherlinzy/gin-vue3-admin/database/migrations"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/migrate"
 	"github.com/spf13/cobra"
 )
 

@@ -2,7 +2,7 @@
 package requests
 
 import (
-	"github.com/Gopherlinzy/gohub/app/requests/validators"
+	"github.com/Gopherlinzy/gin-vue3-admin/app/requests/validators"
 	"github.com/gin-gonic/gin"
 	"github.com/thedevsaddam/govalidator"
 )

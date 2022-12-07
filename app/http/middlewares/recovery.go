@@ -1,8 +1,8 @@
 package middlewares
 
 import (
-	"github.com/Gopherlinzy/gohub/pkg/logger"
-	"github.com/Gopherlinzy/gohub/pkg/response"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/logger"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/response"
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
 	"net"

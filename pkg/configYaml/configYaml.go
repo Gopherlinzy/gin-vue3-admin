@@ -2,7 +2,7 @@ package configYaml
 
 import (
 	"fmt"
-	"github.com/Gopherlinzy/gohub/configYaml"
+	"github.com/Gopherlinzy/gin-vue3-admin/configYaml"
 	"github.com/fsnotify/fsnotify"
 	viperlib "github.com/spf13/viper"
 	"os"

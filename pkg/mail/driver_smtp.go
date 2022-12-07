@@ -2,8 +2,8 @@ package mail
 
 import (
 	"fmt"
-	"github.com/Gopherlinzy/gohub/pkg/configYaml"
-	"github.com/Gopherlinzy/gohub/pkg/logger"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/configYaml"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/logger"
 	emailPKG "github.com/jordan-wright/email"
 	"net/smtp"
 )

@@ -1,11 +1,11 @@
 package bootstrap
 
 import (
-	"github.com/Gopherlinzy/gohub/app/models/role"
-	"github.com/Gopherlinzy/gohub/app/models/user"
-	casbins "github.com/Gopherlinzy/gohub/pkg/casbin"
-	"github.com/Gopherlinzy/gohub/pkg/database"
-	"github.com/Gopherlinzy/gohub/pkg/logger"
+	"github.com/Gopherlinzy/gin-vue3-admin/app/models/role"
+	"github.com/Gopherlinzy/gin-vue3-admin/app/models/user"
+	casbins "github.com/Gopherlinzy/gin-vue3-admin/pkg/casbin"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/database"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/logger"
 	gormadapter "github.com/casbin/gorm-adapter/v3"
 	"sync"
 )
@@ -17,7 +17,7 @@ func IntizationData() {
 		initUserData()
 		initRoleData()
 		initCasbinData()
-		//casbins.NewCasbin().AddPolicy("superAdmin", "/api/v1/users/id", "POST")
+		//casbins.NewCasbin().AddPolicy("superAdmin", "/api/v1/roles/status", "PUT")
 	})
 }
 
@@ -38,7 +38,7 @@ func initUserData() {
 	users := []user.User{
 		{Name: "sly", Email: "123@testing.com", Phone: "00012312312", Password: "123456", City: "Huzhou", Introduction: "帅", Status: true, RoleName: "superAdmin"},
 		{Name: "linzy", Email: "123456@testing.com", Phone: "00012345678", Password: "123456", City: "Hangzhou", Introduction: "很帅", Status: true, RoleName: "admin"},
-		{Name: "gg", Email: "gggg@testing.com", Phone: "12345678910", Password: "123456", City: "yingdu", Introduction: "长得不咋地", Status: true, RoleName: "user"},
+		{Name: "gggg", Email: "gggg@testing.com", Phone: "12345678910", Password: "123456", City: "yingdu", Introduction: "长得不咋地", Status: true, RoleName: "user"},
 	}
 
 	database.Gohub_DB.Create(&users)
@@ -81,7 +81,7 @@ func initCasbinData() {
 		// 超级管理员
 		{Ptype: "g", V0: "sly", V1: "superAdmin"},
 		{Ptype: "g", V0: "linzy", V1: "admin"},
-		{Ptype: "g", V0: "gg", V1: "user"},
+		{Ptype: "g", V0: "gggg", V1: "user"},
 
 		{Ptype: "p", V0: "superAdmin", V1: "/api/v1/users", V2: "GET"},
 		{Ptype: "p", V0: "superAdmin", V1: "/api/v1/users", V2: "POST"},
@@ -102,6 +102,7 @@ func initCasbinData() {
 		{Ptype: "p", V0: "superAdmin", V1: "/api/v1/categories", V2: "PUT"},
 		{Ptype: "p", V0: "superAdmin", V1: "/api/v1/categories", V2: "DELETE"},
 
+		{Ptype: "p", V0: "superAdmin", V1: "/api/v1/roles/id", V2: "POST"},
 		{Ptype: "p", V0: "superAdmin", V1: "/api/v1/roles", V2: "GET"},
 		{Ptype: "p", V0: "superAdmin", V1: "/api/v1/roles", V2: "POST"},
 		{Ptype: "p", V0: "superAdmin", V1: "/api/v1/roles", V2: "PUT"},
@@ -122,6 +123,7 @@ func initCasbinData() {
 		{Ptype: "p", V0: "admin", V1: "/api/v1/categories", V2: "PUT"},
 		{Ptype: "p", V0: "admin", V1: "/api/v1/categories", V2: "DELETE"},
 
+		{Ptype: "p", V0: "admin", V1: "/api/v1/roles/id", V2: "GET"},
 		{Ptype: "p", V0: "admin", V1: "/api/v1/roles", V2: "GET"},
 		{Ptype: "p", V0: "admin", V1: "/api/v1/roles", V2: "POST"},
 

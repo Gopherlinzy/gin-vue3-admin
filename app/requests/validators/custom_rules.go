@@ -4,7 +4,7 @@ package validators
 import (
 	"errors"
 	"fmt"
-	"github.com/Gopherlinzy/gohub/pkg/database"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/database"
 	"github.com/thedevsaddam/govalidator"
 	"strconv"
 	"strings"

@@ -4,7 +4,7 @@ import (
 	"database/sql"
 	"errors"
 	"fmt"
-	"github.com/Gopherlinzy/gohub/pkg/configYaml"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/configYaml"
 	"gorm.io/gorm"
 	gormlogger "gorm.io/gorm/logger"
 	"sync"

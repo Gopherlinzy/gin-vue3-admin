@@ -2,7 +2,7 @@
 package response
 
 import (
-	"github.com/Gopherlinzy/gohub/pkg/logger"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/logger"
 	"net/http"
 
 	"github.com/gin-gonic/gin"

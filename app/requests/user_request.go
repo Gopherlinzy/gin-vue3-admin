@@ -1,8 +1,8 @@
 package requests
 
 import (
-	"github.com/Gopherlinzy/gohub/app/requests/validators"
-	"github.com/Gopherlinzy/gohub/pkg/auth"
+	"github.com/Gopherlinzy/gin-vue3-admin/app/requests/validators"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/auth"
 	"github.com/gin-gonic/gin"
 	"github.com/thedevsaddam/govalidator"
 	"mime/multipart"
@@ -362,7 +362,6 @@ func UpdateUserStatus(data interface{}, c *gin.Context) map[string][]string {
 			"numeric:id必须为数字",
 			"exists:id必须存在",
 		},
-
 		"status": []string{
 			"required:status为必填项",
 			"bool:必须得为布尔类型:true, false, 1, 0, \"1\" and \"0\"",

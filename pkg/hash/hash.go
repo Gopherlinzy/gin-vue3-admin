@@ -2,7 +2,7 @@
 package hash
 
 import (
-	"github.com/Gopherlinzy/gohub/pkg/logger"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/logger"
 	"golang.org/x/crypto/bcrypt"
 )
 

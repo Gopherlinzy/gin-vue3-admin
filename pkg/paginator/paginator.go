@@ -3,8 +3,8 @@ package paginator
 
 import (
 	"fmt"
-	"github.com/Gopherlinzy/gohub/pkg/configYaml"
-	"github.com/Gopherlinzy/gohub/pkg/logger"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/configYaml"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/logger"
 	"github.com/gin-gonic/gin"
 	"github.com/spf13/cast"
 	"gorm.io/gorm"

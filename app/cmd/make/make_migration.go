@@ -2,8 +2,8 @@ package make
 
 import (
 	"fmt"
-	"github.com/Gopherlinzy/gohub/pkg/app"
-	"github.com/Gopherlinzy/gohub/pkg/console"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/app"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/console"
 	"github.com/spf13/cobra"
 )
 

@@ -2,8 +2,8 @@ package migrations
 
 import (
 	"database/sql"
-	"github.com/Gopherlinzy/gohub/app/models"
-	"github.com/Gopherlinzy/gohub/pkg/migrate"
+	"github.com/Gopherlinzy/gin-vue3-admin/app/models"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/migrate"
 
 	"gorm.io/gorm"
 )

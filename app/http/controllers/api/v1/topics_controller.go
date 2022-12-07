@@ -1,10 +1,10 @@
 package v1
 
 import (
-	"github.com/Gopherlinzy/gohub/app/models/topic"
-	"github.com/Gopherlinzy/gohub/app/requests"
-	"github.com/Gopherlinzy/gohub/pkg/auth"
-	"github.com/Gopherlinzy/gohub/pkg/response"
+	"github.com/Gopherlinzy/gin-vue3-admin/app/models/topic"
+	"github.com/Gopherlinzy/gin-vue3-admin/app/requests"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/auth"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/response"
 
 	"github.com/gin-gonic/gin"
 )

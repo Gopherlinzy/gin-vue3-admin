@@ -2,10 +2,10 @@
 package routes
 
 import (
-	controllers "github.com/Gopherlinzy/gohub/app/http/controllers/api/v1"
-	"github.com/Gopherlinzy/gohub/app/http/controllers/api/v1/auth"
-	"github.com/Gopherlinzy/gohub/app/http/middlewares"
-	"github.com/Gopherlinzy/gohub/pkg/configYaml"
+	controllers "github.com/Gopherlinzy/gin-vue3-admin/app/http/controllers/api/v1"
+	"github.com/Gopherlinzy/gin-vue3-admin/app/http/controllers/api/v1/auth"
+	"github.com/Gopherlinzy/gin-vue3-admin/app/http/middlewares"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/configYaml"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )
@@ -106,8 +106,8 @@ func RegisterAPIRoutes(r *gin.Engine) {
 			tpc := new(controllers.TopicsController)
 			tpcGroup := v1.Group("/topics", middlewares.AuthJWT())
 			{
-				tpcGroup.GET("/:id", tpc.Show)
 				tpcGroup.GET("", middlewares.CasbinAPI(), tpc.Index)
+				tpcGroup.POST("/id", tpc.Show)
 				tpcGroup.POST("", middlewares.CasbinAPI(), tpc.Store)
 				tpcGroup.PUT("", middlewares.CasbinAPI(), tpc.Update)
 				tpcGroup.DELETE("", middlewares.CasbinAPI(), tpc.Delete)
@@ -122,13 +122,14 @@ func RegisterAPIRoutes(r *gin.Engine) {
 
 			// role 接口
 			rsc := new(controllers.RolesController)
-			rscGroup := v1.Group("/roles", middlewares.AuthJWT())
+			rscGroup := v1.Group("/roles", middlewares.AuthJWT(), middlewares.CasbinAPI())
 			{
-				rscGroup.GET("/:id", rsc.Show)
-				rscGroup.GET("", middlewares.CasbinAPI(), rsc.Index)
-				rscGroup.POST("", middlewares.CasbinAPI(), rsc.Store)
-				rscGroup.PUT("", middlewares.CasbinAPI(), rsc.Update)
-				rscGroup.DELETE("", middlewares.CasbinAPI(), rsc.Delete)
+				rscGroup.GET("", rsc.Index)
+				rscGroup.POST("", rsc.Store)
+				rscGroup.POST("/id", rsc.Show)
+				rscGroup.PUT("", rsc.Update)
+				rscGroup.PUT("/status", rsc.UpdateRoleStatus)
+				rscGroup.DELETE("", rsc.Delete)
 			}
 		}
 	}

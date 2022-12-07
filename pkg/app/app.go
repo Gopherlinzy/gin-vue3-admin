@@ -2,7 +2,7 @@
 package app
 
 import (
-	"github.com/Gopherlinzy/gohub/pkg/configYaml"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/configYaml"
 	"time"
 )
 

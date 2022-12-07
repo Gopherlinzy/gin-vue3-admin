@@ -2,8 +2,8 @@
 package bootstrap
 
 import (
-	"github.com/Gopherlinzy/gohub/app/http/middlewares"
-	"github.com/Gopherlinzy/gohub/routes"
+	"github.com/Gopherlinzy/gin-vue3-admin/app/http/middlewares"
+	"github.com/Gopherlinzy/gin-vue3-admin/routes"
 	"github.com/gin-gonic/gin"
 	"net/http"
 	"strings"

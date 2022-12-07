@@ -1,9 +1,9 @@
 package cmd
 
 import (
-	"github.com/Gopherlinzy/gohub/database/seeders"
-	"github.com/Gopherlinzy/gohub/pkg/console"
-	"github.com/Gopherlinzy/gohub/pkg/seed"
+	"github.com/Gopherlinzy/gin-vue3-admin/database/seeders"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/console"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/seed"
 	"github.com/spf13/cobra"
 )
 

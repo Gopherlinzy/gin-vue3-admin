@@ -1,9 +1,9 @@
 package middlewares
 
 import (
-	"github.com/Gopherlinzy/gohub/app/models/role"
-	casbins "github.com/Gopherlinzy/gohub/pkg/casbin"
-	"github.com/Gopherlinzy/gohub/pkg/response"
+	"github.com/Gopherlinzy/gin-vue3-admin/app/models/role"
+	casbins "github.com/Gopherlinzy/gin-vue3-admin/pkg/casbin"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/response"
 	"github.com/gin-gonic/gin"
 )
 
@@ -13,7 +13,7 @@ func CasbinAPI() gin.HandlerFunc {
 		sub, exists := c.MustGet("current_user_name").(string)
 		if exists {
 			r := casbins.NewCasbin().GetRolesForUser(sub)[0]
-			if len(r) == 0 {
+			if r == "" {
 				response.NoPolicyRequest(c, "你没有权限")
 				c.Abort()
 			}

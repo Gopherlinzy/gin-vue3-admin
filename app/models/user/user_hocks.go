@@ -1,7 +1,7 @@
 package user
 
 import (
-	"github.com/Gopherlinzy/gohub/pkg/hash"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/hash"
 	"gorm.io/gorm"
 )
 

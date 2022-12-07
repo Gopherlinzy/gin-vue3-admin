@@ -2,11 +2,11 @@ package main
 
 import (
 	"fmt"
-	"github.com/Gopherlinzy/gohub/app/cmd"
-	"github.com/Gopherlinzy/gohub/app/cmd/make"
-	"github.com/Gopherlinzy/gohub/bootstrap"
-	"github.com/Gopherlinzy/gohub/pkg/configYaml"
-	"github.com/Gopherlinzy/gohub/pkg/console"
+	"github.com/Gopherlinzy/gin-vue3-admin/app/cmd"
+	"github.com/Gopherlinzy/gin-vue3-admin/app/cmd/make"
+	"github.com/Gopherlinzy/gin-vue3-admin/bootstrap"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/configYaml"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/console"
 	"github.com/spf13/cobra"
 	"os"
 )

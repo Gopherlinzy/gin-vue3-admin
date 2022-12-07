@@ -2,8 +2,8 @@
 package seed
 
 import (
-	"github.com/Gopherlinzy/gohub/pkg/console"
-	"github.com/Gopherlinzy/gohub/pkg/database"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/console"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/database"
 	"gorm.io/gorm"
 )
 

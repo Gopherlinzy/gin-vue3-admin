@@ -3,13 +3,13 @@ package verifycode
 
 import (
 	"fmt"
-	"github.com/Gopherlinzy/gohub/pkg/app"
-	"github.com/Gopherlinzy/gohub/pkg/configYaml"
-	"github.com/Gopherlinzy/gohub/pkg/helpers"
-	"github.com/Gopherlinzy/gohub/pkg/logger"
-	"github.com/Gopherlinzy/gohub/pkg/mail"
-	"github.com/Gopherlinzy/gohub/pkg/redis"
-	"github.com/Gopherlinzy/gohub/pkg/sms"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/app"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/configYaml"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/helpers"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/logger"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/mail"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/redis"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/sms"
 	"strings"
 	"sync"
 )
@@ -34,7 +34,8 @@ func NewVerifyCode() *VerifyCode {
 }
 
 // SendSMS 发送短信验证码，调用示例：
-//         verifycode.NewVerifyCode().SendSMS(request.Phone)
+//
+//	verifycode.NewVerifyCode().SendSMS(request.Phone)
 func (vc *VerifyCode) SendSMS(phone string) bool {
 	// 生成验证码
 	code := vc.generateVerifyCode(phone)
@@ -51,7 +52,8 @@ func (vc *VerifyCode) SendSMS(phone string) bool {
 }
 
 // SendEmail 发送邮件验证码，调用示例：
-//         verifycode.NewVerifyCode().SendEmail(request.Email)
+//
+//	verifycode.NewVerifyCode().SendEmail(request.Email)
 func (vc *VerifyCode) SendEmail(email string) error {
 	// 生成验证码
 	code := vc.generateVerifyCode(email)

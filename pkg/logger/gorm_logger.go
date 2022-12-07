@@ -3,7 +3,7 @@ package logger
 import (
 	"context"
 	"errors"
-	"github.com/Gopherlinzy/gohub/pkg/helpers"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/helpers"
 	"go.uber.org/zap"
 	"gorm.io/gorm"
 	gormlogger "gorm.io/gorm/logger"
@@ -20,9 +20,10 @@ type GormLogger struct {
 }
 
 // NewGormLogger 外部调用。实例化一个 GormLogger 对象，示例：
-//     DB, err := gorm.Open(dbConfig, &gorm.Config{
-//         Logger: logger.NewGormLogger(),
-//     })
+//
+//	DB, err := gorm.Open(dbConfig, &gorm.Config{
+//	    Logger: logger.NewGormLogger(),
+//	})
 func NewGormLogger() GormLogger {
 	return GormLogger{
 		ZapLogger:     Gohub_Logger,           // 使用全局的 global.Gohub_Logger 对象

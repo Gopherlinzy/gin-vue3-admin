@@ -1,9 +1,10 @@
 package v1
 
 import (
-	"github.com/Gopherlinzy/gohub/app/models/role"
-	"github.com/Gopherlinzy/gohub/app/requests"
-	"github.com/Gopherlinzy/gohub/pkg/response"
+	"github.com/Gopherlinzy/gin-vue3-admin/app/models/role"
+	"github.com/Gopherlinzy/gin-vue3-admin/app/requests"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/response"
+	"strconv"
 
 	"github.com/gin-gonic/gin"
 )
@@ -19,7 +20,7 @@ func (ctrl *RolesController) Index(c *gin.Context) {
 		return
 	}
 
-	data, pager := role.Paginate(c, 10)
+	data, pager := role.Paginate(c, 5)
 	response.JSON(c, gin.H{
 		"data":  data,
 		"pager": pager,
@@ -28,19 +29,21 @@ func (ctrl *RolesController) Index(c *gin.Context) {
 
 // Show 显示单个 role 数据
 func (ctrl *RolesController) Show(c *gin.Context) {
-	roleModel := role.Get(c.Param("id"))
-	if roleModel.ID == 0 {
-		response.Abort404(c)
+	request := requests.RoleIDRequest{}
+
+	if bindOk := requests.Validate(c, &request, requests.RoleID); !bindOk {
 		return
 	}
+
+	roleModel := role.Get(request.ID)
 	response.Data(c, roleModel)
 }
 
 // Store 新建 role 数据
 func (ctrl *RolesController) Store(c *gin.Context) {
 
-	request := requests.RoleRequest{}
-	if ok := requests.Validate(c, &request, requests.RoleSave); !ok {
+	request := requests.RoleStoreRequest{}
+	if ok := requests.Validate(c, &request, requests.RoleStore); !ok {
 		return
 	}
 
@@ -59,9 +62,9 @@ func (ctrl *RolesController) Store(c *gin.Context) {
 // Update 修改 role 数据
 func (ctrl *RolesController) Update(c *gin.Context) {
 
-	request := requests.RoleRequest{}
+	request := requests.RoleUpdateRequest{}
 
-	if bindOk := requests.Validate(c, &request, requests.RoleSave); !bindOk {
+	if bindOk := requests.Validate(c, &request, requests.RoleUpdate); !bindOk {
 		return
 	}
 
@@ -79,9 +82,9 @@ func (ctrl *RolesController) Update(c *gin.Context) {
 // Delete 删除 role 数据
 func (ctrl *RolesController) Delete(c *gin.Context) {
 
-	request := requests.RoleDeleteRequest{}
+	request := requests.RoleIDRequest{}
 
-	if bindOk := requests.Validate(c, &request, requests.RoleDelete); !bindOk {
+	if bindOk := requests.Validate(c, &request, requests.RoleID); !bindOk {
 		return
 	}
 
@@ -94,4 +97,27 @@ func (ctrl *RolesController) Delete(c *gin.Context) {
 	}
 
 	response.Abort500(c, "删除失败，请稍后尝试~")
+}
+
+// UpdateRoleStatus 修改角色启用状态
+func (ctrl *RolesController) UpdateRoleStatus(c *gin.Context) {
+	request := requests.UpdateRoleStatusRequest{}
+	if ok := requests.Validate(c, &request, requests.UpdateRoleStatus); !ok {
+		return
+	}
+
+	roleModel := role.Get(request.ID)
+
+	status, _ := strconv.ParseBool(request.Status)
+
+	roleModel.Status = status
+
+	rowsAffected := roleModel.Save()
+
+	if rowsAffected > 0 {
+		response.Success(c)
+		return
+	}
+
+	response.Abort500(c, "更新失败，请稍后尝试~")
 }

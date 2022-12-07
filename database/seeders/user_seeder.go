@@ -2,11 +2,11 @@ package seeders
 
 import (
 	"fmt"
-	"github.com/Gopherlinzy/gohub/database/factories"
-	"github.com/Gopherlinzy/gohub/pkg/console"
-	"github.com/Gopherlinzy/gohub/pkg/database"
-	"github.com/Gopherlinzy/gohub/pkg/logger"
-	"github.com/Gopherlinzy/gohub/pkg/seed"
+	"github.com/Gopherlinzy/gin-vue3-admin/database/factories"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/console"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/database"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/logger"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/seed"
 	gormadapter "github.com/casbin/gorm-adapter/v3"
 	"gorm.io/gorm"
 )

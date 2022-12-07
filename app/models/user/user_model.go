@@ -2,10 +2,10 @@ package user
 
 import (
 	"errors"
-	"github.com/Gopherlinzy/gohub/app/models"
-	casbins "github.com/Gopherlinzy/gohub/pkg/casbin"
-	"github.com/Gopherlinzy/gohub/pkg/database"
-	"github.com/Gopherlinzy/gohub/pkg/hash"
+	"github.com/Gopherlinzy/gin-vue3-admin/app/models"
+	casbins "github.com/Gopherlinzy/gin-vue3-admin/pkg/casbin"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/database"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/hash"
 )
 
 // User 用户模型

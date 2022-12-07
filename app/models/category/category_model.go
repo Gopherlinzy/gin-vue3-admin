@@ -1,9 +1,9 @@
-//Package category 模型
+// Package category 模型
 package category
 
 import (
-	"github.com/Gopherlinzy/gohub/app/models"
-	"github.com/Gopherlinzy/gohub/pkg/database"
+	"github.com/Gopherlinzy/gin-vue3-admin/app/models"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/database"
 )
 
 type Category struct {

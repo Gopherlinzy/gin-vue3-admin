@@ -1,6 +1,6 @@
 package configYaml
 
-import "github.com/Gopherlinzy/gohub/configYaml/driver_captcha"
+import "github.com/Gopherlinzy/gin-vue3-admin/configYaml/driver_captcha"
 
 type Captcha struct {
 	Height          int    `mapstructure:"height" json:"height" yaml:"height"`

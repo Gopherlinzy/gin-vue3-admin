@@ -2,8 +2,8 @@ package sms
 
 import (
 	"encoding/json"
-	"github.com/Gopherlinzy/gohub/pkg/configYaml"
-	"github.com/Gopherlinzy/gohub/pkg/logger"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/configYaml"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/logger"
 	aliyunsmsclient "github.com/KenmyZhang/aliyun-communicate"
 )
 

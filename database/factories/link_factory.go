@@ -1,7 +1,7 @@
 package factories
 
 import (
-	"github.com/Gopherlinzy/gohub/app/models/link"
+	"github.com/Gopherlinzy/gin-vue3-admin/app/models/link"
 	"github.com/bxcodec/faker/v4"
 )
 

@@ -1,11 +1,11 @@
-//Package topic 模型
+// Package topic 模型
 package topic
 
 import (
-	"github.com/Gopherlinzy/gohub/app/models"
-	"github.com/Gopherlinzy/gohub/app/models/category"
-	"github.com/Gopherlinzy/gohub/app/models/user"
-	"github.com/Gopherlinzy/gohub/pkg/database"
+	"github.com/Gopherlinzy/gin-vue3-admin/app/models"
+	"github.com/Gopherlinzy/gin-vue3-admin/app/models/category"
+	"github.com/Gopherlinzy/gin-vue3-admin/app/models/user"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/database"
 )
 
 type Topic struct {

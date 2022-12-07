@@ -3,7 +3,7 @@ package requests
 
 import (
 	"fmt"
-	"github.com/Gopherlinzy/gohub/pkg/response"
+	"github.com/Gopherlinzy/gin-vue3-admin/pkg/response"
 	"github.com/gin-gonic/gin"
 	"github.com/thedevsaddam/govalidator"
 	"net/http"
@@ -13,9 +13,10 @@ import (
 type ValidatorFunc func(interface{}, *gin.Context) map[string][]string
 
 // Validate 控制器里调用示例：
-//        if ok := requests.Validate(c, &requests.UserSaveRequest{}, requests.UserSave); !ok {
-//            return
-//        }
+//
+//	if ok := requests.Validate(c, &requests.UserSaveRequest{}, requests.UserSave); !ok {
+//	    return
+//	}
 func Validate(c *gin.Context, request interface{}, handler ValidatorFunc) bool {
 	// 1. 解析请求，支持 JSON 数据、表单请求和 URL Query
 	if err := c.ShouldBind(request); err != nil {
