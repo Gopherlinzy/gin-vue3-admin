@@ -3,6 +3,8 @@ package role
 
 import (
 	"github.com/Gopherlinzy/gin-vue3-admin/app/models"
+	"github.com/Gopherlinzy/gin-vue3-admin/app/models/api"
+	"github.com/Gopherlinzy/gin-vue3-admin/app/models/menu"
 	"github.com/Gopherlinzy/gin-vue3-admin/pkg/database"
 )
 
@@ -12,6 +14,9 @@ type Role struct {
 	RoleName string `json:"role_name,omitempty"`
 	Des      string `json:"des,omitempty"`
 	Status   bool   `json:"status,omitempty"`
+
+	Menus []menu.Menu `gorm:"many2many:roles_menus;"`
+	Apis  []api.Api   `gorm:"many2many:roles_apis;"`
 
 	models.CommonTimestampsField
 }

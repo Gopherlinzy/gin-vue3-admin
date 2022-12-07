@@ -18,6 +18,12 @@ func GetBy(field, value string) (role Role) {
 	return
 }
 
+// GetByMany 查找关联表数据
+func GetByMany(tableName string) (role Role) {
+	database.Gohub_DB.Preload(tableName).First(&role)
+	return
+}
+
 func All() (roles []Role) {
 	database.Gohub_DB.Find(&roles)
 	return

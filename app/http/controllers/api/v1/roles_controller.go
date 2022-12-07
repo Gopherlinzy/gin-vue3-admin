@@ -1,8 +1,10 @@
 package v1
 
 import (
+	"fmt"
 	"github.com/Gopherlinzy/gin-vue3-admin/app/models/role"
 	"github.com/Gopherlinzy/gin-vue3-admin/app/requests"
+	casbins "github.com/Gopherlinzy/gin-vue3-admin/pkg/casbin"
 	"github.com/Gopherlinzy/gin-vue3-admin/pkg/response"
 	"strconv"
 
@@ -25,6 +27,20 @@ func (ctrl *RolesController) Index(c *gin.Context) {
 		"data":  data,
 		"pager": pager,
 	})
+}
+
+// IndexPolicies 显示该 role 所有的权限
+func (ctrl *RolesController) IndexPolicies(c *gin.Context) {
+	request := requests.RoleIDRequest{}
+
+	if bindOk := requests.Validate(c, &request, requests.RoleID); !bindOk {
+		return
+	}
+
+	roleModel := role.Get(request.ID)
+	fmt.Println("-------", request)
+	policy := casbins.NewCasbin().GetFilteredPolicy(roleModel.RoleName)
+	response.Data(c, policy)
 }
 
 // Show 显示单个 role 数据

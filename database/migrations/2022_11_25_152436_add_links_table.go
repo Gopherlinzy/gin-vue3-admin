@@ -8,16 +8,16 @@ import (
 	"gorm.io/gorm"
 )
 
+type Link struct {
+	models.BaseModel
+
+	Name string `gorm:"type:varchar(255);not null"`
+	URL  string `gorm:"type:varchar(255);default:null"`
+
+	models.CommonTimestampsField
+}
+
 func init() {
-
-	type Link struct {
-		models.BaseModel
-
-		Name string `gorm:"type:varchar(255);not null"`
-		URL  string `gorm:"type:varchar(255);default:null"`
-
-		models.CommonTimestampsField
-	}
 
 	up := func(migrator gorm.Migrator, DB *sql.DB) {
 		migrator.AutoMigrate(&Link{})

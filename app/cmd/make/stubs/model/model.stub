@@ -1,28 +1,31 @@
-package seeders
+//Package {{PackageName}} 模型
+package {{PackageName}}
 
 import (
-    "fmt"
-    "github.com/Gopherlinzy/gin-vue3-admin/database/factories"
-    "github.com/Gopherlinzy/gin-vue3-admin/pkg/console"
-    "github.com/Gopherlinzy/gin-vue3-admin/pkg/logger"
-    "github.com/Gopherlinzy/gin-vue3-admin/pkg/seed"
 
-    "gorm.io/gorm"
+    "github.com/Gopherlinzy/gin-vue3-admin/app/models"
+    "github.com/Gopherlinzy/gin-vue3-admin/pkg/database"
 )
 
-func init() {
+type {{StructName}} struct {
+    models.BaseModel
 
-    seed.Add("Seed{{StructNamePlural}}Table", func(db *gorm.DB) {
+    // Put fields in here
+    FIXME()
 
-        {{VariableNamePlural}}  := factories.Make{{StructNamePlural}}(10)
+    models.CommonTimestampsField
+}
 
-        result := db.Table("{{TableName}}").Create(&{{VariableNamePlural}})
+func ({{VariableName}} *{{StructName}}) Create() {
+    database.Gohub_DB.Create(&{{VariableName}})
+}
 
-        if err := result.Error; err != nil {
-            logger.LogIf(err)
-            return
-        }
+func ({{VariableName}} *{{StructName}}) Save() (rowsAffected int64) {
+    result := database.Gohub_DB.Save(&{{VariableName}})
+    return result.RowsAffected
+}
 
-        console.Success(fmt.Sprintf("Table [%v] %v rows seeded", result.Statement.Table, result.RowsAffected))
-    })
+func ({{VariableName}} *{{StructName}}) Delete() (rowsAffected int64) {
+    result := database.Gohub_DB.Delete(&{{VariableName}})
+    return result.RowsAffected
 }

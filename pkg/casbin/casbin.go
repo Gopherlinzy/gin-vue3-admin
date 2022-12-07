@@ -47,7 +47,7 @@ func NewCasbin() *Casbin {
 			
 			# 匹配器
 			[matchers]
-			m = g(r.sub, p.sub) && r.obj == p.obj && r.act == p.act || checkSuperAdmin(r.sub, "superadmin")
+			m = g(r.sub, p.sub) && r.obj == p.obj && r.act == p.act || checkSuperAdmin(r.sub, "superAdmin")
 			`
 		m, _ := casbinmodel.NewModelFromString(text)
 		//db, err := gorm.Open(mysql.Open("root:123456@tcp(127.0.0.1:3306)/go_test?charset=utf8mb4"), &gorm.Config{})
@@ -63,7 +63,8 @@ func NewCasbin() *Casbin {
 		internalCasbin.Enforcer.AddFunction("checkSuperAdmin", func(arguments ...interface{}) (interface{}, error) {
 			username := arguments[0].(string)
 			role := arguments[1].(string)
-			// 检查用户名的角色是否为superadmin
+			//fmt.Println(username, role, "--------")
+			// 检查用户名的角色是否为superAdmin
 			return internalCasbin.Enforcer.HasRoleForUser(username, role)
 		})
 

@@ -24,7 +24,7 @@ func CasbinAPI() gin.HandlerFunc {
 			//fmt.Println("--------", sub, obj, act)
 
 			// 存在这条policy
-			success := casbins.NewCasbin().Enforce(r, obj, act)
+			success := casbins.NewCasbin().Enforce(sub, obj, act)
 			// 并且角色状态为true
 			status := role.GetBy("role_name", r).Status
 			if !success || !status {

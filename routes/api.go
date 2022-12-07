@@ -126,6 +126,7 @@ func RegisterAPIRoutes(r *gin.Engine) {
 			{
 				rscGroup.GET("", rsc.Index)
 				rscGroup.POST("", rsc.Store)
+				rscGroup.POST("/policies", rsc.IndexPolicies)
 				rscGroup.POST("/id", rsc.Show)
 				rscGroup.PUT("", rsc.Update)
 				rscGroup.PUT("/status", rsc.UpdateRoleStatus)

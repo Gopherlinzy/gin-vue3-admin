@@ -278,3 +278,77 @@ net/http.serverHandler.ServeHTTP
 	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
 net/http.(*conn).serve
 	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-07 21:12:00	[31mERROR[0m	gorm@v1.24.1/callbacks.go:134	Database Error	{"sql": "ALTER TABLE `roles` MODIFY COLUMN `role_name` longtext", "time": "0.000ms", "rows": 0, "error": "Error 1170: BLOB/TEXT column 'role_name' used in key specification without a key length"}
+gorm.io/gorm.(*processor).Execute
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+gorm.io/gorm.(*DB).Exec
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/finisher_api.go:707
+gorm.io/driver/mysql.Migrator.AlterColumn.func1
+	/Users/admin/go/pkg/mod/gorm.io/driver/mysql@v1.4.4/migrator.go:52
+gorm.io/gorm/migrator.Migrator.RunWithValue
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/migrator/migrator.go:52
+gorm.io/driver/mysql.Migrator.AlterColumn
+	/Users/admin/go/pkg/mod/gorm.io/driver/mysql@v1.4.4/migrator.go:50
+gorm.io/gorm/migrator.Migrator.MigrateColumn
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/migrator/migrator.go:498
+gorm.io/gorm/migrator.Migrator.AutoMigrate.func1
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/migrator/migrator.go:123
+gorm.io/gorm/migrator.Migrator.RunWithValue
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/migrator/migrator.go:52
+gorm.io/gorm/migrator.Migrator.AutoMigrate
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/migrator/migrator.go:101
+github.com/Gopherlinzy/gin-vue3-admin/database/migrations.init.6.func1
+	/Users/admin/go/src/gin-vue3-admin/database/migrations/2022_12_07_210542_add_menus_table.go:29
+github.com/Gopherlinzy/gin-vue3-admin/pkg/migrate.(*Migrator).runUpMigration
+	/Users/admin/go/src/gin-vue3-admin/pkg/migrate/migrator.go:213
+github.com/Gopherlinzy/gin-vue3-admin/pkg/migrate.(*Migrator).Up
+	/Users/admin/go/src/gin-vue3-admin/pkg/migrate/migrator.go:71
+github.com/Gopherlinzy/gin-vue3-admin/app/cmd.runUp
+	/Users/admin/go/src/gin-vue3-admin/app/cmd/migrate.go:65
+github.com/spf13/cobra.(*Command).execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:920
+github.com/spf13/cobra.(*Command).ExecuteC
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:1044
+github.com/spf13/cobra.(*Command).Execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:968
+main.main
+	/Users/admin/go/src/gin-vue3-admin/main.go:64
+runtime.main
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/proc.go:250
+2022-12-07 21:12:00	[31mERROR[0m	gorm@v1.24.1/callbacks.go:134	Database Error	{"sql": "ALTER TABLE `roles` MODIFY COLUMN `role_name` longtext", "time": "0.000ms", "rows": 0, "error": "Error 1170: BLOB/TEXT column 'role_name' used in key specification without a key length"}
+gorm.io/gorm.(*processor).Execute
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+gorm.io/gorm.(*DB).Exec
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/finisher_api.go:707
+gorm.io/driver/mysql.Migrator.AlterColumn.func1
+	/Users/admin/go/pkg/mod/gorm.io/driver/mysql@v1.4.4/migrator.go:52
+gorm.io/gorm/migrator.Migrator.RunWithValue
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/migrator/migrator.go:52
+gorm.io/driver/mysql.Migrator.AlterColumn
+	/Users/admin/go/pkg/mod/gorm.io/driver/mysql@v1.4.4/migrator.go:50
+gorm.io/gorm/migrator.Migrator.MigrateColumn
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/migrator/migrator.go:498
+gorm.io/gorm/migrator.Migrator.AutoMigrate.func1
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/migrator/migrator.go:123
+gorm.io/gorm/migrator.Migrator.RunWithValue
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/migrator/migrator.go:52
+gorm.io/gorm/migrator.Migrator.AutoMigrate
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/migrator/migrator.go:101
+github.com/Gopherlinzy/gin-vue3-admin/database/migrations.init.7.func1
+	/Users/admin/go/src/gin-vue3-admin/database/migrations/2022_12_07_210614_add_apis_table.go:28
+github.com/Gopherlinzy/gin-vue3-admin/pkg/migrate.(*Migrator).runUpMigration
+	/Users/admin/go/src/gin-vue3-admin/pkg/migrate/migrator.go:213
+github.com/Gopherlinzy/gin-vue3-admin/pkg/migrate.(*Migrator).Up
+	/Users/admin/go/src/gin-vue3-admin/pkg/migrate/migrator.go:71
+github.com/Gopherlinzy/gin-vue3-admin/app/cmd.runUp
+	/Users/admin/go/src/gin-vue3-admin/app/cmd/migrate.go:65
+github.com/spf13/cobra.(*Command).execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:920
+github.com/spf13/cobra.(*Command).ExecuteC
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:1044
+github.com/spf13/cobra.(*Command).Execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:968
+main.main
+	/Users/admin/go/src/gin-vue3-admin/main.go:64
+runtime.main
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/proc.go:250

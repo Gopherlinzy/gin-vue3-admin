@@ -20,7 +20,7 @@ func runMakeModel(cmd *cobra.Command, args []string) {
 	// 确保模型的目录存在，例如 `app/models/user`
 	dir := fmt.Sprintf("app/models/%s/", model.PackageName)
 	// os.MkdirAll 会确保父目录和子目录都会创建，第二个参数是目录权限，使用 0777
-	os.MkdirAll(dir, os.ModeDir)
+	os.MkdirAll(dir, 0777)
 	// 从模板中创建文件(做好变量替换)
 	createFileFromStub(dir+model.PackageName+"_model.go", "model/model", model)
 	createFileFromStub(dir+model.PackageName+"_util.go", "model/model_util", model)

@@ -8,16 +8,16 @@ import (
 	"gorm.io/gorm"
 )
 
+type Category struct {
+	models.BaseModel
+
+	Name        string `json:"name,omitempty"`
+	Description string `json:"description,omitempty"`
+
+	models.CommonTimestampsField
+}
+
 func init() {
-
-	type Category struct {
-		models.BaseModel
-
-		Name        string `json:"name,omitempty"`
-		Description string `json:"description,omitempty"`
-
-		models.CommonTimestampsField
-	}
 
 	up := func(migrator gorm.Migrator, DB *sql.DB) {
 		migrator.AutoMigrate(&Category{})
