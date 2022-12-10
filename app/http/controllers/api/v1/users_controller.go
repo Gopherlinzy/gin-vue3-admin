@@ -21,7 +21,11 @@ type UsersController struct {
 func (ctrl *UsersController) CurrentUser(c *gin.Context) {
 	//fmt.Println(request)
 	userModel := auth.CurrentUser(c)
-	response.Data(c, userModel)
+	response.JSON(c, gin.H{
+		"data":        userModel,
+		"permissions": user.GetMenus(userModel.Name),
+		"success":     true,
+	})
 }
 
 func (ctrl *UsersController) GetUser(c *gin.Context) {

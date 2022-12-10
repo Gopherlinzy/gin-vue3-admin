@@ -36,6 +36,14 @@ func (role *Role) Delete() (rowsAffected int64) {
 	return result.RowsAffected
 }
 
+func (role *Role) GetAssociationsMenus() (data []menu.Menu) {
+	var menus []menu.Menu
+	database.Gohub_DB.Model(&role).Association("Menus").Find(&menus)
+	return menus
+
+	return
+}
+
 func (role *Role) AssociationClear(tableName string) (err error) {
 	err = database.Gohub_DB.Model(&role).Association(tableName).Clear()
 	return

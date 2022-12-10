@@ -1,7 +1,10 @@
 package user
 
 import (
+	"github.com/Gopherlinzy/gin-vue3-admin/app/models/menu"
+	"github.com/Gopherlinzy/gin-vue3-admin/app/models/role"
 	"github.com/Gopherlinzy/gin-vue3-admin/pkg/app"
+	casbins "github.com/Gopherlinzy/gin-vue3-admin/pkg/casbin"
 	"github.com/Gopherlinzy/gin-vue3-admin/pkg/database"
 	"github.com/Gopherlinzy/gin-vue3-admin/pkg/paginator"
 	"github.com/gin-gonic/gin"
@@ -56,5 +59,14 @@ func Paginate(c *gin.Context, perPage int) (users []User, paging paginator.Pagin
 		app.V1URL(database.TableName(&User{})),
 		perPage,
 	)
+	return
+}
+
+// GetMenus 获取用户角色的菜单权限
+func GetMenus(userName string) (menus []menu.Menu) {
+	r := casbins.NewCasbin().GetRolesForUser(userName)[0]
+	//fmt.Println(r)
+	roleModel := role.GetBy("role_name", r)
+	menus = roleModel.GetAssociationsMenus()
 	return
 }
