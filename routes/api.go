@@ -129,6 +129,7 @@ func RegisterAPIRoutes(r *gin.Engine) {
 				rscGroup.POST("/policies", rsc.IndexPolicies)
 				rscGroup.POST("/id", rsc.Show)
 				rscGroup.POST("/menus", rsc.ShowMenus)
+				rscGroup.POST("/apis", rsc.ShowApis)
 				rscGroup.PUT("", rsc.Update)
 				rscGroup.PUT("/menuPermissions", rsc.SetMenuPermissions)
 				rscGroup.PUT("/status", rsc.UpdateRoleStatus)
@@ -140,6 +141,7 @@ func RegisterAPIRoutes(r *gin.Engine) {
 			mscGroup := v1.Group("/menus", middlewares.AuthJWT(), middlewares.CasbinAPI())
 			{
 				mscGroup.GET("", msc.Index)
+				mscGroup.GET("/pag", msc.IndexPagination)
 				mscGroup.POST("/id", msc.Show)
 				mscGroup.POST("", msc.Store)
 				mscGroup.PUT("", msc.Update)
@@ -151,6 +153,7 @@ func RegisterAPIRoutes(r *gin.Engine) {
 			ascGroup := v1.Group("/apis", middlewares.AuthJWT(), middlewares.CasbinAPI())
 			{
 				ascGroup.GET("", asc.Index)
+				ascGroup.GET("/pag", asc.IndexPagination)
 				ascGroup.POST("/id", asc.Show)
 				ascGroup.POST("", asc.Store)
 				ascGroup.PUT("", asc.Update)

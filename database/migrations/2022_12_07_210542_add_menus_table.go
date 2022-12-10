@@ -11,13 +11,13 @@ import (
 type Menu struct {
 	models.BaseModel
 
-	Name        string `gorm:"type:varchar(50);not null;index"`
-	Permissions string `gorm:"type:varchar(50);not null;index;unique"`
-	RouterName  string `gorm:"type:varchar(255);not null"`
-	RouterPath  string `gorm:"type:varchar(255);not null"`
-	FatherID    uint64 `gorm:"type:int;default:0"`
-	VuePath     string `gorm:"type:varchar(255)"`
-	Status      bool   `gorm:"type:TINYINT(1);default:1"`
+	Name       string `gorm:"type:varchar(50);not null;index"`
+	Permission string `gorm:"type:varchar(50);not null;index;unique"`
+	RouterName string `gorm:"type:varchar(255);not null"`
+	RouterPath string `gorm:"type:varchar(255);not null"`
+	FatherID   uint64 `gorm:"type:int;default:0"`
+	VuePath    string `gorm:"type:varchar(255)"`
+	Status     bool   `gorm:"type:TINYINT(1);default:1"`
 
 	//Children []Menu `json:"children" gorm:"-"`
 

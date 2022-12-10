@@ -66,6 +66,18 @@ func (ctrl *RolesController) ShowMenus(c *gin.Context) {
 	response.Data(c, roleModel.Menus)
 }
 
+// ShowApis 显示角色关联的 apis
+func (ctrl *RolesController) ShowApis(c *gin.Context) {
+	request := requests.RoleIDRequest{}
+
+	if bindOk := requests.Validate(c, &request, requests.RoleID); !bindOk {
+		return
+	}
+	roleModel := role.GetByAssociated("Apis", request.ID)
+	//fmt.Println(roleModel)
+	response.Data(c, roleModel.Apis)
+}
+
 // Store 新建 role 数据
 func (ctrl *RolesController) Store(c *gin.Context) {
 

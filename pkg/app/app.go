@@ -31,5 +31,5 @@ func URL(path string) string {
 
 // V1URL 拼接带 v1 标示 URL
 func V1URL(path string) string {
-	return "/v1/" + path
+	return URL("/v1/" + path)
 }

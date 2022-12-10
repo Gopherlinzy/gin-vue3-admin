@@ -409,3 +409,119 @@ net/http.(*conn).serve
 2022-12-10 11:21:31	[33mWARN[0m	middlewares/logger.go:72	HTTP Warning 422	{"status": 422, "request": "POST /api/v1/auth/login/using-password", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36", "errors": "", "time": "6.000ms", "Request Body": "{\"login_id\":\"1231\",\"password\":\"123123123\",\"captcha_id\":\"bsehny62vQ0YzfyUskon\",\"captcha_answer\":\"886187\"}", "Response Body": "{\"error\":\"账号不存在\",\"message\":\"账号不存在或密码错误\"}"}
 2022-12-10 11:21:50	[35mDEBUG[0m	auth/login_controller.go:49	Database Query	{"sql": "SELECT * FROM `users` WHERE (name = 'VMFQVYB' OR phone = 'VMFQVYB' OR email = 'VMFQVYB') AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
 2022-12-10 11:21:50	[33mWARN[0m	middlewares/logger.go:72	HTTP Warning 422	{"status": 422, "request": "POST /api/v1/auth/login/using-password", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36", "errors": "", "time": "306.000ms", "Request Body": "{\"login_id\":\"VMFQVYB\",\"password\":\"123456\",\"captcha_id\":\"bsehny62vQ0YzfyUskon\",\"captcha_answer\":\"886187\"}", "Response Body": "{\"errors\":\"账号异常\",\"message\":\"账号当前处于冻结状态，登录失败\"}"}
+2022-12-10 20:00:07	[31mERROR[0m	gorm@v1.24.1/callbacks.go:134	Database Error	{"sql": "SELECT * FROM `apis` WHERE (id == 10 OR id == 17 OR id == 18 OR id == 19 OR id == 20) AND `apis`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 0, "error": "Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '== ? OR id == ? OR id == ? OR id == ? OR id == ?) AND `apis`.`deleted_at` IS NUL' at line 1"}
+gorm.io/gorm.(*processor).Execute
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+gorm.io/gorm.(*DB).Find
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/finisher_api.go:170
+github.com/Gopherlinzy/gin-vue3-admin/app/models/api.AcceptID
+	/Users/admin/go/src/gin-vue3-admin/app/models/api/api_util.go:47
+github.com/Gopherlinzy/gin-vue3-admin/bootstrap.initRoleData
+	/Users/admin/go/src/gin-vue3-admin/bootstrap/initialzation.go:163
+github.com/Gopherlinzy/gin-vue3-admin/bootstrap.IntizationData.func1
+	/Users/admin/go/src/gin-vue3-admin/bootstrap/initialzation.go:22
+sync.(*Once).doSlow
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/sync/once.go:74
+sync.(*Once).Do
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/sync/once.go:65
+github.com/Gopherlinzy/gin-vue3-admin/bootstrap.IntizationData
+	/Users/admin/go/src/gin-vue3-admin/bootstrap/initialzation.go:19
+main.main.func1
+	/Users/admin/go/src/gin-vue3-admin/main.go:41
+github.com/spf13/cobra.(*Command).execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:896
+github.com/spf13/cobra.(*Command).ExecuteC
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:1044
+github.com/spf13/cobra.(*Command).Execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:968
+main.main
+	/Users/admin/go/src/gin-vue3-admin/main.go:64
+runtime.main
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/proc.go:250
+2022-12-10 20:00:07	[31mERROR[0m	gorm@v1.24.1/callbacks.go:134	Database Error	{"sql": "SELECT * FROM `apis` WHERE id == 10 AND `apis`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 0, "error": "Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '== ? AND `apis`.`deleted_at` IS NULL' at line 1"}
+gorm.io/gorm.(*processor).Execute
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+gorm.io/gorm.(*DB).Find
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/finisher_api.go:170
+github.com/Gopherlinzy/gin-vue3-admin/app/models/api.AcceptID
+	/Users/admin/go/src/gin-vue3-admin/app/models/api/api_util.go:47
+github.com/Gopherlinzy/gin-vue3-admin/bootstrap.initRoleData
+	/Users/admin/go/src/gin-vue3-admin/bootstrap/initialzation.go:164
+github.com/Gopherlinzy/gin-vue3-admin/bootstrap.IntizationData.func1
+	/Users/admin/go/src/gin-vue3-admin/bootstrap/initialzation.go:22
+sync.(*Once).doSlow
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/sync/once.go:74
+sync.(*Once).Do
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/sync/once.go:65
+github.com/Gopherlinzy/gin-vue3-admin/bootstrap.IntizationData
+	/Users/admin/go/src/gin-vue3-admin/bootstrap/initialzation.go:19
+main.main.func1
+	/Users/admin/go/src/gin-vue3-admin/main.go:41
+github.com/spf13/cobra.(*Command).execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:896
+github.com/spf13/cobra.(*Command).ExecuteC
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:1044
+github.com/spf13/cobra.(*Command).Execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:968
+main.main
+	/Users/admin/go/src/gin-vue3-admin/main.go:64
+runtime.main
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/proc.go:250
+2022-12-10 20:05:34	[31mERROR[0m	gorm@v1.24.1/callbacks.go:134	Database Error	{"sql": "SELECT * FROM `apis` WHERE (id == 10 OR id == 17 OR id == 18 OR id == 19 OR id == 20) AND `apis`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 0, "error": "Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '== ? OR id == ? OR id == ? OR id == ? OR id == ?) AND `apis`.`deleted_at` IS NUL' at line 1"}
+gorm.io/gorm.(*processor).Execute
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+gorm.io/gorm.(*DB).Find
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/finisher_api.go:170
+github.com/Gopherlinzy/gin-vue3-admin/app/models/api.AcceptID
+	/Users/admin/go/src/gin-vue3-admin/app/models/api/api_util.go:43
+github.com/Gopherlinzy/gin-vue3-admin/bootstrap.initRoleData
+	/Users/admin/go/src/gin-vue3-admin/bootstrap/initialzation.go:164
+github.com/Gopherlinzy/gin-vue3-admin/bootstrap.IntizationData.func1
+	/Users/admin/go/src/gin-vue3-admin/bootstrap/initialzation.go:23
+sync.(*Once).doSlow
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/sync/once.go:74
+sync.(*Once).Do
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/sync/once.go:65
+github.com/Gopherlinzy/gin-vue3-admin/bootstrap.IntizationData
+	/Users/admin/go/src/gin-vue3-admin/bootstrap/initialzation.go:19
+main.main.func1
+	/Users/admin/go/src/gin-vue3-admin/main.go:41
+github.com/spf13/cobra.(*Command).execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:896
+github.com/spf13/cobra.(*Command).ExecuteC
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:1044
+github.com/spf13/cobra.(*Command).Execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:968
+main.main
+	/Users/admin/go/src/gin-vue3-admin/main.go:64
+runtime.main
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/proc.go:250
+2022-12-10 20:05:34	[31mERROR[0m	gorm@v1.24.1/callbacks.go:134	Database Error	{"sql": "SELECT * FROM `apis` WHERE id == 10 AND `apis`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 0, "error": "Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '== ? AND `apis`.`deleted_at` IS NULL' at line 1"}
+gorm.io/gorm.(*processor).Execute
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+gorm.io/gorm.(*DB).Find
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/finisher_api.go:170
+github.com/Gopherlinzy/gin-vue3-admin/app/models/api.AcceptID
+	/Users/admin/go/src/gin-vue3-admin/app/models/api/api_util.go:43
+github.com/Gopherlinzy/gin-vue3-admin/bootstrap.initRoleData
+	/Users/admin/go/src/gin-vue3-admin/bootstrap/initialzation.go:165
+github.com/Gopherlinzy/gin-vue3-admin/bootstrap.IntizationData.func1
+	/Users/admin/go/src/gin-vue3-admin/bootstrap/initialzation.go:23
+sync.(*Once).doSlow
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/sync/once.go:74
+sync.(*Once).Do
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/sync/once.go:65
+github.com/Gopherlinzy/gin-vue3-admin/bootstrap.IntizationData
+	/Users/admin/go/src/gin-vue3-admin/bootstrap/initialzation.go:19
+main.main.func1
+	/Users/admin/go/src/gin-vue3-admin/main.go:41
+github.com/spf13/cobra.(*Command).execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:896
+github.com/spf13/cobra.(*Command).ExecuteC
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:1044
+github.com/spf13/cobra.(*Command).Execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:968
+main.main
+	/Users/admin/go/src/gin-vue3-admin/main.go:64
+runtime.main
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/proc.go:250

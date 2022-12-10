@@ -19,6 +19,20 @@ func (ctrl *MenusController) Index(c *gin.Context) {
 	response.Data(c, menus)
 }
 
+// IndexPagination 显示 menus 分页列表
+func (ctrl *MenusController) IndexPagination(c *gin.Context) {
+	request := requests.PaginationRequest{}
+	if ok := requests.Validate(c, &request, requests.Pagination); !ok {
+		return
+	}
+
+	data, pager := menu.Paginate(c, 10)
+	response.JSON(c, gin.H{
+		"data":  data,
+		"pager": pager,
+	})
+}
+
 // Show 显示单个 menu 数据
 func (ctrl *MenusController) Show(c *gin.Context) {
 	request := requests.MenuIDRequest{}
