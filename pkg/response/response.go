@@ -77,12 +77,6 @@ func BadRequest(c *gin.Context, err error, msg ...string) {
 	})
 }
 
-func NoPolicyRequest(c *gin.Context, msg ...string) {
-	c.AbortWithStatusJSON(http.StatusUnsupportedMediaType, gin.H{
-		"message": defaultMessage("请求失败，您并没有访问此接口的权限", msg...),
-	})
-}
-
 // Error 响应 404 或 422，未传参 msg 时使用默认消息
 // 处理请求时出现错误 err，会附带返回 error 信息，如登录错误、找不到 ID 对应的 Model
 func Error(c *gin.Context, err error, msg ...string) {
@@ -104,7 +98,7 @@ func Error(c *gin.Context, err error, msg ...string) {
 func LoginError(c *gin.Context, error error, msg string) {
 	c.AbortWithStatusJSON(http.StatusUnprocessableEntity, gin.H{
 		"message": msg,
-		"errors":  error.Error(),
+		"error":   error.Error(),
 	})
 }
 

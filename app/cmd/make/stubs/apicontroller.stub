@@ -2,7 +2,6 @@ package v1
 
 import (
     "github.com/Gopherlinzy/gin-vue3-admin/app/models/{{PackageName}}"
-    "github.com/Gopherlinzy/gin-vue3-admin/app/policies"
     "github.com/Gopherlinzy/gin-vue3-admin/app/requests"
     "github.com/Gopherlinzy/gin-vue3-admin/pkg/response"
 
@@ -34,7 +33,7 @@ func (ctrl *{{StructNamePlural}}Controller) Show(c *gin.Context) {
 // Store 新建 {{PackageName}} 数据
 func (ctrl *{{StructNamePlural}}Controller) Store(c *gin.Context) {
 
-    request := requests.{{StructName}}Request{}
+    request := requests.{{StructName}}SaveRequest{}
     if ok := requests.Validate(c, &request, requests.{{StructName}}Save); !ok {
         return
     }
@@ -53,7 +52,7 @@ func (ctrl *{{StructNamePlural}}Controller) Store(c *gin.Context) {
 // Update 修改 {{PackageName}} 数据
 func (ctrl *{{StructNamePlural}}Controller) Update(c *gin.Context) {
 
-    request := requests.{{StructName}}Request{}
+    request := requests.{{StructName}}SaveRequest{}
 
     if bindOk := requests.Validate(c, &request, requests.{{StructName}}Save); !bindOk {
         return

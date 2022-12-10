@@ -11,13 +11,15 @@ import (
 type Menu struct {
 	models.BaseModel
 
-	Name       string `gorm:"type:varchar(50);not null;index"`
-	RouterName string `gorm:"type:varchar(255);not null"`
-	RouterPath string `gorm:"type:varchar(255);not null"`
-	FatherID   uint64 `gorm:"type:int;default:0"`
-	VuePath    string `gorm:"type:varchar(255);not null"`
+	Name        string `gorm:"type:varchar(50);not null;index"`
+	Permissions string `gorm:"type:varchar(50);not null;index;unique"`
+	RouterName  string `gorm:"type:varchar(255);not null"`
+	RouterPath  string `gorm:"type:varchar(255);not null"`
+	FatherID    uint64 `gorm:"type:int;default:0"`
+	VuePath     string `gorm:"type:varchar(255)"`
+	Status      bool   `gorm:"type:TINYINT(1);default:1"`
 
-	Roles []Role `gorm:"many2many:roles_menus;"`
+	//Children []Menu `json:"children" gorm:"-"`
 
 	models.CommonTimestampsField
 }

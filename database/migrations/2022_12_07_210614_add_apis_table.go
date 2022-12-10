@@ -11,12 +11,10 @@ import (
 type Api struct {
 	models.BaseModel
 
-	Path    string `gorm:"type:varchar(255);not null"`
-	Group   string `gorm:"type:varchar(50);not null"`
-	Des     string `gorm:"type:varchar(255);default:null"`
-	Request string `gorm:"type:varchar(255);not null"`
-
-	Roles []Role `gorm:"many2many:roles_menus;"`
+	Path        string `gorm:"type:varchar(255);not null"`     // api路径
+	Description string `gorm:"type:varchar(255);default:null"` // api中文描述
+	ApiGroup    string `gorm:"type:varchar(255);not null"`     // api组
+	Method      string `gorm:"type:varchar(50);not null"`      // 方法:创建POST(默认)|查看GET|更新PUT|删除DELETE
 
 	models.CommonTimestampsField
 }

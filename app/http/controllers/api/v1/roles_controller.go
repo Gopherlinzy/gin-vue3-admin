@@ -1,7 +1,6 @@
 package v1
 
 import (
-	"fmt"
 	"github.com/Gopherlinzy/gin-vue3-admin/app/models/role"
 	"github.com/Gopherlinzy/gin-vue3-admin/app/requests"
 	casbins "github.com/Gopherlinzy/gin-vue3-admin/pkg/casbin"
@@ -38,7 +37,7 @@ func (ctrl *RolesController) IndexPolicies(c *gin.Context) {
 	}
 
 	roleModel := role.Get(request.ID)
-	fmt.Println("-------", request)
+	//fmt.Println("-------", request)
 	policy := casbins.NewCasbin().GetFilteredPolicy(roleModel.RoleName)
 	response.Data(c, policy)
 }
@@ -53,6 +52,18 @@ func (ctrl *RolesController) Show(c *gin.Context) {
 
 	roleModel := role.Get(request.ID)
 	response.Data(c, roleModel)
+}
+
+// ShowMenus 显示角色关联的 menus
+func (ctrl *RolesController) ShowMenus(c *gin.Context) {
+	request := requests.RoleIDRequest{}
+
+	if bindOk := requests.Validate(c, &request, requests.RoleID); !bindOk {
+		return
+	}
+	roleModel := role.GetByAssociated("Menus", request.ID)
+	//fmt.Println(roleModel)
+	response.Data(c, roleModel.Menus)
 }
 
 // Store 新建 role 数据
@@ -95,6 +106,23 @@ func (ctrl *RolesController) Update(c *gin.Context) {
 	}
 }
 
+// SetMenuPermissions 添加 role_id 的 菜单权限
+func (ctrl *RolesController) SetMenuPermissions(c *gin.Context) {
+	request := requests.RolePermissionsRequest{}
+	if ok := requests.Validate(c, &request, requests.RolePermissions); !ok {
+		return
+	}
+	roleModel := role.Get(request.ID)
+
+	err := roleModel.AppendAssociation("Menus", request.Permissions)
+	if err != nil {
+		response.Abort500(c, "创建失败，请稍后尝试~")
+	} else {
+		response.Data(c, request)
+	}
+
+}
+
 // Delete 删除 role 数据
 func (ctrl *RolesController) Delete(c *gin.Context) {
 
@@ -106,6 +134,8 @@ func (ctrl *RolesController) Delete(c *gin.Context) {
 
 	roleModel := role.Get(request.ID)
 
+	roleModel.AssociationClear("Menus")
+	roleModel.AssociationClear("Apis")
 	rowsAffected := roleModel.Delete()
 	if rowsAffected > 0 {
 		response.Success(c)

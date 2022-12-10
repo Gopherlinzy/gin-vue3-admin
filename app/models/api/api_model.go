@@ -9,10 +9,10 @@ import (
 type Api struct {
 	models.BaseModel
 
-	Path    string `json:"api_path"`
-	Group   string `json:"api_group"`
-	Des     string `json:"api_des,omitempty"`
-	Request string `json:"request"`
+	Path        string `json:"api_path"`
+	Description string `json:"description,omitempty"`
+	ApiGroup    string `json:"api_group"`
+	Method      string `json:"method"`
 
 	//Roles []role.Role `gorm:"many2many:roles_apis;"`
 

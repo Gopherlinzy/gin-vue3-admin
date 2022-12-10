@@ -14,7 +14,7 @@ func CasbinAPI() gin.HandlerFunc {
 		if exists {
 			r := casbins.NewCasbin().GetRolesForUser(sub)[0]
 			if r == "" {
-				response.NoPolicyRequest(c, "你没有权限")
+				response.Abort403(c)
 				c.Abort()
 			}
 			// 获取请求的PATH
@@ -28,7 +28,7 @@ func CasbinAPI() gin.HandlerFunc {
 			// 并且角色状态为true
 			status := role.GetBy("role_name", r).Status
 			if !success || !status {
-				response.NoPolicyRequest(c)
+				response.Abort403(c)
 				c.Abort()
 				return
 			}

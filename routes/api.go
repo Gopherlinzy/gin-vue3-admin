@@ -128,9 +128,33 @@ func RegisterAPIRoutes(r *gin.Engine) {
 				rscGroup.POST("", rsc.Store)
 				rscGroup.POST("/policies", rsc.IndexPolicies)
 				rscGroup.POST("/id", rsc.Show)
+				rscGroup.POST("/menus", rsc.ShowMenus)
 				rscGroup.PUT("", rsc.Update)
+				rscGroup.PUT("/menuPermissions", rsc.SetMenuPermissions)
 				rscGroup.PUT("/status", rsc.UpdateRoleStatus)
 				rscGroup.DELETE("", rsc.Delete)
+			}
+
+			// menu 接口
+			msc := new(controllers.MenusController)
+			mscGroup := v1.Group("/menus", middlewares.AuthJWT(), middlewares.CasbinAPI())
+			{
+				mscGroup.GET("", msc.Index)
+				mscGroup.POST("/id", msc.Show)
+				mscGroup.POST("", msc.Store)
+				mscGroup.PUT("", msc.Update)
+				mscGroup.DELETE("", msc.Delete)
+			}
+
+			// api 接口
+			asc := new(controllers.ApisController)
+			ascGroup := v1.Group("/apis", middlewares.AuthJWT(), middlewares.CasbinAPI())
+			{
+				ascGroup.GET("", asc.Index)
+				ascGroup.POST("/id", asc.Show)
+				ascGroup.POST("", asc.Store)
+				ascGroup.PUT("", asc.Update)
+				ascGroup.DELETE("", asc.Delete)
 			}
 		}
 	}

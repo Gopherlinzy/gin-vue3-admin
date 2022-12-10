@@ -1,0 +1,595 @@
+2022-12-08 14:07:23	[31mERROR[0m	gorm@v1.24.1/callbacks.go:134	Database Error	{"sql": "INSERT INTO `menus` (`name`,`permissions`,`router_name`,`router_path`,`father_id`,`vue_path`,`status`,`created_at`,`updated_at`,`deleted_at`,`id`) VALUES ('首页','system:index','Index','/',0,'@/views/index/Index.vue',true,'2022-12-08 14:07:23.42','2022-12-08 14:07:23.42',NULL,1),('超级管理员','system:superAdmin','superAdmin','/superAdmin',0,'',true,'2022-12-08 14:07:23.42','2022-12-08 14:07:23.42',NULL,2),('角色管理','system:superAdmin:role','roles','roles',2,'@/views/superAdmin/Role.vue',true,'2022-12-08 14:07:23.42','2022-12-08 14:07:23.42',NULL,DEFAULT),('API管理','system:superAdmin:api','apis','apis',2,'@/views/superAdmin/Api.vue',true,'2022-12-08 14:07:23.42','2022-12-08 14:07:23.42',NULL,DEFAULT),('菜单管理','system:superAdmin:menu','menus','menus',2,'@/views/superAdmin/Menu.vue',true,'2022-12-08 14:07:23.42','2022-12-08 14:07:23.42',NULL,DEFAULT),('用户管理','system:superAdmin:user','users','users',2,'@/views/superAdmin/User.vue',true,'2022-12-08 14:07:23.42','2022-12-08 14:07:23.42',NULL,DEFAULT),('系统设置','system:superAdmin:sysSetting','setting','setting',2,'@/views/superAdmin/SysSetting.vue',true,'2022-12-08 14:07:23.42','2022-12-08 14:07:23.42',NULL,DEFAULT),('订单管理','system:order','order','/order',0,'',true,'2022-12-08 14:07:23.42','2022-12-08 14:07:23.42',NULL,3),('订单查询','system:order:orderInfo','orderInfo','orderInfo',3,'@/views/orders/OrderInfo.vue',true,'2022-12-08 14:07:23.42','2022-12-08 14:07:23.42',NULL,DEFAULT),('订单管理','system:order:orderManage','orderManage','orderManage',3,'@/views/orders/OrderManage.vue',true,'2022-12-08 14:07:23.42','2022-12-08 14:07:23.42',NULL,DEFAULT),('商品管理','goods:goods','goods','/goods',0,'',true,'2022-12-08 14:07:23.42','2022-12-08 14:07:23.42',NULL,4),('商品种类','system:goods:goodsCategory','goodsCategory','goodsCategory',4,'@/views/goods/GoodsCategory.vue',true,'2022-12-08 14:07:23.42','2022-12-08 14:07:23.42',NULL,DEFAULT),('商品信息','system:goods:goodsInfo','goodsInfo','goodsInfo',4,'@/views/goods/GoodsInfo.vue',true,'2022-12-08 14:07:23.42','2022-12-08 14:07:23.42',NULL,13),('商品信息','system:goods:goodsInfo:add','orderManage','orderManage',13,'',true,'2022-12-08 14:07:23.42','2022-12-08 14:07:23.42',NULL,DEFAULT),('商品信息','system:goods:goodsInfo:update','orderManage','orderManage',13,'',true,'2022-12-08 14:07:23.42','2022-12-08 14:07:23.42',NULL,DEFAULT)", "time": "2.000ms", "rows": 0, "error": "Error 1062: Duplicate entry '3' for key 'menus.PRIMARY'"}
+gorm.io/gorm.(*processor).Execute
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+gorm.io/gorm.(*DB).Create
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/finisher_api.go:24
+github.com/Gopherlinzy/gin-vue3-admin/bootstrap.initMenuData
+	/Users/admin/go/src/gin-vue3-admin/bootstrap/initialzation.go:85
+github.com/Gopherlinzy/gin-vue3-admin/bootstrap.IntizationData.func1
+	/Users/admin/go/src/gin-vue3-admin/bootstrap/initialzation.go:20
+sync.(*Once).doSlow
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/sync/once.go:74
+sync.(*Once).Do
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/sync/once.go:65
+github.com/Gopherlinzy/gin-vue3-admin/bootstrap.IntizationData
+	/Users/admin/go/src/gin-vue3-admin/bootstrap/initialzation.go:18
+main.main.func1
+	/Users/admin/go/src/gin-vue3-admin/main.go:41
+github.com/spf13/cobra.(*Command).execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:896
+github.com/spf13/cobra.(*Command).ExecuteC
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:1044
+github.com/spf13/cobra.(*Command).Execute
+	/Users/admin/go/pkg/mod/github.com/spf13/cobra@v1.6.1/command.go:968
+main.main
+	/Users/admin/go/src/gin-vue3-admin/main.go:64
+runtime.main
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/runtime/proc.go:250
+2022-12-08 14:32:43	[31mERROR[0m	gorm@v1.24.1/callbacks.go:134	Database Error	{"sql": "SELECT * FROM `roles` WHERE id = '1' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "0.000ms", "rows": 1, "error": "menus: unsupported relations for schema Role"}
+gorm.io/gorm.(*processor).Execute
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+gorm.io/gorm.(*DB).First
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/finisher_api.go:129
+github.com/Gopherlinzy/gin-vue3-admin/app/models/role.GetByAssociated
+	/Users/admin/go/src/gin-vue3-admin/app/models/role/role_util.go:23
+github.com/Gopherlinzy/gin-vue3-admin/app/http/controllers/api/v1.(*RolesController).ShowMenus
+	/Users/admin/go/src/gin-vue3-admin/app/http/controllers/api/v1/roles_controller.go:65
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gin-vue3-admin/app/http/middlewares.CasbinAPI.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/casbin.go:36
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gin-vue3-admin/app/http/middlewares.AuthJWT.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/auth_jwt.go:37
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gin-vue3-admin/app/http/middlewares.LimitIP.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:30
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gin-vue3-admin/app/http/middlewares.ForceUA.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gin-vue3-admin/app/http/middlewares.Recovery.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gin-vue3-admin/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-08 14:47:23	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-08 14:47:23	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "1.000ms", "rows": 1}
+2022-12-08 14:47:23	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'users' AND table_type = 'BASE TABLE'", "time": "1.000ms", "rows": -1}
+2022-12-08 14:47:23	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-08 14:47:23	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-08 14:47:23	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-08 14:47:23	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:47:23	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'menus' AND table_type = 'BASE TABLE'", "time": "1.000ms", "rows": -1}
+2022-12-08 14:47:23	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `menus` WHERE `menus`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-08 14:47:23	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `menus` WHERE `menus`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-08 14:47:23	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-08 14:47:23	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:47:23	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'roles' AND table_type = 'BASE TABLE'", "time": "0.000ms", "rows": -1}
+2022-12-08 14:47:23	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `roles` WHERE `roles`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-08 14:47:23	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `roles` WHERE `roles`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-08 14:47:23	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-08 14:47:23	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:47:23	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND table_type = 'BASE TABLE'", "time": "0.000ms", "rows": -1}
+2022-12-08 14:47:23	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-08 14:47:23	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:47:23	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT * FROM `casbin_rule` LIMIT 1", "time": "0.000ms", "rows": -1}
+2022-12-08 14:47:23	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' ORDER BY ORDINAL_POSITION", "time": "1.000ms", "rows": -1}
+2022-12-08 14:47:23	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-08 14:47:23	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "1.000ms", "rows": 1}
+2022-12-08 14:47:23	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND index_name = 'idx_casbin_rule'", "time": "0.000ms", "rows": -1}
+2022-12-08 14:47:23	[35mDEBUG[0m	v2@v2.58.0/enforcer.go:179	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 64}
+2022-12-08 14:47:23	[35mDEBUG[0m	v2@v2.58.0/enforcer_cached.go:96	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 64}
+2022-12-08 14:47:23	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `casbin_rule`", "time": "0.000ms", "rows": 1}
+2022-12-08 14:47:23	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `casbin_rule`", "time": "0.000ms", "rows": 1}
+2022-12-08 14:47:26	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE id = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:47:26	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'superAdmin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "2.000ms", "rows": 1}
+2022-12-08 14:47:26	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `roles` WHERE id= '1'", "time": "0.000ms", "rows": 1}
+2022-12-08 14:47:26	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles_apis` WHERE `roles_apis`.`role_id` = 1", "time": "0.000ms", "rows": 0}
+2022-12-08 14:47:26	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles_menus` WHERE `roles_menus`.`role_id` = 1", "time": "0.000ms", "rows": 0}
+2022-12-08 14:47:26	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE id = '1' AND `roles`.`deleted_at` IS NULL", "time": "1.000ms", "rows": 1}
+2022-12-08 14:47:26	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "POST /api/v1/roles/menus", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "7.000ms", "Request Body": "{\n    \"id\":\"1\"\n}", "Response Body": "{\"data\":{\"id\":1,\"role_name\":\"superAdmin\",\"des\":\"超级管理员:拥有所有权限\",\"status\":true,\"Menus\":[],\"Apis\":[],\"created_at\":\"2022-12-08T14:42:46+08:00\",\"updated_at\":\"2022-12-08T14:42:46+08:00\",\"deleted_at\":null},\"success\":true}"}
+2022-12-08 14:49:16	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE id = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:49:16	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'superAdmin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:49:16	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `roles` WHERE id= '2'", "time": "0.000ms", "rows": 1}
+2022-12-08 14:49:16	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles_apis` WHERE `roles_apis`.`role_id` = 2", "time": "0.000ms", "rows": 0}
+2022-12-08 14:49:16	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles_menus` WHERE `roles_menus`.`role_id` = 2", "time": "1.000ms", "rows": 14}
+2022-12-08 14:49:16	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `menus` WHERE `menus`.`id` IN (1,2,4,5,6,7,8,9,10,11,12,13,14,15) AND `menus`.`deleted_at` IS NULL", "time": "1.000ms", "rows": 14}
+2022-12-08 14:49:16	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE id = '2' AND `roles`.`deleted_at` IS NULL", "time": "4.000ms", "rows": 1}
+2022-12-08 14:49:16	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "POST /api/v1/roles/menus", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "10.000ms", "Request Body": "{\n    \"id\":\"2\"\n}", "Response Body": "{\"data\":{\"id\":2,\"role_name\":\"admin\",\"des\":\"管理员\",\"status\":true,\"Menus\":[{\"id\":1,\"name\":\"首页\",\"permissions\":\"system:index\",\"router_name\":\"Index\",\"router_path\":\"/\",\"vue_path\":\"@/views/index/Index.vue\",\"status\":true,\"created_at\":\"2022-12-08T14:42:46+08:00\",\"updated_at\":\"2022-12-08T14:42:46+08:00\",\"deleted_at\":null},{\"id\":2,\"name\":\"超级管理员\",\"permissions\":\"system:superAdmin\",\"router_name\":\"superAdmin\",\"router_path\":\"/superAdmin\",\"status\":true,\"created_at\":\"2022-12-08T14:42:46+08:00\",\"updated_at\":\"2022-12-08T14:42:46+08:00\",\"deleted_at\":null},{\"id\":4,\"name\":\"API管理\",\"permissions\":\"system:superAdmin:api\",\"router_name\":\"apis\",\"router_path\":\"apis\",\"father_id\":2,\"vue_path\":\"@/views/superAdmin/Api.vue\",\"status\":true,\"created_at\":\"2022-12-08T14:42:46+08:00\",\"updated_at\":\"2022-12-08T14:42:46+08:00\",\"deleted_at\":null},{\"id\":5,\"name\":\"菜单管理\",\"permissions\":\"system:superAdmin:menu\",\"router_name\":\"menus\",\"router_path\":\"menus\",\"father_id\":2,\"vue_path\":\"@/views/superAdmin/Menu.vue\",\"status\":true,\"created_at\":\"2022-12-08T14:42:46+08:00\",\"updated_at\":\"2022-12-08T14:42:46+08:00\",\"deleted_at\":null},{\"id\":6,\"name\":\"用户管理\",\"permissions\":\"system:superAdmin:user\",\"router_name\":\"users\",\"router_path\":\"users\",\"father_id\":2,\"vue_path\":\"@/views/superAdmin/User.vue\",\"status\":true,\"created_at\":\"2022-12-08T14:42:46+08:00\",\"updated_at\":\"2022-12-08T14:42:46+08:00\",\"deleted_at\":null},{\"id\":7,\"name\":\"系统设置\",\"permissions\":\"system:superAdmin:sysSetting\",\"router_name\":\"setting\",\"router_path\":\"setting\",\"father_id\":2,\"vue_path\":\"@/views/superAdmin/SysSetting.vue\",\"status\":true,\"created_at\":\"2022-12-08T14:42:46+08:00\",\"updated_at\":\"2022-12-08T14:42:46+08:00\",\"deleted_at\":null},{\"id\":8,\"name\":\"订单管理\",\"permissions\":\"system:order\",\"router_name\":\"order\",\"router_path\":\"/order\",\"status\":true,\"created_at\":\"2022-12-08T14:42:46+08:00\",\"updated_at\":\"2022-12-08T14:42:46+08:00\",\"deleted_at\":null},{\"id\":9,\"name\":\"订单查询\",\"permissions\":\"system:order:orderInfo\",\"router_name\":\"orderInfo\",\"router_path\":\"orderInfo\",\"father_id\":8,\"vue_path\":\"@/views/orders/OrderInfo.vue\",\"status\":true,\"created_at\":\"2022-12-08T14:42:46+08:00\",\"updated_at\":\"2022-12-08T14:42:46+08:00\",\"deleted_at\":null},{\"id\":10,\"name\":\"订单管理\",\"permissions\":\"system:order:orderManage\",\"router_name\":\"orderManage\",\"router_path\":\"orderManage\",\"father_id\":8,\"vue_path\":\"@/views/orders/OrderManage.vue\",\"status\":true,\"created_at\":\"2022-12-08T14:42:46+08:00\",\"updated_at\":\"2022-12-08T14:42:46+08:00\",\"deleted_at\":null},{\"id\":11,\"name\":\"商品管理\",\"permissions\":\"goods:goods\",\"router_name\":\"goods\",\"router_path\":\"/goods\",\"status\":true,\"created_at\":\"2022-12-08T14:42:46+08:00\",\"updated_at\":\"2022-12-08T14:42:46+08:00\",\"deleted_at\":null},{\"id\":12,\"name\":\"商品种类\",\"permissions\":\"system:goods:goodsCategory\",\"router_name\":\"goodsCategory\",\"router_path\":\"goodsCategory\",\"father_id\":11,\"vue_path\":\"@/views/goods/GoodsCategory.vue\",\"status\":true,\"created_at\":\"2022-12-08T14:42:46+08:00\",\"updated_at\":\"2022-12-08T14:42:46+08:00\",\"deleted_at\":null},{\"id\":13,\"name\":\"商品信息\",\"permissions\":\"system:goods:goodsInfo\",\"router_name\":\"goodsInfo\",\"router_path\":\"goodsInfo\",\"father_id\":11,\"vue_path\":\"@/views/goods/GoodsInfo.vue\",\"status\":true,\"created_at\":\"2022-12-08T14:42:46+08:00\",\"updated_at\":\"2022-12-08T14:42:46+08:00\",\"deleted_at\":null},{\"id\":14,\"name\":\"添加商品\",\"permissions\":\"system:goods:goodsInfo:add\",\"router_name\":\"orderManage\",\"router_path\":\"orderManage\",\"father_id\":13,\"status\":true,\"created_at\":\"2022-12-08T14:42:46+08:00\",\"updated_at\":\"2022-12-08T14:42:46+08:00\",\"deleted_at\":null},{\"id\":15,\"name\":\"修改商品\",\"permissions\":\"system:goods:goodsInfo:update\",\"router_name\":\"orderManage\",\"router_path\":\"orderManage\",\"father_id\":13,\"status\":true,\"created_at\":\"2022-12-08T14:42:46+08:00\",\"updated_at\":\"2022-12-08T14:42:46+08:00\",\"deleted_at\":null}],\"Apis\":[],\"created_at\":\"2022-12-08T14:42:46+08:00\",\"updated_at\":\"2022-12-08T14:42:46+08:00\",\"deleted_at\":null},\"success\":true}"}
+2022-12-08 14:50:37	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-08 14:50:37	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:50:37	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'users' AND table_type = 'BASE TABLE'", "time": "1.000ms", "rows": -1}
+2022-12-08 14:50:37	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-08 14:50:37	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-08 14:50:37	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-08 14:50:37	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:50:37	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'menus' AND table_type = 'BASE TABLE'", "time": "0.000ms", "rows": -1}
+2022-12-08 14:50:37	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `menus` WHERE `menus`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-08 14:50:37	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `menus` WHERE `menus`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-08 14:50:37	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-08 14:50:37	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:50:37	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'roles' AND table_type = 'BASE TABLE'", "time": "0.000ms", "rows": -1}
+2022-12-08 14:50:37	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `roles` WHERE `roles`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 0}
+2022-12-08 14:50:37	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `roles` WHERE `roles`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-08 14:50:37	[35mDEBUG[0m	bootstrap/initialzation.go:103	Database Query	{"sql": "SELECT * FROM `menus` WHERE `menus`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 15}
+2022-12-08 14:50:37	[35mDEBUG[0m	bootstrap/initialzation.go:21	Database Query	{"sql": "SELECT * FROM `menus` WHERE id != 3 AND `menus`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 14}
+2022-12-08 14:50:37	[35mDEBUG[0m	bootstrap/initialzation.go:21	Database Query	{"sql": "SELECT * FROM `menus` WHERE id != 2 AND `menus`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 14}
+2022-12-08 14:50:37	[35mDEBUG[0m	bootstrap/initialzation.go:21	Database Query	{"sql": "SELECT * FROM `menus` WHERE id != 3 AND `menus`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 14}
+2022-12-08 14:50:37	[35mDEBUG[0m	bootstrap/initialzation.go:21	Database Query	{"sql": "SELECT * FROM `menus` WHERE id != 4 AND `menus`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 14}
+2022-12-08 14:50:37	[35mDEBUG[0m	bootstrap/initialzation.go:21	Database Query	{"sql": "SELECT * FROM `menus` WHERE id != 5 AND `menus`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 14}
+2022-12-08 14:50:37	[35mDEBUG[0m	bootstrap/initialzation.go:21	Database Query	{"sql": "SELECT * FROM `menus` WHERE id != 6 AND `menus`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 14}
+2022-12-08 14:50:37	[35mDEBUG[0m	bootstrap/initialzation.go:21	Database Query	{"sql": "SELECT * FROM `menus` WHERE id != 7 AND `menus`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 14}
+2022-12-08 14:50:37	[35mDEBUG[0m	bootstrap/initialzation.go:21	Database Query	{"sql": "SELECT * FROM `menus` WHERE id != 2 AND `menus`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 14}
+2022-12-08 14:50:37	[35mDEBUG[0m	bootstrap/initialzation.go:21	Database Query	{"sql": "SELECT * FROM `menus` WHERE id != 3 AND `menus`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 14}
+2022-12-08 14:50:37	[35mDEBUG[0m	bootstrap/initialzation.go:21	Database Query	{"sql": "SELECT * FROM `menus` WHERE id != 4 AND `menus`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 14}
+2022-12-08 14:50:37	[35mDEBUG[0m	bootstrap/initialzation.go:21	Database Query	{"sql": "SELECT * FROM `menus` WHERE id != 5 AND `menus`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 14}
+2022-12-08 14:50:37	[35mDEBUG[0m	bootstrap/initialzation.go:21	Database Query	{"sql": "SELECT * FROM `menus` WHERE id != 6 AND `menus`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 14}
+2022-12-08 14:50:37	[35mDEBUG[0m	bootstrap/initialzation.go:21	Database Query	{"sql": "SELECT * FROM `menus` WHERE id != 7 AND `menus`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 14}
+2022-12-08 14:50:37	[35mDEBUG[0m	bootstrap/initialzation.go:21	Database Query	{"sql": "SELECT * FROM `menus` WHERE id != 10 AND `menus`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 14}
+2022-12-08 14:50:37	[35mDEBUG[0m	bootstrap/initialzation.go:21	Database Query	{"sql": "SELECT * FROM `menus` WHERE id != 13 AND `menus`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 14}
+2022-12-08 14:50:37	[35mDEBUG[0m	bootstrap/initialzation.go:21	Database Query	{"sql": "SELECT * FROM `menus` WHERE id != 14 AND `menus`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 14}
+2022-12-08 14:50:37	[35mDEBUG[0m	bootstrap/initialzation.go:21	Database Query	{"sql": "SELECT * FROM `menus` WHERE id != 15 AND `menus`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 14}
+2022-12-08 14:50:37	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "INSERT INTO `menus` (`name`,`permissions`,`router_name`,`router_path`,`father_id`,`vue_path`,`status`,`created_at`,`updated_at`,`deleted_at`,`id`) VALUES ('首页','system:index','Index','/',0,'@/views/index/Index.vue',true,'2022-12-08 14:42:46','2022-12-08 14:42:46',NULL,1),('超级管理员','system:superAdmin','superAdmin','/superAdmin',0,'',true,'2022-12-08 14:42:46','2022-12-08 14:42:46',NULL,2),('角色管理','system:superAdmin:role','roles','roles',2,'@/views/superAdmin/Role.vue',true,'2022-12-08 14:42:46','2022-12-08 14:42:46',NULL,3),('API管理','system:superAdmin:api','apis','apis',2,'@/views/superAdmin/Api.vue',true,'2022-12-08 14:42:46','2022-12-08 14:42:46',NULL,4),('菜单管理','system:superAdmin:menu','menus','menus',2,'@/views/superAdmin/Menu.vue',true,'2022-12-08 14:42:46','2022-12-08 14:42:46',NULL,5),('用户管理','system:superAdmin:user','users','users',2,'@/views/superAdmin/User.vue',true,'2022-12-08 14:42:46','2022-12-08 14:42:46',NULL,6),('系统设置','system:superAdmin:sysSetting','setting','setting',2,'@/views/superAdmin/SysSetting.vue',true,'2022-12-08 14:42:46','2022-12-08 14:42:46',NULL,7),('订单管理','system:order','order','/order',0,'',true,'2022-12-08 14:42:46','2022-12-08 14:42:46',NULL,8),('订单查询','system:order:orderInfo','orderInfo','orderInfo',8,'@/views/orders/OrderInfo.vue',true,'2022-12-08 14:42:46','2022-12-08 14:42:46',NULL,9),('订单管理','system:order:orderManage','orderManage','orderManage',8,'@/views/orders/OrderManage.vue',true,'2022-12-08 14:42:46','2022-12-08 14:42:46',NULL,10),('商品管理','goods:goods','goods','/goods',0,'',true,'2022-12-08 14:42:46','2022-12-08 14:42:46',NULL,11),('商品种类','system:goods:goodsCategory','goodsCategory','goodsCategory',11,'@/views/goods/GoodsCategory.vue',true,'2022-12-08 14:42:46','2022-12-08 14:42:46',NULL,12),('商品信息','system:goods:goodsInfo','goodsInfo','goodsInfo',11,'@/views/goods/GoodsInfo.vue',true,'2022-12-08 14:42:46','2022-12-08 14:42:46',NULL,13),('添加商品','system:goods:goodsInfo:add','orderManage','orderManage',13,'',true,'2022-12-08 14:42:46','2022-12-08 14:42:46',NULL,14),('修改商品','system:goods:goodsInfo:update','orderManage','orderManage',13,'',true,'2022-12-08 14:42:46','2022-12-08 14:42:46',NULL,15) ON DUPLICATE KEY UPDATE `id`=`id`", "time": "0.000ms", "rows": 0}
+2022-12-08 14:50:37	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "INSERT INTO `roles_menus` (`role_id`,`menu_id`) VALUES (1,1),(1,2),(1,3),(1,4),(1,5),(1,6),(1,7),(1,8),(1,9),(1,10),(1,11),(1,12),(1,13),(1,14),(1,15),(2,1),(2,2),(2,4),(2,5),(2,6),(2,7),(2,8),(2,9),(2,10),(2,11),(2,12),(2,13),(2,14),(2,15),(3,1),(3,2),(3,3),(3,4),(3,5),(3,6),(3,8),(3,9),(3,10),(3,11),(3,12),(3,13),(3,14),(3,15),(4,1),(4,2),(4,3),(4,4),(4,5),(4,6),(4,7),(4,8),(4,9),(4,10),(4,11),(4,12),(4,13),(4,14) ON DUPLICATE KEY UPDATE `role_id`=`role_id`", "time": "1.000ms", "rows": 57}
+2022-12-08 14:50:37	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "INSERT INTO `roles` (`role_name`,`des`,`status`,`created_at`,`updated_at`,`deleted_at`,`id`) VALUES ('superAdmin','超级管理员:拥有所有权限',true,'2022-12-08 14:50:37.553','2022-12-08 14:50:37.553',NULL,1),('admin','管理员',true,'2022-12-08 14:50:37.553','2022-12-08 14:50:37.553',NULL,2),('user','普通用户',true,'2022-12-08 14:50:37.553','2022-12-08 14:50:37.553',NULL,3),('guest','游客模式',false,'2022-12-08 14:50:37.553','2022-12-08 14:50:37.553',NULL,4)", "time": "4.000ms", "rows": 4}
+2022-12-08 14:50:37	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-08 14:50:37	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:50:37	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND table_type = 'BASE TABLE'", "time": "0.000ms", "rows": -1}
+2022-12-08 14:50:37	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-08 14:50:37	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:50:37	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT * FROM `casbin_rule` LIMIT 1", "time": "0.000ms", "rows": -1}
+2022-12-08 14:50:37	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' ORDER BY ORDINAL_POSITION", "time": "1.000ms", "rows": -1}
+2022-12-08 14:50:37	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-08 14:50:37	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:50:37	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND index_name = 'idx_casbin_rule'", "time": "0.000ms", "rows": -1}
+2022-12-08 14:50:37	[35mDEBUG[0m	v2@v2.58.0/enforcer.go:179	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 64}
+2022-12-08 14:50:37	[35mDEBUG[0m	v2@v2.58.0/enforcer_cached.go:96	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 64}
+2022-12-08 14:50:37	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `casbin_rule`", "time": "0.000ms", "rows": 1}
+2022-12-08 14:50:37	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `casbin_rule`", "time": "0.000ms", "rows": 1}
+2022-12-08 14:50:54	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE id = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:50:54	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'superAdmin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "2.000ms", "rows": 1}
+2022-12-08 14:50:54	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `roles` WHERE id= '1'", "time": "0.000ms", "rows": 1}
+2022-12-08 14:50:54	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles_apis` WHERE `roles_apis`.`role_id` = 1", "time": "0.000ms", "rows": 0}
+2022-12-08 14:50:54	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles_menus` WHERE `roles_menus`.`role_id` = 1", "time": "0.000ms", "rows": 15}
+2022-12-08 14:50:54	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `menus` WHERE `menus`.`id` IN (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15) AND `menus`.`deleted_at` IS NULL", "time": "2.000ms", "rows": 15}
+2022-12-08 14:50:54	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE id = '1' AND `roles`.`deleted_at` IS NULL", "time": "4.000ms", "rows": 1}
+2022-12-08 14:50:54	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "POST /api/v1/roles/menus", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "15.000ms", "Request Body": "{\n    \"id\":\"1\"\n}", "Response Body": "{\"data\":{\"id\":1,\"role_name\":\"superAdmin\",\"des\":\"超级管理员:拥有所有权限\",\"status\":true,\"Menus\":[{\"id\":1,\"name\":\"首页\",\"permissions\":\"system:index\",\"router_name\":\"Index\",\"router_path\":\"/\",\"vue_path\":\"@/views/index/Index.vue\",\"status\":true,\"created_at\":\"2022-12-08T14:42:46+08:00\",\"updated_at\":\"2022-12-08T14:42:46+08:00\",\"deleted_at\":null},{\"id\":2,\"name\":\"超级管理员\",\"permissions\":\"system:superAdmin\",\"router_name\":\"superAdmin\",\"router_path\":\"/superAdmin\",\"status\":true,\"created_at\":\"2022-12-08T14:42:46+08:00\",\"updated_at\":\"2022-12-08T14:42:46+08:00\",\"deleted_at\":null},{\"id\":3,\"name\":\"角色管理\",\"permissions\":\"system:superAdmin:role\",\"router_name\":\"roles\",\"router_path\":\"roles\",\"father_id\":2,\"vue_path\":\"@/views/superAdmin/Role.vue\",\"status\":true,\"created_at\":\"2022-12-08T14:42:46+08:00\",\"updated_at\":\"2022-12-08T14:42:46+08:00\",\"deleted_at\":null},{\"id\":4,\"name\":\"API管理\",\"permissions\":\"system:superAdmin:api\",\"router_name\":\"apis\",\"router_path\":\"apis\",\"father_id\":2,\"vue_path\":\"@/views/superAdmin/Api.vue\",\"status\":true,\"created_at\":\"2022-12-08T14:42:46+08:00\",\"updated_at\":\"2022-12-08T14:42:46+08:00\",\"deleted_at\":null},{\"id\":5,\"name\":\"菜单管理\",\"permissions\":\"system:superAdmin:menu\",\"router_name\":\"menus\",\"router_path\":\"menus\",\"father_id\":2,\"vue_path\":\"@/views/superAdmin/Menu.vue\",\"status\":true,\"created_at\":\"2022-12-08T14:42:46+08:00\",\"updated_at\":\"2022-12-08T14:42:46+08:00\",\"deleted_at\":null},{\"id\":6,\"name\":\"用户管理\",\"permissions\":\"system:superAdmin:user\",\"router_name\":\"users\",\"router_path\":\"users\",\"father_id\":2,\"vue_path\":\"@/views/superAdmin/User.vue\",\"status\":true,\"created_at\":\"2022-12-08T14:42:46+08:00\",\"updated_at\":\"2022-12-08T14:42:46+08:00\",\"deleted_at\":null},{\"id\":7,\"name\":\"系统设置\",\"permissions\":\"system:superAdmin:sysSetting\",\"router_name\":\"setting\",\"router_path\":\"setting\",\"father_id\":2,\"vue_path\":\"@/views/superAdmin/SysSetting.vue\",\"status\":true,\"created_at\":\"2022-12-08T14:42:46+08:00\",\"updated_at\":\"2022-12-08T14:42:46+08:00\",\"deleted_at\":null},{\"id\":8,\"name\":\"订单管理\",\"permissions\":\"system:order\",\"router_name\":\"order\",\"router_path\":\"/order\",\"status\":true,\"created_at\":\"2022-12-08T14:42:46+08:00\",\"updated_at\":\"2022-12-08T14:42:46+08:00\",\"deleted_at\":null},{\"id\":9,\"name\":\"订单查询\",\"permissions\":\"system:order:orderInfo\",\"router_name\":\"orderInfo\",\"router_path\":\"orderInfo\",\"father_id\":8,\"vue_path\":\"@/views/orders/OrderInfo.vue\",\"status\":true,\"created_at\":\"2022-12-08T14:42:46+08:00\",\"updated_at\":\"2022-12-08T14:42:46+08:00\",\"deleted_at\":null},{\"id\":10,\"name\":\"订单管理\",\"permissions\":\"system:order:orderManage\",\"router_name\":\"orderManage\",\"router_path\":\"orderManage\",\"father_id\":8,\"vue_path\":\"@/views/orders/OrderManage.vue\",\"status\":true,\"created_at\":\"2022-12-08T14:42:46+08:00\",\"updated_at\":\"2022-12-08T14:42:46+08:00\",\"deleted_at\":null},{\"id\":11,\"name\":\"商品管理\",\"permissions\":\"goods:goods\",\"router_name\":\"goods\",\"router_path\":\"/goods\",\"status\":true,\"created_at\":\"2022-12-08T14:42:46+08:00\",\"updated_at\":\"2022-12-08T14:42:46+08:00\",\"deleted_at\":null},{\"id\":12,\"name\":\"商品种类\",\"permissions\":\"system:goods:goodsCategory\",\"router_name\":\"goodsCategory\",\"router_path\":\"goodsCategory\",\"father_id\":11,\"vue_path\":\"@/views/goods/GoodsCategory.vue\",\"status\":true,\"created_at\":\"2022-12-08T14:42:46+08:00\",\"updated_at\":\"2022-12-08T14:42:46+08:00\",\"deleted_at\":null},{\"id\":13,\"name\":\"商品信息\",\"permissions\":\"system:goods:goodsInfo\",\"router_name\":\"goodsInfo\",\"router_path\":\"goodsInfo\",\"father_id\":11,\"vue_path\":\"@/views/goods/GoodsInfo.vue\",\"status\":true,\"created_at\":\"2022-12-08T14:42:46+08:00\",\"updated_at\":\"2022-12-08T14:42:46+08:00\",\"deleted_at\":null},{\"id\":14,\"name\":\"添加商品\",\"permissions\":\"system:goods:goodsInfo:add\",\"router_name\":\"orderManage\",\"router_path\":\"orderManage\",\"father_id\":13,\"status\":true,\"created_at\":\"2022-12-08T14:42:46+08:00\",\"updated_at\":\"2022-12-08T14:42:46+08:00\",\"deleted_at\":null},{\"id\":15,\"name\":\"修改商品\",\"permissions\":\"system:goods:goodsInfo:update\",\"router_name\":\"orderManage\",\"router_path\":\"orderManage\",\"father_id\":13,\"status\":true,\"created_at\":\"2022-12-08T14:42:46+08:00\",\"updated_at\":\"2022-12-08T14:42:46+08:00\",\"deleted_at\":null}],\"Apis\":[],\"created_at\":\"2022-12-08T14:50:38+08:00\",\"updated_at\":\"2022-12-08T14:50:38+08:00\",\"deleted_at\":null},\"success\":true}"}
+2022-12-08 14:51:36	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-08 14:51:36	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:51:36	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'users' AND table_type = 'BASE TABLE'", "time": "0.000ms", "rows": -1}
+2022-12-08 14:51:36	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-08 14:51:36	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-08 14:51:36	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-08 14:51:36	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:51:36	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'menus' AND table_type = 'BASE TABLE'", "time": "0.000ms", "rows": -1}
+2022-12-08 14:51:36	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `menus` WHERE `menus`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-08 14:51:36	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `menus` WHERE `menus`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-08 14:51:36	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-08 14:51:36	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:51:36	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'roles' AND table_type = 'BASE TABLE'", "time": "1.000ms", "rows": -1}
+2022-12-08 14:51:36	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `roles` WHERE `roles`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-08 14:51:36	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `roles` WHERE `roles`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-08 14:51:36	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-08 14:51:36	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:51:36	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND table_type = 'BASE TABLE'", "time": "1.000ms", "rows": -1}
+2022-12-08 14:51:36	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-08 14:51:36	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:51:36	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT * FROM `casbin_rule` LIMIT 1", "time": "0.000ms", "rows": -1}
+2022-12-08 14:51:36	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' ORDER BY ORDINAL_POSITION", "time": "1.000ms", "rows": -1}
+2022-12-08 14:51:36	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-08 14:51:36	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:51:36	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND index_name = 'idx_casbin_rule'", "time": "1.000ms", "rows": -1}
+2022-12-08 14:51:36	[35mDEBUG[0m	v2@v2.58.0/enforcer.go:179	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 64}
+2022-12-08 14:51:36	[35mDEBUG[0m	v2@v2.58.0/enforcer_cached.go:96	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 64}
+2022-12-08 14:51:36	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `casbin_rule`", "time": "0.000ms", "rows": 1}
+2022-12-08 14:51:36	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `casbin_rule`", "time": "0.000ms", "rows": 1}
+2022-12-08 14:51:49	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-08 14:51:49	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:51:49	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'users' AND table_type = 'BASE TABLE'", "time": "0.000ms", "rows": -1}
+2022-12-08 14:51:49	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-08 14:51:49	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-08 14:51:49	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-08 14:51:49	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:51:49	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'menus' AND table_type = 'BASE TABLE'", "time": "0.000ms", "rows": -1}
+2022-12-08 14:51:49	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `menus` WHERE `menus`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-08 14:51:49	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `menus` WHERE `menus`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-08 14:51:49	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-08 14:51:49	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:51:49	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'roles' AND table_type = 'BASE TABLE'", "time": "1.000ms", "rows": -1}
+2022-12-08 14:51:49	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `roles` WHERE `roles`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-08 14:51:49	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `roles` WHERE `roles`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-08 14:51:49	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-08 14:51:49	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:51:49	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND table_type = 'BASE TABLE'", "time": "0.000ms", "rows": -1}
+2022-12-08 14:51:49	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-08 14:51:49	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:166	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:51:49	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT * FROM `casbin_rule` LIMIT 1", "time": "0.000ms", "rows": -1}
+2022-12-08 14:51:49	[35mDEBUG[0m	mysql@v1.4.4/migrator.go:164	Database Query	{"sql": "SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' ORDER BY ORDINAL_POSITION", "time": "2.000ms", "rows": -1}
+2022-12-08 14:51:49	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT DATABASE()", "time": "0.000ms", "rows": -1}
+2022-12-08 14:51:49	[35mDEBUG[0m	migrator/migrator.go:52	Database Query	{"sql": "SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gohub%' ORDER BY SCHEMA_NAME='gohub' DESC,SCHEMA_NAME limit 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:51:49	[35mDEBUG[0m	v3@v3.13.0/adapter.go:268	Database Query	{"sql": "SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gohub' AND table_name = 'casbin_rule' AND index_name = 'idx_casbin_rule'", "time": "0.000ms", "rows": -1}
+2022-12-08 14:51:49	[35mDEBUG[0m	v2@v2.58.0/enforcer.go:179	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 64}
+2022-12-08 14:51:49	[35mDEBUG[0m	v2@v2.58.0/enforcer_cached.go:96	Database Query	{"sql": "SELECT * FROM `casbin_rule` ORDER BY ID", "time": "0.000ms", "rows": 64}
+2022-12-08 14:51:49	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT * FROM `casbin_rule`", "time": "0.000ms", "rows": 1}
+2022-12-08 14:51:49	[35mDEBUG[0m	sync/once.go:74	Database Query	{"sql": "SELECT count(*) FROM `casbin_rule`", "time": "0.000ms", "rows": 1}
+2022-12-08 14:51:50	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE id = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "1.000ms", "rows": 1}
+2022-12-08 14:51:50	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'superAdmin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "1.000ms", "rows": 1}
+2022-12-08 14:51:50	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `roles` WHERE id= '1'", "time": "0.000ms", "rows": 1}
+2022-12-08 14:51:50	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles_apis` WHERE `roles_apis`.`role_id` = 1", "time": "0.000ms", "rows": 0}
+2022-12-08 14:51:50	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles_menus` WHERE `roles_menus`.`role_id` = 1", "time": "0.000ms", "rows": 15}
+2022-12-08 14:51:50	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `menus` WHERE `menus`.`id` IN (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15) AND `menus`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 15}
+2022-12-08 14:51:50	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE id = '1' AND `roles`.`deleted_at` IS NULL", "time": "2.000ms", "rows": 1}
+2022-12-08 14:51:50	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "POST /api/v1/roles/menus", "query": "", "ip": "::1", "user-agent": "PostmanRuntime/7.29.2", "errors": "", "time": "7.000ms", "Request Body": "{\n    \"id\":\"1\"\n}", "Response Body": "{\"data\":[{\"id\":1,\"name\":\"首页\",\"permissions\":\"system:index\",\"router_name\":\"Index\",\"router_path\":\"/\",\"vue_path\":\"@/views/index/Index.vue\",\"status\":true,\"created_at\":\"2022-12-08T14:42:46+08:00\",\"updated_at\":\"2022-12-08T14:42:46+08:00\",\"deleted_at\":null},{\"id\":2,\"name\":\"超级管理员\",\"permissions\":\"system:superAdmin\",\"router_name\":\"superAdmin\",\"router_path\":\"/superAdmin\",\"status\":true,\"created_at\":\"2022-12-08T14:42:46+08:00\",\"updated_at\":\"2022-12-08T14:42:46+08:00\",\"deleted_at\":null},{\"id\":3,\"name\":\"角色管理\",\"permissions\":\"system:superAdmin:role\",\"router_name\":\"roles\",\"router_path\":\"roles\",\"father_id\":2,\"vue_path\":\"@/views/superAdmin/Role.vue\",\"status\":true,\"created_at\":\"2022-12-08T14:42:46+08:00\",\"updated_at\":\"2022-12-08T14:42:46+08:00\",\"deleted_at\":null},{\"id\":4,\"name\":\"API管理\",\"permissions\":\"system:superAdmin:api\",\"router_name\":\"apis\",\"router_path\":\"apis\",\"father_id\":2,\"vue_path\":\"@/views/superAdmin/Api.vue\",\"status\":true,\"created_at\":\"2022-12-08T14:42:46+08:00\",\"updated_at\":\"2022-12-08T14:42:46+08:00\",\"deleted_at\":null},{\"id\":5,\"name\":\"菜单管理\",\"permissions\":\"system:superAdmin:menu\",\"router_name\":\"menus\",\"router_path\":\"menus\",\"father_id\":2,\"vue_path\":\"@/views/superAdmin/Menu.vue\",\"status\":true,\"created_at\":\"2022-12-08T14:42:46+08:00\",\"updated_at\":\"2022-12-08T14:42:46+08:00\",\"deleted_at\":null},{\"id\":6,\"name\":\"用户管理\",\"permissions\":\"system:superAdmin:user\",\"router_name\":\"users\",\"router_path\":\"users\",\"father_id\":2,\"vue_path\":\"@/views/superAdmin/User.vue\",\"status\":true,\"created_at\":\"2022-12-08T14:42:46+08:00\",\"updated_at\":\"2022-12-08T14:42:46+08:00\",\"deleted_at\":null},{\"id\":7,\"name\":\"系统设置\",\"permissions\":\"system:superAdmin:sysSetting\",\"router_name\":\"setting\",\"router_path\":\"setting\",\"father_id\":2,\"vue_path\":\"@/views/superAdmin/SysSetting.vue\",\"status\":true,\"created_at\":\"2022-12-08T14:42:46+08:00\",\"updated_at\":\"2022-12-08T14:42:46+08:00\",\"deleted_at\":null},{\"id\":8,\"name\":\"订单管理\",\"permissions\":\"system:order\",\"router_name\":\"order\",\"router_path\":\"/order\",\"status\":true,\"created_at\":\"2022-12-08T14:42:46+08:00\",\"updated_at\":\"2022-12-08T14:42:46+08:00\",\"deleted_at\":null},{\"id\":9,\"name\":\"订单查询\",\"permissions\":\"system:order:orderInfo\",\"router_name\":\"orderInfo\",\"router_path\":\"orderInfo\",\"father_id\":8,\"vue_path\":\"@/views/orders/OrderInfo.vue\",\"status\":true,\"created_at\":\"2022-12-08T14:42:46+08:00\",\"updated_at\":\"2022-12-08T14:42:46+08:00\",\"deleted_at\":null},{\"id\":10,\"name\":\"订单管理\",\"permissions\":\"system:order:orderManage\",\"router_name\":\"orderManage\",\"router_path\":\"orderManage\",\"father_id\":8,\"vue_path\":\"@/views/orders/OrderManage.vue\",\"status\":true,\"created_at\":\"2022-12-08T14:42:46+08:00\",\"updated_at\":\"2022-12-08T14:42:46+08:00\",\"deleted_at\":null},{\"id\":11,\"name\":\"商品管理\",\"permissions\":\"goods:goods\",\"router_name\":\"goods\",\"router_path\":\"/goods\",\"status\":true,\"created_at\":\"2022-12-08T14:42:46+08:00\",\"updated_at\":\"2022-12-08T14:42:46+08:00\",\"deleted_at\":null},{\"id\":12,\"name\":\"商品种类\",\"permissions\":\"system:goods:goodsCategory\",\"router_name\":\"goodsCategory\",\"router_path\":\"goodsCategory\",\"father_id\":11,\"vue_path\":\"@/views/goods/GoodsCategory.vue\",\"status\":true,\"created_at\":\"2022-12-08T14:42:46+08:00\",\"updated_at\":\"2022-12-08T14:42:46+08:00\",\"deleted_at\":null},{\"id\":13,\"name\":\"商品信息\",\"permissions\":\"system:goods:goodsInfo\",\"router_name\":\"goodsInfo\",\"router_path\":\"goodsInfo\",\"father_id\":11,\"vue_path\":\"@/views/goods/GoodsInfo.vue\",\"status\":true,\"created_at\":\"2022-12-08T14:42:46+08:00\",\"updated_at\":\"2022-12-08T14:42:46+08:00\",\"deleted_at\":null},{\"id\":14,\"name\":\"添加商品\",\"permissions\":\"system:goods:goodsInfo:add\",\"router_name\":\"orderManage\",\"router_path\":\"orderManage\",\"father_id\":13,\"status\":true,\"created_at\":\"2022-12-08T14:42:46+08:00\",\"updated_at\":\"2022-12-08T14:42:46+08:00\",\"deleted_at\":null},{\"id\":15,\"name\":\"修改商品\",\"permissions\":\"system:goods:goodsInfo:update\",\"router_name\":\"orderManage\",\"router_path\":\"orderManage\",\"father_id\":13,\"status\":true,\"created_at\":\"2022-12-08T14:42:46+08:00\",\"updated_at\":\"2022-12-08T14:42:46+08:00\",\"deleted_at\":null}],\"success\":true}"}
+2022-12-08 14:52:05	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE id = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:52:05	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/user", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "1.000ms"}
+2022-12-08 14:52:06	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE id = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:52:06	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'superAdmin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:52:06	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE id = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "1.000ms", "rows": 1}
+2022-12-08 14:52:06	[35mDEBUG[0m	paginator/paginator.go:65	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-08 14:52:06	[35mDEBUG[0m	v1/users_controller.go:44	Database Query	{"sql": "SELECT * FROM `users` WHERE `users`.`deleted_at` IS NULL ORDER BY id asc LIMIT 5", "time": "0.000ms", "rows": 5}
+2022-12-08 14:52:06	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'superAdmin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:52:06	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/users", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "3.000ms"}
+2022-12-08 14:52:06	[35mDEBUG[0m	paginator/paginator.go:65	Database Query	{"sql": "SELECT count(*) FROM `roles` WHERE `roles`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-08 14:52:06	[35mDEBUG[0m	v1/roles_controller.go:24	Database Query	{"sql": "SELECT * FROM `roles_apis` WHERE `roles_apis`.`role_id` IN (1,2,3,4)", "time": "1.000ms", "rows": 0}
+2022-12-08 14:52:06	[35mDEBUG[0m	v1/roles_controller.go:24	Database Query	{"sql": "SELECT * FROM `roles_menus` WHERE `roles_menus`.`role_id` IN (1,2,3,4)", "time": "0.000ms", "rows": 57}
+2022-12-08 14:52:06	[35mDEBUG[0m	v1/roles_controller.go:24	Database Query	{"sql": "SELECT * FROM `menus` WHERE `menus`.`id` IN (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15) AND `menus`.`deleted_at` IS NULL", "time": "3.000ms", "rows": 15}
+2022-12-08 14:52:06	[35mDEBUG[0m	v1/roles_controller.go:24	Database Query	{"sql": "SELECT * FROM `roles` WHERE `roles`.`deleted_at` IS NULL ORDER BY id asc LIMIT 5", "time": "11.000ms", "rows": 4}
+2022-12-08 14:52:06	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/roles", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "16.000ms"}
+2022-12-08 14:52:12	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE id = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "1.000ms", "rows": 1}
+2022-12-08 14:52:12	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/user", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "2.000ms"}
+2022-12-08 14:52:12	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE id = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:52:12	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE id = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:52:12	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'superAdmin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:52:12	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'superAdmin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:52:12	[35mDEBUG[0m	paginator/paginator.go:65	Database Query	{"sql": "SELECT count(*) FROM `roles` WHERE `roles`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-08 14:52:12	[35mDEBUG[0m	paginator/paginator.go:65	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-08 14:52:12	[35mDEBUG[0m	v1/users_controller.go:44	Database Query	{"sql": "SELECT * FROM `users` WHERE `users`.`deleted_at` IS NULL ORDER BY id asc LIMIT 5", "time": "0.000ms", "rows": 5}
+2022-12-08 14:52:12	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/users", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "3.000ms"}
+2022-12-08 14:52:12	[35mDEBUG[0m	v1/roles_controller.go:24	Database Query	{"sql": "SELECT * FROM `roles_apis` WHERE `roles_apis`.`role_id` IN (1,2,3,4)", "time": "1.000ms", "rows": 0}
+2022-12-08 14:52:12	[35mDEBUG[0m	v1/roles_controller.go:24	Database Query	{"sql": "SELECT * FROM `roles_menus` WHERE `roles_menus`.`role_id` IN (1,2,3,4)", "time": "0.000ms", "rows": 57}
+2022-12-08 14:52:12	[35mDEBUG[0m	v1/roles_controller.go:24	Database Query	{"sql": "SELECT * FROM `menus` WHERE `menus`.`id` IN (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15) AND `menus`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 15}
+2022-12-08 14:52:12	[35mDEBUG[0m	v1/roles_controller.go:24	Database Query	{"sql": "SELECT * FROM `roles` WHERE `roles`.`deleted_at` IS NULL ORDER BY id asc LIMIT 5", "time": "3.000ms", "rows": 4}
+2022-12-08 14:52:12	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/roles", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "6.000ms"}
+2022-12-08 14:52:13	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE id = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:52:13	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/user", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "1.000ms"}
+2022-12-08 14:52:13	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE id = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:52:13	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE id = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:52:13	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'superAdmin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:52:13	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'superAdmin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:52:13	[35mDEBUG[0m	paginator/paginator.go:65	Database Query	{"sql": "SELECT count(*) FROM `roles` WHERE `roles`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-08 14:52:13	[35mDEBUG[0m	paginator/paginator.go:65	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-08 14:52:13	[35mDEBUG[0m	v1/users_controller.go:44	Database Query	{"sql": "SELECT * FROM `users` WHERE `users`.`deleted_at` IS NULL ORDER BY id asc LIMIT 5", "time": "0.000ms", "rows": 5}
+2022-12-08 14:52:13	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/users", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "3.000ms"}
+2022-12-08 14:52:13	[35mDEBUG[0m	v1/roles_controller.go:24	Database Query	{"sql": "SELECT * FROM `roles_apis` WHERE `roles_apis`.`role_id` IN (1,2,3,4)", "time": "0.000ms", "rows": 0}
+2022-12-08 14:52:13	[35mDEBUG[0m	v1/roles_controller.go:24	Database Query	{"sql": "SELECT * FROM `roles_menus` WHERE `roles_menus`.`role_id` IN (1,2,3,4)", "time": "1.000ms", "rows": 57}
+2022-12-08 14:52:13	[35mDEBUG[0m	v1/roles_controller.go:24	Database Query	{"sql": "SELECT * FROM `menus` WHERE `menus`.`id` IN (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15) AND `menus`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 15}
+2022-12-08 14:52:13	[35mDEBUG[0m	v1/roles_controller.go:24	Database Query	{"sql": "SELECT * FROM `roles` WHERE `roles`.`deleted_at` IS NULL ORDER BY id asc LIMIT 5", "time": "4.000ms", "rows": 4}
+2022-12-08 14:52:13	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/roles", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "7.000ms"}
+2022-12-08 14:52:14	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE id = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:52:14	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/user", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "1.000ms"}
+2022-12-08 14:52:14	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE id = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:52:14	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'superAdmin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:52:14	[35mDEBUG[0m	paginator/paginator.go:65	Database Query	{"sql": "SELECT count(*) FROM `roles` WHERE `roles`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-08 14:52:14	[35mDEBUG[0m	v1/roles_controller.go:24	Database Query	{"sql": "SELECT * FROM `roles_apis` WHERE `roles_apis`.`role_id` IN (1,2,3,4)", "time": "0.000ms", "rows": 0}
+2022-12-08 14:52:14	[35mDEBUG[0m	v1/roles_controller.go:24	Database Query	{"sql": "SELECT * FROM `roles_menus` WHERE `roles_menus`.`role_id` IN (1,2,3,4)", "time": "0.000ms", "rows": 57}
+2022-12-08 14:52:14	[35mDEBUG[0m	v1/roles_controller.go:24	Database Query	{"sql": "SELECT * FROM `menus` WHERE `menus`.`id` IN (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15) AND `menus`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 15}
+2022-12-08 14:52:14	[35mDEBUG[0m	v1/roles_controller.go:24	Database Query	{"sql": "SELECT * FROM `roles` WHERE `roles`.`deleted_at` IS NULL ORDER BY id asc LIMIT 5", "time": "2.000ms", "rows": 4}
+2022-12-08 14:52:14	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/roles", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "4.000ms"}
+2022-12-08 14:52:15	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE id = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:52:15	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/user", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "1.000ms"}
+2022-12-08 14:52:15	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE id = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:52:15	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/user", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "1.000ms"}
+2022-12-08 14:52:16	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE id = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:52:16	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/user", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "1.000ms"}
+2022-12-08 14:52:17	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE id = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:52:17	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/user", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "1.000ms"}
+2022-12-08 14:52:17	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE id = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:52:17	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/user", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "1.000ms"}
+2022-12-08 14:52:17	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE id = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:52:17	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'superAdmin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:52:17	[35mDEBUG[0m	paginator/paginator.go:65	Database Query	{"sql": "SELECT count(*) FROM `users` WHERE `users`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-08 14:52:17	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE id = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:52:17	[35mDEBUG[0m	v1/users_controller.go:44	Database Query	{"sql": "SELECT * FROM `users` WHERE `users`.`deleted_at` IS NULL ORDER BY id asc LIMIT 5", "time": "0.000ms", "rows": 5}
+2022-12-08 14:52:17	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/users", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "3.000ms"}
+2022-12-08 14:52:17	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'superAdmin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:52:17	[35mDEBUG[0m	paginator/paginator.go:65	Database Query	{"sql": "SELECT count(*) FROM `roles` WHERE `roles`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-08 14:52:17	[35mDEBUG[0m	v1/roles_controller.go:24	Database Query	{"sql": "SELECT * FROM `roles_apis` WHERE `roles_apis`.`role_id` IN (1,2,3,4)", "time": "0.000ms", "rows": 0}
+2022-12-08 14:52:17	[35mDEBUG[0m	v1/roles_controller.go:24	Database Query	{"sql": "SELECT * FROM `roles_menus` WHERE `roles_menus`.`role_id` IN (1,2,3,4)", "time": "0.000ms", "rows": 57}
+2022-12-08 14:52:17	[35mDEBUG[0m	v1/roles_controller.go:24	Database Query	{"sql": "SELECT * FROM `menus` WHERE `menus`.`id` IN (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15) AND `menus`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 15}
+2022-12-08 14:52:17	[35mDEBUG[0m	v1/roles_controller.go:24	Database Query	{"sql": "SELECT * FROM `roles` WHERE `roles`.`deleted_at` IS NULL ORDER BY id asc LIMIT 5", "time": "3.000ms", "rows": 4}
+2022-12-08 14:52:17	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/roles", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "6.000ms"}
+2022-12-08 14:52:18	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE id = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:52:18	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/user", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "1.000ms"}
+2022-12-08 14:52:18	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE id = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:52:18	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'superAdmin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:52:18	[35mDEBUG[0m	paginator/paginator.go:65	Database Query	{"sql": "SELECT count(*) FROM `roles` WHERE `roles`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-08 14:52:18	[35mDEBUG[0m	v1/roles_controller.go:24	Database Query	{"sql": "SELECT * FROM `roles_apis` WHERE `roles_apis`.`role_id` IN (1,2,3,4)", "time": "0.000ms", "rows": 0}
+2022-12-08 14:52:18	[35mDEBUG[0m	v1/roles_controller.go:24	Database Query	{"sql": "SELECT * FROM `roles_menus` WHERE `roles_menus`.`role_id` IN (1,2,3,4)", "time": "0.000ms", "rows": 57}
+2022-12-08 14:52:18	[35mDEBUG[0m	v1/roles_controller.go:24	Database Query	{"sql": "SELECT * FROM `menus` WHERE `menus`.`id` IN (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15) AND `menus`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 15}
+2022-12-08 14:52:18	[35mDEBUG[0m	v1/roles_controller.go:24	Database Query	{"sql": "SELECT * FROM `roles` WHERE `roles`.`deleted_at` IS NULL ORDER BY id asc LIMIT 5", "time": "2.000ms", "rows": 4}
+2022-12-08 14:52:18	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/roles", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "4.000ms"}
+2022-12-08 14:52:19	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE id = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:52:19	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'superAdmin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:52:19	[35mDEBUG[0m	govalidator@v1.9.10/validator.go:203	Database Query	{"sql": "SELECT count(*) FROM `roles` WHERE id= '1'", "time": "0.000ms", "rows": 1}
+2022-12-08 14:52:19	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE `id` = '1' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:52:19	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "POST /api/v1/roles/policies", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "3.000ms", "Request Body": "{\"id\":\"1\"}", "Response Body": "{\"data\":[[\"superAdmin\",\"/api/v1/users\",\"GET\"],[\"superAdmin\",\"/api/v1/users\",\"POST\"],[\"superAdmin\",\"/api/v1/users/id\",\"POST\"],[\"superAdmin\",\"/api/v1/users/reset\",\"POST\"],[\"superAdmin\",\"/api/v1/users\",\"PUT\"],[\"superAdmin\",\"/api/v1/users/status\",\"PUT\"],[\"superAdmin\",\"/api/v1/users/role\",\"PUT\"],[\"superAdmin\",\"/api/v1/users/profile\",\"PUT\"],[\"superAdmin\",\"/api/v1/users/email\",\"PUT\"],[\"superAdmin\",\"/api/v1/users/phone\",\"PUT\"],[\"superAdmin\",\"/api/v1/users/password\",\"PUT\"],[\"superAdmin\",\"/api/v1/users/avatar\",\"PUT\"],[\"superAdmin\",\"/api/v1/users\",\"DELETE\"],[\"superAdmin\",\"/api/v1/categories\",\"GET\"],[\"superAdmin\",\"/api/v1/categories\",\"POST\"],[\"superAdmin\",\"/api/v1/categories\",\"PUT\"],[\"superAdmin\",\"/api/v1/categories\",\"DELETE\"],[\"superAdmin\",\"/api/v1/roles/id\",\"POST\"],[\"superAdmin\",\"/api/v1/roles\",\"GET\"],[\"superAdmin\",\"/api/v1/roles\",\"POST\"],[\"superAdmin\",\"/api/v1/roles\",\"PUT\"],[\"superAdmin\",\"/api/v1/roles\",\"DELETE\"],[\"superAdmin\",\"/api/v1/roles/status\",\"PUT\"]],\"success\":true}"}
+2022-12-08 14:53:52	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE id = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:53:52	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'superAdmin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:53:52	[35mDEBUG[0m	paginator/paginator.go:65	Database Query	{"sql": "SELECT count(*) FROM `roles` WHERE `roles`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-08 14:53:52	[35mDEBUG[0m	v1/roles_controller.go:24	Database Query	{"sql": "SELECT * FROM `roles_apis` WHERE `roles_apis`.`role_id` IN (1,2,3,4)", "time": "0.000ms", "rows": 0}
+2022-12-08 14:53:52	[35mDEBUG[0m	v1/roles_controller.go:24	Database Query	{"sql": "SELECT * FROM `roles_menus` WHERE `roles_menus`.`role_id` IN (1,2,3,4)", "time": "0.000ms", "rows": 57}
+2022-12-08 14:53:52	[35mDEBUG[0m	v1/roles_controller.go:24	Database Query	{"sql": "SELECT * FROM `menus` WHERE `menus`.`id` IN (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15) AND `menus`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 15}
+2022-12-08 14:53:52	[35mDEBUG[0m	v1/roles_controller.go:24	Database Query	{"sql": "SELECT * FROM `roles` WHERE `roles`.`deleted_at` IS NULL ORDER BY id asc LIMIT 5", "time": "2.000ms", "rows": 4}
+2022-12-08 14:53:52	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/roles", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "5.000ms"}
+2022-12-08 14:55:04	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE id = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:55:04	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/user", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "2.000ms"}
+2022-12-08 14:55:04	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `users` WHERE id = '1' AND `users`.`deleted_at` IS NULL ORDER BY `users`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:55:04	[35mDEBUG[0m	gin@v1.8.1/context.go:173	Database Query	{"sql": "SELECT * FROM `roles` WHERE role_name = 'superAdmin' AND `roles`.`deleted_at` IS NULL ORDER BY `roles`.`id` LIMIT 1", "time": "0.000ms", "rows": 1}
+2022-12-08 14:55:04	[35mDEBUG[0m	paginator/paginator.go:65	Database Query	{"sql": "SELECT count(*) FROM `roles` WHERE `roles`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 1}
+2022-12-08 14:55:04	[35mDEBUG[0m	v1/roles_controller.go:24	Database Query	{"sql": "SELECT * FROM `roles_apis` WHERE `roles_apis`.`role_id` IN (1,2,3,4)", "time": "0.000ms", "rows": 0}
+2022-12-08 14:55:04	[35mDEBUG[0m	v1/roles_controller.go:24	Database Query	{"sql": "SELECT * FROM `roles_menus` WHERE `roles_menus`.`role_id` IN (1,2,3,4)", "time": "0.000ms", "rows": 57}
+2022-12-08 14:55:04	[35mDEBUG[0m	v1/roles_controller.go:24	Database Query	{"sql": "SELECT * FROM `menus` WHERE `menus`.`id` IN (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15) AND `menus`.`deleted_at` IS NULL", "time": "0.000ms", "rows": 15}
+2022-12-08 14:55:04	[35mDEBUG[0m	v1/roles_controller.go:24	Database Query	{"sql": "SELECT * FROM `roles` WHERE `roles`.`deleted_at` IS NULL ORDER BY id asc LIMIT 5", "time": "2.000ms", "rows": 4}
+2022-12-08 14:55:04	[35mDEBUG[0m	middlewares/logger.go:77	HTTP Access Log	{"status": 200, "request": "GET /api/v1/roles", "query": "", "ip": "127.0.0.1", "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36", "errors": "", "time": "4.000ms"}
+2022-12-08 21:47:31	[31mERROR[0m	response/response.go:73	Error Occurred:	{"error": "json: cannot unmarshal number into Go struct field RoleUpdateRequest.id of type string"}
+github.com/Gopherlinzy/gin-vue3-admin/pkg/response.BadRequest
+	/Users/admin/go/src/gin-vue3-admin/pkg/response/response.go:73
+github.com/Gopherlinzy/gin-vue3-admin/app/requests.Validate
+	/Users/admin/go/src/gin-vue3-admin/app/requests/requests.go:24
+github.com/Gopherlinzy/gin-vue3-admin/app/http/controllers/api/v1.(*RolesController).Update
+	/Users/admin/go/src/gin-vue3-admin/app/http/controllers/api/v1/roles_controller.go:94
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gin-vue3-admin/app/http/middlewares.CasbinAPI.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/casbin.go:36
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gin-vue3-admin/app/http/middlewares.AuthJWT.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/auth_jwt.go:37
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gin-vue3-admin/app/http/middlewares.LimitIP.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:30
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gin-vue3-admin/app/http/middlewares.ForceUA.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gin-vue3-admin/app/http/middlewares.Recovery.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gin-vue3-admin/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-08 21:50:41	[31mERROR[0m	response/response.go:73	Error Occurred:	{"error": "json: cannot unmarshal number into Go struct field RoleUpdateRequest.id of type string"}
+github.com/Gopherlinzy/gin-vue3-admin/pkg/response.BadRequest
+	/Users/admin/go/src/gin-vue3-admin/pkg/response/response.go:73
+github.com/Gopherlinzy/gin-vue3-admin/app/requests.Validate
+	/Users/admin/go/src/gin-vue3-admin/app/requests/requests.go:24
+github.com/Gopherlinzy/gin-vue3-admin/app/http/controllers/api/v1.(*RolesController).Update
+	/Users/admin/go/src/gin-vue3-admin/app/http/controllers/api/v1/roles_controller.go:94
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gin-vue3-admin/app/http/middlewares.CasbinAPI.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/casbin.go:36
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gin-vue3-admin/app/http/middlewares.AuthJWT.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/auth_jwt.go:37
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gin-vue3-admin/app/http/middlewares.LimitIP.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:30
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gin-vue3-admin/app/http/middlewares.ForceUA.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gin-vue3-admin/app/http/middlewares.Recovery.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gin-vue3-admin/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-08 21:52:24	[31mERROR[0m	response/response.go:73	Error Occurred:	{"error": "json: cannot unmarshal number into Go struct field RoleUpdateRequest.id of type string"}
+github.com/Gopherlinzy/gin-vue3-admin/pkg/response.BadRequest
+	/Users/admin/go/src/gin-vue3-admin/pkg/response/response.go:73
+github.com/Gopherlinzy/gin-vue3-admin/app/requests.Validate
+	/Users/admin/go/src/gin-vue3-admin/app/requests/requests.go:24
+github.com/Gopherlinzy/gin-vue3-admin/app/http/controllers/api/v1.(*RolesController).Update
+	/Users/admin/go/src/gin-vue3-admin/app/http/controllers/api/v1/roles_controller.go:94
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gin-vue3-admin/app/http/middlewares.CasbinAPI.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/casbin.go:36
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gin-vue3-admin/app/http/middlewares.AuthJWT.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/auth_jwt.go:37
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gin-vue3-admin/app/http/middlewares.LimitIP.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:30
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gin-vue3-admin/app/http/middlewares.ForceUA.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gin-vue3-admin/app/http/middlewares.Recovery.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gin-vue3-admin/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-08 21:52:50	[31mERROR[0m	response/response.go:73	Error Occurred:	{"error": "json: cannot unmarshal number into Go struct field RoleUpdateRequest.id of type string"}
+github.com/Gopherlinzy/gin-vue3-admin/pkg/response.BadRequest
+	/Users/admin/go/src/gin-vue3-admin/pkg/response/response.go:73
+github.com/Gopherlinzy/gin-vue3-admin/app/requests.Validate
+	/Users/admin/go/src/gin-vue3-admin/app/requests/requests.go:24
+github.com/Gopherlinzy/gin-vue3-admin/app/http/controllers/api/v1.(*RolesController).Update
+	/Users/admin/go/src/gin-vue3-admin/app/http/controllers/api/v1/roles_controller.go:94
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gin-vue3-admin/app/http/middlewares.CasbinAPI.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/casbin.go:36
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gin-vue3-admin/app/http/middlewares.AuthJWT.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/auth_jwt.go:37
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gin-vue3-admin/app/http/middlewares.LimitIP.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:30
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gin-vue3-admin/app/http/middlewares.ForceUA.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gin-vue3-admin/app/http/middlewares.Recovery.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gin-vue3-admin/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-08 21:54:27	[31mERROR[0m	response/response.go:73	Error Occurred:	{"error": "json: cannot unmarshal number into Go struct field RoleUpdateRequest.id of type string"}
+github.com/Gopherlinzy/gin-vue3-admin/pkg/response.BadRequest
+	/Users/admin/go/src/gin-vue3-admin/pkg/response/response.go:73
+github.com/Gopherlinzy/gin-vue3-admin/app/requests.Validate
+	/Users/admin/go/src/gin-vue3-admin/app/requests/requests.go:24
+github.com/Gopherlinzy/gin-vue3-admin/app/http/controllers/api/v1.(*RolesController).Update
+	/Users/admin/go/src/gin-vue3-admin/app/http/controllers/api/v1/roles_controller.go:94
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gin-vue3-admin/app/http/middlewares.CasbinAPI.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/casbin.go:36
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gin-vue3-admin/app/http/middlewares.AuthJWT.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/auth_jwt.go:37
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gin-vue3-admin/app/http/middlewares.LimitIP.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:30
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gin-vue3-admin/app/http/middlewares.ForceUA.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gin-vue3-admin/app/http/middlewares.Recovery.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gin-vue3-admin/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
+2022-12-08 21:56:02	[31mERROR[0m	response/response.go:73	Error Occurred:	{"error": "json: cannot unmarshal number into Go struct field UserUpdateRequest.id of type string"}
+github.com/Gopherlinzy/gin-vue3-admin/pkg/response.BadRequest
+	/Users/admin/go/src/gin-vue3-admin/pkg/response/response.go:73
+github.com/Gopherlinzy/gin-vue3-admin/app/requests.Validate
+	/Users/admin/go/src/gin-vue3-admin/app/requests/requests.go:24
+github.com/Gopherlinzy/gin-vue3-admin/app/http/controllers/api/v1.(*UsersController).Update
+	/Users/admin/go/src/gin-vue3-admin/app/http/controllers/api/v1/users_controller.go:79
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gin-vue3-admin/app/http/middlewares.CasbinAPI.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/casbin.go:36
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gin-vue3-admin/app/http/middlewares.AuthJWT.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/auth_jwt.go:37
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gin-vue3-admin/app/http/middlewares.LimitIP.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:30
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gin-vue3-admin/app/http/middlewares.ForceUA.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gin-vue3-admin/app/http/middlewares.Recovery.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gin-vue3-admin/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991

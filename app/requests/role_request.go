@@ -100,3 +100,24 @@ func UpdateRoleStatus(data interface{}, c *gin.Context) map[string][]string {
 	}
 	return validate(data, rules, messages)
 }
+
+type RolePermissionsRequest struct {
+	ID string `valid:"id" json:"id"`
+
+	Permissions []string `json:"permissions" valid:"permissions"`
+}
+
+func RolePermissions(data interface{}, c *gin.Context) map[string][]string {
+
+	rules := govalidator.MapData{
+		"id": []string{"required", "numeric", "exists:roles,id"},
+	}
+	messages := govalidator.MapData{
+		"id": []string{
+			"required:id必须存在",
+			"numeric:id必须为数字",
+			"exists:id必须存在",
+		},
+	}
+	return validate(data, rules, messages)
+}

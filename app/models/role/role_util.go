@@ -4,6 +4,7 @@ import (
 	"github.com/Gopherlinzy/gin-vue3-admin/pkg/app"
 	"github.com/Gopherlinzy/gin-vue3-admin/pkg/database"
 	"github.com/Gopherlinzy/gin-vue3-admin/pkg/paginator"
+	"gorm.io/gorm/clause"
 
 	"github.com/gin-gonic/gin"
 )
@@ -18,9 +19,9 @@ func GetBy(field, value string) (role Role) {
 	return
 }
 
-// GetByMany 查找关联表数据
-func GetByMany(tableName string) (role Role) {
-	database.Gohub_DB.Preload(tableName).First(&role)
+// GetByAssociated 查找关联表数据
+func GetByAssociated(tableName, RoleID string) (role Role) {
+	database.Gohub_DB.Preload(clause.Associations).Where("id = ?", RoleID).Find(&role)
 	return
 }
 

@@ -29,6 +29,11 @@ func (lc *LoginController) LoginByPhone(c *gin.Context) {
 		// 失败，显示错误提示
 		response.Error(c, err, "账号不存在")
 	} else {
+		if !user.Status {
+			// 失败，显示错误提示
+			response.LoginError(c, errors.New("账号异常"), "账号当前处于冻结状态，登录失败")
+			return
+		}
 		// 登录成功
 		token := jwt.NewJWT().IssueToken(user.GetStringID(), user.Name)
 

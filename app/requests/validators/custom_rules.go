@@ -95,7 +95,7 @@ func init() {
 	// 自定义规则 exists，确保数据库存在某条数据
 	// 一个使用场景是创建话题时需要附带 category_id 分类 ID 为参数，此时需要保证
 	// category_id 的值在数据库中存在，即可使用：
-	// exists:categories,id
+	// exists:categories,id,acceptID
 	govalidator.AddCustomRule("exists", func(field string, rule string,
 		message string, value interface{}) error {
 		rng := strings.Split(strings.TrimPrefix(rule, "exists:"), ",")
@@ -105,8 +105,19 @@ func init() {
 		// 第二个参数，字段名称，如 id
 		dbFiled := rng[1]
 
+		// 第三个参数，可接受的 ID
+		var acceptID string
+		if len(rng) > 2 {
+			acceptID = rng[2]
+		}
+
 		// 用户请求过来的数据
 		requestValue := value.(string)
+
+		// 如果请求过来的数据等于可接受的 ID 则直接成功
+		if requestValue == acceptID {
+			return nil
+		}
 
 		// 查询数据库
 		var count int64

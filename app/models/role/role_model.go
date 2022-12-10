@@ -6,6 +6,7 @@ import (
 	"github.com/Gopherlinzy/gin-vue3-admin/app/models/api"
 	"github.com/Gopherlinzy/gin-vue3-admin/app/models/menu"
 	"github.com/Gopherlinzy/gin-vue3-admin/pkg/database"
+	"strconv"
 )
 
 type Role struct {
@@ -33,4 +34,29 @@ func (role *Role) Save() (rowsAffected int64) {
 func (role *Role) Delete() (rowsAffected int64) {
 	result := database.Gohub_DB.Delete(&role)
 	return result.RowsAffected
+}
+
+func (role *Role) AssociationClear(tableName string) (err error) {
+	err = database.Gohub_DB.Model(&role).Association(tableName).Clear()
+	return
+}
+
+func (role *Role) AppendAssociation(tableName string, AssIDS []string) (err error) {
+	role.AssociationClear(tableName)
+	if tableName == "Menus" {
+		var ass []menu.Menu
+		for _, v := range AssIDS {
+			id, _ := strconv.Atoi(v)
+			ass = append(ass, menu.Menu{BaseModel: models.BaseModel{ID: uint64(id)}})
+		}
+		err = database.Gohub_DB.Model(&role).Association(tableName).Append(&ass)
+	} else if tableName == "Apis" {
+		var ass []api.Api
+		for _, v := range AssIDS {
+			id, _ := strconv.Atoi(v)
+			ass = append(ass, api.Api{BaseModel: models.BaseModel{ID: uint64(id)}})
+		}
+		err = database.Gohub_DB.Model(&role).Association(tableName).Append(&ass)
+	}
+	return
 }
