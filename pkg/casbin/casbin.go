@@ -120,9 +120,9 @@ func (c *Casbin) GetFilteredPolicy(sub string) [][]string {
 	return c.Enforcer.GetFilteredPolicy(0, sub)
 }
 
-// DeleteRole 删除角色（相关权限、用户全部删除）
-func (c *Casbin) DeleteRole(sub string) error {
-	_, err := c.Enforcer.DeleteRole(sub)
+// DeleteRole 删除角色所有相关权限
+func (c *Casbin) DeleteRole(role string) error {
+	_, err := c.Enforcer.RemoveFilteredPolicy(0, role)
 	return err
 }
 

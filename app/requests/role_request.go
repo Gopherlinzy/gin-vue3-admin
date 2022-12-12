@@ -13,7 +13,7 @@ type RoleStoreRequest struct {
 func RoleStore(data interface{}, c *gin.Context) map[string][]string {
 
 	rules := govalidator.MapData{
-		"role_name": []string{"required", "between:3,20", "not_exists:roles,role_name"},
+		"role_name": []string{"required", "between:3,20", "not_exists:roles,role_name", "not_exists:users,name"},
 		"des":       []string{"min_cn:3", "max_cn:255"},
 	}
 	messages := govalidator.MapData{
@@ -21,6 +21,7 @@ func RoleStore(data interface{}, c *gin.Context) map[string][]string {
 			"required:角色名为必填项",
 			"between:角色名长度需在 3~20 之间",
 			"not_exists:角色名已存在",
+			"not_exists:用户名与角色名重名",
 		},
 		"des": []string{
 			"min_cn:描述长度需至少 3 个字",
@@ -108,6 +109,27 @@ type RolePermissionsRequest struct {
 }
 
 func RolePermissions(data interface{}, c *gin.Context) map[string][]string {
+
+	rules := govalidator.MapData{
+		"id": []string{"required", "numeric", "exists:roles,id"},
+	}
+	messages := govalidator.MapData{
+		"id": []string{
+			"required:id必须存在",
+			"numeric:id必须为数字",
+			"exists:id必须存在",
+		},
+	}
+	return validate(data, rules, messages)
+}
+
+type RoleApiPolicyRequest struct {
+	ID string `valid:"id" json:"id"`
+
+	ApiPolicies []string `json:"api_policies" valid:"api_policies"`
+}
+
+func RoleApiPolicy(data interface{}, c *gin.Context) map[string][]string {
 
 	rules := govalidator.MapData{
 		"id": []string{"required", "numeric", "exists:roles,id"},

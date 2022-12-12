@@ -22,7 +22,11 @@ func IntizationData() {
 		initMenuData()
 		initRoleData()
 		initCasbinData()
-		//casbins.NewCasbin().AddPolicy("superAdmin", "/api/v1/roles/status", "PUT")
+		//casbins.NewCasbin().DeleteRole("guest")
+		//casbins.NewCasbin().AddPolicies([][]string{
+		//	{"guest", "1", "2"},
+		//	{"guest", "2", "3"},
+		//})
 		//database.Gohub_DB.Model(&role.Role{BaseModel: models.BaseModel{ID: 7}}).Find(&role.Role{}).Association("Menus").Append(&[]menu.Menu{{BaseModel: models.BaseModel{ID: 1}}, {BaseModel: models.BaseModel{ID: 2}}})
 	})
 }
@@ -109,36 +113,37 @@ func initApiData() {
 		{BaseModel: models.BaseModel{ID: 5}, Path: "/api/v1/roles/menus", Method: "POST", ApiGroup: "roles", Description: "查询指定角色 id 所有菜单权限"},
 		{BaseModel: models.BaseModel{ID: 6}, Path: "/api/v1/roles", Method: "PUT", ApiGroup: "roles", Description: "更新角色信息"},
 		{BaseModel: models.BaseModel{ID: 7}, Path: "/api/v1/roles/menuPermissions", Method: "PUT", ApiGroup: "roles", Description: "更新角色的菜单权限"},
-		{BaseModel: models.BaseModel{ID: 8}, Path: "/api/v1/roles/status", Method: "PUT", ApiGroup: "roles", Description: "更新角色启用状态"},
-		{BaseModel: models.BaseModel{ID: 9}, Path: "/api/v1/roles", Method: "DELETE", ApiGroup: "roles", Description: "删除角色"},
+		{BaseModel: models.BaseModel{ID: 8}, Path: "/api/v1/roles/apiPolicy", Method: "PUT", ApiGroup: "roles", Description: "更新角色的api权限"},
+		{BaseModel: models.BaseModel{ID: 9}, Path: "/api/v1/roles/status", Method: "PUT", ApiGroup: "roles", Description: "更新角色启用状态"},
+		{BaseModel: models.BaseModel{ID: 10}, Path: "/api/v1/roles", Method: "DELETE", ApiGroup: "roles", Description: "删除角色"},
 
 		// user api权限
-		{BaseModel: models.BaseModel{ID: 10}, Path: "/api/v1/users", Method: "GET", ApiGroup: "users", Description: "查询用户列表"},
-		{BaseModel: models.BaseModel{ID: 11}, Path: "/api/v1/users", Method: "POST", ApiGroup: "users", Description: "新增用户数据"},
-		{BaseModel: models.BaseModel{ID: 12}, Path: "/api/v1/users/id", Method: "POST", ApiGroup: "users", Description: "查询指定用户 id 的信息"},
-		{BaseModel: models.BaseModel{ID: 13}, Path: "/api/v1/users/reset", Method: "POST", ApiGroup: "users", Description: "重置指定用户的密码为 '123456'"},
-		{BaseModel: models.BaseModel{ID: 14}, Path: "/api/v1/users", Method: "PUT", ApiGroup: "users", Description: "更新用户信息"},
-		{BaseModel: models.BaseModel{ID: 15}, Path: "/api/v1/users/status", Method: "PUT", ApiGroup: "users", Description: "更新用户启用状态"},
-		{BaseModel: models.BaseModel{ID: 16}, Path: "/api/v1/users/role", Method: "PUT", ApiGroup: "users", Description: "更新用户的角色权限"},
-		{BaseModel: models.BaseModel{ID: 17}, Path: "/api/v1/users/email", Method: "PUT", ApiGroup: "users", Description: "更新用户的邮箱"},
-		{BaseModel: models.BaseModel{ID: 18}, Path: "/api/v1/users/phone", Method: "PUT", ApiGroup: "users", Description: "更新用户的手机号"},
-		{BaseModel: models.BaseModel{ID: 19}, Path: "/api/v1/users/password", Method: "PUT", ApiGroup: "users", Description: "更新用户的密码"},
-		{BaseModel: models.BaseModel{ID: 20}, Path: "/api/v1/users/avatar", Method: "PUT", ApiGroup: "users", Description: "更新用户的头像"},
-		{BaseModel: models.BaseModel{ID: 21}, Path: "/api/v1/users", Method: "DELETE", ApiGroup: "users", Description: "删除用户信息"},
+		{BaseModel: models.BaseModel{ID: 11}, Path: "/api/v1/users", Method: "GET", ApiGroup: "users", Description: "查询用户列表"},
+		{BaseModel: models.BaseModel{ID: 12}, Path: "/api/v1/users", Method: "POST", ApiGroup: "users", Description: "新增用户数据"},
+		{BaseModel: models.BaseModel{ID: 13}, Path: "/api/v1/users/id", Method: "POST", ApiGroup: "users", Description: "查询指定用户 id 的信息"},
+		{BaseModel: models.BaseModel{ID: 14}, Path: "/api/v1/users/reset", Method: "POST", ApiGroup: "users", Description: "重置指定用户的密码为 '123456'"},
+		{BaseModel: models.BaseModel{ID: 15}, Path: "/api/v1/users", Method: "PUT", ApiGroup: "users", Description: "更新用户信息"},
+		{BaseModel: models.BaseModel{ID: 16}, Path: "/api/v1/users/status", Method: "PUT", ApiGroup: "users", Description: "更新用户启用状态"},
+		{BaseModel: models.BaseModel{ID: 17}, Path: "/api/v1/users/role", Method: "PUT", ApiGroup: "users", Description: "更新用户的角色权限"},
+		{BaseModel: models.BaseModel{ID: 18}, Path: "/api/v1/users/email", Method: "PUT", ApiGroup: "users", Description: "更新用户的邮箱"},
+		{BaseModel: models.BaseModel{ID: 19}, Path: "/api/v1/users/phone", Method: "PUT", ApiGroup: "users", Description: "更新用户的手机号"},
+		{BaseModel: models.BaseModel{ID: 20}, Path: "/api/v1/users/password", Method: "PUT", ApiGroup: "users", Description: "更新用户的密码"},
+		{BaseModel: models.BaseModel{ID: 21}, Path: "/api/v1/users/avatar", Method: "PUT", ApiGroup: "users", Description: "更新用户的头像"},
+		{BaseModel: models.BaseModel{ID: 22}, Path: "/api/v1/users", Method: "DELETE", ApiGroup: "users", Description: "删除用户信息"},
 
 		// menu api权限
-		{BaseModel: models.BaseModel{ID: 22}, Path: "/api/v1/menus", Method: "GET", ApiGroup: "menus", Description: "查询菜单列表"},
-		{BaseModel: models.BaseModel{ID: 23}, Path: "/api/v1/menus", Method: "POST", ApiGroup: "menus", Description: "新增菜单信息"},
-		{BaseModel: models.BaseModel{ID: 24}, Path: "/api/v1/menus/id", Method: "POST", ApiGroup: "menus", Description: "查询指定菜单 id 数据"},
-		{BaseModel: models.BaseModel{ID: 25}, Path: "/api/v1/menus", Method: "PUT", ApiGroup: "menus", Description: "更新菜单信息"},
-		{BaseModel: models.BaseModel{ID: 26}, Path: "/api/v1/menus", Method: "DELETE", ApiGroup: "menus", Description: "删除菜单信息"},
+		{BaseModel: models.BaseModel{ID: 23}, Path: "/api/v1/menus", Method: "GET", ApiGroup: "menus", Description: "查询菜单列表"},
+		{BaseModel: models.BaseModel{ID: 24}, Path: "/api/v1/menus", Method: "POST", ApiGroup: "menus", Description: "新增菜单信息"},
+		{BaseModel: models.BaseModel{ID: 25}, Path: "/api/v1/menus/id", Method: "POST", ApiGroup: "menus", Description: "查询指定菜单 id 数据"},
+		{BaseModel: models.BaseModel{ID: 26}, Path: "/api/v1/menus", Method: "PUT", ApiGroup: "menus", Description: "更新菜单信息"},
+		{BaseModel: models.BaseModel{ID: 27}, Path: "/api/v1/menus", Method: "DELETE", ApiGroup: "menus", Description: "删除菜单信息"},
 
 		// apis api权限
-		{BaseModel: models.BaseModel{ID: 27}, Path: "/api/v1/apis", Method: "GET", ApiGroup: "apis", Description: "查询api列表"},
-		{BaseModel: models.BaseModel{ID: 28}, Path: "/api/v1/apis", Method: "POST", ApiGroup: "apis", Description: "新增api信息"},
-		{BaseModel: models.BaseModel{ID: 29}, Path: "/api/v1/apis/id", Method: "POST", ApiGroup: "apis", Description: "查询指定api id 数据"},
-		{BaseModel: models.BaseModel{ID: 30}, Path: "/api/v1/apis", Method: "PUT", ApiGroup: "apis", Description: "更新api信息"},
-		{BaseModel: models.BaseModel{ID: 31}, Path: "/api/v1/apis", Method: "DELETE", ApiGroup: "apis", Description: "删除api信息"},
+		{BaseModel: models.BaseModel{ID: 28}, Path: "/api/v1/apis", Method: "GET", ApiGroup: "apis", Description: "查询api列表"},
+		{BaseModel: models.BaseModel{ID: 29}, Path: "/api/v1/apis", Method: "POST", ApiGroup: "apis", Description: "新增api信息"},
+		{BaseModel: models.BaseModel{ID: 30}, Path: "/api/v1/apis/id", Method: "POST", ApiGroup: "apis", Description: "查询指定api id 数据"},
+		{BaseModel: models.BaseModel{ID: 31}, Path: "/api/v1/apis", Method: "PUT", ApiGroup: "apis", Description: "更新api信息"},
+		{BaseModel: models.BaseModel{ID: 32}, Path: "/api/v1/apis", Method: "DELETE", ApiGroup: "apis", Description: "删除api信息"},
 	}
 
 	database.Gohub_DB.Create(&apis)
@@ -160,9 +165,9 @@ func initRoleData() {
 
 	roles := []role.Role{
 		{BaseModel: models.BaseModel{ID: 1}, RoleName: "superAdmin", Des: "超级管理员:拥有所有权限", Status: true, Menus: menu.ExceptID(), Apis: api.ExceptID([]uint64{})},
-		{BaseModel: models.BaseModel{ID: 2}, RoleName: "admin", Des: "管理员", Status: true, Menus: menu.ExceptID(2, 3), Apis: api.ExceptID([]uint64{4, 5, 6, 7, 8, 9})},
-		{BaseModel: models.BaseModel{ID: 3}, RoleName: "user", Des: "普通用户", Status: true, Menus: menu.ExceptID(2, 3, 4, 5, 6, 7), Apis: api.AcceptID([]uint64{10, 17, 18, 19, 20, 22, 27}, 31)},
-		{BaseModel: models.BaseModel{ID: 4}, RoleName: "guest", Des: "游客模式", Status: false, Menus: menu.ExceptID(2, 3, 4, 5, 6, 7, 8, 10, 11, 13, 14, 15), Apis: api.AcceptID([]uint64{10}, 31)},
+		{BaseModel: models.BaseModel{ID: 2}, RoleName: "admin", Des: "管理员", Status: true, Menus: menu.ExceptID(2, 3), Apis: api.ExceptID([]uint64{4, 5, 6, 7, 8, 9, 10})},
+		{BaseModel: models.BaseModel{ID: 3}, RoleName: "user", Des: "普通用户", Status: true, Menus: menu.ExceptID(2, 3, 4, 5, 6, 7), Apis: api.AcceptID([]uint64{11, 18, 19, 20, 21, 23, 28}, 32)},
+		{BaseModel: models.BaseModel{ID: 4}, RoleName: "guest", Des: "游客模式", Status: false, Menus: menu.ExceptID(2, 3, 4, 5, 6, 7, 8, 10, 11, 13, 14, 15), Apis: api.AcceptID([]uint64{11}, 32)},
 	}
 
 	database.Gohub_DB.Create(&roles)
@@ -191,6 +196,7 @@ func initCasbinData() {
 		{Ptype: "p", V0: "superAdmin", V1: "/api/v1/roles", V2: "POST"},
 		{Ptype: "p", V0: "superAdmin", V1: "/api/v1/roles", V2: "PUT"},
 		{Ptype: "p", V0: "superAdmin", V1: "/api/v1/roles/menuPermissions", V2: "PUT"},
+		{Ptype: "p", V0: "superAdmin", V1: "/api/v1/roles/apiPolicy", V2: "PUT"},
 		{Ptype: "p", V0: "superAdmin", V1: "/api/v1/roles/status", V2: "PUT"},
 		{Ptype: "p", V0: "superAdmin", V1: "/api/v1/roles", V2: "DELETE"},
 

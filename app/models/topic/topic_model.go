@@ -6,6 +6,7 @@ import (
 	"github.com/Gopherlinzy/gin-vue3-admin/app/models/category"
 	"github.com/Gopherlinzy/gin-vue3-admin/app/models/user"
 	"github.com/Gopherlinzy/gin-vue3-admin/pkg/database"
+	"gorm.io/gorm/clause"
 )
 
 type Topic struct {
@@ -26,7 +27,7 @@ type Topic struct {
 }
 
 func (topic *Topic) Create() {
-	database.Gohub_DB.Create(&topic)
+	database.Gohub_DB.Clauses(clause.OnConflict{UpdateAll: true}).Create(&topic)
 }
 
 func (topic *Topic) Save() (rowsAffected int64) {

@@ -4,6 +4,7 @@ package category
 import (
 	"github.com/Gopherlinzy/gin-vue3-admin/app/models"
 	"github.com/Gopherlinzy/gin-vue3-admin/pkg/database"
+	"gorm.io/gorm/clause"
 )
 
 type Category struct {
@@ -16,7 +17,7 @@ type Category struct {
 }
 
 func (category *Category) Create() {
-	database.Gohub_DB.Create(&category)
+	database.Gohub_DB.Clauses(clause.OnConflict{UpdateAll: true}).Create(&category)
 }
 
 func (category *Category) Save() (rowsAffected int64) {

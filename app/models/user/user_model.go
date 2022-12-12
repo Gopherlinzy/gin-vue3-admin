@@ -6,6 +6,7 @@ import (
 	casbins "github.com/Gopherlinzy/gin-vue3-admin/pkg/casbin"
 	"github.com/Gopherlinzy/gin-vue3-admin/pkg/database"
 	"github.com/Gopherlinzy/gin-vue3-admin/pkg/hash"
+	"gorm.io/gorm/clause"
 )
 
 // User 用户模型
@@ -31,7 +32,7 @@ type User struct {
 
 // Create 创建用户，通过 User.ID 来判断是否创建成功
 func (userModel *User) Create() {
-	database.Gohub_DB.Create(&userModel)
+	database.Gohub_DB.Clauses(clause.OnConflict{UpdateAll: true}).Create(&userModel)
 }
 
 // ComparePassword 密码是否正确

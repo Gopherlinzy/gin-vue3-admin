@@ -17,7 +17,7 @@ type {{StructName}} struct {
 }
 
 func ({{VariableName}} *{{StructName}}) Create() {
-    database.Gohub_DB.Create(&{{VariableName}})
+    database.Gohub_DB.Clauses(clause.OnConflict{UpdateAll: true}).Create(&{{VariableName}})
 }
 
 func ({{VariableName}} *{{StructName}}) Save() (rowsAffected int64) {

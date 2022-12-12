@@ -4,6 +4,7 @@ package menu
 import (
 	"github.com/Gopherlinzy/gin-vue3-admin/app/models"
 	"github.com/Gopherlinzy/gin-vue3-admin/pkg/database"
+	"gorm.io/gorm/clause"
 )
 
 type Menu struct {
@@ -24,7 +25,7 @@ type Menu struct {
 }
 
 func (menu *Menu) Create() {
-	database.Gohub_DB.Create(&menu)
+	database.Gohub_DB.Clauses(clause.OnConflict{UpdateAll: true}).Create(&menu)
 }
 
 func (menu *Menu) Save() (rowsAffected int64) {

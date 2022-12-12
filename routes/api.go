@@ -132,6 +132,7 @@ func RegisterAPIRoutes(r *gin.Engine) {
 				rscGroup.POST("/apis", rsc.ShowApis)
 				rscGroup.PUT("", rsc.Update)
 				rscGroup.PUT("/menuPermissions", rsc.SetMenuPermissions)
+				rscGroup.PUT("/apiPolicy", rsc.SetApiPolicies)
 				rscGroup.PUT("/status", rsc.UpdateRoleStatus)
 				rscGroup.DELETE("", rsc.Delete)
 			}

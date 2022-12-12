@@ -4,6 +4,7 @@ package link
 import (
 	"github.com/Gopherlinzy/gin-vue3-admin/app/models"
 	"github.com/Gopherlinzy/gin-vue3-admin/pkg/database"
+	"gorm.io/gorm/clause"
 )
 
 type Link struct {
@@ -16,7 +17,7 @@ type Link struct {
 }
 
 func (link *Link) Create() {
-	database.Gohub_DB.Create(&link)
+	database.Gohub_DB.Clauses(clause.OnConflict{UpdateAll: true}).Create(&link)
 }
 
 func (link *Link) Save() (rowsAffected int64) {

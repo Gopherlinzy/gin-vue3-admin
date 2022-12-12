@@ -22,7 +22,7 @@ type UserStoreRequest struct {
 func UserStore(data interface{}, c *gin.Context) map[string][]string {
 
 	rules := govalidator.MapData{
-		"name": []string{"required", "alpha_num", "between:3,20", "not_exists:users,name"},
+		"name": []string{"required", "alpha_num", "between:3,20", "not_exists:users,name", "not_exists:roles,name"},
 		"email": []string{
 			"required", "min:4",
 			"max:30",
@@ -45,6 +45,7 @@ func UserStore(data interface{}, c *gin.Context) map[string][]string {
 			"alpha_num:用户名格式错误，只允许数字和英文",
 			"between:用户名长度需在 3~20 之间",
 			"not_exists:用户名已被占用",
+			"not_exists:用户名与角色名重名",
 		},
 		"email": []string{
 			"required:Email 为必填项",

@@ -135,6 +135,22 @@ func (ctrl *RolesController) SetMenuPermissions(c *gin.Context) {
 
 }
 
+// SetApiPolicies 添加 role_id 的 api权限
+func (ctrl *RolesController) SetApiPolicies(c *gin.Context) {
+	request := requests.RoleApiPolicyRequest{}
+	if ok := requests.Validate(c, &request, requests.RoleApiPolicy); !ok {
+		return
+	}
+	roleModel := role.Get(request.ID)
+
+	err := roleModel.AppendAssociation("Apis", request.ApiPolicies)
+	if err != nil {
+		response.Abort500(c, "创建失败，请稍后尝试~")
+	} else {
+		response.Data(c, request)
+	}
+}
+
 // Delete 删除 role 数据
 func (ctrl *RolesController) Delete(c *gin.Context) {
 
@@ -148,6 +164,7 @@ func (ctrl *RolesController) Delete(c *gin.Context) {
 
 	roleModel.AssociationClear("Menus")
 	roleModel.AssociationClear("Apis")
+	casbins.NewCasbin().DeleteRole(roleModel.RoleName)
 	rowsAffected := roleModel.Delete()
 	if rowsAffected > 0 {
 		response.Success(c)
