@@ -44,6 +44,12 @@ func (role *Role) GetAssociationsMenus() (data []menu.Menu) {
 	return menus
 }
 
+func (role *Role) GetAssociationsApis() (data []api.Api) {
+	var apis []api.Api
+	database.Gohub_DB.Model(&role).Association("Apis").Find(&apis)
+	return apis
+}
+
 func (role *Role) AssociationClear(tableName string) (err error) {
 	err = database.Gohub_DB.Model(&role).Association(tableName).Clear()
 	return

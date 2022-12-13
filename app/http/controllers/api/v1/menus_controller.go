@@ -58,6 +58,7 @@ func (ctrl *MenusController) Store(c *gin.Context) {
 
 	menuModel := menu.Menu{
 		Name:       request.Name,
+		Permission: request.Permission,
 		RouterName: request.RouterName,
 		RouterPath: request.RouterPath,
 		FatherID:   uint64(faID),
@@ -87,6 +88,7 @@ func (ctrl *MenusController) Update(c *gin.Context) {
 	status, _ := strconv.ParseBool(request.Status)
 
 	menuModel.Name = request.Name
+	menuModel.Permission = request.Permission
 	menuModel.RouterName = request.RouterName
 	menuModel.RouterPath = request.RouterPath
 	menuModel.FatherID = uint64(faID)

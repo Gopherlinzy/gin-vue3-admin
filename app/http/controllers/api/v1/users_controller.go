@@ -21,9 +21,11 @@ type UsersController struct {
 func (ctrl *UsersController) CurrentUser(c *gin.Context) {
 	//fmt.Println(request)
 	userModel := auth.CurrentUser(c)
+	r := casbins.NewCasbin().GetRolesForUser(userModel.Name)
 	response.JSON(c, gin.H{
 		"data":        userModel,
-		"permissions": user.GetMenus(userModel.Name),
+		"permissions": user.GetMenus(r[0]),
+		"apiPolicies": user.GetApis(r[0]),
 		"success":     true,
 	})
 }

@@ -13,6 +13,7 @@ func CasbinAPI() gin.HandlerFunc {
 		sub, exists := c.MustGet("current_user_name").(string)
 		if exists {
 			r := casbins.NewCasbin().GetRolesForUser(sub)[0]
+			//fmt.Println(r)
 			if r == "" {
 				response.Abort403(c)
 				c.Abort()
@@ -21,10 +22,11 @@ func CasbinAPI() gin.HandlerFunc {
 			obj := c.Request.URL.Path
 			// 获取请求方法
 			act := c.Request.Method
-			//fmt.Println("--------", sub, obj, act)
+			//fmt.Println("--------", r, sub, obj, act)
 
 			// 存在这条policy
-			success := casbins.NewCasbin().Enforce(sub, obj, act)
+			success := casbins.NewCasbin().Enforce(r, obj, act)
+			//fmt.Println(success)
 			// 并且角色状态为true
 			status := role.GetBy("role_name", r).Status
 			if !success || !status {

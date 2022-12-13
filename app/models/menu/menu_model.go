@@ -11,7 +11,7 @@ type Menu struct {
 	models.BaseModel
 
 	Name       string `json:"name"`
-	Permission string `json:"permissions"`
+	Permission string `json:"permission"`
 	RouterName string `json:"router_name"`
 	RouterPath string `json:"router_path"`
 	FatherID   uint64 `json:"father_id,omitempty"`

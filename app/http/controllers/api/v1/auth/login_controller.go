@@ -6,6 +6,7 @@ import (
 	"github.com/Gopherlinzy/gin-vue3-admin/app/models/user"
 	"github.com/Gopherlinzy/gin-vue3-admin/app/requests"
 	"github.com/Gopherlinzy/gin-vue3-admin/pkg/auth"
+	casbins "github.com/Gopherlinzy/gin-vue3-admin/pkg/casbin"
 	"github.com/Gopherlinzy/gin-vue3-admin/pkg/jwt"
 	"github.com/Gopherlinzy/gin-vue3-admin/pkg/response"
 	"github.com/gin-gonic/gin"
@@ -62,12 +63,21 @@ func (lc *LoginController) LoginByPassword(c *gin.Context) {
 			response.LoginError(c, errors.New("账号异常"), "账号当前处于冻结状态，登录失败")
 			return
 		}
+
+		r := casbins.NewCasbin().GetRolesForUser(userModel.Name)
+		if len(r) == 0 {
+			// 失败，显示错误提示
+			response.LoginError(c, errors.New("账号异常"), "账号没有角色权限")
+			return
+		}
+
 		// 登录成功
 		token := jwt.NewJWT().IssueToken(userModel.GetStringID(), userModel.Name)
 
 		response.JSON(c, gin.H{
 			"data":        userModel,
-			"permissions": user.GetMenus(userModel.Name),
+			"permissions": user.GetMenus(r[0]),
+			"apiPolicies": user.GetApis(r[0]),
 			"token":       token,
 		})
 	}

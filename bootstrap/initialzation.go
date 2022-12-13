@@ -22,6 +22,9 @@ func IntizationData() {
 		initMenuData()
 		initRoleData()
 		initCasbinData()
+		//roleModel := role.GetBy("role_name", "superadmin")
+		//apis := roleModel.GetAssociationsApis()
+		//fmt.Println(apis)
 		//casbins.NewCasbin().DeleteRole("guest")
 		//casbins.NewCasbin().AddPolicies([][]string{
 		//	{"guest", "1", "2"},
@@ -109,7 +112,7 @@ func initApiData() {
 		{BaseModel: models.BaseModel{ID: 1}, Path: "/api/v1/roles", Method: "GET", ApiGroup: "roles", Description: "查询角色列表"},
 		{BaseModel: models.BaseModel{ID: 2}, Path: "/api/v1/roles", Method: "POST", ApiGroup: "roles", Description: "新增角色数据"},
 		{BaseModel: models.BaseModel{ID: 3}, Path: "/api/v1/roles/id", Method: "POST", ApiGroup: "roles", Description: "查询指定角色 id 信息"},
-		{BaseModel: models.BaseModel{ID: 4}, Path: "/api/v1/roles/policies", Method: "POST", ApiGroup: "roles", Description: "查询指定角色 id 的所有api权限"},
+		{BaseModel: models.BaseModel{ID: 4}, Path: "/api/v1/roles/apis", Method: "POST", ApiGroup: "roles", Description: "查询指定角色 id 的所有api权限"},
 		{BaseModel: models.BaseModel{ID: 5}, Path: "/api/v1/roles/menus", Method: "POST", ApiGroup: "roles", Description: "查询指定角色 id 所有菜单权限"},
 		{BaseModel: models.BaseModel{ID: 6}, Path: "/api/v1/roles", Method: "PUT", ApiGroup: "roles", Description: "更新角色信息"},
 		{BaseModel: models.BaseModel{ID: 7}, Path: "/api/v1/roles/menuPermissions", Method: "PUT", ApiGroup: "roles", Description: "更新角色的菜单权限"},
@@ -133,17 +136,19 @@ func initApiData() {
 
 		// menu api权限
 		{BaseModel: models.BaseModel{ID: 23}, Path: "/api/v1/menus", Method: "GET", ApiGroup: "menus", Description: "查询菜单列表"},
-		{BaseModel: models.BaseModel{ID: 24}, Path: "/api/v1/menus", Method: "POST", ApiGroup: "menus", Description: "新增菜单信息"},
-		{BaseModel: models.BaseModel{ID: 25}, Path: "/api/v1/menus/id", Method: "POST", ApiGroup: "menus", Description: "查询指定菜单 id 数据"},
-		{BaseModel: models.BaseModel{ID: 26}, Path: "/api/v1/menus", Method: "PUT", ApiGroup: "menus", Description: "更新菜单信息"},
-		{BaseModel: models.BaseModel{ID: 27}, Path: "/api/v1/menus", Method: "DELETE", ApiGroup: "menus", Description: "删除菜单信息"},
+		{BaseModel: models.BaseModel{ID: 24}, Path: "/api/v1/menus/pag", Method: "GET", ApiGroup: "menus", Description: "查询菜单分页列表"},
+		{BaseModel: models.BaseModel{ID: 25}, Path: "/api/v1/menus", Method: "POST", ApiGroup: "menus", Description: "新增菜单信息"},
+		{BaseModel: models.BaseModel{ID: 26}, Path: "/api/v1/menus/id", Method: "POST", ApiGroup: "menus", Description: "查询指定菜单 id 数据"},
+		{BaseModel: models.BaseModel{ID: 27}, Path: "/api/v1/menus", Method: "PUT", ApiGroup: "menus", Description: "更新菜单信息"},
+		{BaseModel: models.BaseModel{ID: 28}, Path: "/api/v1/menus", Method: "DELETE", ApiGroup: "menus", Description: "删除菜单信息"},
 
 		// apis api权限
-		{BaseModel: models.BaseModel{ID: 28}, Path: "/api/v1/apis", Method: "GET", ApiGroup: "apis", Description: "查询api列表"},
-		{BaseModel: models.BaseModel{ID: 29}, Path: "/api/v1/apis", Method: "POST", ApiGroup: "apis", Description: "新增api信息"},
-		{BaseModel: models.BaseModel{ID: 30}, Path: "/api/v1/apis/id", Method: "POST", ApiGroup: "apis", Description: "查询指定api id 数据"},
-		{BaseModel: models.BaseModel{ID: 31}, Path: "/api/v1/apis", Method: "PUT", ApiGroup: "apis", Description: "更新api信息"},
-		{BaseModel: models.BaseModel{ID: 32}, Path: "/api/v1/apis", Method: "DELETE", ApiGroup: "apis", Description: "删除api信息"},
+		{BaseModel: models.BaseModel{ID: 29}, Path: "/api/v1/apis", Method: "GET", ApiGroup: "apis", Description: "查询api列表"},
+		{BaseModel: models.BaseModel{ID: 30}, Path: "/api/v1/apis/pag", Method: "GET", ApiGroup: "apis", Description: "查询api分页列表"},
+		{BaseModel: models.BaseModel{ID: 31}, Path: "/api/v1/apis", Method: "POST", ApiGroup: "apis", Description: "新增api信息"},
+		{BaseModel: models.BaseModel{ID: 32}, Path: "/api/v1/apis/id", Method: "POST", ApiGroup: "apis", Description: "查询指定api id 数据"},
+		{BaseModel: models.BaseModel{ID: 33}, Path: "/api/v1/apis", Method: "PUT", ApiGroup: "apis", Description: "更新api信息"},
+		{BaseModel: models.BaseModel{ID: 34}, Path: "/api/v1/apis", Method: "DELETE", ApiGroup: "apis", Description: "删除api信息"},
 	}
 
 	database.Gohub_DB.Create(&apis)
@@ -193,6 +198,7 @@ func initCasbinData() {
 		{Ptype: "p", V0: "superAdmin", V1: "/api/v1/roles/id", V2: "POST"},
 		{Ptype: "p", V0: "superAdmin", V1: "/api/v1/roles/policies", V2: "POST"},
 		{Ptype: "p", V0: "superAdmin", V1: "/api/v1/roles/menus", V2: "POST"},
+		{Ptype: "p", V0: "superAdmin", V1: "/api/v1/roles/apis", V2: "POST"},
 		{Ptype: "p", V0: "superAdmin", V1: "/api/v1/roles", V2: "POST"},
 		{Ptype: "p", V0: "superAdmin", V1: "/api/v1/roles", V2: "PUT"},
 		{Ptype: "p", V0: "superAdmin", V1: "/api/v1/roles/menuPermissions", V2: "PUT"},
@@ -215,12 +221,14 @@ func initCasbinData() {
 		{Ptype: "p", V0: "superAdmin", V1: "/api/v1/users", V2: "DELETE"},
 
 		{Ptype: "p", V0: "superAdmin", V1: "/api/v1/menus", V2: "GET"},
+		{Ptype: "p", V0: "superAdmin", V1: "/api/v1/menus/pag", V2: "GET"},
 		{Ptype: "p", V0: "superAdmin", V1: "/api/v1/menus", V2: "POST"},
 		{Ptype: "p", V0: "superAdmin", V1: "/api/v1/menus/id", V2: "POST"},
 		{Ptype: "p", V0: "superAdmin", V1: "/api/v1/menus", V2: "PUT"},
 		{Ptype: "p", V0: "superAdmin", V1: "/api/v1/menus", V2: "DELETE"},
 
 		{Ptype: "p", V0: "superAdmin", V1: "/api/v1/apis", V2: "GET"},
+		{Ptype: "p", V0: "superAdmin", V1: "/api/v1/apis/pag", V2: "GET"},
 		{Ptype: "p", V0: "superAdmin", V1: "/api/v1/apis", V2: "POST"},
 		{Ptype: "p", V0: "superAdmin", V1: "/api/v1/apis/id", V2: "POST"},
 		{Ptype: "p", V0: "superAdmin", V1: "/api/v1/apis", V2: "PUT"},
@@ -246,12 +254,14 @@ func initCasbinData() {
 		{Ptype: "p", V0: "admin", V1: "/api/v1/users", V2: "DELETE"},
 
 		{Ptype: "p", V0: "admin", V1: "/api/v1/menus", V2: "GET"},
+		{Ptype: "p", V0: "admin", V1: "/api/v1/menus/pag", V2: "GET"},
 		{Ptype: "p", V0: "admin", V1: "/api/v1/menus", V2: "POST"},
 		{Ptype: "p", V0: "admin", V1: "/api/v1/menus/id", V2: "POST"},
 		{Ptype: "p", V0: "admin", V1: "/api/v1/menus", V2: "PUT"},
 		{Ptype: "p", V0: "admin", V1: "/api/v1/menus", V2: "DELETE"},
 
 		{Ptype: "p", V0: "admin", V1: "/api/v1/apis", V2: "GET"},
+		{Ptype: "p", V0: "admin", V1: "/api/v1/apis/pag", V2: "GET"},
 		{Ptype: "p", V0: "admin", V1: "/api/v1/apis", V2: "POST"},
 		{Ptype: "p", V0: "admin", V1: "/api/v1/apis/id", V2: "POST"},
 		{Ptype: "p", V0: "admin", V1: "/api/v1/apis", V2: "PUT"},
@@ -266,6 +276,7 @@ func initCasbinData() {
 		{Ptype: "p", V0: "user", V1: "/api/v1/users/avatar", V2: "PUT"},
 
 		{Ptype: "p", V0: "user", V1: "/api/v1/menus", V2: "GET"},
+		{Ptype: "p", V0: "user", V1: "/api/v1/menus/pag", V2: "GET"},
 
 		{Ptype: "p", V0: "user", V1: "/api/v1/apis", V2: "GET"},
 
@@ -276,6 +287,8 @@ func initCasbinData() {
 
 		// 游客
 		{Ptype: "p", V0: "guest", V1: "/api/v1/users", V2: "GET"},
+		{Ptype: "p", V0: "guest", V1: "/api/v1/menus/pag", V2: "GET"},
+		{Ptype: "p", V0: "guest", V1: "/api/v1/apis/pag", V2: "GET"},
 		//{Ptype: "p", V0: "guest", V1: "/api/v1/categories", V2: "GET"},
 	}
 
