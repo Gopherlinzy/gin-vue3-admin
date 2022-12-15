@@ -1,0 +1,55 @@
+2022-12-14 18:29:23	[31mERROR[0m	gorm@v1.24.1/callbacks.go:134	Database Error	{"sql": "SELECT count(*) FROM `roles` WHERE name = '' && isnull(deleted_at)", "time": "0.000ms", "rows": 0, "error": "Error 1054: Unknown column 'name' in 'where clause'"}
+gorm.io/gorm.(*processor).Execute
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+gorm.io/gorm.(*DB).Count
+	/Users/admin/go/pkg/mod/gorm.io/gorm@v1.24.1/finisher_api.go:462
+github.com/Gopherlinzy/gin-vue3-admin/app/requests/validators.init.0.func1
+	/Users/admin/go/src/gin-vue3-admin/app/requests/validators/custom_rules.go:49
+github.com/thedevsaddam/govalidator.validateCustomRules
+	/Users/admin/go/pkg/mod/github.com/thedevsaddam/govalidator@v1.9.10/rules.go:32
+github.com/thedevsaddam/govalidator.(*Validator).internalValidateStruct
+	/Users/admin/go/pkg/mod/github.com/thedevsaddam/govalidator@v1.9.10/validator.go:203
+github.com/thedevsaddam/govalidator.(*Validator).ValidateStruct
+	/Users/admin/go/pkg/mod/github.com/thedevsaddam/govalidator@v1.9.10/validator.go:167
+github.com/Gopherlinzy/gin-vue3-admin/app/requests.validate
+	/Users/admin/go/src/gin-vue3-admin/app/requests/requests.go:53
+github.com/Gopherlinzy/gin-vue3-admin/app/requests.UserStore
+	/Users/admin/go/src/gin-vue3-admin/app/requests/user_request.go:80
+github.com/Gopherlinzy/gin-vue3-admin/app/requests.Validate
+	/Users/admin/go/src/gin-vue3-admin/app/requests/requests.go:33
+github.com/Gopherlinzy/gin-vue3-admin/app/http/controllers/api/v1.(*UsersController).Store
+	/Users/admin/go/src/gin-vue3-admin/app/http/controllers/api/v1/users_controller.go:59
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gin-vue3-admin/app/http/middlewares.CasbinAPI.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/casbin.go:38
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gin-vue3-admin/app/http/middlewares.AuthJWT.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/auth_jwt.go:37
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gin-vue3-admin/app/http/middlewares.LimitIP.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/limit.go:30
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gin-vue3-admin/app/http/middlewares.ForceUA.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/force_ua.go:19
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gin-vue3-admin/app/http/middlewares.Recovery.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/recovery.go:63
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/Gopherlinzy/gin-vue3-admin/app/http/middlewares.Logger.func1
+	/Users/admin/go/src/gin-vue3-admin/app/http/middlewares/logger.go:47
+github.com/gin-gonic/gin.(*Context).Next
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go:173
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:616
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	/Users/admin/go/pkg/mod/github.com/gin-gonic/gin@v1.8.1/gin.go:572
+net/http.serverHandler.ServeHTTP
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:2947
+net/http.(*conn).serve
+	/opt/homebrew/Cellar/go/1.19.3/libexec/src/net/http/server.go:1991
