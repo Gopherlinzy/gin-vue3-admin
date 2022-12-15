@@ -130,6 +130,7 @@ Use "Gohub migrate [command] --help" for more information about a command.
 
 
 # 自动化生成CRUD接口
+
 ## 1. 创建模型
 ```shell
 $ go run main.go make model category
